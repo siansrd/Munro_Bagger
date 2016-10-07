@@ -1,3 +1,5 @@
+var GridRef = require ("./grid_ref")
+
 var Mountain = function(options){
   this._id = options._id;
   this._name = options.name;
@@ -32,7 +34,4 @@ var Mountain = function(options){
   });
 };
 
-// Mountain.prototype.GridRef = function(options){
-//
-//
-// };
+module.export = Mountain;
