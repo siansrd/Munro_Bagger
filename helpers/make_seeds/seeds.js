@@ -1,19 +1,6 @@
 use munro_bagger;
 db.mountains.insert([
   {
-    name: "Hill Name",
-    height: "Height",
-    gridRef: {
-      letters: "GridZN",
-      eastings: "GridEast",
-      northings: "GridNorth"
-    },
-    latLng: {
-      lat: "Latitude",
-      lng: "Longitude"
-    }
-  },
-  {
     name: "A'Bhuidheanach Bheag",
     height: " 936.1",
     gridRef: {
