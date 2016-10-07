@@ -1,5 +1,6 @@
 var Map = require('../models/map');
 var Mountains = require('../models/mountains');
+var Pin = require('../models/pin');
 
 var mainMap;
 
@@ -15,18 +16,14 @@ UI.prototype = {
   },
   addMarkers: function(myMountains){
     for (var i = 0;  i < myMountains.length; i++){
-      console.log(myMountains[i].latLng);
-      mainMap.addMarker(myMountains[i].latLng);
-
+      mainMap.addPin(myMountains[i].latLng);
     };
   },
   render: function() {
     this.displayMap();
     var newMount = new Mountains();
-    newMount.all(function(mtns){
-      //this.myMountains = mtns;   
+    newMount.all(function(mtns){  
       this.addMarkers(mtns);
-      // console.log(myMountains)
     }.bind(this));   
   }
 };

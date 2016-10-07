@@ -1,0 +1,48 @@
+/*Blue: #A5CEFD*/
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+
+#mapContainer {
+    width: 50%; 
+    height: 100%;
+}
+
+/* PopUp (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(165,206,253); /* Fallback color */
+    background-color: rgba(165,206,253,0.7); 
+}
+
+/* PopUp Content/Box */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; 
+}
+
+/* PopUp Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    cursor: pointer;
+}
