@@ -6,6 +6,7 @@ var Mountain = function(options){
   this._height = options.height;
   this._gridRef = new GridRef(options.gridRef);
   this._latLng = options.latLng;
+  this._bagged = false;
 
   Object.defineProperty(this, "id", {
     get: function(){
@@ -34,6 +35,12 @@ var Mountain = function(options){
   Object.defineProperty(this, "latLng", {
     get: function(){
       return this._latLng;
+    }
+  });
+
+  Object.defineProperty(this, "bagged", {
+    get: function(){
+      return this._bagged;
     }
   });
 };
