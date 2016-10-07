@@ -9,7 +9,7 @@ Mountains.prototype.all = function(onCompleted) {
   var apiRequest = new ApiRequest();
   apiRequest.makeRequest(url, function(receivedMtns) {
     var mountains = [];
-    for (var receivedMtn of receivedMtns) {
+    for (var receivedMtn of receivedMtns.mountains) {
       var mtn = new Mountain(receivedMtn);
       mountains.push(mtn);
     }
