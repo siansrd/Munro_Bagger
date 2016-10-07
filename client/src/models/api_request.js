@@ -1,3 +1,5 @@
+var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+
 var ApiRequest = function() {
 }
 

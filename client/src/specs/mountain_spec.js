@@ -5,7 +5,7 @@ describe("Mountain", function(){
 
   var mountain;
 
-  beforeEach(function(){
+  before(function(){
 
     mountain = new Mountain({
 
@@ -47,7 +47,7 @@ describe("Mountain", function(){
   });
 
   it("should not be bagged", function(){
-    assert.deepEqual(mountain.bagged, false)
+    assert.strictEqual(mountain.bagged, false)
   });
 
 })
