@@ -8,7 +8,7 @@ var Map = function(container){
 Map.prototype = {
   addMarker: function(coords){
     var marker = new google.maps.Marker({
-      position: coords,
+      position: {lat: coords.lat-0,lng: coords.lng-0},
       map: this.googleMap,
       animation: google.maps.Animation.DROP
     });
