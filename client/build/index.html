@@ -1,0 +1,616 @@
+<html>
+<head>
+  <link rel="icon" href="/images/favicon.png">
+  
+  <title>Munro Bagger</title>
+  <script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js"> </script>
+  <script src='index.js'></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body >
+
+
+  <table WIDTH="100%" HEIGHT="100%" BORDER='1'>
+
+    <th width="60%"  colspan="2" bgcolor="red"><CENTER><IMG SRC="./munro.jpg" WIDTH="100%" height="80"/><BR>
+    <!-- <a href="http://localhost:3000/splash.html" FONT-SIZE="12">home</a> -->
+    </th>
+    
+  <tr>
+  </tr>
+    <th width="65%" rowspan="2" bgcolor="WHITE"><div id="map_canvas" style="width:100%; height:900px;"></div></th>
+    <th  height="140" bgcolor= "#538cc6">
+      
+          <font  size="4" color="white">
+            <!-- <marquee color = "white" bgcolor="#538cc6"  direction="up"  scrollamount="4" height="100%"> -->
+            
+<IMG SRC="https://www.wildernessscotland.com/wp-content/uploads/2015/01/Munros-and-Munro-Bagging-What-is-it-all-about-1.jpg" WIDTH="100%"/><BR><BR>
+            A Munro is a mountain in Scotland with a height over 3,000 feet (914 m). Munros are named after Sir Hugh Munro, 4th Baronet (1856–1919), who produced the first list of such hills, known as Munro's Tables, in 1891. A Munro top is a summit that is not regarded as a separate mountain and which is over 3,000 feet. In the 2012 revision of the tables, published by the Scottish Mountaineering Club, there are 282 Munros and 227 further subsidiary tops. Of these 200 have a topographic prominence of over 150 m (492 ft) and are regarded by Peakbaggers as Real Munros.[1] The best known Munro is Ben Nevis, the highest mountain in the British Isles.
+              <BR><BR>
+                
+                  <!-- </marquee> -->
+                </font>
+
+
+              </th>
+            </tr>
+            <tr>
+              <td VALIGN="TOP" BGCOLOR="BLUE"><FONT COLOR="WHITE">
+                <CENTER><BR><B>Login or <U>Register</U><HR WIDTH="80%"><BR>
+
+                Username: <input type="text" name="uname"><br><BR>
+                Password: <input type="text" name="password"><br><BR>
+                <button type="button">Sign In</button>
+                <BR>
+              </td>
+
+            </table>
+
+
+
+            <script type="text/javascript" src=https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+            <script type="text/javascript">
+              function initialize(){
+
+                var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+                var icons = {
+                  parking: {
+                    icon: iconBase + 'parking_lot_maps.png'
+                  },
+                  library: {
+                    icon: iconBase + 'library_maps.png'
+                  },
+                  info: {
+                    icon: iconBase + 'info-i_maps.png'
+                  }
+                };
+
+                var triangleCoords = [
+                {lat: 56.870399, lng: -4.198839},
+                                {lat: 57.693782, lng: -5.12873},
+                                {lat: 57.109564, lng: -4.179285},
+                                {lat: 57.18424, lng: -5.154842},
+                                {lat: 57.25509, lng: -5.303687},
+                                {lat: 57.719644, lng: -5.34672},
+                                {lat: 56.856993, lng: -4.290668},
+                                {lat: 57.247931, lng: -6.202982},
+                                {lat: 56.741727, lng: -4.983393},
+                                {lat: 57.771801, lng: -4.853899},
+                                {lat: 56.3386, lng: -4.624368},
+                                {lat: 57.667625, lng: -4.949498},
+                                {lat: 56.759143, lng: -4.966203},
+                                {lat: 57.362429, lng: -5.104728},
+                                {lat: 56.931928, lng: -3.754367},
+                                {lat: 57.350229, lng: -5.158603},
+                                {lat: 56.902295, lng: -3.513148},
+                                {lat: 57.257533, lng: -5.171293},
+                                {lat: 56.560093, lng: -4.216258},
+                                {lat: 57.807098, lng: -5.251767},
+                                {lat: 57.800726, lng: -5.259443},
+                                {lat: 57.12464, lng: -5.221291},
+                                {lat: 56.799998, lng: -4.954121},
+                                {lat: 56.833496, lng: -4.529181},
+                                {lat: 56.68072, lng: -5.003271},
+                                {lat: 56.679387, lng: -5.037143},
+                                {lat: 57.173082, lng: -5.229121},
+                                {lat: 56.812932, lng: -4.961744},
+                                {lat: 56.653921, lng: -5.17151},
+                                {lat: 56.650499, lng: -5.197757},
+                                {lat: 57.08759, lng: -3.499366},
+                                {lat: 57.093299, lng: -3.577435},
+                                {lat: 56.928643, lng: -4.653628},
+                                {lat: 56.869525, lng: -4.509684},
+                                {lat: 56.390231, lng: -4.835632},
+                                {lat: 56.44979, lng: -5.068536},
+                                {lat: 56.560382, lng: -4.647618},
+                                {lat: 56.331987, lng: -4.609638},
+                                {lat: 56.831083, lng: -3.729505},
+                                {lat: 56.80777, lng: -3.744106},
+                                {lat: 56.839837, lng: -3.688006},
+                                {lat: 56.551887, lng: -4.694525},
+                                {lat: 57.59082, lng: -5.572764},
+                                {lat: 57.580519, lng: -5.581912},
+                                {lat: 56.530113, lng: -4.713947},
+                                {lat: 56.813276, lng: -4.430646},
+                                {lat: 57.055063, lng: -3.553471},
+                                {lat: 57.009868, lng: -3.723813},
+                                {lat: 56.326662, lng: -4.906722},
+                                {lat: 56.325775, lng: -4.641485},
+                                {lat: 57.78635, lng: -4.929557},
+                                {lat: 56.877346, lng: -3.883719},
+                                {lat: 56.502888, lng: -4.722142},
+                                {lat: 56.391304, lng: -4.743194},
+                                {lat: 56.825254, lng: -4.542082},
+                                {lat: 57.593735, lng: -5.429454},
+                                {lat: 57.582098, lng: -5.403706},
+                                {lat: 56.450352, lng: -5.026639},
+                                {lat: 57.220993, lng: -5.283518},
+                                {lat: 57.306004, lng: -5.129911},
+                                {lat: 56.600979, lng: -5.104733},
+                                {lat: 56.536005, lng: -4.236977},
+                                {lat: 56.23682, lng: -4.817159},
+                                {lat: 56.894994, lng: -3.568229},
+                                {lat: 57.512074, lng: -5.400617},
+                                {lat: 57.706104, lng: -4.989776},
+                                {lat: 56.53404, lng: -4.646059},
+                                {lat: 57.095849, lng: -3.611464},
+                                {lat: 56.78939, lng: -4.659994},
+                                {lat: 56.520221, lng: -5.011233},
+                                {lat: 56.220947, lng: -4.789002},
+                                {lat: 57.153824, lng: -5.579728},
+                                {lat: 56.566232, lng: -5.170365},
+                                {lat: 56.510272, lng: -4.579218},
+                                {lat: 57.702052, lng: -5.291601},
+                                {lat: 56.935928, lng: -4.694757},
+                                {lat: 56.342216, lng: -4.56333},
+                                {lat: 56.835472, lng: -4.329913},
+                                {lat: 56.813796, lng: -4.465089},
+                                {lat: 57.099347, lng: -3.434422},
+                                {lat: 56.454565, lng: -4.619183},
+                                {lat: 56.453851, lng: -3.992057},
+                                {lat: 56.426839, lng: -5.131828},
+                                {lat: 58.413113, lng: -4.60786},
+                                {lat: 58.235202, lng: -4.41113},
+                                {lat: 56.544922, lng: -4.22086},
+                                {lat: 56.190284, lng: -4.633008},
+                                {lat: 56.397013, lng: -4.81051},
+                                {lat: 57.070368, lng: -3.669099},
+                                {lat: 56.385952, lng: -4.540103},
+                                {lat: 56.424829, lng: -6.014015},
+                                {lat: 58.138173, lng: -4.858192},
+                                {lat: 56.796849, lng: -5.003525},
+                                {lat: 56.389272, lng: -4.775488},
+                                {lat: 56.538939, lng: -5.049798},
+                                {lat: 56.249786, lng: -4.781639},
+                                {lat: 56.34268, lng: -4.219464},
+                                {lat: 56.27403, lng: -4.755047},
+                                {lat: 57.678895, lng: -4.579282},
+                                {lat: 56.642768, lng: -5.029335},
+                                {lat: 57.419718, lng: -5.250473},
+                                {lat: 56.76699, lng: -4.911065},
+                                {lat: 56.754358, lng: -4.925795},
+                                {lat: 57.219565, lng: -6.09321},
+                                {lat: 57.078298, lng: -3.728389},
+                                {lat: 56.919148, lng: -3.249066},
+                                {lat: 57.246761, lng: -6.210795},
+                                {lat: 56.649938, lng: -4.951686},
+                                {lat: 56.63815, lng: -4.970746},
+                                {lat: 56.646229, lng: -4.900336},
+                                {lat: 56.62988, lng: -4.951151},
+                                {lat: 57.13822, lng: -3.584716},
+                                {lat: 56.927719, lng: -3.278402},
+                                {lat: 57.116714, lng: -3.644477},
+                                {lat: 56.894178, lng: -3.338654},
+                                {lat: 57.054397, lng: -3.710773},
+                                {lat: 56.860968, lng: -3.779629},
+                                {lat: 56.945773, lng: -3.272707},
+                                {lat: 56.873065, lng: -3.466616},
+                                {lat: 57.036871, lng: -3.6584},
+                                {lat: 56.935919, lng: -3.801661},
+                                {lat: 56.876565, lng: -3.595272},
+                                {lat: 56.942973, lng: -3.303227},
+                                {lat: 56.908283, lng: -3.357125},
+                                {lat: 56.895696, lng: -3.423274},
+                                {lat: 56.930541, lng: -3.56088},
+                                {lat: 56.855241, lng: -4.454709},
+                                {lat: 57.092261, lng: -4.253246},
+                                {lat: 56.759931, lng: -4.589888},
+                                {lat: 57.287711, lng: -5.115127},
+                                {lat: 57.16595, lng: -5.068158},
+                                {lat: 56.622519, lng: -4.226052},
+                                {lat: 56.978784, lng: -4.515305},
+                                {lat: 56.634662, lng: -4.14561},
+                                {lat: 56.805246, lng: -4.986616},
+                                {lat: 56.911739, lng: -4.174478},
+                                {lat: 57.363304, lng: -5.024544},
+                                {lat: 57.452331, lng: -4.879935},
+                                {lat: 57.124371, lng: -4.176986},
+                                {lat: 56.830086, lng: -4.660831},
+                                {lat: 57.199243, lng: -5.209016},
+                                {lat: 57.791068, lng: -4.9034},
+                                {lat: 58.135689, lng: -4.883497},
+                                {lat: 57.120971, lng: -5.160048},
+                                {lat: 56.854631, lng: -3.387751},
+                                {lat: 56.952033, lng: -4.602084},
+                                {lat: 56.48951, lng: -4.614021},
+                                {lat: 57.147263, lng: -5.334597},
+                                {lat: 56.899713, lng: -4.484955},
+                                {lat: 56.614449, lng: -4.871979},
+                                {lat: 56.356429, lng: -4.576151},
+                                {lat: 57.062801, lng: -3.622004},
+                                {lat: 56.848003, lng: -3.196523},
+                                {lat: 57.126794, lng: -5.182857},
+                                {lat: 57.813492, lng: -4.934218},
+                                {lat: 57.611148, lng: -5.102713},
+                                {lat: 57.044879, lng: -5.255827},
+                                {lat: 57.008556, lng: -5.444338},
+                                {lat: 56.897763, lng: -4.457236},
+                                {lat: 57.057418, lng: -4.373572},
+                                {lat: 56.837836, lng: -4.509727},
+                                {lat: 56.874433, lng: -4.304519},
+                                {lat: 56.542434, lng: -5.005236},
+                                {lat: 56.873059, lng: -3.368236},
+                                {lat: 56.865766, lng: -3.55818},
+                                {lat: 57.097163, lng: -5.238035},
+                                {lat: 56.936202, lng: -5.284526},
+                                {lat: 57.075263, lng: -5.591745},
+                                {lat: 57.560891, lng: -5.49255},
+                                {lat: 57.564198, lng: -5.463592},
+                                {lat: 56.960254, lng: -3.24526},
+                                {lat: 57.048325, lng: -5.513607},
+                                {lat: 57.413091, lng: -5.22365},
+                                {lat: 57.279801, lng: -5.120267},
+                                {lat: 57.464477, lng: -5.111002},
+                                {lat: 57.491697, lng: -5.465549},
+                                {lat: 57.12756, lng: -5.252651},
+                                {lat: 56.848936, lng: -3.246316},
+                                {lat: 56.612218, lng: -4.852078},
+                                {lat: 56.566312, lng: -4.259625},
+                                {lat: 57.712876, lng: -5.048726},
+                                {lat: 57.031552, lng: -5.546334},
+                                {lat: 56.61724, lng: -4.448608},
+                                {lat: 56.963851, lng: -4.112552},
+                                {lat: 56.540946, lng: -4.253469},
+                                {lat: 56.566122, lng: -4.207707},
+                                {lat: 56.637372, lng: -4.207456},
+                                {lat: 56.525809, lng: -4.416654},
+                                {lat: 56.455712, lng: -4.546821},
+                                {lat: 57.680837, lng: -4.983801},
+                                {lat: 56.567426, lng: -4.159543},
+                                {lat: 56.620618, lng: -4.12874},
+                                {lat: 56.989075, lng: -4.930927},
+                                {lat: 57.798505, lng: -4.934011},
+                                {lat: 56.561177, lng: -4.942893},
+                                {lat: 56.521655, lng: -4.301343},
+                                {lat: 57.02679, lng: -3.750102},
+                                {lat: 57.499712, lng: -5.17063},
+                                {lat: 56.969751, lng: -2.973622},
+                                {lat: 57.011879, lng: -3.841271},
+                                {lat: 57.709022, lng: -5.271342},
+                                {lat: 57.20545, lng: -5.155691},
+                                {lat: 57.283399, lng: -5.18635},
+                                {lat: 56.749867, lng: -5.072381},
+                                {lat: 56.743687, lng: -4.939875},
+                                {lat: 57.726781, lng: -5.329288},
+                                {lat: 57.191804, lng: -5.091098},
+                                {lat: 57.181273, lng: -5.281332},
+                                {lat: 56.666942, lng: -4.100213},
+                                {lat: 57.84733, lng: -4.89662},
+                                {lat: 56.828447, lng: -4.297792},
+                                {lat: 56.453149, lng: -4.495653},
+                                {lat: 57.058369, lng: -3.725797},
+                                {lat: 56.772544, lng: -4.546498},
+                                {lat: 57.068561, lng: -3.810856},
+                                {lat: 56.619813, lng: -5.080078},
+                                {lat: 57.498622, lng: -5.407747},
+                                {lat: 57.177825, lng: -5.252177},
+                                {lat: 57.452492, lng: -5.1893},
+                                {lat: 57.444288, lng: -4.903757},
+                                {lat: 57.227286, lng: -6.234438},
+                                {lat: 57.230869, lng: -6.231931},
+                                {lat: 56.75592, lng: -5.00369},
+                                {lat: 57.105573, lng: -5.330434},
+                                {lat: 57.206598, lng: -6.224144},
+                                {lat: 57.136861, lng: -5.28153},
+                                {lat: 57.141232, lng: -5.297527},
+                                {lat: 57.718538, lng: -5.265903},
+                                {lat: 57.69205, lng: -5.091722},
+                                {lat: 57.451026, lng: -5.207916},
+                                {lat: 56.800431, lng: -4.903943},
+                                {lat: 57.21327, lng: -6.234819},
+                                {lat: 57.204894, lng: -6.211421},
+                                {lat: 56.750024, lng: -4.895453},
+                                {lat: 57.44968, lng: -4.94178},
+                                {lat: 57.196142, lng: -5.347616},
+                                {lat: 57.208964, lng: -6.2241},
+                                {lat: 57.700134, lng: -5.016748},
+                                {lat: 57.028437, lng: -5.354188},
+                                {lat: 57.220964, lng: -6.24162},
+                                {lat: 57.189025, lng: -5.349224},
+                                {lat: 57.013452, lng: -5.456854},
+                                {lat: 57.180923, lng: -5.337151},
+                                {lat: 57.369311, lng: -5.059726},
+                                {lat: 57.441497, lng: -4.852465},
+                                {lat: 57.147098, lng: -5.396634},
+                                {lat: 57.254911, lng: -5.222732},
+                                {lat: 57.696287, lng: -5.048238},
+                                {lat: 56.935728, lng: -5.448551},
+                                {lat: 57.007158, lng: -5.40544},
+                                {lat: 57.177613, lng: -5.095407},
+                                {lat: 57.681017, lng: -5.046351},
+                                {lat: 57.19581, lng: -6.211264},
+                                {lat: 57.248262, lng: -6.193098},
+                                {lat: 56.937056, lng: -5.389207},
+                                {lat: 57.667176, lng: -5.347047},
+                                {lat: 57.088964, lng: -5.193614},
+                                {lat: 57.007839, lng: -4.928763},
+                                {lat: 56.823693, lng: -4.7602},
+                                {lat: 56.573308, lng: -4.838302},
+                                {lat: 56.743697, lng: -5.030343},
+                                {lat: 56.810647, lng: -4.840876},
+                                {lat: 56.370726, lng: -4.535753},
+                                {lat: 56.823786, lng: -4.849624},
+                                {lat: 56.554921, lng: -4.97981},
+                                {lat: 56.750744, lng: -4.969025},
+                                {lat: 56.810877, lng: -4.884891},
+                                {lat: 56.81819, lng: -4.77371},
+                                {lat: 56.638322, lng: -5.010285},
+                                {lat: 56.831736, lng: -4.694917},
+                                {lat: 56.431327, lng: -5.091319},
+                                {lat: 56.568103, lng: -4.882099},
+                                {lat: 56.964037, lng: -4.585745},
+                                {lat: 56.329315, lng: -4.237533},
+                                {lat: 56.570907, lng: -4.470619},
+                                {lat: 56.879502, lng: -3.421198},
+                                {lat: 57.035728, lng: -3.688788},
+                                {lat: 57.162395, lng: -5.414721},
+                                {lat: 57.309227, lng: -4.999953},
+                                {lat: 56.904733, lng: -3.297946},
+                                {lat: 57.299554, lng: -5.048962},
+                                {lat: 56.893615, lng: -3.292356}  
+
+                ];
+
+            // Construct the polygon.
+            // var bermudaTriangle = new google.maps.Polygon({
+            //   paths: triangleCoords,
+            //   strokeColor: '#FF0000',
+            //   strokeOpacity: 0.8,
+            //   strokeWeight: 2,
+            //   fillColor: '#FF0000',
+            //   fillOpacity: 0.10
+            // });
+
+            var myOptions = {
+              zoom:8,
+
+              center: new google.maps.LatLng(56.87039900,-4.1988390),
+              mapTypeId: google.maps.MapTypeId.ROADMAP}
+              map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+
+              var marker = new google.maps.Marker( {
+                position: new google.maps.LatLng(56.87039900,-4.1988390),
+                map: map,
+                title: "Bhuidheanach Bheag",
+                icon: 'https://cdn2.iconfinder.com/data/icons/simplie-plants/16/nature_007-mountain-hill-landscape-forest-128.png', 
+                url: "http://www.walkhighlands.co.uk/munros/a-bhuidheanach-bheag/",
+                animation: google.maps.Animation.DROP,
+
+              });
+
+              infowindow= new google.maps.InfoWindow();
+              listener=google.maps.event.addListener (marker,'click',function () {
+                //infowindow1.setContent("<a href=http://pokeapi.co/api/v2/pokemon/1/">+"Bulbasour is on the prowl - catch him while you can!></a>");
+                infowindow.setContent("<h2><a href='http://www.walkhighlands.co.uk/munros/a-bhuidheanach-bheag'>Bhuidheanach Bheag</a><BR><h2>Height: 936.1<BR></h2><BR>A Bhuidheanach Bheag is a broad, domed summit on the spacious plateau to the east of the Drumochter Pass. The plateau lacks distinctive landforms but is wild and desolate.")
+                infowindow.open(map,marker);
+                // <img src ='https://en.wikipedia.org/wiki/A%27_Bhuidheanach_Bheag#/media/File:A_Bhuidheanach_Beag_from_Sow.jpg'><BR>
+                
+                // type: info
+              });
+
+              var marker1 = new google.maps.Marker( {
+                position: new google.maps.LatLng(57.69378200,-5.1287300),
+                map: map,
+                title: "A'Chailleach",
+                icon: 'https://cdn2.iconfinder.com/data/icons/simplie-plants/16/nature_007-mountain-hill-landscape-forest-128.png',
+
+                url: "http://www.walkhighlands.co.uk/munros/A-Chailleach/",
+                animation: google.maps.Animation.DROP,
+                              // type: info
+                            });
+
+              infowindow1= new google.maps.InfoWindow();
+              listener=google.maps.event.addListener (marker1,'click',function () {
+                infowindow1.setContent("<H2><U>A'Chailleach</U></H2><a href='http://www.walkhighlands.co.uk/munros/a-chailleach-monadhliath'><BR><h2>Height: 997<BR></h2>A Chailleach is a familiar sight from the area around Newtonmore. Topped by a big cairn, it is the most ascended and perhaps the finest of the Monadhliath.'>");
+                
+                infowindow1.open(map,marker1);
+              });
+
+              var marker2 = new google.maps.Marker( {
+                position: new google.maps.LatLng(57.10956400,-4.1792850),
+                map: map,
+                title: "A'Chailleach",
+                icon: 'https://cdn2.iconfinder.com/data/icons/simplie-plants/16/nature_007-mountain-hill-landscape-forest-128.png"', 
+                //icon: 'https://img.pokemondb.net/sprites/ruby-sapphire/shiny/snorlax.png',
+                animation: google.maps.Animation.DROP,
+                                            // type: info
+                                          });
+
+              infowindow2= new google.maps.InfoWindow();
+              listener=google.maps.event.addListener (marker2,'click',function () {
+                infowindow2.setContent("<H2><U>A Chailleach'><BR><h2>Height: 997<BR></h2>A Chailleach is a familiar sight from the area around Newtonmore. Topped by a big cairn, it is the most ascended and perhaps the finest of the Monadhliath.'>");
+
+                infowindow2.open(map,marker2);
+              });
+
+              var marker3 = new google.maps.Marker( {
+                position: new google.maps.LatLng(56.89361500,-3.2923560),
+              
+                map: map,
+                title: "Squirtle",
+                icon: 'https://cdn2.iconfinder.com/data/icons/simplie-plants/16/nature_007-mountain-hill-landscape-forest-128.png',
+                animation: google.maps.Animation.DROP,
+                                                          // type: info
+                                                        });
+
+              infowindow3= new google.maps.InfoWindow();
+              listener=google.maps.event.addListener (marker3,'click',function () {
+                infowindow3.setContent("<H2><U>Tom Buidhe</U><h2>Height: 997<BR></H2>Squirtle's shell is not merely used for protection.<BR> The shell's rounded shape and the grooves on its surface help minimize resistance in water.<BR><img src ='http://www.walkhighlands.co.uk/munros/tom-buidhe'>");
+
+
+                
+                infowindow3.open(map,marker3);
+              });
+
+//               var marker4 = new google.maps.Marker( {
+//                 position: new google.maps.LatLng(55.967638, -3.174373),
+//                 map: map,
+//                 title: "Eevee",
+//                 url: "http://www.wikipedia.org/",
+//                 animation: google.maps.Animation.DROP,
+//                 icon: 'http://fc05.deviantart.net/fs71/f/2012/305/2/1/free_bouncy_eevee_icon_by_kattling-d5jnjl3.gif',
+//               });
+//               infowindow4= new google.maps.InfoWindow();
+//               listener=google.maps.event.addListener (marker4,'click',function () {
+//                 infowindow4.setContent(
+//                   "<H2><U>Eevee</U></H2>Eevee is a mammalian, quadruped creature with primarily brown fur<BR><img src ='http://vignette1.wikia.nocookie.net/pokemon/images/c/ce/133Eevee_BW_anime.png/revision/latest?cb=20140810044703'>"
+
+
+//                   );
+//                 infowindow4.open(map,marker4);
+//               });
+
+//               var marker5 = new google.maps.Marker( {
+//                 position: new google.maps.LatLng(55.946981, -3.158870),
+//                 map: map,
+//                 title: "Psyduck",
+//                 icon: 'http://orig13.deviantart.net/c447/f/2016/221/9/2/psyduck_icon_by_gelidwolf-dadb0r5.gif',
+//                 animation: google.maps.Animation.DROP,
+//                                                           // type: info
+//                                                         });
+
+//               infowindow5= new google.maps.InfoWindow();
+//               listener=google.maps.event.addListener (marker5,'click',function () {
+//                 infowindow5.setContent("<H2><U>PsyDuck</U></H2>Psyduck is a yellow Pokémon that resembles a duck or bipedal platypus.");
+
+//                 infowindow5.open(map,marker5);
+//               });
+
+//               var marker6 = new google.maps.Marker( {
+//                 position: new google.maps.LatLng(55.942481, -3.128333),
+//                 map: map,
+//                 title: "Slopoke",
+//                 icon: 'http://cdn.bulbagarden.net/upload/1/1f/Spr_5b_079.png',
+//                 animation: google.maps.Animation.DROP,
+//                                                           // type: info
+//                                                         });
+
+//               infowindow6= new google.maps.InfoWindow();
+//               listener=google.maps.event.addListener (marker6,'click',function () {
+//                 infowindow6.setContent("<H2><U>Slopoke</U></H2>Slopoke is a pink creature that resembles a cross<br>between a salamander and a hippopotamus.");
+
+//                 infowindow6.open(map,marker6);
+//               });
+
+//               var marker7 = new google.maps.Marker( {
+//                 position: new google.maps.LatLng(55.928807, -3.161094),
+//                 map: map,
+//                 title: "Charizard",
+//                 icon: 'https://i.dstatic.com/images/pokemon/front/normal/mega%20charizard%20x.png',
+//                 animation: google.maps.Animation.DROP,
+//                                                           // type: info
+//                                                         });
+
+//               infowindow7= new google.maps.InfoWindow();
+//               listener=google.maps.event.addListener (marker7,'click',function () {
+//                 infowindow7.setContent("<H2><U>Charizard</U></H2>It is said that Charizard’s fire burns hotter if it has experienced harsh battles.");
+
+//                 infowindow7.open(map,marker7);
+//               });
+              
+//               var marker8 = new google.maps.Marker( {
+//                 position: new google.maps.LatLng(55.932422, -3.186988),
+//                 map: map,
+//                 title: "MikeyMon",
+//                 icon: '/images/rsz_mikeymon.gif',
+//                 animation: google.maps.Animation.DROP,
+//                                                           // type: info
+//                                                         });
+
+//               infowindow8= new google.maps.InfoWindow();
+//               listener=google.maps.event.addListener (marker8,'click',function () {
+//                 infowindow8.setContent("<h2><B><U>MikeyMon</U></b><BR><P>The latest recruit to the Pokemon team - MikeyMon has special coding powers. Some say that, if he had his hair cut, he would lose these powers</h2>");
+
+//                 infowindow8.open(map,marker8);
+// });
+// var marker9 = new google.maps.Marker( {
+//   position: new google.maps.LatLng(55.947500, -3.202282),
+//   map: map,
+//   title: "Codeclan Pokeball",
+//   icon: 'http://static.wixstatic.com/media/56db6f_9364037a3c164a05af700384ecedeab2~mv2.png_srz_60_60_85_22_0.50_1.20_0.00_png_srz',
+//   animation: google.maps.Animation.DROP,
+//                                                             // type: info
+//                                                           });
+
+// infowindow9= new google.maps.InfoWindow();
+// listener=google.maps.event.addListener (marker9,'click',function () {
+//   infowindow9.setContent("<B><U>Pokeball</U></b><BR><BR><h2>The PokeBall is at the CodeClan Pokemon Gym - don't lose it - you've already lost the Pokemon!!</h3>");
+
+//   infowindow9.open(map,marker9);
+
+// });
+
+// var json =  [{ 
+//   "title": "Stockholm",
+//   lat: 56.904733, 
+//   lng: -3.297946},
+//   "description": "Stockholm is the capital and the largest city of Sweden and constitutes the most populated urban area in Scandinavia with a population of 2.1 million in the metropolitan area (2010)"
+// },
+// {
+//   "title": "Oslo",
+//   "lat": 57.299554,
+//   "lng": -5.048962,
+//   "description": "Oslo is a municipality, and the capital and most populous city of Norway with a metropolitan population of 1,442,318 (as of 2010)."
+// },
+// {
+//   "title": "Copenhagen",
+//   "lat": 56.893615,
+//   "lng": -3.292356,
+//   "description": "Copenhagen is the capital of Denmark and its most populous city, with a metropolitan population of 1,931,467 (as of 1 January 2012)."
+// }
+// ];
+
+
+// Creating a new map
+// var map = new google.maps.Map(document.getElementById("map"), {
+//   center: new google.maps.LatLng(57.9, 14.6),
+//   zoom: 6,
+//   mapTypeId: google.maps.MapTypeId.ROADMAP,
+//   console.log(maps)
+// });
+
+
+
+// for (var i = 0, length = json.length; i < length; i++) {
+//   var data = json[i],
+//       latLng = new google.maps.LatLng(data.lat, data.lng); 
+
+//   // Creating a marker and putting it on the map
+//   var marker = new google.maps.Marker({
+//     position: latLng,
+//     map: map,
+//     title: data.title
+//   });
+// }
+
+                            // Define the LatLng coordinates for the polygon's path.
+
+ bermudaTriangle.setMap(map);
+
+}
+
+
+    // );
+
+    // var marker1 = new google.maps.Marker( {
+    //   position: new google.maps.LatLng(55.9, -3.3), map: map,
+    //   title: "Codeclan",
+    //   animation: google.maps.Animation.DROP,
+    //   type:parking
+    // }
+    // );
+
+
+  </script>
+
+
+
+  <script type="text/javascript">
+    initialize();
+  </script>
+
+
+  
+</body>
+</html>
