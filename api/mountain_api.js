@@ -4,7 +4,7 @@ var MountainApi = function(app) {
 
   var query = new MountainQuery();
 
-  //film index
+  //mountain index
   app.get('/api/mountains', function(req, res) {
     query.all(function(data) {
       res.json( { mountains: data } );
