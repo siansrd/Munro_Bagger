@@ -10,28 +10,32 @@ var Mountain = function(options){
   Object.defineProperty(this, "id", {
     get: function(){
       return this._id;
-    };
+    }
   });
+
   Object.defineProperty(this, "name", {
     get: function(){
       return this._name;
-    };
+    }
   });
+
   Object.defineProperty(this, "height", {
     get: function(){
       return this._height;
-    };
+    }
   });
+
   Object.defineProperty(this, "gridRef", {
     get: function(){
       return this._gridRef;
-    };
+    }
   });
+
   Object.defineProperty(this, "latLng", {
     get: function(){
       return this._latLng;
-    };
+    }
   });
 };
 
-module.export = Mountain;
+module.exports = Mountain;
