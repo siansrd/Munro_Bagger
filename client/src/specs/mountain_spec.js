@@ -44,8 +44,10 @@ describe("Mountain", function(){
 
   it("should have latlng", function(){
     assert.deepEqual(mountain.latLng, {lat: "56.87039900", lng: "-4.1988390"})
-  })
+  });
 
-
+  it("should not be bagged", function(){
+    assert.deepEqual(mountain.bagged, false)
+  });
 
 })
