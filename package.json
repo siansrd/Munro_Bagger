@@ -4,7 +4,7 @@
   "description": "Project 3: Munro Bagger.",
   "main": "seeds.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./client/src/specs/",
     "start": "node server.js"
   },
   "author": "",
