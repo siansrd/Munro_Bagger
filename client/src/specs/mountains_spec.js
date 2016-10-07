@@ -27,7 +27,7 @@ describe("Mountains", function(){
   it("first mountain should have height", function(){
     new Mountains().all(function(mtns){
       // test result needs to be checked in the callback
-      assert.equal(mtns[0].height, 936.1);
+      assert.strictEqual(mtns[0].height, 936.1);
     });
   });
 

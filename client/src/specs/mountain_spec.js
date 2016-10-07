@@ -11,15 +11,15 @@ describe("Mountain", function(){
 
       _id: "57f6c141fcff223d05f1ebe0",
       name: "A'Bhuidheanach Bheag",
-      height: " 936.1",
+      height: 936.1,
       gridRef: {
         letters: "NN",
         eastings: "66069",
         northings: "77600"
       },
       latLng: {
-        lat: "56.87039900",
-        lng: "-4.1988390"
+        lat: 56.87039900,
+        lng: -4.1988390
       }
 
     })
@@ -35,7 +35,7 @@ describe("Mountain", function(){
   });
 
   it("should have height", function(){
-    assert.equal(mountain.height, 936.1)
+    assert.strictEqual(mountain.height, 936.1)
   });
 
   it("should have gridref", function(){
@@ -43,7 +43,7 @@ describe("Mountain", function(){
   });
 
   it("should have latlng", function(){
-    assert.deepEqual(mountain.latLng, {lat: "56.87039900", lng: "-4.1988390"})
+    assert.deepStrictEqual(mountain.latLng, {lat: 56.87039900, lng: -4.1988390})
   });
 
   it("should not be bagged", function(){
