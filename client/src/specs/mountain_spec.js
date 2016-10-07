@@ -1,5 +1,4 @@
 var Mountain = require("../models/mountain");
-var GridRed = require("../models/grid_ref");
 var assert = require("assert");
 
 describe("Mountain", function(){
