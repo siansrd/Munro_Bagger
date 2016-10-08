@@ -20,7 +20,7 @@ function Pin (map, mountain) {
             popUp.style.display = "none";
         }
     }; 
-    var closeBtn = document.querySelector('.close')
+    var closeBtn = document.querySelector('#close')
     closeBtn.onclick= function() {
       popUp.style.display = "none";
     }
@@ -34,24 +34,16 @@ Pin.prototype = {
     popUp.style.display = "block";
   },
   createPopUp: function() {
-    var popUpContent = document.getElementById('popUp-content');
-    this.removeChildNodes(popUpContent);
-    var close = document.createElement("img");
+    var close = document.getElementById("close");
     close.setAttribute('src', 'https://cdn0.iconfinder.com/data/icons/octicons/1024/x-128.png');
-    close.className = "close";
-    popUpContent.appendChild(close);
-    var mountName = document.createElement('h2');
+    var mountName = document.getElementById('mountName');
     mountName.innerHTML = this.mountName;
-    popUpContent.appendChild(mountName);
-    var mountHeight = document.createElement('p');
-    mountHeight.innerHTML = this.mountHeight + " meters above sea level";
-    popUpContent.appendChild(mountHeight); 
-    var gridRef = document.createElement('p');
-    gridRef.innerHTML = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
-    popUpContent.appendChild(gridRef);
-    var latLng = document.createElement('p');
-    latLng.innerHTML = this.mountlatLng.lat + " " + this.mountlatLng.lng;
-    popUpContent.appendChild(latLng); 
+    heightText = document.querySelector('#txt_height');
+    heightText.innerText = this.mountHeight + " meters above sea level";
+    gridText = document.querySelector('#text_grid');
+    gridText.innerText = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
+    txtLatLng = document.querySelector('#txt_latlng');
+    txtLatLng.innerText = this.mountlatLng.lat + " " + this.mountlatLng.lng;  
   },
   removeChildNodes: function(parent) {
     while (parent.hasChildNodes()) {   

@@ -47,11 +47,24 @@ body {
 }
 
 /* PopUp Close Button */
-.close {
+#close {
     width: 20px;
     float: right;
 }
-.close:hover,
-.close:focus {
+#close:hover,
+#close:focus {
     cursor: pointer;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid-item {
+  flex: 1 1 calc(100% - 100px);
+  height: 25px;
+}
+.grid-item:nth-child(odd) {
+  flex: 0 0 100px;
+  height: 25px;
 }
