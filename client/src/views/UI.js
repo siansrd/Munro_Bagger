@@ -19,12 +19,21 @@ UI.prototype = {
       mainMap.addPin(myMountains[i].latLng);
     };
   },
+  populateList: function(myMountains){
+    for (var i = 0;  i < myMountains.length; i++){
+       munro = document.createElement('li');
+       munro.innerHTML = myMountains[i].name;
+       document.getElementById('munroList').appendChild(munro); 
+    };
+  },
   render: function() {
     this.displayMap();
     var newMount = new Mountains();
     newMount.all(function(mtns){  
       this.addMarkers(mtns);
-    }.bind(this));   
+      this.populateList(mtns);
+    }.bind(this)); 
+
   }
 };
 
