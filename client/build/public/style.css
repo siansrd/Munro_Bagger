@@ -24,7 +24,7 @@ body {
 }
 
 /* PopUp (background) */
-.modal {
+.popUp {
     display: none; /* Hidden by default */
     position: fixed; 
     z-index: 1; 
@@ -38,7 +38,7 @@ body {
 }
 
 /* PopUp Content/Box */
-.modal-content {
+#popUp-content {
     background-color: #fff;
     margin: 15% auto;
     border: 3px solid #456F99;
