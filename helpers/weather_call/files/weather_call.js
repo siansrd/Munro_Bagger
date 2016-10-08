@@ -97,9 +97,17 @@ var requestComplete = function(){
   saveWeather(response);
   counter++;
   if (counter < 282){
-    makeRequest(url, requestComplete);
+    setTimeout(function(){
+      makeRequest(urlGenerator(), requestComplete);
+    }, 1050);
   };
 };
+
+// setTimeout(function2, 3000)
+
+// setTimeout(function() {
+//     console.log('Blah blah blah blah extra-blah');
+// }, 3000);
 
 var saveWeather = function(response){
   var weatherObj = response[counter];
