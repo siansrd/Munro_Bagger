@@ -15,4 +15,15 @@ MountainQuery.prototype.all = function(onQueryFinished) {
   });
 }
 
+MountainQuery.prototype.byId = function(id, onQueryFinished) {
+  MongoClient.connect(this.url, function(err, db) {
+    if (db) {
+      var collection = db.collection('mountains');
+      collection.find( { "_id": id }).toArray(function(err, docs) {
+        onQueryFinished(docs);
+      })
+    }
+  });
+}
+
 module.exports = MountainQuery;
