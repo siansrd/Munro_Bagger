@@ -81,14 +81,14 @@ var makeRequest = function(url, callback){
   request.open("GET", url);
   request.onload = callback;
   request.send();
-}
+};
 
 var requestComplete = function(){
   if (this.status !== 200) return;
   var jsonString = this.responseText;
   var response = JSON.parse(jsonString);
   saveWeather(response);
-  counter++;
+  // counter++;
 };
 
 var saveWeather = function(response){
@@ -99,19 +99,20 @@ var saveWeather = function(response){
 var latLngGenerator = function(){
   var latLng = munroList[counter].latLng;
   return latLng;
-}
+};
 
 var urlGenerator = function(){
   var api_key = apiKey.key();
-  var lat = latLngGenerator[0];
-  var lng = latLngGenerator[1];
+  var lat = latLngGenerator().lat;
+  var lng = latLngGenerator().lng;
   var url = "api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lng + "&appid=" + api_key;
   return url;
-}
-
-
-var app = function(){
-
 };
 
-window.onload = app;
+// var app = function(){
+  var url = urlGenerator();
+  makeRequest(url, requestComplete);
+  console.log(weatherObjs);
+// };
+
+// window.onload = app;
