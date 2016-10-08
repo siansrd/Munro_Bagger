@@ -97,17 +97,12 @@ var requestComplete = function(){
   saveWeather(response);
   counter++;
   if (counter < 282){
-    setTimeout(function(){
+    // setTimeout(function(){
       makeRequest(urlGenerator(), requestComplete);
-    }, 1050);
+    // }, 1050);
   };
 };
-
-// setTimeout(function2, 3000)
-
-// setTimeout(function() {
-//     console.log('Blah blah blah blah extra-blah');
-// }, 3000);
+//can we make this call when the mountain is created?? Maybe when we host the munro api ourselves, we can make both requests at the same time and save them together??
 
 var saveWeather = function(response){
   var weatherObj = response[counter];
