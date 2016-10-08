@@ -99,6 +99,7 @@ var requestComplete = function(){
   if (counter < 282){
     // setTimeout(function(){
       makeRequest(urlGenerator(), requestComplete);
+      console.log(counter)
     // }, 1050);
   };
 };
