@@ -10,8 +10,8 @@ var Map = function(container){
   this.pins = [];
 }
 
-Map.prototype.addPin = function(coords) {
-  this.pins.push(new Pin(this.googleMap, coords));
+Map.prototype.addPin = function(mountain) {
+  this.pins.push(new Pin(this.googleMap, mountain));
 }
 
 module.exports = Map;

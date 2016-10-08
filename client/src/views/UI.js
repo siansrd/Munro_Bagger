@@ -16,7 +16,7 @@ UI.prototype = {
   },
   addMarkers: function(myMountains){
     for (var i = 0;  i < myMountains.length; i++){
-      mainMap.addPin(myMountains[i].latLng);
+      mainMap.addPin(myMountains[i]);
     };
   },
   populateList: function(myMountains){

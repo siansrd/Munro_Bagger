@@ -1,11 +1,11 @@
-function Pin (map, coords) {
+function Pin (map, mountain) {
   this.map = map;
-  this.coords = coords;
+  this.coords = mountain.latLng;
   this.mountName = "Name";
   this.mountHeight = "Height";
 
   this.marker = new google.maps.Marker({
-    position: {lat: coords.lat-0,lng: coords.lng-0},
+    position: mountain.latLng,
     map: map
   });
 
