@@ -1,4 +1,6 @@
-var apiKey = require("./api_key");
+// var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+
+// var apiKey = require("./api_key");
 // var munros = require("..../db/mountain_query");
 
 var munroList = [
@@ -78,17 +80,25 @@ var counter = 0;
 
 var makeRequest = function(url, callback){
   var request = new XMLHttpRequest();
+  // console.log(request)
   request.open("GET", url);
   request.onload = callback;
   request.send();
+  // console.log("hello cyan")
 };
 
 var requestComplete = function(){
+  // console.log(this.status)
   if (this.status !== 200) return;
   var jsonString = this.responseText;
   var response = JSON.parse(jsonString);
+  console.log(response)
+  // console.log("hello michael")
   saveWeather(response);
-  // counter++;
+  counter++;
+  if (counter < 282){
+    makeRequest(url, requestComplete);
+  };
 };
 
 var saveWeather = function(response){
@@ -102,17 +112,17 @@ var latLngGenerator = function(){
 };
 
 var urlGenerator = function(){
-  var api_key = apiKey.key();
-  var lat = latLngGenerator().lat;
-  var lng = latLngGenerator().lng;
-  var url = "api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lng + "&appid=" + api_key;
+  // var api_key = apiKey;
+  // var lat = latLngGenerator().lat;
+  // var lng = latLngGenerator().lng;
+  var url = "http://api.openweathermap.org/data/2.5/forecast?lat=56.87039900&lon=-4.1988390&appid=6ae7f2b0c3d705d3444ea0812ef77487";
   return url;
 };
 
-// var app = function(){
+var app = function(){
   var url = urlGenerator();
   makeRequest(url, requestComplete);
   console.log(weatherObjs);
-// };
+};
 
-// window.onload = app;
+window.onload = app;

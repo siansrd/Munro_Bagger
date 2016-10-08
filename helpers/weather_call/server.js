@@ -6,7 +6,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.use(express.static('public'));
+app.use(express.static('helpers/weather_call/files'));
 
 
 var server = app.listen(3000, function () {
