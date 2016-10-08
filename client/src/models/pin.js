@@ -15,6 +15,11 @@ function Pin (map, mountain) {
   this.marker.addListener('click', function() {
     this.createPopUp();
     this.openPopUp();
+    window.onclick = function(event) {
+        if (event.target == popUp) {
+            popUp.style.display = "none";
+        }
+    }
   }.bind(this));
 
 }
@@ -25,8 +30,10 @@ Pin.prototype = {
     popUp.style.display = "block";
   },
   createPopUp: function() {
+
     var popUpContent = document.getElementById('popUp-content');
-    
+    // var popUpContent.innerHTML = ""
+
     var mountName = document.createElement('p');
     mountName.innerHTML = this.mountName;
     popUpContent.appendChild(mountName);
