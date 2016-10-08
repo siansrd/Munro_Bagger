@@ -7,10 +7,16 @@ html, body {
     margin: 0;
 }
 
+#munroList {
+    width:50%;
+    height:100%;
+    float: right;
+}
 
 #mapContainer {
-    width: 50%; 
+    width: 45%; 
     height: 100%;
+    float: left;
 }
 
 /* PopUp (background) */
