@@ -15,8 +15,22 @@ UI.prototype = {
   },
   addMarkers: function(myMountains){
     for (var i = 0;  i < myMountains.length; i++){
-      console.log(myMountains[i].latLng);
-      mainMap.addMarker(myMountains[i].latLng);
+      //console.log(myMountains[i].latLng);
+      console.log(myMountains[i].height);
+
+
+      //   var marker = new google.maps.Marker({
+      //     position:coords,  
+      //     map:this.googleMap,
+      //     label: label, //"1"
+      //     title: title
+      //   });
+      // }
+
+
+//console.log(myMountains[i].latLng, myMountains[i].name,myMountains[i].height.toString())
+
+      mainMap.addMarker(myMountains[i].latLng, myMountains[i].name,myMountains[i].height);
 
     };
   },
