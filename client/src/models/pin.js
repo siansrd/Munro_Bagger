@@ -3,6 +3,9 @@ function Pin (map, mountain) {
   this.coords = mountain.latLng;
   this.mountName = mountain.name;
   this.mountHeight = mountain.height;
+  this.mountGridRef = mountain.gridRef;
+  this.mountlatLng = mountain.latLng;
+
 
   this.marker = new google.maps.Marker({
     position: mountain.latLng,
@@ -23,12 +26,22 @@ Pin.prototype = {
   },
   createPopUp: function() {
     var popUpContent = document.getElementById('popUp-content');
+    
     var mountName = document.createElement('p');
     mountName.innerHTML = this.mountName;
     popUpContent.appendChild(mountName);
+    
     var mountHeight = document.createElement('p');
     mountHeight.innerHTML = this.mountHeight;
     popUpContent.appendChild(mountHeight); 
+
+    var gridRef = document.createElement('p');
+    gridRef.innerHTML = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
+    popUpContent.appendChild(gridRef);
+
+    var latLng = document.createElement('p');
+    latLng.innerHTML = this.mountlatLng.lat + " " + this.mountlatLng.lng;
+    popUpContent.appendChild(latLng); 
 
   }
 }
