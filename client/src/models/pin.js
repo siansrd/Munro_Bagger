@@ -20,6 +20,10 @@ function Pin (map, mountain) {
             popUp.style.display = "none";
         }
     }; 
+    var closeBtn = document.querySelector('.close')
+    closeBtn.onclick= function() {
+      popUp.style.display = "none";
+    }
   }.bind(this));
 
 }
@@ -32,6 +36,10 @@ Pin.prototype = {
   createPopUp: function() {
     var popUpContent = document.getElementById('popUp-content');
     this.removeChildNodes(popUpContent);
+    var close = document.createElement("img");
+    close.setAttribute('src', 'https://cdn0.iconfinder.com/data/icons/octicons/1024/x-128.png');
+    close.className = "close";
+    popUpContent.appendChild(close);
     var mountName = document.createElement('p');
     mountName.innerHTML = this.mountName;
     popUpContent.appendChild(mountName);

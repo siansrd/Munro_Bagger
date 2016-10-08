@@ -48,10 +48,8 @@ body {
 
 /* PopUp Close Button */
 .close {
-    color: #aaa;
+    width: 20px;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
 }
 .close:hover,
 .close:focus {
