@@ -19,7 +19,7 @@ function Pin (map, mountain) {
         if (event.target == popUp) {
             popUp.style.display = "none";
         }
-    }
+    }; 
   }.bind(this));
 
 }
@@ -30,26 +30,25 @@ Pin.prototype = {
     popUp.style.display = "block";
   },
   createPopUp: function() {
-
     var popUpContent = document.getElementById('popUp-content');
-    // var popUpContent.innerHTML = ""
-
+    this.removeChildNodes(popUpContent);
     var mountName = document.createElement('p');
     mountName.innerHTML = this.mountName;
     popUpContent.appendChild(mountName);
-    
     var mountHeight = document.createElement('p');
     mountHeight.innerHTML = this.mountHeight;
     popUpContent.appendChild(mountHeight); 
-
     var gridRef = document.createElement('p');
     gridRef.innerHTML = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
     popUpContent.appendChild(gridRef);
-
     var latLng = document.createElement('p');
     latLng.innerHTML = this.mountlatLng.lat + " " + this.mountlatLng.lng;
     popUpContent.appendChild(latLng); 
-
+  },
+  removeChildNodes: function(parent) {
+    while (parent.hasChildNodes()) {   
+      parent.removeChild(parent.firstChild);
+    }
   }
 }
 
