@@ -6,20 +6,22 @@ var WeatherApi = function(app) {
   //req.params - holds lat & lng for location search
   app.get('/api/weather', function(req, res) {
     if (req.query.m) {
-      console.log(req.query.m);
       var mquery = new MountainQuery();
-      mquery.byId(req.query.m, function(mtns) {
-        var weatherStn = mtns[0].weatherStation;
-        console.log(weatherStn);
-        // var wquery = new WeatherQuery();
-        // wquery.get(function(data) {
-        //   res.json( { weather: data } );
-        // });
+      mquery.byId(req.query.m, function(mtn) {
+        if (mtn) {
+          console.log(mtn);
+          var weatherStn = mtn.weatherStation;
+          console.log(weatherStn);
+          // var wquery = new WeatherQuery();
+          // wquery.get(function(data) {
+          //   res.json( { weather: data } );
+          // });
+        }
+        else {
+          console.log("No mountains returned");
+        }
       })
-
     }
-
-
   });
 }
 
