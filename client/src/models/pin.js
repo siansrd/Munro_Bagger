@@ -40,11 +40,11 @@ Pin.prototype = {
     close.setAttribute('src', 'https://cdn0.iconfinder.com/data/icons/octicons/1024/x-128.png');
     close.className = "close";
     popUpContent.appendChild(close);
-    var mountName = document.createElement('p');
+    var mountName = document.createElement('h2');
     mountName.innerHTML = this.mountName;
     popUpContent.appendChild(mountName);
     var mountHeight = document.createElement('p');
-    mountHeight.innerHTML = this.mountHeight;
+    mountHeight.innerHTML = this.mountHeight + " meters above sea level";
     popUpContent.appendChild(mountHeight); 
     var gridRef = document.createElement('p');
     gridRef.innerHTML = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
