@@ -83,6 +83,7 @@ var requestComplete = function(){
   var jsonString = this.responseText;
   var response = JSON.parse(jsonString);
   saveWeather(response);
+  counter++;
 };
 
 var saveWeather = function(response){
@@ -90,8 +91,15 @@ var saveWeather = function(response){
   weatherObjs.push(weatherObj);
 };
 
+var latLngGenerator = function(){
+  var latLng = munroList[counter].latLng;
+  return latLng;
+}
+
 var urlGenerator = function(){
   var api_key = apiKey.key();
+  var lat = latLngGenerator[0];
+  var lng = latLngGenerator[1];
   var url = "api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lng + "&appid=" + api_key;
   return url;
 }
