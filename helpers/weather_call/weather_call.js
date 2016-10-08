@@ -3,6 +3,7 @@ var apiKey = require("./api_key");
 
 var munroList = [
   {
+    _id: 1,
     name: "A'Bhuidheanach Bheag",
     height:  936.1,
     gridRef: {
@@ -16,6 +17,7 @@ var munroList = [
     }
   },
   {
+    _id: 2,
     name: "A'Chailleach",
     height:  997.0,
     gridRef: {
@@ -29,6 +31,7 @@ var munroList = [
     }
   },
   {
+    _id: 3,
     name: "A'Chailleach",
     height:  929.2,
     gridRef: {
@@ -42,6 +45,7 @@ var munroList = [
     }
   },
   {
+    _id: 4,
     name: "A'Chraileag (A'Chralaig)",
     height: 1120.0,
     gridRef: {
@@ -55,6 +59,7 @@ var munroList = [
     }
   },
   {
+    _id: 5,
     name: "A'Ghlas-bheinn",
     height:  918.0,
     gridRef: {
