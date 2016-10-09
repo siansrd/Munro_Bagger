@@ -13,3 +13,5 @@ myMountains now contains the information for all 282 mountains.
 3. Two bugs fixed:
   a. seeds.js (see 1, above), has now had the quotes stripped away from height, lat and lng.
   b. mountains.js now works with the array of mountains instead of the object containing the array.
+
+4. Added a user API. Retreive the list of climbed mountains for a user by pulling back the data from api/users/:userid. Eleven test users have been created: user1@codeclan.com thru user11@codeclan.com. user1 has climbed nothing while user11 has climbed everything. The number of mountains climbed increases by 10% for each successive user. To populate the database you will have to run "mongo < helpers/make_seeds/user_seeds.js". retrieve sample data by pointing a browser at http://localhost:3000/api/users/user1@codeclan.com (for example).
