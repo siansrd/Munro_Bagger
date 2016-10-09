@@ -11,8 +11,8 @@ MountainQuery.prototype.all = function(onQueryFinished) {
       var collection = db.collection('mountains');
       collection.find().toArray(function(err, docs) {
         onQueryFinished(docs);
+        db.close();
       })
-      //db.close();
     }
   });
 }
@@ -21,8 +21,9 @@ MountainQuery.prototype.byId = function(id, onQueryFinished) {
   MongoClient.connect(this.url, function(err, db) {
     if (db) {
       var collection = db.collection('mountains');
-      collection.find().toArray(function(err, docs) {
-        onQueryFinished(docs[id-1]);
+      collection.findOne({ "_id": id }, function(err, mtn) {
+        onQueryFinished(mtn);
+        db.close();
       })
     }
   });
