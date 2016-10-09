@@ -8,7 +8,8 @@ function Pin (map, mountain) {
 
   this.marker = new google.maps.Marker({
     position: mountain.latLng,
-    map: map
+    map: map,
+    icon: "/public/images/mntn-not-sunny.png"
   });
 
   this.marker.addListener('click', function() {
