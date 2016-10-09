@@ -8,7 +8,7 @@ var WeatherApi = function(app) {
     if (req.query.m) {
       // req.query.m is a string
       var mquery = new MountainQuery();
-      mquery.byId(req.query.m, function(mtn) {
+      mquery.oneById(req.query.m, function(mtn) {
         if (mtn) {
           console.log(mtn);
           var weatherStn = mtn.weatherStation;

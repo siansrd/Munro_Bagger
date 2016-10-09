@@ -10,6 +10,18 @@ var MountainApi = function(app) {
       res.json( { mountains: data } );
     });
   });
+
+  app.get('/api/mountains/:userid', function(req, res) {
+    query.all(function(data) {
+      res.json( { mountains: data } );
+    });
+  });
+
+  app.get('/api/mountains/:userId/:mountainId', function(req, res) {
+    query.all(function(data) {
+      res.json( { mountains: data } );
+    });
+  });
 }
 
 module.exports = MountainApi;
