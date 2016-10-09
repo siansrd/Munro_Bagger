@@ -3,7 +3,7 @@ db.user_mountains.drop();
 db.user_mountains.insert([
   {
     _id: "1",
-    [
+    mountains: [
       {
         mtn_id: "1",
         bagged: false
@@ -1136,7 +1136,7 @@ db.user_mountains.insert([
   },
   {
     _id: "2",
-    [
+    mountains: [
       {
         mtn_id: "1",
         bagged: false
@@ -2269,7 +2269,7 @@ db.user_mountains.insert([
   },
   {
     _id: "3",
-    [
+    mountains: [
       {
         mtn_id: "1",
         bagged: false
@@ -3402,7 +3402,7 @@ db.user_mountains.insert([
   },
   {
     _id: "4",
-    [
+    mountains: [
       {
         mtn_id: "1",
         bagged: false
@@ -4535,7 +4535,7 @@ db.user_mountains.insert([
   },
   {
     _id: "5",
-    [
+    mountains: [
       {
         mtn_id: "1",
         bagged: false

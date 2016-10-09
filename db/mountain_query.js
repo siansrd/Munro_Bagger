@@ -45,8 +45,11 @@ MountainQuery.prototype.oneByUserId = function(userId, mtnId, onQueryFinished) {
   MongoClient.connect(this.url, function(err, db) {
     if (db) {
       var collection = db.collection('user_mountains');
-      collection.findOne({ "_id": id }, function(err, mtn) {
-        onQueryFinished(mtn);
+      collection.findOne({ "_id": userId }, function(err, userMtns) {
+        var mountain = userMtns.mountins.find(function(mtn) {
+          mtn.mtn_id == id;
+        })
+        onQueryFinished(mountain);
         db.close();
       })
     }
