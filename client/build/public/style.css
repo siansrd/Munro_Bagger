@@ -7,6 +7,14 @@ html, body {
     margin: 0;
 }
 
+body {
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
 #munroList {
     width:50%;
     height:100%;
@@ -20,7 +28,7 @@ html, body {
 }
 
 /* PopUp (background) */
-.modal {
+.popUp {
     display: none; /* Hidden by default */
     position: fixed; 
     z-index: 1; 
@@ -34,22 +42,38 @@ html, body {
 }
 
 /* PopUp Content/Box */
-.modal-content {
+#popUp-content {
     background-color: #fff;
     margin: 15% auto;
     border: 3px solid #456F99;
-    padding: 20px;
-    width: 40%; 
+    padding: 10px;
+    width: 35%; 
 }
 
 /* PopUp Close Button */
-.close {
-    color: #aaa;
+#close {
+    width: 20px;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
 }
-.close:hover,
-.close:focus {
+#close:hover,
+#close:focus {
     cursor: pointer;
+}
+
+h2#mountName {
+    padding-left: 40px;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 10px 20px 40px;
+}
+.grid-item {
+  flex: 1 1 calc(100% - 100px);
+  height: 25px;
+}
+.grid-item:nth-child(odd) {
+  flex: 0 0 100px;
+  height: 25px;
 }
