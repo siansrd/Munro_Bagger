@@ -1,3 +1,11 @@
+var icon = {
+    url: "/public/images/mntn-sunny.png",
+    //state your size parameters in terms of pixels
+    size: new google.maps.Size(15, 15),
+    scaledSize: new google.maps.Size(15, 15),
+    origin: new google.maps.Point(0,0)
+}
+
 function Pin (map, mountain) {
   this.map = map;
   this.coords = mountain.latLng;
@@ -9,7 +17,7 @@ function Pin (map, mountain) {
   this.marker = new google.maps.Marker({
     position: mountain.latLng,
     map: map,
-    icon: "/public/images/mntn-not-sunny.png"
+    icon: icon
   });
 
   this.marker.addListener('click', function() {
