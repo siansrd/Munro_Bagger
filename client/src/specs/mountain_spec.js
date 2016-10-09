@@ -23,7 +23,6 @@ describe("Mountain", function(){
       }
 
     })
-
   });
 
   it("should have id", function(){
