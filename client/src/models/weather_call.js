@@ -1,7 +1,5 @@
-// var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-
-var apiKey = require("./api_key");
-var munroList = require("../test_data");
+var apiKey = require("....../helpers/weather_call/api_key");
+// var munroList = require("../test_data"); ???
 //cannot require these without webpack. No progress from dummy data...
 
 // var munroList = [
