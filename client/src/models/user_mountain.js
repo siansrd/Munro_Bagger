@@ -5,4 +5,3 @@ var UserMountain = function(options) {
 }
 
 module.exports = UserMountain;
-

@@ -1,4 +1,4 @@
-var munros = [
+var munroList = [
   {
     _id: 1,
     name: "A'Bhuidheanach Bheag",

@@ -43,11 +43,17 @@ describe("Mountains", function(){
     });
   });
 
-  it("first mountain should not be bagged", function(){
+  // it("first mountain should not be bagged", function(){
+  //   new Mountains().all(function(mtns){
+  //     assert.strictEqual(mtns[0].bagged, false);
+  //   });
+  // });
+
+  it("first mountain should have a weather station", function() {
     new Mountains().all(function(mtns){
-      assert.strictEqual(mtns[0].bagged, false);
+      assert.strictEqual(mtns[0].weatherStation.name, "Kingussie");
     });
-  });
+  })
 
 });
 

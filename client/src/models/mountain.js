@@ -7,8 +7,7 @@ var Mountain = function(options){
   this._height = options.height;
   this._gridRef = new GridRef(options.gridRef);
   this._latLng = options.latLng;
-  this._bagged = false;
-  this._weatherStation = new WeatherStation( /* options.weatherStation */);
+  this._weatherStation = new WeatherStation(options.city);
 
   Object.defineProperty(this, "id", {
     get: function(){

@@ -13,6 +13,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.87039900,
       lng: -4.1988390
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -27,6 +35,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.69378200,
       lng: -5.1287300
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -41,6 +57,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.10956400,
       lng: -4.1792850
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -55,6 +79,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.18424000,
       lng: -5.1548420
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -69,6 +101,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.25509000,
       lng: -5.3036870
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -83,6 +123,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.71964400,
       lng: -5.3467200
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -97,6 +145,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.85699300,
       lng: -4.2906680
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -111,6 +167,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.24793100,
       lng: -6.2029820
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -125,6 +189,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.74172700,
       lng: -4.9833930
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -139,6 +211,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.77180100,
       lng: -4.8538990
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -153,6 +233,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.33860000,
       lng: -4.6243680
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -167,6 +255,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.66762500,
       lng: -4.9494980
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -181,6 +277,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.75914300,
       lng: -4.9662030
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -195,6 +299,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.36242900,
       lng: -5.1047280
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -209,6 +321,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.93192800,
       lng: -3.7543670
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -223,6 +343,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.35022900,
       lng: -5.1586030
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -237,6 +365,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.90229500,
       lng: -3.5131480
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -251,6 +387,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.25753300,
       lng: -5.1712930
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -265,6 +409,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.56009300,
       lng: -4.2162580
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -279,6 +431,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.80709800,
       lng: -5.2517670
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -293,6 +453,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.80072600,
       lng: -5.2594430
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -307,6 +475,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.12464000,
       lng: -5.2212910
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -321,6 +497,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.79999800,
       lng: -4.9541210
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -335,6 +519,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.83349600,
       lng: -4.5291810
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -349,6 +541,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.68072000,
       lng: -5.0032710
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -363,6 +563,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.67938700,
       lng: -5.0371430
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -377,6 +585,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.17308200,
       lng: -5.2291210
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -391,6 +607,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.81293200,
       lng: -4.9617440
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -405,6 +629,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.65392100,
       lng: -5.1715100
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -419,6 +651,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.65049900,
       lng: -5.1977570
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -433,6 +673,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.08759000,
       lng: -3.4993660
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -447,6 +695,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.09329900,
       lng: -3.5774350
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -461,6 +717,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.92864300,
       lng: -4.6536280
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -475,6 +739,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.86952500,
       lng: -4.5096840
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -489,6 +761,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.39023100,
       lng: -4.8356320
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -503,6 +783,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.44979000,
       lng: -5.0685360
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -517,6 +805,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.56038200,
       lng: -4.6476180
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -531,6 +827,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.33198700,
       lng: -4.6096380
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -545,6 +849,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.83108300,
       lng: -3.7295050
+    },
+    city: {
+      id: 2640255,
+      name: "Pitlochry",
+      latLng: {
+        lat: 56.705139,
+        lng: -3.73432
+      }
     }
   },
   {
@@ -559,6 +871,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.80777000,
       lng: -3.7441060
+    },
+    city: {
+      id: 2640255,
+      name: "Pitlochry",
+      latLng: {
+        lat: 56.705139,
+        lng: -3.73432
+      }
     }
   },
   {
@@ -573,6 +893,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.83983700,
       lng: -3.6880060
+    },
+    city: {
+      id: 2640255,
+      name: "Pitlochry",
+      latLng: {
+        lat: 56.705139,
+        lng: -3.73432
+      }
     }
   },
   {
@@ -587,6 +915,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.55188700,
       lng: -4.6945250
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -601,6 +937,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.59082000,
       lng: -5.5727640
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -615,6 +959,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.58051900,
       lng: -5.5819120
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -629,6 +981,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.53011300,
       lng: -4.7139470
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -643,6 +1003,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.81327600,
       lng: -4.4306460
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -657,6 +1025,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.05506300,
       lng: -3.5534710
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -671,6 +1047,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.00986800,
       lng: -3.7238130
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -685,6 +1069,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.32666200,
       lng: -4.9067220
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -699,6 +1091,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.32577500,
       lng: -4.6414850
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -713,6 +1113,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.78635000,
       lng: -4.9295570
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -727,6 +1135,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.87734600,
       lng: -3.8837190
+    },
+    city: {
+      id: 2640255,
+      name: "Pitlochry",
+      latLng: {
+        lat: 56.705139,
+        lng: -3.73432
+      }
     }
   },
   {
@@ -741,6 +1157,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.50288800,
       lng: -4.7221420
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -755,6 +1179,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.39130400,
       lng: -4.7431940
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -769,6 +1201,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.82525400,
       lng: -4.5420820
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -783,6 +1223,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.59373500,
       lng: -5.4294540
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -797,6 +1245,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.58209800,
       lng: -5.4037060
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -811,6 +1267,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.45035200,
       lng: -5.0266390
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -825,6 +1289,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.22099300,
       lng: -5.2835180
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -839,6 +1311,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.30600400,
       lng: -5.1299110
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -853,6 +1333,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.60097900,
       lng: -5.1047330
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -867,6 +1355,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.53600500,
       lng: -4.2369770
+    },
+    city: {
+      id: 2652478,
+      name: "Comrie",
+      latLng: {
+        lat: 56.379101,
+        lng: -3.9949
+      }
     }
   },
   {
@@ -881,6 +1377,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.23682000,
       lng: -4.8171590
+    },
+    city: {
+      id: 2648877,
+      name: "Garelochhead",
+      latLng: {
+        lat: 56.082031,
+        lng: -4.82909
+      }
     }
   },
   {
@@ -895,6 +1399,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.89499400,
       lng: -3.5682290
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -909,6 +1421,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.51207400,
       lng: -5.4006170
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -923,6 +1443,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.70610400,
       lng: -4.9897760
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -937,6 +1465,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.53404000,
       lng: -4.6460590
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -951,6 +1487,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.09584900,
       lng: -3.6114640
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -965,6 +1509,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.78939000,
       lng: -4.6599940
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -979,6 +1531,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.52022100,
       lng: -5.0112330
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -993,6 +1553,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.22094700,
       lng: -4.7890020
+    },
+    city: {
+      id: 2648877,
+      name: "Garelochhead",
+      latLng: {
+        lat: 56.082031,
+        lng: -4.82909
+      }
     }
   },
   {
@@ -1007,6 +1575,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.15382400,
       lng: -5.5797280
+    },
+    city: {
+      id: 2657204,
+      name: "Ardvasar",
+      latLng: {
+        lat: 57.058048,
+        lng: -5.90939
+      }
     }
   },
   {
@@ -1021,6 +1597,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.56623200,
       lng: -5.1703650
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -1035,6 +1619,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.51027200,
       lng: -4.5792180
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -1049,6 +1641,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.70205200,
       lng: -5.2916010
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -1063,6 +1663,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.93592800,
       lng: -4.6947570
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -1077,6 +1685,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.34221600,
       lng: -4.5633300
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -1091,6 +1707,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.83547200,
       lng: -4.3299130
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -1105,6 +1729,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.81379600,
       lng: -4.4650890
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -1119,6 +1751,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.09934700,
       lng: -3.4344220
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -1133,6 +1773,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.45456500,
       lng: -4.6191830
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -1147,6 +1795,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.45385100,
       lng: -3.9920570
+    },
+    city: {
+      id: 2652478,
+      name: "Comrie",
+      latLng: {
+        lat: 56.379101,
+        lng: -3.9949
+      }
     }
   },
   {
@@ -1161,6 +1817,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.42683900,
       lng: -5.1318280
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -1175,6 +1839,14 @@ db.mountains.insert([
     latLng: {
       lat: 58.41311300,
       lng: -4.6078600
+    },
+    city: {
+      id: 2645401,
+      name: "Kinlochbervie",
+      latLng: {
+        lat: 58.458691,
+        lng: -5.04332
+      }
     }
   },
   {
@@ -1189,6 +1861,14 @@ db.mountains.insert([
     latLng: {
       lat: 58.23520200,
       lng: -4.4111300
+    },
+    city: {
+      id: 2648341,
+      name: "Golspie",
+      latLng: {
+        lat: 57.97266,
+        lng: -3.97798
+      }
     }
   },
   {
@@ -1203,6 +1883,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.54492200,
       lng: -4.2208600
+    },
+    city: {
+      id: 2652478,
+      name: "Comrie",
+      latLng: {
+        lat: 56.379101,
+        lng: -3.9949
+      }
     }
   },
   {
@@ -1217,6 +1905,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.19028400,
       lng: -4.6330080
+    },
+    city: {
+      id: 2648877,
+      name: "Garelochhead",
+      latLng: {
+        lat: 56.082031,
+        lng: -4.82909
+      }
     }
   },
   {
@@ -1231,6 +1927,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.39701300,
       lng: -4.8105100
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -1245,6 +1949,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.07036800,
       lng: -3.6690990
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -1259,6 +1971,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.38595200,
       lng: -4.5401030
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -1273,6 +1993,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.42482900,
       lng: -6.0140150
+    },
+    city: {
+      id: 7290043,
+      name: "Isle Of Mull",
+      latLng: {
+        lat: 56.446892,
+        lng: -5.77126
+      }
     }
   },
   {
@@ -1287,6 +2015,14 @@ db.mountains.insert([
     latLng: {
       lat: 58.13817300,
       lng: -4.8581920
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -1301,6 +2037,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.79684900,
       lng: -5.0035250
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -1315,6 +2059,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.38927200,
       lng: -4.7754880
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -1329,6 +2081,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.53893900,
       lng: -5.0497980
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -1343,6 +2103,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.24978600,
       lng: -4.7816390
+    },
+    city: {
+      id: 2648877,
+      name: "Garelochhead",
+      latLng: {
+        lat: 56.082031,
+        lng: -4.82909
+      }
     }
   },
   {
@@ -1357,6 +2125,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.34268000,
       lng: -4.2194640
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -1371,6 +2147,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.27403000,
       lng: -4.7550470
+    },
+    city: {
+      id: 2648877,
+      name: "Garelochhead",
+      latLng: {
+        lat: 56.082031,
+        lng: -4.82909
+      }
     }
   },
   {
@@ -1385,6 +2169,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.67889500,
       lng: -4.5792820
+    },
+    city: {
+      id: 2651245,
+      name: "Dingwall",
+      latLng: {
+        lat: 57.59531,
+        lng: -4.42721
+      }
     }
   },
   {
@@ -1399,6 +2191,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.64276800,
       lng: -5.0293350
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -1413,6 +2213,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.41971800,
       lng: -5.2504730
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -1427,6 +2235,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.76699000,
       lng: -4.9110650
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -1441,6 +2257,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.75435800,
       lng: -4.9257950
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -1455,6 +2279,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.21956500,
       lng: -6.0932100
+    },
+    city: {
+      id: 2657204,
+      name: "Ardvasar",
+      latLng: {
+        lat: 57.058048,
+        lng: -5.90939
+      }
     }
   },
   {
@@ -1469,6 +2301,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.07829800,
       lng: -3.7283890
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -1483,6 +2323,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.91914800,
       lng: -3.2490660
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -1497,6 +2345,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.24676100,
       lng: -6.2107950
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -1511,6 +2367,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.64993800,
       lng: -4.9516860
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -1525,6 +2389,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.63815000,
       lng: -4.9707460
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -1539,6 +2411,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.64622900,
       lng: -4.9003360
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -1553,6 +2433,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.62988000,
       lng: -4.9511510
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -1567,6 +2455,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.13822000,
       lng: -3.5847160
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -1581,6 +2477,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.92771900,
       lng: -3.2784020
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -1595,6 +2499,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.11671400,
       lng: -3.6444770
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -1609,6 +2521,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.89417800,
       lng: -3.3386540
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -1623,6 +2543,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.05439700,
       lng: -3.7107730
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -1637,6 +2565,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.86096800,
       lng: -3.7796290
+    },
+    city: {
+      id: 2640255,
+      name: "Pitlochry",
+      latLng: {
+        lat: 56.705139,
+        lng: -3.73432
+      }
     }
   },
   {
@@ -1651,6 +2587,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.94577300,
       lng: -3.2727070
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -1665,6 +2609,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.87306500,
       lng: -3.4666160
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -1679,6 +2631,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.03687100,
       lng: -3.6584000
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -1693,6 +2653,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.93591900,
       lng: -3.8016610
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -1707,6 +2675,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.87656500,
       lng: -3.5952720
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -1721,6 +2697,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.94297300,
       lng: -3.3032270
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -1735,6 +2719,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.90828300,
       lng: -3.3571250
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -1749,6 +2741,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.89569600,
       lng: -3.4232740
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -1763,6 +2763,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.93054100,
       lng: -3.5608800
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -1777,6 +2785,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.85524100,
       lng: -4.4547090
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -1791,6 +2807,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.09226100,
       lng: -4.2532460
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -1805,6 +2829,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.75993100,
       lng: -4.5898880
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -1819,6 +2851,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.28771100,
       lng: -5.1151270
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -1833,6 +2873,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.16595000,
       lng: -5.0681580
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -1847,6 +2895,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.62251900,
       lng: -4.2260520
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -1861,6 +2917,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.97878400,
       lng: -4.5153050
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -1875,6 +2939,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.63466200,
       lng: -4.1456100
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -1889,6 +2961,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.80524600,
       lng: -4.9866160
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -1903,6 +2983,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.91173900,
       lng: -4.1744780
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -1917,6 +3005,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.36330400,
       lng: -5.0245440
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -1931,6 +3027,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.45233100,
       lng: -4.8799350
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -1945,6 +3049,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.12437100,
       lng: -4.1769860
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -1959,6 +3071,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.83008600,
       lng: -4.6608310
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -1973,6 +3093,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.19924300,
       lng: -5.2090160
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -1987,6 +3115,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.79106800,
       lng: -4.9034000
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -2001,6 +3137,14 @@ db.mountains.insert([
     latLng: {
       lat: 58.13568900,
       lng: -4.8834970
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -2015,6 +3159,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.12097100,
       lng: -5.1600480
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -2029,6 +3181,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.85463100,
       lng: -3.3877510
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -2043,6 +3203,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.95203300,
       lng: -4.6020840
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -2057,6 +3225,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.48951000,
       lng: -4.6140210
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -2071,6 +3247,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.14726300,
       lng: -5.3345970
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -2085,6 +3269,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.89971300,
       lng: -4.4849550
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -2099,6 +3291,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.61444900,
       lng: -4.8719790
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -2113,6 +3313,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.35642900,
       lng: -4.5761510
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -2127,6 +3335,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.06280100,
       lng: -3.6220040
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -2141,6 +3357,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.84800300,
       lng: -3.1965230
+    },
+    city: {
+      id: 2645191,
+      name: "Kirriemuir",
+      latLng: {
+        lat: 56.673981,
+        lng: -3.00343
+      }
     }
   },
   {
@@ -2155,6 +3379,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.12679400,
       lng: -5.1828570
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -2169,6 +3401,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.81349200,
       lng: -4.9342180
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -2183,6 +3423,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.61114800,
       lng: -5.1027130
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -2197,6 +3445,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.04487900,
       lng: -5.2558270
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -2211,6 +3467,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.00855600,
       lng: -5.4443380
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -2225,6 +3489,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.89776300,
       lng: -4.4572360
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -2239,6 +3511,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.05741800,
       lng: -4.3735720
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -2253,6 +3533,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.83783600,
       lng: -4.5097270
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -2267,6 +3555,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.87443300,
       lng: -4.3045190
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -2281,6 +3577,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.54243400,
       lng: -5.0052360
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -2295,6 +3599,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.87305900,
       lng: -3.3682360
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -2309,6 +3621,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.86576600,
       lng: -3.5581800
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -2323,6 +3643,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.09716300,
       lng: -5.2380350
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -2337,6 +3665,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.93620200,
       lng: -5.2845260
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -2351,6 +3687,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.07526300,
       lng: -5.5917450
+    },
+    city: {
+      id: 2657204,
+      name: "Ardvasar",
+      latLng: {
+        lat: 57.058048,
+        lng: -5.90939
+      }
     }
   },
   {
@@ -2365,6 +3709,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.56089100,
       lng: -5.4925500
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -2379,6 +3731,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.56419800,
       lng: -5.4635920
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -2393,6 +3753,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.96025400,
       lng: -3.2452600
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -2407,6 +3775,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.04832500,
       lng: -5.5136070
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -2421,6 +3797,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.41309100,
       lng: -5.2236500
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -2435,6 +3819,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.27980100,
       lng: -5.1202670
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -2449,6 +3841,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.46447700,
       lng: -5.1110020
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -2463,6 +3863,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.49169700,
       lng: -5.4655490
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -2477,6 +3885,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.12756000,
       lng: -5.2526510
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -2491,6 +3907,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.84893600,
       lng: -3.2463160
+    },
+    city: {
+      id: 2645191,
+      name: "Kirriemuir",
+      latLng: {
+        lat: 56.673981,
+        lng: -3.00343
+      }
     }
   },
   {
@@ -2505,6 +3929,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.61221800,
       lng: -4.8520780
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -2519,6 +3951,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.56631200,
       lng: -4.2596250
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -2533,6 +3973,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.71287600,
       lng: -5.0487260
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -2547,6 +3995,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.03155200,
       lng: -5.5463340
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -2561,6 +4017,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.61724000,
       lng: -4.4486080
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -2575,6 +4039,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.96385100,
       lng: -4.1125520
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -2589,6 +4061,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.54094600,
       lng: -4.2534690
+    },
+    city: {
+      id: 2652478,
+      name: "Comrie",
+      latLng: {
+        lat: 56.379101,
+        lng: -3.9949
+      }
     }
   },
   {
@@ -2603,6 +4083,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.56612200,
       lng: -4.2077070
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -2617,6 +4105,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.63737200,
       lng: -4.2074560
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -2631,6 +4127,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.52580900,
       lng: -4.4166540
+    },
+    city: {
+      id: 2652478,
+      name: "Comrie",
+      latLng: {
+        lat: 56.379101,
+        lng: -3.9949
+      }
     }
   },
   {
@@ -2645,6 +4149,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.45571200,
       lng: -4.5468210
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -2659,6 +4171,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.68083700,
       lng: -4.9838010
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -2673,6 +4193,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.56742600,
       lng: -4.1595430
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -2687,6 +4215,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.62061800,
       lng: -4.1287400
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -2701,6 +4237,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.98907500,
       lng: -4.9309270
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -2715,6 +4259,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.79850500,
       lng: -4.9340110
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -2729,6 +4281,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.56117700,
       lng: -4.9428930
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -2743,6 +4303,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.52165500,
       lng: -4.3013430
+    },
+    city: {
+      id: 2652478,
+      name: "Comrie",
+      latLng: {
+        lat: 56.379101,
+        lng: -3.9949
+      }
     }
   },
   {
@@ -2757,6 +4325,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.02679000,
       lng: -3.7501020
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -2771,6 +4347,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.49971200,
       lng: -5.1706300
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -2785,6 +4369,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.96975100,
       lng: -2.9736220
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -2799,6 +4391,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.01187900,
       lng: -3.8412710
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -2813,6 +4413,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.70902200,
       lng: -5.2713420
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -2827,6 +4435,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.20545000,
       lng: -5.1556910
+    },
+    city: {
+      id: 2646091,
+      name: "Invermoriston",
+      latLng: {
+        lat: 57.214359,
+        lng: -4.61758
+      }
     }
   },
   {
@@ -2841,6 +4457,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.28339900,
       lng: -5.1863500
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -2855,6 +4479,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.74986700,
       lng: -5.0723810
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -2869,6 +4501,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.74368700,
       lng: -4.9398750
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -2883,6 +4523,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.72678100,
       lng: -5.3292880
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -2897,6 +4545,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.19180400,
       lng: -5.0910980
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -2911,6 +4567,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.18127300,
       lng: -5.2813320
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -2925,6 +4589,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.66694200,
       lng: -4.1002130
+    },
+    city: {
+      id: 2657820,
+      name: "Aberfeldy",
+      latLng: {
+        lat: 56.619999,
+        lng: -3.86453
+      }
     }
   },
   {
@@ -2939,6 +4611,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.84733000,
       lng: -4.8966200
+    },
+    city: {
+      id: 2635199,
+      name: "Ullapool",
+      latLng: {
+        lat: 57.89872,
+        lng: -5.16039
+      }
     }
   },
   {
@@ -2953,6 +4633,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.82844700,
       lng: -4.2977920
+    },
+    city: {
+      id: 2645409,
+      name: "Kingussie",
+      latLng: {
+        lat: 57.07996,
+        lng: -4.05231
+      }
     }
   },
   {
@@ -2967,6 +4655,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.45314900,
       lng: -4.4956530
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -2981,6 +4677,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.05836900,
       lng: -3.7257970
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -2995,6 +4699,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.77254400,
       lng: -4.5464980
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3009,6 +4721,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.06856100,
       lng: -3.8108560
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -3023,6 +4743,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.61981300,
       lng: -5.0800780
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -3037,6 +4765,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.49862200,
       lng: -5.4077470
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -3051,6 +4787,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.17782500,
       lng: -5.2521770
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -3065,6 +4809,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.45249200,
       lng: -5.1893000
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -3079,6 +4831,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.44428800,
       lng: -4.9037570
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -3093,6 +4853,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.22728600,
       lng: -6.2344380
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -3107,6 +4875,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.23086900,
       lng: -6.2319310
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -3121,6 +4897,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.75592000,
       lng: -5.0036900
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -3135,6 +4919,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.10557300,
       lng: -5.3304340
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -3149,6 +4941,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.20659800,
       lng: -6.2241440
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -3163,6 +4963,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.13686100,
       lng: -5.2815300
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3177,6 +4985,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.14123200,
       lng: -5.2975270
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3191,6 +5007,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.71853800,
       lng: -5.2659030
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -3205,6 +5029,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.69205000,
       lng: -5.0917220
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -3219,6 +5051,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.45102600,
       lng: -5.2079160
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -3233,6 +5073,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.80043100,
       lng: -4.9039430
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3247,6 +5095,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.21327000,
       lng: -6.2348190
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -3261,6 +5117,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.20489400,
       lng: -6.2114210
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -3275,6 +5139,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.75002400,
       lng: -4.8954530
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -3289,6 +5161,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.44968000,
       lng: -4.9417800
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -3303,6 +5183,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.19614200,
       lng: -5.3476160
+    },
+    city: {
+      id: 2657204,
+      name: "Ardvasar",
+      latLng: {
+        lat: 57.058048,
+        lng: -5.90939
+      }
     }
   },
   {
@@ -3317,6 +5205,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.20896400,
       lng: -6.2241000
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -3331,6 +5227,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.70013400,
       lng: -5.0167480
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -3345,6 +5249,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.02843700,
       lng: -5.3541880
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -3359,6 +5271,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.22096400,
       lng: -6.2416200
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -3373,6 +5293,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.18902500,
       lng: -5.3492240
+    },
+    city: {
+      id: 2657204,
+      name: "Ardvasar",
+      latLng: {
+        lat: 57.058048,
+        lng: -5.90939
+      }
     }
   },
   {
@@ -3387,6 +5315,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.01345200,
       lng: -5.4568540
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -3401,6 +5337,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.18092300,
       lng: -5.3371510
+    },
+    city: {
+      id: 2657204,
+      name: "Ardvasar",
+      latLng: {
+        lat: 57.058048,
+        lng: -5.90939
+      }
     }
   },
   {
@@ -3415,6 +5359,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.36931100,
       lng: -5.0597260
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -3429,6 +5381,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.44149700,
       lng: -4.8524650
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -3443,6 +5403,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.14709800,
       lng: -5.3966340
+    },
+    city: {
+      id: 2657204,
+      name: "Ardvasar",
+      latLng: {
+        lat: 57.058048,
+        lng: -5.90939
+      }
     }
   },
   {
@@ -3457,6 +5425,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.25491100,
       lng: -5.2227320
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -3471,6 +5447,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.69628700,
       lng: -5.0482380
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -3485,6 +5469,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.93572800,
       lng: -5.4485510
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -3499,6 +5491,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.00715800,
       lng: -5.4054400
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -3513,6 +5513,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.17761300,
       lng: -5.0954070
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -3527,6 +5535,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.68101700,
       lng: -5.0463510
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -3541,6 +5557,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.19581000,
       lng: -6.2112640
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -3555,6 +5579,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.24826200,
       lng: -6.1930980
+    },
+    city: {
+      id: 2640006,
+      name: "Portree",
+      latLng: {
+        lat: 57.41288,
+        lng: -6.19418
+      }
     }
   },
   {
@@ -3569,6 +5601,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.93705600,
       lng: -5.3892070
+    },
+    city: {
+      id: 2643857,
+      name: "Lochailort",
+      latLng: {
+        lat: 56.878151,
+        lng: -5.66362
+      }
     }
   },
   {
@@ -3583,6 +5623,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.66717600,
       lng: -5.3470470
+    },
+    city: {
+      id: 2645398,
+      name: "Kinlochewe",
+      latLng: {
+        lat: 57.604328,
+        lng: -5.30205
+      }
     }
   },
   {
@@ -3597,6 +5645,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.08896400,
       lng: -5.1936140
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3611,6 +5667,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.00783900,
       lng: -4.9287630
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3625,6 +5689,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.82369300,
       lng: -4.7602000
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3639,6 +5711,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.57330800,
       lng: -4.8383020
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -3653,6 +5733,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.74369700,
       lng: -5.0303430
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -3667,6 +5755,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.81064700,
       lng: -4.8408760
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3681,6 +5777,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.37072600,
       lng: -4.5357530
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -3695,6 +5799,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.82378600,
       lng: -4.8496240
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3709,6 +5821,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.55492100,
       lng: -4.9798100
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -3723,6 +5843,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.75074400,
       lng: -4.9690250
+    },
+    city: {
+      id: 2649169,
+      name: "Fort William",
+      latLng: {
+        lat: 56.816479,
+        lng: -5.11208
+      }
     }
   },
   {
@@ -3737,6 +5865,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.81087700,
       lng: -4.8848910
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3751,6 +5887,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.81819000,
       lng: -4.7737100
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3765,6 +5909,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.63832200,
       lng: -5.0102850
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -3779,6 +5931,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.83173600,
       lng: -4.6949170
+    },
+    city: {
+      id: 2637248,
+      name: "Spean Bridge",
+      latLng: {
+        lat: 56.891571,
+        lng: -4.91982
+      }
     }
   },
   {
@@ -3793,6 +5953,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.43132700,
       lng: -5.0913190
+    },
+    city: {
+      id: 2636159,
+      name: "Taynuilt",
+      latLng: {
+        lat: 56.42881,
+        lng: -5.23928
+      }
     }
   },
   {
@@ -3807,6 +5975,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.56810300,
       lng: -4.8820990
+    },
+    city: {
+      id: 2650401,
+      name: "East Laroch",
+      latLng: {
+        lat: 56.666672,
+        lng: -5.13333
+      }
     }
   },
   {
@@ -3821,6 +5997,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.96403700,
       lng: -4.5857450
+    },
+    city: {
+      id: 2646086,
+      name: "Inverness-shire",
+      latLng: {
+        lat: 57.083328,
+        lng: -4.66667
+      }
     }
   },
   {
@@ -3835,6 +6019,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.32931500,
       lng: -4.2375330
+    },
+    city: {
+      id: 2653989,
+      name: "Callander",
+      latLng: {
+        lat: 56.244099,
+        lng: -4.21637
+      }
     }
   },
   {
@@ -3849,6 +6041,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.57090700,
       lng: -4.4706190
+    },
+    city: {
+      id: 2652478,
+      name: "Comrie",
+      latLng: {
+        lat: 56.379101,
+        lng: -3.9949
+      }
     }
   },
   {
@@ -3863,6 +6063,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.87950200,
       lng: -3.4211980
+    },
+    city: {
+      id: 7303904,
+      name: "Milton of Edradour",
+      latLng: {
+        lat: 56.701801,
+        lng: -3.70173
+      }
     }
   },
   {
@@ -3877,6 +6085,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.03572800,
       lng: -3.6887880
+    },
+    city: {
+      id: 2656752,
+      name: "Aviemore",
+      latLng: {
+        lat: 57.19553,
+        lng: -3.8259
+      }
     }
   },
   {
@@ -3891,6 +6107,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.16239500,
       lng: -5.4147210
+    },
+    city: {
+      id: 2657204,
+      name: "Ardvasar",
+      latLng: {
+        lat: 57.058048,
+        lng: -5.90939
+      }
     }
   },
   {
@@ -3905,6 +6129,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.30922700,
       lng: -4.9999530
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -3919,6 +6151,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.90473300,
       lng: -3.2979460
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   },
   {
@@ -3933,6 +6173,14 @@ db.mountains.insert([
     latLng: {
       lat: 57.29955400,
       lng: -5.0489620
+    },
+    city: {
+      id: 2646944,
+      name: "Highland",
+      latLng: {
+        lat: 57.5,
+        lng: -5
+      }
     }
   },
   {
@@ -3947,6 +6195,14 @@ db.mountains.insert([
     latLng: {
       lat: 56.89361500,
       lng: -3.2923560
+    },
+    city: {
+      id: 2656565,
+      name: "Ballater",
+      latLng: {
+        lat: 57.049301,
+        lng: -3.04023
+      }
     }
   }
 ]);
