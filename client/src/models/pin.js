@@ -33,7 +33,7 @@ Pin.prototype = {
   },
   createPopUp: function() {
     var close = document.getElementById("close");
-    close.setAttribute('src', 'https://cdn0.iconfinder.com/data/icons/octicons/1024/x-128.png');
+    close.setAttribute('src', '/public/images/cross.png');
     var mountName = document.getElementById('mountName');
     mountName.innerHTML = this.mountName;
     heightText = document.querySelector('#txt_height');
