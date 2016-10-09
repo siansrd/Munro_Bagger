@@ -103,7 +103,7 @@ var requestComplete = function(){
       makeRequest(urlGenerator(), requestComplete);
       // console.log(counter)
     // }, 1050);
-    //timeout maybe not required. Put back in if we have an issues
+    //timeout maybe not required. Put back in if we have any issues
   };
 };
 //can we make this call when the mountain is created?? Maybe when we host the munro api ourselves, we can make both requests at the same time and save them together??
