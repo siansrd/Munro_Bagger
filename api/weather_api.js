@@ -30,24 +30,7 @@ var urlGenerator = function(latLng){
   return url;
 };
 
-// var filterWeather = function(forecast) {
-//   // this is the weather for now
-//   // really need the forecasts for now, tomorrow and the day after
-//   return {
-//     weather: {
-//       id: forecast.list[0].weather[0].id,
-//       description: forecast.list[0].weather[0].description,
-//       main: forecast.list[0].weather[0].main,
-//       temperature: forecast.list[0].main.temp - 273.15,
-//       wind: {
-//         speed: forecast.list[0].wind.speed,
-//         direction: forecast.list[0].wind.deg
-//       }
-//     }
-//   }
-// }
-
-var filterWeather = function(forecast) {
+var filterForecast = function(forecast) {
   // this is the weather for now
   // really need the forecasts for now, tomorrow and the day after
   return {
@@ -64,25 +47,22 @@ var filterWeather = function(forecast) {
   }
 }
 
-var buildWeather = function(forecasts) {
-  var weathers = [];
-  weathers.push(filterWeather(forecasts.list[0]));
+var buildForecast = function(fullForecast) {
 
+  var forecastFor = function(targetT) {
+    var forecast = fullForecast.list.find(function(item){
+      return item.dt === targetT;
+    });
+    return filterForecast(forecast);
+  }
+
+  var forecasts = [];
   var t = new ForecastTime();
+  forecasts.push(filterForecast(fullForecast.list[0]));
+  forecasts.push(forecastFor(t.midTomorrow()));
+  forecasts.push(forecastFor(t.midDayAfter()));
 
-  var targetT = t.midTomorrow();
-  var weather = forecasts.list.find(function(forecast){
-    return forecast.dt === targetT;
-  });
-  weathers.push(filterWeather(weather));
-
-  targetT = t.midDayAfter();
-  var weather = forecasts.list.find(function(forecast){
-    return forecast.dt === targetT;
-  });
-  weathers.push(filterWeather(weather));
-
-  return weathers;
+  return forecasts;
 }
 
 var WeatherApi = function(app) {
@@ -99,7 +79,7 @@ var WeatherApi = function(app) {
           wquery.getCachedForecast(weatherStn, function(cachedForecast) {
             if (cachedForecast && !expired(cachedForecast.timeOfRequest)){
               // return cachedForecast.forecast;
-              res.json(buildWeather(cachedForecast.forecast));
+              res.json(buildForecast(cachedForecast.forecast));
             }
             else {
               // Don't have a valid cached entry so need to get the weather
@@ -108,7 +88,7 @@ var WeatherApi = function(app) {
                 // now save it
                 var wquery = new WeatherQuery();
                 wquery.cacheForecast(weatherStn.id, newForecast, function() {
-                  res.json(buildWeather(newForecast));
+                  res.json(buildForecast(newForecast));
                 });
               })
             }
