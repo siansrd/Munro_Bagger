@@ -122,15 +122,20 @@ ul {
   overflow: hidden;
   border: 1px solid #e7e7e7;
   background-color: #f3f3f3;
+
 }
 
-li#tabs {
+.munroMap {
   float: left;
+  color: white;
+
+  background-color:yellow;
+  font-size:20pt;
 }
 
 li a {
   display: block;
-  color: #666;
+  color: #;
   text-align: center;
   border-width: 2px;
   padding: 14px 16px;
@@ -186,6 +191,42 @@ ul.tab li a:focus, .active {
   border: 1px solid #F00;
   border-top: 2px;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+
 
 /*li#tabs {
     display: inline;
