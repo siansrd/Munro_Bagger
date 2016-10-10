@@ -1,6 +1,6 @@
 var Map = require('../models/map');
 var Mountains = require('../models/mountains');
-var Pin = require('../models/pin');
+var Pin = require('./pin');
 
 
 var Login = function(){
