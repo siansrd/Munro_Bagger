@@ -5,7 +5,7 @@ function Pin (map, mountain) {
   this.mountHeight = mountain.height;
   this.mountGridRef = mountain.gridRef;
   this.mountlatLng = mountain.latLng;
-  this.mountSunny = false;
+  this.mountSunny = true;
 
   this.marker = new google.maps.Marker({
     position: mountain.latLng,

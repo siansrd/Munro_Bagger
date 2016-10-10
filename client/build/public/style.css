@@ -58,8 +58,9 @@ button {
     background-color: rgba(165,206,253,0.5); 
 }
 
+
 /* PopUp Content/Box */
-#popUp-content {
+.popUpContent {
     background-color: #fff;
     margin: 15% auto;
     border: 3px solid #456F99;
