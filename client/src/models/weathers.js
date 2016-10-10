@@ -23,5 +23,6 @@ var Weathers = function(options){
     }
   });
 
+};
 
-}
+module.exports = Weathers;
