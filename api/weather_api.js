@@ -2,11 +2,11 @@ var MountainQuery = require('../db/mountain_query');
 var WeatherQuery = require('../db/weather_query');
 var WeatherCall = require("./weather_call");
 
-var thirtyMinutes = 30 * 60 * 1000;
+var thirtyMins = 30 * 60 * 1000;
 
 var expired = function(time){
   var dif = Date.now() - time;
-  return ( dif > thirtyMinutes )
+  return ( dif > thirtyMins )
 };
 
 var WeatherApi = function(app) {
