@@ -94,3 +94,99 @@ h2#mountName {
   flex: 0 0 100px;
   height: 25px;
 }
+
+.collapse{
+  cursor: pointer;
+  display: block;
+  background: #cdf;
+  border: thin solid black;
+}
+.collapse + input{
+  display: none; /* hide the checkboxes */
+}
+.collapse + input + div{
+  display:none;
+}
+.collapse + input:checked + div{
+  display:block;
+}
+
+th{alignment:left;}
+
+th{font-size:12pt;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li#tabs {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  border-width: 2px;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+
+ul.tab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 5px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 1px 2px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 13px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 1px 2px;
+  border: 1px solid #F00;
+  border-top: 2px;
+}
+
+/*li#tabs {
+    display: inline;
+}*/
