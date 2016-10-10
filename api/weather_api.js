@@ -31,7 +31,6 @@ var WeatherApi = function(app) {
             else{
               makeRequest(urlGenerator, requestComplete);
             }
-            // Date.now()
           });
         }
         else {

@@ -18,6 +18,7 @@ var requestComplete = function(){
   if (this.status !== 200) return;
   var jsonString = this.responseText;
   var response = JSON.parse(jsonString);
+  return response; //think is this what i should be doing?
   // saveWeather(response);
   // return weather ??
   // counter++; //counter no longer required
@@ -36,7 +37,7 @@ var requestComplete = function(){
 // };
 
 var latLngGenerator = function(){
-  var latLng = munroList[counter].latLng;
+  var latLng = munroList[counter].latLng; //need to pass in the latlng from the DB?? //counter to be replaced.
   return latLng;
 };
 
