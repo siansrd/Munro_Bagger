@@ -1,20 +1,8 @@
 var MountainQuery = require('../db/mountain_query');
 var WeatherQuery = require('../db/weather_query');
 var ForecastTime = require('../client/src/models/forecast_time')
-var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+var sendRequest = require('./utility').sendRequest;
 var apiKey = require("./weather_api_key");
-
-var makeRequest = function(url, callback) {
- var request = new XMLHttpRequest()
- request.open("GET", url);
- request.onload = function() {
-   if (this.status !== 200) return;
-   var jsonString = this.responseText;
-   var results = JSON.parse(jsonString);
-   callback(results);
- };
- request.send();
-}
 
 var thirtyMins = 30 * 60 * 1000;
 
