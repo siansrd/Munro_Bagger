@@ -1,5 +1,5 @@
 var Weather = function(options){
-  // this._id = options.id;
+  // this._id = options.id; //what was the first property again??
   this._timeOfRequest = options.timeOfRequest;
   this._forcast = options.forcast;
 
@@ -20,6 +20,6 @@ var Weather = function(options){
       return this._forcast;
     }
   });
-}
+};
 
-module.exports = WeatherStation;
+module.exports = Weather;
