@@ -26,9 +26,10 @@ var WeatherApi = function(app) {
             // res.json( { weather: data } );
             if(weather && !expired(weather.timeOfRequest)){
               //work out data to be returned
+              return weather.forcast;
             }
             else{
-              
+              makeRequest(urlGenerator, requestComplete);
             }
             // Date.now()
           });

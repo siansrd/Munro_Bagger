@@ -1,4 +1,5 @@
-var apiKey = require("....../helpers/weather_call/api_key"); //should we move the API key?
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest
+var apiKey = require("./weather_api_key");
 var munroList = require(""); //this should come from a DB now
 
 var weatherObjs = []; //this should point to a DB now
@@ -17,7 +18,7 @@ var requestComplete = function(){
   var response = JSON.parse(jsonString);
   saveWeather(response);
   counter++;
-  if (counter < 10){
+  if (counter < 10){ //this number needs to change
     // setTimeout(function(){
       makeRequest(urlGenerator(), requestComplete);
     // }, 1050);
@@ -44,10 +45,10 @@ var urlGenerator = function(){
   return url;
 };
 
-var app = function(){
-  var url = urlGenerator();
-  makeRequest(url, requestComplete);
-  console.log(weatherObjs);
-};
+// var app = function(){
+  // var url = urlGenerator();
+  // makeRequest(url, requestComplete);
+  // console.log(weatherObjs);
+// };
 
-window.onload = app;
+// window.onload = app;
