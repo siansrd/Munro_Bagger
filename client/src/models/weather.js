@@ -1,39 +1,14 @@
-var Weather = function(day0, day1, day2){
-  [
-    {
-      this._day = day0.name
-      this._id = day0.id;
-      this._description = day0.description;
-      this._main = day0.main;
-      this._temperature = day0.temperature;
-      this._wind = {
-        day0.wind.speed,
-        day0.wind.direction;
-      };
-    },
-    {
-      this._day = day1.name
-      this._id = day1.id;
-      this._description = day1.description;
-      this._main = day1.main;
-      this._temperature = day1.temperature;
-      this._wind = {
-        day1.wind.speed,
-        day1.wind.direction;
-      };
-    },
-    {
-      this._day = day2.name
-      this._id = day2.id;
-      this._description = day2.description;
-      this._main = day2.main;
-      this._temperature = day2.temperature;
-      this._wind = {
-        day2.wind.speed,
-        day2.wind.direction;
-      };
-    },
-  ]
+var Weather = function(options){
+  this._id = options.id;
+  this._day = options.day;
+  this._time = options.time;
+  this._description = options.description;
+  this._main = options.main;
+  this._temperature = options.temperature;
+  this._wind = {
+    options.wind.speed,
+    options.wind.direction;
+  };
 
   Object.defineProperty(this, "id", {
     get: function(){
@@ -41,17 +16,48 @@ var Weather = function(day0, day1, day2){
     }
   });
 
-  Object.defineProperty(this, "timeOfRequest", {
+  Object.defineProperty(this, "day", {
     get: function(){
-      return this._timeOfRequest;
+      return this._day;
     }
   });
 
-  Object.defineProperty(this, "forecast", {
+  Object.defineProperty(this, "time", {
     get: function(){
-      return this._forecast;
+      return this._time;
     }
   });
+
+  Object.defineProperty(this, "description", {
+    get: function(){
+      return this._description;
+    }
+  });
+
+  Object.defineProperty(this, "main", {
+    get: function(){
+      return this._main;
+    }
+  });
+
+  Object.defineProperty(this, "temperature", {
+    get: function(){
+      return this._temperature;
+    }
+  });
+
+  Object.defineProperty(this, "windSpeed", {
+    get: function(){
+      return this._wind[0];
+    }
+  });
+
+  Object.defineProperty(this, "windDirection", {
+    get: function(){
+      return this._wind[1];
+    }
+  });
+  
 };
 
 module.exports = Weather;
