@@ -5,10 +5,13 @@ function Pin (map, mountain) {
   this.mountHeight = mountain.height;
   this.mountGridRef = mountain.gridRef;
   this.mountlatLng = mountain.latLng;
+  this.mountSunny = false;
 
   this.marker = new google.maps.Marker({
     position: mountain.latLng,
-    map: map
+    map: map,
+    icon: { url: this.generateIcon(),
+            scaledSize: new google.maps.Size(15, 15)}
   });
 
   this.marker.addListener('click', function() {
@@ -46,6 +49,20 @@ Pin.prototype = {
   removeChildNodes: function(parent) {
     while (parent.hasChildNodes()) {   
       parent.removeChild(parent.firstChild);
+    }
+  },
+  generateIcon: function(){
+    var base = "/public/images/";
+    var sunny = "mntn-sunny.png";
+    var notSunny = "mntn-not-sunny.png";
+    var sunnyBagged = "mntn-bagged-sunny.png";
+    var sunnyNotBagged = "mntn-not-bagged-sunny.png";
+    var bagged = "mntn-bagged.png";
+    var notBagged = "mntn-not-bagged.png";
+    if (this.mountSunny) {
+      return base + sunny
+    } else {
+      return base + notSunny
     }
   }
 }
