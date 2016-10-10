@@ -22,7 +22,6 @@ var Weathers = function(options){
       return this._dayAfter;
     }
   });
-
 };
 
 module.exports = Weathers;

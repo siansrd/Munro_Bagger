@@ -1,5 +1,6 @@
 var MountainQuery = require('../db/mountain_query');
 var WeatherQuery = require('../db/weather_query');
+var ForecastTime = require('../client/src/models/forecast_time')
 var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 var apiKey = require("./weather_api_key");
 
@@ -29,21 +30,59 @@ var urlGenerator = function(latLng){
   return url;
 };
 
+// var filterWeather = function(forecast) {
+//   // this is the weather for now
+//   // really need the forecasts for now, tomorrow and the day after
+//   return {
+//     weather: {
+//       id: forecast.list[0].weather[0].id,
+//       description: forecast.list[0].weather[0].description,
+//       main: forecast.list[0].weather[0].main,
+//       temperature: forecast.list[0].main.temp - 273.15,
+//       wind: {
+//         speed: forecast.list[0].wind.speed,
+//         direction: forecast.list[0].wind.deg
+//       }
+//     }
+//   }
+// }
+
 var filterWeather = function(forecast) {
   // this is the weather for now
   // really need the forecasts for now, tomorrow and the day after
   return {
-    weather: {
-      id: forecast.list[0].weather[0].id,
-      description: forecast.list[0].weather[0].description,
-      main: forecast.list[0].weather[0].main,
-      temperature: forecast.list[0].main.temp - 273.15,
-      wind: {
-        speed: forecast.list[0].wind.speed,
-        direction: forecast.list[0].wind.deg
-      }
+    dt: forecast.dt,
+    dt_txt: forecast.dt_txt,
+    id: forecast.weather[0].id,
+    description: forecast.weather[0].description,
+    main: forecast.weather[0].main,
+    temperature: forecast.main.temp - 273.15,
+    wind: {
+      speed: forecast.wind.speed,
+      direction: forecast.wind.deg
     }
   }
+}
+
+var buildWeather = function(forecasts) {
+  var weathers = [];
+  weathers.push(filterWeather(forecasts.list[0]));
+
+  var t = new ForecastTime();
+
+  var targetT = t.midTomorrow();
+  var weather = forecasts.list.find(function(forecast){
+    return forecast.dt === targetT;
+  });
+  weathers.push(filterWeather(weather));
+
+  targetT = t.midDayAfter();
+  var weather = forecasts.list.find(function(forecast){
+    return forecast.dt === targetT;
+  });
+  weathers.push(filterWeather(weather));
+
+  return weathers;
 }
 
 var WeatherApi = function(app) {
@@ -60,8 +99,7 @@ var WeatherApi = function(app) {
           wquery.getCachedForecast(weatherStn, function(cachedForecast) {
             if (cachedForecast && !expired(cachedForecast.timeOfRequest)){
               // return cachedForecast.forecast;
-              console.log("returning the cached version");
-              res.json(filterWeather(cachedForecast.forecast));
+              res.json(buildWeather(cachedForecast.forecast));
             }
             else {
               // Don't have a valid cached entry so need to get the weather
@@ -70,7 +108,7 @@ var WeatherApi = function(app) {
                 // now save it
                 var wquery = new WeatherQuery();
                 wquery.cacheForecast(weatherStn.id, newForecast, function() {
-                  res.json(filterWeather(newForecast));
+                  res.json(buildWeather(newForecast));
                 });
               })
             }
