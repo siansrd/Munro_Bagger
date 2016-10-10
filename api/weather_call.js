@@ -5,6 +5,8 @@ var apiKey = require("./weather_api_key");
 // var weatherObjs = []; //this should point to a DB now
 // var counter = 0; //maybe we dont need this counter since this is only for calls that are out of date.
 
+makeRequest(urlGenerator, requestComplete);
+
 var makeRequest = function(url, callback){
   var request = new XMLHttpRequest();
   request.open("GET", url);
@@ -21,7 +23,7 @@ var requestComplete = function(){
   // counter++; //counter no longer required
   // if (counter < 10){ //this number needs to change //counter no longer required
     // setTimeout(function(){
-      makeRequest(urlGenerator(), requestComplete);
+  // makeRequest(urlGenerator(), requestComplete); //maybe this is no longer required as the loop has been removed
     // }, 1050);
     //timeout maybe not required. Put back in if we have any issues
   // };
