@@ -14,6 +14,7 @@ MountainQuery.prototype.getForecast = function(weatherStation, onQueryFinished) 
       collection.findOne({ "_id": id }, function(err, weather) {
         if (!weather /* || weather out of date */ ) {
           // TODO: John's code goes in here
+
           // get weather from the open weather API
           // if weather existed but was out of date, remove the existing record from mongo
           // store the weather in mongo
