@@ -6,7 +6,7 @@ var thirtyMins = 30 * 60 * 1000;
 
 var expired = function(time){
   var dif = Date.now() - time;
-  return ( dif > thirtyMins )
+  return ( dif > thirtyMins );
 };
 
 var WeatherApi = function(app) {
@@ -29,7 +29,7 @@ var WeatherApi = function(app) {
               return weather.forcast;
             }
             else{
-              makeRequest(urlGenerator, requestComplete);
+              makeRequest(urlGenerator, requestComplete); //not sure if this is correct. Phil to confirm.
             }
           });
         }
