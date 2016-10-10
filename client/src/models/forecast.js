@@ -1,14 +1,14 @@
-var Weather = function(options){
+var Wind = require('./wind');
+
+var Forecast = function(options){
   this._id = options.id;
-  this._day = options.day;
+  this._timeStamp = options.dt;
+  this._dateTime = options.dt_txt;
   this._time = options.time;
   this._description = options.description;
   this._main = options.main;
   this._temperature = options.temperature;
-  this._wind = {
-    options.wind.speed,
-    options.wind.direction;
-  };
+  this._wind = new Wind(options.wind);
 
   Object.defineProperty(this, "id", {
     get: function(){
@@ -16,15 +16,15 @@ var Weather = function(options){
     }
   });
 
-  Object.defineProperty(this, "day", {
+  Object.defineProperty(this, "dateTime", {
     get: function(){
-      return this._day;
+      return this._dateTime;
     }
   });
 
-  Object.defineProperty(this, "time", {
+  Object.defineProperty(this, "timeStamp", {
     get: function(){
-      return this._time;
+      return this._timeStamp;
     }
   });
 
@@ -46,18 +46,12 @@ var Weather = function(options){
     }
   });
 
-  Object.defineProperty(this, "windSpeed", {
+  Object.defineProperty(this, "wind", {
     get: function(){
-      return this._wind[0];
-    }
-  });
-
-  Object.defineProperty(this, "windDirection", {
-    get: function(){
-      return this._wind[1];
+      return this._wind;
     }
   });
   
 };
 
-module.exports = Weather;
+module.exports = Forecast;
