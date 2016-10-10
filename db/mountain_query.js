@@ -1,4 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
+var Mountain = require('../client/src/models/mountain');
 //var ObjectID = require('mongodb').ObjectID;
 
 var MountainQuery = function() {
@@ -22,7 +23,7 @@ MountainQuery.prototype.oneById = function(id, onQueryFinished) {
     if (db) {
       var collection = db.collection('mountains');
       collection.findOne({ "_id": id }, function(err, mtn) {
-        onQueryFinished(mtn);
+        onQueryFinished(new Mountain(mtn));
         db.close();
       })
     }

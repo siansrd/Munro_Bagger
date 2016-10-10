@@ -1,7 +1,7 @@
 var Weather = function(options){
   this._id = options.id;
   this._timeOfRequest = options.timeOfRequest;
-  this._forcast = options.forcast;
+  this._forecast = options.forecast;
 
   Object.defineProperty(this, "id", {
     get: function(){
@@ -15,9 +15,9 @@ var Weather = function(options){
     }
   });
 
-  Object.defineProperty(this, "forcast", {
+  Object.defineProperty(this, "forecast", {
     get: function(){
-      return this._forcast;
+      return this._forecast;
     }
   });
 };
