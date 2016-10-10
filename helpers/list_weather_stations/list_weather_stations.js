@@ -11,7 +11,7 @@ var generateOutput = function(stations) {
     strNum = (i+1).toString();
     padding = " ".repeat(3 - strNum.length);
     linesOut += padding + (i+1) + ". " + stations[i].weatherStation.name +
-      " (" + stations[i].weatherStation.id + ")\n";
+      " (id: " + stations[i].weatherStation.id + ") (" + stations[i].mountains.length + ")\n";
     for (mountain of stations[i].mountains) {
       linesOut += "     - " + mountain.name + " (" + (++m) + ")\n";
     }
@@ -35,12 +35,12 @@ new Mountains().all(function(mountains) {
   var station;
 
   for (var mountain of mountains) {
-    console.log(stations);
+    // console.log(stations);
     station = stations.find(function(stn){
       // console.log("Comparing...");
       // console.log("stn", stn.weatherStation);
       // console.log("mtn", mountain.weatherStation);
-      stn.weatherStation.name == mountain.weatherStation.name;
+      return stn.weatherStation.id === mountain.weatherStation.id;
     });
     if (!station) {
       station = new Station(mountain.weatherStation);
