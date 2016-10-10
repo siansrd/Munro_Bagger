@@ -1,5 +1,3 @@
 node_modules/
 client/build/bundle.*
-client/src/models/api_key.js
-helpers/weather_call/api_key.js
 api/weather_api_key.js
