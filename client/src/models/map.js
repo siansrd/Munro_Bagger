@@ -1,4 +1,4 @@
-var Pin = require('../models/pin');
+var Pin = require('../views/pin');
 
 var Map = function(container){
   this.googleMap = new google.maps.Map(container, {
