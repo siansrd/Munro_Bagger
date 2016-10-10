@@ -1,4 +1,5 @@
 var Weather = require("./forecast");
+var ApiRequest = require("./api_request");
 
 var Forecasts = function(){
   this._forecasts = [];
@@ -22,7 +23,7 @@ var Forecasts = function(){
   });
 };
 
-Forecasts.prototype.forMountain(moutainId) {
+Forecasts.prototype.forMountain = function(mountainId, onCompleted) {
   var url = "http://localhost:3000/api/weather?m=" + mountainId;
   var apiRequest = new ApiRequest();
   apiRequest.makeRequest(url, function(receivedForecasts) {
