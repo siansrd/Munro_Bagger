@@ -1,7 +1,7 @@
 // var Mountain = require('../../client/src/models/mountain');
 var Mountains = require('../../client/src/models/mountains');
 var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-var key = require('./api_key');
+var key = require('../../client/src/models/api_key');
 var fs = require('fs');
 
 var makeRequest = function(num, url, callback){
