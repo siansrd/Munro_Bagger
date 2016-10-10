@@ -26,14 +26,7 @@ UI.prototype = {
        document.getElementById('munroList').appendChild(munro); 
     };
   },
-  login: function() {
-    var login = document.getElementById('login');
-    login.addEventListener('click', function() {
-      console.log("login clicked");
-    });
-  },
   render: function() {
-    this.login()
     this.displayMap();
     var newMount = new Mountains();
     newMount.all(function(mtns){  
@@ -44,11 +37,6 @@ UI.prototype = {
 
   }
 };
-
-
-
-
-
 
 
 module.exports = UI;
