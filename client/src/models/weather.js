@@ -35,23 +35,23 @@ var Weather = function(day0, day1, day2){
     },
   ]
 
-  // Object.defineProperty(this, "id", {
-  //   get: function(){
-  //     return this._id;
-  //   }
-  // });
-  //
-  // Object.defineProperty(this, "timeOfRequest", {
-  //   get: function(){
-  //     return this._timeOfRequest;
-  //   }
-  // });
-  //
-  // Object.defineProperty(this, "forecast", {
-  //   get: function(){
-  //     return this._forecast;
-  //   }
-  // });
+  Object.defineProperty(this, "id", {
+    get: function(){
+      return this._id;
+    }
+  });
+
+  Object.defineProperty(this, "timeOfRequest", {
+    get: function(){
+      return this._timeOfRequest;
+    }
+  });
+
+  Object.defineProperty(this, "forecast", {
+    get: function(){
+      return this._forecast;
+    }
+  });
 };
 
 module.exports = Weather;
