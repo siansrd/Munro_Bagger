@@ -134,7 +134,7 @@ ul {
   padding: 0;
   overflow: hidden;
   border: 1px solid #e7e7e7;
-  background-color: #f3f3f3;
+  abackground-color: #f3f3f3;
 
 }
 
@@ -152,8 +152,8 @@ li a:hover:not(.active) {
 }
 
 li a.active {
-  color: white;
-  background-color: #4CAF50;
+  acolor: white;
+  abackground-color: #4CAF50;
 }
 
 ul.tab {
@@ -162,7 +162,7 @@ ul.tab {
   padding: 0;
   overflow: hidden;
   border: 5px solid #ccc;
-  background-color: #f1f1f1;
+  //background-color: #f1f1f1;
 }
 
 /* Float the list items side by side */
@@ -179,14 +179,14 @@ ul.tab li a {
   font-size: 13px;
 }
 
-ul.singleList{
-  /*display: inline-block;*/
-  color: yellow; 
-  text-align: center;
-  padding: 1px 2px;
+li.singleItem{
+  display:block;
+color: gray; 
+  atext-align: center;
+  padding: 5px 5px;
   text-decoration: none;
   transition: 0.3s;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 
@@ -197,7 +197,7 @@ ul.tab li a:hover {
 
 /* Create an active/current tablink class */
 ul.tab li a:focus, .active {
-  background-color: #ccc;
+  abackground-color: #ccc;
 }
 
 /* Style the tab content */
