@@ -39,11 +39,17 @@ List.prototype = {
     }
 
     // var munroList = document.createElement('ul');
+
     for (var i = 0;  i < alphabet.length; i++) {
       var mountains = alphabet[i].mountains;
       var divID = alphabet[i].letter;
       var munroDiv = document.createElement('div');
       munroDiv.setAttribute("id", divID);
+      munroDiv.setAttribute("class", "singleItem");
+      if ( i !== 0 ){
+        munroDiv.setAttribute("style","display:none");
+      };
+
       for(var j = 0; j < mountains.length; j++) {
         var munro = document.createElement('li');
         munro.innerText = mountains[j].name;

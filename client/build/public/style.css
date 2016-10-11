@@ -179,6 +179,17 @@ ul.tab li a {
   font-size: 13px;
 }
 
+ul.singleList{
+  /*display: inline-block;*/
+  color: yellow; 
+  text-align: center;
+  padding: 1px 2px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+
 /* Change background color of links on hover */
 ul.tab li a:hover {
   background-color: #ddd;
