@@ -81,6 +81,7 @@ var WeatherApi = function(app) {
                 // got the weather back
                 // now save it
                 if (DEBUG) console.log("Received updated forecast.");
+                if (DEBUG) console.log("Saving to Mongo");
                 if (DEBUG && cachedForecast) console.log("Must overwrite existing cache entry.");
                 var wquery = new WeatherQuery();
                 wquery.cacheForecast(weatherStn.id, newForecast, function() {
