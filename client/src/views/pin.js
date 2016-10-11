@@ -25,8 +25,9 @@ function Pin (map, mountain) {
 Pin.prototype = {
   changeForecast: function(dayNum) {
     if (this.forecasts.day[this.dayNum].id !== this.forecasts.day[dayNum].id) {
-      this.mountSunny = (this.forecasts.day[dayNum].id === 800)
-      this.createMarker()
+      this.mountSunny = (this.forecasts.day[dayNum].id === 800);
+      this.marker.setMap(null);
+      this.createMarker();
     }
     this.dayNum = dayNum;
   },
