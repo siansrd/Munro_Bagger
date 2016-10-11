@@ -59,6 +59,8 @@ Pin.prototype = {
     gridText.innerText = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
     txtLatLng = document.querySelector('#txt_latlng');
     txtLatLng.innerText = this.mountlatLng.lat + ", " + this.mountlatLng.lng;  
+    txtWeather = document.querySelector('#weather');
+    txtWeather.innerText = this.forecasts.today.description;
   },
   removeChildNodes: function(parent) {
     while (parent.hasChildNodes()) {   
