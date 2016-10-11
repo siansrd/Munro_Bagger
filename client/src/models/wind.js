@@ -6,11 +6,12 @@ var Wind = function(options) {
 };
 
 Wind.prototype.windDirection = function(){
-  var d = this.direction;
-  var dToReturn;
+  var dir = this._direction;
+  var dirToReturn = "No Wind";
   var directions = ["North", "North North-East", "North-East", "East North-East", "East", "East South-East", "South-East", "South South-East", "South", "South South-West", "South-West", "West South-West", "West", "West North-West", "North-West", "North West-North"];
-  dToReturn = directions[Math.round(d/22.5)];
-  return dToReturn;
+  index = Math.round(dir/22.5)
+  dirToReturn = directions[index];
+  return dirToReturn;
 };
 
 module.exports = Wind;
