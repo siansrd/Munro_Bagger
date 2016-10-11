@@ -9,8 +9,9 @@ Wind.prototype.windDirection = function(){
   var dir = this._direction;
   var dirToReturn = "No Wind";
   var directions = ["North", "North North-East", "North-East", "East North-East", "East", "East South-East", "South-East", "South South-East", "South", "South South-West", "South-West", "West South-West", "West", "West North-West", "North-West", "North West-North"];
-  index = Math.round(dir/22.5)
-  dirToReturn = directions[index];
+  index = Math.round(dir/22.5);
+  index2 = index%directions.length;
+  dirToReturn = directions[index2];
   return dirToReturn;
 };
 
