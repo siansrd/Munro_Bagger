@@ -76,8 +76,8 @@ button {
     background-color: #fff;
     margin: 15% auto;
     border: 3px solid #456F99;
-    padding: 20px;
-    width: 40%; 
+    padding: 30px;
+    width: 200px; 
 }
 
 /* PopUp Close Button */
@@ -90,8 +90,18 @@ button {
     cursor: pointer;
 }
 
+/* LogIn Close Button */
+#login-close {
+    width: 20px;
+    float: right;
+}
+#login-close:hover,
+#login-close:focus {
+    cursor: pointer;
+}
+
 h2#mountName {
-    padding-left: 40px;
+    padding: 0 30px 0 40px;
 }
 
 .flex-grid {

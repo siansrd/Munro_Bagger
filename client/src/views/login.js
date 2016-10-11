@@ -13,7 +13,22 @@ Login.prototype = {
    var login = document.getElementById('login');
    login.addEventListener('click', function() {
      console.log("login clicked");
-       this.openPopUp();
+      this.createPopUp();
+      this.openPopUp();
+
+       var loginPopUp = document.getElementById('loginPopUp');
+       window.onclick = function(event) {
+         if (event.target == loginPopUp) {
+             loginPopUp.style.display = "none";
+         }
+       }; 
+       var closeBtn = document.getElementById("login-close");
+       closeBtn.onclick= function() {
+        console.log("close clicked")
+         loginPopUp.style.display = "none";
+       }
+       
+
    }.bind(this));
  },
  openPopUp: function(){
@@ -21,8 +36,8 @@ Login.prototype = {
    loginPopUp.style.display = "block";
  },
  createPopUp: function() {
-   var close = document.getElementById("close");
-   close.setAttribute('src', '../../client/build/public/images/cross.png');
+   var closeBtn = document.getElementById("login-close");
+   closeBtn.setAttribute('src', '/public/images/cross.png');
  },
  login: function() {
   var loginSubmit = document.getElementById('login-submit');
