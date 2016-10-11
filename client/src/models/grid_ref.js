@@ -18,7 +18,7 @@ var GridRef = function(options){
       return this._northings;
     }
   });
-}
+};
 
 GridRef.prototype.toString = function(){
   return this._letters + this._eastings.substring(0,3) + this._northings.substring(0,3);
