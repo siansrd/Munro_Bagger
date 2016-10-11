@@ -15,8 +15,8 @@ List.prototype = {
   },
 
   addTabs: function(){
-    var str= "AB"
-   // var str= "ABCDEFGHLMNPRST"
+   // var str= "AB"
+    var str= "ABCDEFGHLMNPRST"
     // var htmlText=""
     // var headerText = "<ul class=\"tab\">"
     // for (var i=0  ; i < str.length; i++){

@@ -9,7 +9,7 @@ html, body {
 
 body {
     font-family: 'Hammersmith One', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 h1, h2, h3 {
@@ -34,7 +34,7 @@ h1, h2, h3 {
 
 button {
     font-family: 'Hammersmith One', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     color: buttontext;
     background-color: buttonface;
     box-sizing: border-box;
@@ -115,6 +115,15 @@ th{alignment:left;}
 
 th{font-size:12pt;}
 
+
+
+.munroMap {
+  float: left;
+  color: white;
+  background-color:yellow;
+  font-size:20pt;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -123,14 +132,6 @@ ul {
   border: 1px solid #e7e7e7;
   background-color: #f3f3f3;
 
-}
-
-.munroMap {
-  float: left;
-  color: white;
-
-  background-color:yellow;
-  font-size:20pt;
 }
 
 li a {
@@ -166,7 +167,7 @@ ul.tab li {float: left;}
 /* Style the links inside the list items */
 ul.tab li a {
   display: inline-block;
-  color: black;
+  color: Red;
   text-align: center;
   padding: 1px 2px;
   text-decoration: none;
@@ -193,14 +194,22 @@ ul.tab li a:focus, .active {
 }
 
 li {
-    float: left;
+    display:inline-block;
+    padding: 10px;
+      
+    color: black ;
+      background-color: #9cf ;
+      border-top: 1px solid #c0ffff ;
+      border-right: 1px solid #00f ;
+      border-bottom: 1px solid #00f ;
+      border-left: 1px solid #c0ffff ;
 }
 
 li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 16px;
+    padding: 12px;
     text-decoration: none;
 }
 
@@ -211,12 +220,12 @@ li a:hover {
 </head>
 <body>
 
-<ul>
+/*<ul>
   <li><a href="#home">Home</a></li>
   <li><a href="#news">News</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#about">About</a></li>
-</ul>
+</ul>*/
 
 
 
