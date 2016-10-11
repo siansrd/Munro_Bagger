@@ -4,7 +4,7 @@ var List = require('./views/list');
 
 var app = function(){
   var ui = new UI();
-  var login = new Login();
+  var login = new Login(ui);
   var list = new List();
 }
 

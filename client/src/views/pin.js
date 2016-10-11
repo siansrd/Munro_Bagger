@@ -10,17 +10,17 @@ function Pin (map, mountain) {
   this.mountGridRef = mountain.gridRef;
   this.mountlatLng = mountain.latLng;
   this.dayNum = 0;
+  this.user = null;
+  this.mountBagged = null;
   // this.mountSunny = false;
-
   this.forecasts = new Forecasts();
 
   this.forecasts.forMountain(this.mountId, function() {
     this.mountSunny = (this.forecasts.day[0].id === 800)
     this.createMarker();
   }.bind(this))
+};
 
-  
-}
 
 Pin.prototype = {
   changeForecast: function(dayNum) {
@@ -30,6 +30,12 @@ Pin.prototype = {
       this.createMarker();
     }
     this.dayNum = dayNum;
+  },
+  userLoggedIn: function(user) {
+    this.user = user;
+    this.mountBagged = this.user.hasClimbed(this.mountId); 
+    this.marker.setMap(null);
+    this.createMarker();
   },
   createMarker: function(){
     this.marker = new google.maps.Marker({
@@ -64,7 +70,7 @@ Pin.prototype = {
     mountName.innerHTML = this.mountName;
 
     heightText = document.querySelector('#txt_height');
-    heightText.innerText = this.mountHeight + " meters above sea level";
+    heightText.innerText = this.mountHeight + "m above sea level";
 
     gridText = document.querySelector('#text_grid');
     gridText.innerText = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
@@ -91,12 +97,33 @@ Pin.prototype = {
     var sunnyNotBagged = "mntn-not-bagged-sunny.png";
     var bagged = "mntn-bagged.png";
     var notBagged = "mntn-not-bagged.png";
-    if (this.mountSunny) {
-      return base + sunny
-    } else {
-      return base + notSunny
+    if (this.user) {
+      if (this.mountSunny) {
+        if (this.mountBagged) {
+          return base + sunnyBagged
+        }
+        else {
+          return base + sunnyNotBagged     
+        }
+      } 
+      else {
+        if (this.mountBagged) {
+          return base + bagged
+        }
+        else {
+          return base + notBagged     
+        }
+      }
+    } 
+    else {
+      if (this.mountSunny) {
+        return base + sunny
+      } else {
+        return base + notSunny
+      }
     }
   }
+
 }
 
 
