@@ -192,14 +192,6 @@ ul.tab li a:focus, .active {
   border-top: 2px;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333333;
-}
-
 li {
     float: left;
 }
