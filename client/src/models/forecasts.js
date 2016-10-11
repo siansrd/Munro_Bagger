@@ -22,7 +22,7 @@ var Forecasts = function(){
     }
   });
 
-  Object.defineProperty(this, "forecasts", {
+  Object.defineProperty(this, "day", {
     get: function(){
       return this._forecasts;
     }
