@@ -8,10 +8,10 @@ var Map = function(container){
     mapTypeId: 'terrain'
   });
   this.pins = [];
-}
+};
 
 Map.prototype.addPin = function(mountain) {
   this.pins.push(new Pin(this.googleMap, mountain));
-}
+};
 
 module.exports = Map;
