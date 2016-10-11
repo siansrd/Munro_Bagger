@@ -1,7 +1,7 @@
 var MountainQuery = require('../db/mountain_query');
 var WeatherQuery = require('../db/weather_query');
 var ForecastTime = require('../client/src/models/forecast_time')
-var sendRequest = require('./utility').sendRequest;
+var makeRequest = require('./utility').makeRequest;
 var apiKey = require("./weather_api_key");
 
 var thirtyMins = 30 * 60 * 1000;
