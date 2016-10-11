@@ -17,13 +17,13 @@ h1, h2, h3 {
 }
 
 #munroList {
-    width:50%;
+    width:40%;
     height:100%;
     float: right;
 }
 
 #mapContainer {
-    width: 45%; 
+    width: 60%; 
     height: 100%;
     float: left;
 }
@@ -167,7 +167,7 @@ ul.tab li {float: left;}
 /* Style the links inside the list items */
 ul.tab li a {
   display: inline-block;
-  color: Red;
+  color: Red; 
   text-align: center;
   padding: 1px 2px;
   text-decoration: none;
@@ -187,7 +187,7 @@ ul.tab li a:focus, .active {
 
 /* Style the tab content */
 .tabcontent {
-  display: none;
+  //REM THIS BACK display: none;
   padding: 1px 2px;
   border: 1px solid #F00;
   border-top: 2px;
