@@ -19,6 +19,6 @@ for(; i < linesIn.length; i++) {
   }
 }
 linesOut = linesOut.slice(0, -2);
-linesOut += "\n]);"
+linesOut += "\n]);\n"
 // console.log(linesOut)
 fs.writeFileSync("seeds.js", linesOut);
