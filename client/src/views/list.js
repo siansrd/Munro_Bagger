@@ -15,17 +15,7 @@ List.prototype = {
   },
 
   addTabs: function(){
-   // var str= "AB"
     var str= "ABCDEFGHLMNPRST"
-    // var htmlText=""
-    // var headerText = "<ul class=\"tab\">"
-    // for (var i=0  ; i < str.length; i++){
-    //   var chr= str.charAt(i);
-    //   htmlText = htmlText + "<li id='tabs'><a href=\"#\" class=\"tablinks\" onclick=\"openSection(event, '"+chr+"')\">"+chr+"   |</a></li>";
-    // }
-    // htmlText=htmlText+"</ul></TD></TABLE><hr>"
-    //   //document.write(htmlText+"</ul></TABLE>");
-    //  // document.write(htmlText);
     var tabContainer= document.getElementById("munroTabs")
 
     var munroUL=document.createElement("ul");
@@ -36,9 +26,30 @@ List.prototype = {
       munroUL.appendChild(initialLi)
     }
     tabContainer.appendChild(munroUL);
-
-
   },
+
+   populateTabSections: function(myMountains){
+    var divID="A";
+    var munroDiv = document.createElement('div');
+    munroDiv.setAttribute("id", divID);
+    console.log(munroDiv);
+    document.getElementById("munroTabSections").appendChild(munroDiv);
+    console.log(munroTabSection);
+    var munroList = document.createElement('ul');
+
+    for (var i = 0;  i < myMountains.length; i++)
+    {
+    // var mountainName = myMountains[i].name;
+
+ //      if mountainName.charAt(1) === divID {
+ //       var munro = document.createElement('li');
+ //       munro.innerHTML = myMountains[i].name;
+ //       munroList.appendChild(munro); 
+     };
+ //   };
+  },
+
+
 
   openSection: function(evt) {
      var i, tabcontent, tablinks;
@@ -60,8 +71,8 @@ List.prototype = {
     var newMount = new Mountains();
     newMount.all(function(mtns){  
       this.populateList(mtns);
+      this.populateTabSections(mtns);
     }.bind(this)); 
-
     this.addTabs();
   }
 };
