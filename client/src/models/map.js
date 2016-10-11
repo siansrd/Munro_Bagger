@@ -1,4 +1,5 @@
 var Pin = require('../views/pin');
+var Login = require('../views/login')
 
 var Map = function(container){
   this.googleMap = new google.maps.Map(container, {
@@ -8,6 +9,7 @@ var Map = function(container){
     mapTypeId: 'terrain'
   });
   this.pins = [];
+  this.user = 
 }
 
 Map.prototype.addPin = function(mountain) {
@@ -15,3 +17,15 @@ Map.prototype.addPin = function(mountain) {
 }
 
 module.exports = Map;
+
+
+
+// var user = new User(email);
+// console.log(user)
+// user.getInfo(function(){
+//   for (var pin of mainMap.pins) {
+//     console.log(pin);
+//     // mountain if pin, call has climbed in user; 
+//     // set true or false;         
+//   }
+// })

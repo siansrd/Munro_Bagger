@@ -1,7 +1,7 @@
 var Map = require('../models/map');
 var Mountains = require('../models/mountains');
 var Pin = require('./pin');
-
+var User = require('../models/user')
 
 var Login = function(){
   this.render(); 
@@ -27,6 +27,7 @@ Login.prototype = {
     var loginSubmit = document.getElementById('login-submit');
     loginSubmit.addEventListener('click', function() {
       var email = document.getElementById('email').value;
+      return email
     })
   },
   render: function() {
