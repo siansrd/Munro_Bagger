@@ -8,7 +8,7 @@ var WeatherQuery = function() {
 WeatherQuery.prototype.getCachedForecast = function(weatherStation, onQueryFinished) {
   MongoClient.connect(this.url, function(err, db) {
     if (db) {
-      var collection = db.collection('weathers');
+      var collection = db.collection('forecasts');
       // how tio get the weather from mongo?
       // By weather station name or by lat/long
       collection.findOne({ "_id": weatherStation.id }, function(err, weather) {
@@ -22,7 +22,7 @@ WeatherQuery.prototype.getCachedForecast = function(weatherStation, onQueryFinis
 WeatherQuery.prototype.cacheForecast = function(id, forecast, onQueryFinished) {
   MongoClient.connect(this.url, function(err, db) {
     if (db){
-      var collection = db.collection('weathers');
+      var collection = db.collection('forecasts');
       var doc = {
         _id: id,
         timeOfRequest: Date.now,
