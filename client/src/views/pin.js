@@ -62,14 +62,21 @@ Pin.prototype = {
     close.setAttribute('src', '/public/images/cross.png');
     var mountName = document.getElementById('mountName');
     mountName.innerHTML = this.mountName;
+
     heightText = document.querySelector('#txt_height');
     heightText.innerText = this.mountHeight + " meters above sea level";
+
     gridText = document.querySelector('#text_grid');
     gridText.innerText = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
+
     txtLatLng = document.querySelector('#txt_latlng');
     txtLatLng.innerText = this.mountlatLng.lat + ", " + this.mountlatLng.lng;  
+
     txtWeather = document.querySelector('#weather');
     txtWeather.innerText = this.forecasts.day[this.dayNum].description;
+
+    txtWind = document.querySelector("#wind");
+    txtWind.innerText = this.forecasts.day[this.dayNum].wind.speed + "m/s " + this.forecasts.day[this.dayNum].wind.compassBearing();
   },
   removeChildNodes: function(parent) {
     while (parent.hasChildNodes()) {   
