@@ -5,4 +5,8 @@ var Wind = function(options) {
   Object.defineProperty(this, "direction", { get: function(){ return this._direction; } });
 };
 
+Wind.prototype.windDirection = function(direction){
+
+};
+
 module.exports = Wind;
