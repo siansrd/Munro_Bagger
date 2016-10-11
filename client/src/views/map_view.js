@@ -1,12 +1,14 @@
 var Map = require('../models/map');
 var Mountains = require('../models/mountains');
 var Pin = require('./pin');
+var User = require('../models/user')
 
 var mainMap;
 
 var UI = function(){
   this.render(); 
-}
+  this.mainMap = mainMap;
+};
 
 UI.prototype = {
   displayMap: function() {

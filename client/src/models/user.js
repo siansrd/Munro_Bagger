@@ -11,12 +11,12 @@ User.prototype.getInfo = function(onCompleted) {
   var url = "http://localhost:3000/api/users/" + this._id;
   var apiRequest = new ApiRequest();
   apiRequest.makeRequest(url, function(receivedData) {
-    var mountains = receivedData.data.mountains;
+    var mountains = receivedData.user.mountains;
     for (var mountain of mountains) {
       this._mountains.push(new UserMountain(mountain));
     }
     onCompleted();
-  })
+  }.bind(this))
 };
 
 User.prototype.hasClimbed = function(mountainId) {
