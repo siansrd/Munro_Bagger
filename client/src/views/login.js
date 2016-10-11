@@ -4,7 +4,7 @@ var Pin = require('./pin');
 
 
 var Login = function(){
-  this.render(); 
+  this.render();
 }
 
 Login.prototype = {
@@ -18,6 +18,5 @@ Login.prototype = {
     this.login();
   }
 };
-
 
 module.exports = Login;
