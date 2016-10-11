@@ -36,6 +36,7 @@ Login.prototype = {
         pin.userLoggedIn(user);
       })
     }.bind(this))
+    loginPopUp.style.display = "none";
    }.bind(this))
  },
  render: function() {

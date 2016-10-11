@@ -71,6 +71,15 @@ button {
     width: 40%; 
 }
 
+/* PopUp Content/Box */
+#loginPopUp-content {
+    background-color: #fff;
+    margin: 15% auto;
+    border: 3px solid #456F99;
+    padding: 20px;
+    width: 40%; 
+}
+
 /* PopUp Close Button */
 #close {
     width: 20px;
