@@ -25,10 +25,10 @@ WeatherQuery.prototype.cacheForecast = function(id, forecast, onQueryFinished) {
       var collection = db.collection('forecasts');
       var doc = {
         _id: id,
-        timeOfRequest: Date.now,
+        timeOfRequest: Date.now(),
         forecast: forecast
       }
-      collection.insertOne(doc, function(err, result) {
+      collection.save(doc, {w:1}, function(err, result) {
         onQueryFinished();
         db.close();
       })

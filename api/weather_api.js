@@ -3,8 +3,8 @@ var WeatherQuery = require('../db/weather_query');
 var ForecastTime = require('../client/src/models/forecast_time')
 var makeRequest = require('./utility').makeRequest;
 var apiKey = require("./weather_api_key");
-
 var thirtyMins = 30 * 60 * 1000;
+var DEBUG = true;
 
 var expired = function(time){
   var dif = Date.now() - time;
@@ -62,18 +62,26 @@ var WeatherApi = function(app) {
       var mquery = new MountainQuery();
       mquery.oneById(req.query.m, function(mtn) {
         if (mtn) {
+          if (DEBUG) console.log("Getting weather for \"" + mtn.name + "\" (" + mtn.id + ")");
           var weatherStn = mtn.weatherStation;
+          if (DEBUG) console.log("Using the weather station at", weatherStn.name);
           var wquery = new WeatherQuery();
           wquery.getCachedForecast(weatherStn, function(cachedForecast) {
             if (cachedForecast && !expired(cachedForecast.timeOfRequest)){
               // return cachedForecast.forecast;
+              if (DEBUG) console.log("Using cached forecast. Timestamped",
+                new Date(cachedForecast.timeOfRequest).toString());
               res.json(buildForecast(cachedForecast.forecast));
             }
             else {
               // Don't have a valid cached entry so need to get the weather
+              if (DEBUG && cachedForecast) console.log("Cached forecast expired. Timestamped",
+                new Date(cachedForecast.timeOfRequest).toString());
               makeRequest(urlGenerator(weatherStn.latLng), function(newForecast) {
                 // got the weather back
                 // now save it
+                if (DEBUG) console.log("Received updated forecast.");
+                if (DEBUG && cachedForecast) console.log("Must overwrite existing cache entry.");
                 var wquery = new WeatherQuery();
                 wquery.cacheForecast(weatherStn.id, newForecast, function() {
                   res.json(buildForecast(newForecast));
