@@ -1,4 +1,5 @@
-var Forecasts = require('../models/forecasts')
+var Forecasts = require('../models/forecasts');
+var upCase = require("../models/upCase");
 
 function Pin (map, mountain) {
   this.mountain = mountain;
@@ -21,7 +22,6 @@ function Pin (map, mountain) {
   }.bind(this))
 };
 
-
 Pin.prototype = {
   changeForecast: function(dayNum) {
     if (this.forecasts.day[this.dayNum].id !== this.forecasts.day[dayNum].id) {
@@ -33,7 +33,7 @@ Pin.prototype = {
   },
   userLoggedIn: function(user) {
     this.user = user;
-    this.mountBagged = this.user.hasClimbed(this.mountId); 
+    this.mountBagged = this.user.hasClimbed(this.mountId);
     this.marker.setMap(null);
     this.createMarker();
   },
@@ -52,7 +52,7 @@ Pin.prototype = {
           if (event.target == popUp) {
               popUp.style.display = "none";
           }
-      }; 
+      };
       var closeBtn = document.querySelector('#close')
       closeBtn.onclick= function() {
         popUp.style.display = "none";
@@ -70,22 +70,24 @@ Pin.prototype = {
     mountName.innerHTML = this.mountName;
 
     heightText = document.querySelector('#txt_height');
-    heightText.innerText = this.mountHeight + "m above sea level";
+    heightText.innerText = this.mountHeight + "m";
 
     gridText = document.querySelector('#text_grid');
     gridText.innerText = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
 
     txtLatLng = document.querySelector('#txt_latlng');
-    txtLatLng.innerText = this.mountlatLng.lat + ", " + this.mountlatLng.lng;  
+    txtLatLng.innerText = this.mountlatLng.lat + ", " + this.mountlatLng.lng;
 
     txtWeather = document.querySelector('#weather');
-    txtWeather.innerText = this.forecasts.day[this.dayNum].description;
+    desc = this.forecasts.day[this.dayNum].description;
+    txtWeather.innerText = upCase(desc);
+    // txtWeather.innerText = this.forecasts.day[this.dayNum].description;
 
     txtWind = document.querySelector("#wind");
     txtWind.innerText = this.forecasts.day[this.dayNum].wind.speed + "m/s " + this.forecasts.day[this.dayNum].wind.compassBearing();
   },
   removeChildNodes: function(parent) {
-    while (parent.hasChildNodes()) {   
+    while (parent.hasChildNodes()) {
       parent.removeChild(parent.firstChild);
     }
   },
@@ -103,18 +105,18 @@ Pin.prototype = {
           return base + sunnyBagged
         }
         else {
-          return base + sunnyNotBagged     
+          return base + sunnyNotBagged
         }
-      } 
+      }
       else {
         if (this.mountBagged) {
           return base + bagged
         }
         else {
-          return base + notBagged     
+          return base + notBagged
         }
       }
-    } 
+    }
     else {
       if (this.mountSunny) {
         return base + sunny
@@ -125,6 +127,5 @@ Pin.prototype = {
   }
 
 }
-
 
 module.exports = Pin;
