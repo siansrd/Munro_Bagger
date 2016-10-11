@@ -1,7 +1,7 @@
 // var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 var ApiRequest = function() {
-}
+};
 
 ApiRequest.prototype.makeRequest = function(url, callback) {
  var request = new XMLHttpRequest()
@@ -13,6 +13,6 @@ ApiRequest.prototype.makeRequest = function(url, callback) {
    callback(results);
  };
  request.send();
-}
+};
 
 module.exports = ApiRequest;

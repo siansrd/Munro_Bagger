@@ -27,12 +27,12 @@ Forecasts.prototype.forMountain = function(mountainId, onCompleted) {
   var url = "http://localhost:3000/api/weather?m=" + mountainId;
   var apiRequest = new ApiRequest();
   apiRequest.makeRequest(url, function(receivedForecasts) {
-    this._forecasts = []; 
+    this._forecasts = [];
     for (var forecast of receivedForecasts) {
       this._forecasts.push(new Forecast(forecast));
     }
     onCompleted();
   })
-}
+};
 
 module.exports = Forecasts;

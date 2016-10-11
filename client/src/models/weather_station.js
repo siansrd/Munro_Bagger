@@ -5,6 +5,6 @@ var WeatherStation = function(options) {
   Object.defineProperty(this, "id", { get: function(){ return this._id; } });
   Object.defineProperty(this, "name", { get: function(){ return this._name; } });
   Object.defineProperty(this, "latLng", { get: function(){ return this._latLng; } });
-}
+};
 
 module.exports = WeatherStation;
