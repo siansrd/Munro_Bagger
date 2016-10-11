@@ -12,6 +12,7 @@ var Map = function(container){
 
 Map.prototype.addPin = function(mountain) {
   this.pins.push(new Pin(this.googleMap, mountain));
+  console.log(mountain);
 };
 
 module.exports = Map;

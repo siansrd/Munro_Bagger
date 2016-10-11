@@ -16,6 +16,7 @@ UI.prototype = {
   addMarkers: function(myMountains){
     for (var i = 0;  i < myMountains.length; i++){
       mainMap.addPin(myMountains[i]);
+      console.log(myMountains[i]);
     };
   },
   pinNotifier: function(callback){

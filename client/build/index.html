@@ -13,7 +13,112 @@
     <div id="mapContainer" style="border: 1px solid black;"></div>
     <div id="munroTabs" width="20%"></div>
     <!-- <div id="munroList"></div> -->
-    <div id ="munroTabSections"></div>
+    <div id ="munroTabSections">
+           
+           <script>
+             var str= "ABCDEFGHLMNPRST"
+             var htmlText=""
+             var headerText = "<ul class=\"tab\">"
+             for (var i=0  ; i < str.length; i++){
+               var chr= str.charAt(i);
+               htmlText = htmlText + "<li> <a href=\"#\" class=\"singleItem\" onclick=\"openMunro(event, '"+chr+"')\">"+chr+"</a></li>";
+             }
+             htmText=htmlText+"</ul></TD></TABLE><hr>"
+         //document.write(htmlText+"</ul></TABLE>");
+         document.write(htmlText);
+
+         populateTabSections: function(myMountains){
+           var alphabet = [];
+           for (var c = 0; c < 26; c++) {
+             letter = String.fromCharCode('A'.charCodeAt() + c);
+             result = myMountains.filter(function(mtn) {
+               return mtn.name[0] === letter;
+             })
+             if (result.length > 0) alphabet.push({ letter: letter, mountains: result});
+           }
+
+           // var munroList = document.createElement('ul');
+
+           for (var i = 0;  i < alphabet.length; i++) {
+             var mountains = alphabet[i].mountains;
+             var divID = alphabet[i].letter;
+             var munroDiv = document.createElement('div');
+             munroDiv.setAttribute("id", divID);
+             munroDiv.setAttribute("class", "singleItem");
+             munroDiv.setAttribute("onclick","openSection(event, divID)");
+
+
+             console.log(i);
+             if ( i !== 0){
+               munroDiv.setAttribute("style","visibility:hidden");
+             };
+
+             for(var j = 0; j < mountains.length; j++) {
+               var munro = document.createElement('li');
+               munro.setAttribute("class","singleItem")
+               munroDiv.setAttribute("margin-left", "20px");
+               munro.innerText = mountains[j].name;
+               munroDiv.appendChild(munro); 
+             }
+             document.getElementById("munroTabSections").appendChild(munroDiv);
+           }
+         },
+
+
+
+
+
+
+
+        function openMunro(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+      </script>
+
+      
+
+      </DIV><TABLE><TR><TD>
+       <p><div id="A" width="150"class="tabcontent">
+        <B>Name:   </B>Anoch Muir<BR>
+        <B>Height: </B>961.3</BR>
+        <B>Weather:</B>Clear<BR>
+        <B>Bagged: </B>Yes</div>
+
+        <div id="B" class="tabcontent">
+          <B>Name:   </B>Bannockburn Muir<BR>
+          <B>Height: </B>961.3<BR>
+          <B>Weather:</B>Clear<BR>
+          <B>Bagged: </B><BR></div>
+
+          <div id="C" class="tabcontent">
+            <B>Name:   </B>Crianlarich<BR>
+            <B>Height: </B>961.3<BR>
+            <B>Weather:</B>Clear<BR>
+            <B>Bagged: </B>Yes<BR>
+            <HR>
+              <B>Name:   </B>CrankyAnoch Muir<BR>
+              <B>Height: </B>531.3<BR>
+              <B>Weather:</B>Rainy<BR>
+              <B>Bagged: </B>No<BR><BR> </div>
+            </div>
+
+            
+            
+         </TD></Table>
+
+    </div>
+
+
     <!-- class="tabcontent" -->
     
     
