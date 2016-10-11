@@ -1,4 +1,4 @@
-var Weather = require("./forecast");
+var Forecast = require("./forecast");
 var ApiRequest = require("./api_request");
 
 var Forecasts = function(){
@@ -32,7 +32,7 @@ Forecasts.prototype.forMountain = function(mountainId, onCompleted) {
       this._forecasts.push(new Forecast(forecast));
     }
     onCompleted();
-  })
+  }.bind(this))
 }
 
 module.exports = Forecasts;

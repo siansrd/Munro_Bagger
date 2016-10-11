@@ -1,35 +1,49 @@
+var Forecasts = require('../models/forecasts')
+
 function Pin (map, mountain) {
+  this.mountain = mountain;
   this.map = map;
   this.coords = mountain.latLng;
+  this.mountId = mountain.id;
   this.mountName = mountain.name;
   this.mountHeight = mountain.height;
   this.mountGridRef = mountain.gridRef;
   this.mountlatLng = mountain.latLng;
-  this.mountSunny = false;
+  // this.mountSunny = false;
 
-  this.marker = new google.maps.Marker({
-    position: mountain.latLng,
-    map: map,
-    icon: { url: this.generateIcon(),
-            scaledSize: new google.maps.Size(15, 15)}
-  });
+  this.forecasts = new Forecasts();
 
-  this.marker.addListener('click', function() {
-    this.createPopUp();
-    this.openPopUp();
-    window.onclick = function(event) {
-        if (event.target == popUp) {
-            popUp.style.display = "none";
-        }
-    }; 
-    var closeBtn = document.querySelector('#close')
-    closeBtn.onclick= function() {
-      popUp.style.display = "none";
-    }
-  }.bind(this));
+  this.forecasts.forMountain(this.mountId, function() {
+    this.mountSunny = (this.forecasts.today.id === 800)
+    this.createMarker();
+  }.bind(this))
+
+  
 }
 
 Pin.prototype = {
+  createMarker: function(){
+    this.marker = new google.maps.Marker({
+      position: this.mountain.latLng,
+      map: this.map,
+      icon: { url: this.generateIcon(),
+              scaledSize: new google.maps.Size(15, 15)}
+    });
+
+    this.marker.addListener('click', function() {
+      this.createPopUp();
+      this.openPopUp();
+      window.onclick = function(event) {
+          if (event.target == popUp) {
+              popUp.style.display = "none";
+          }
+      }; 
+      var closeBtn = document.querySelector('#close')
+      closeBtn.onclick= function() {
+        popUp.style.display = "none";
+      }
+    }.bind(this));
+  },
   openPopUp: function(){
     var popUp = document.getElementById('popUp');
     popUp.style.display = "block";
