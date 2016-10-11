@@ -20,11 +20,9 @@ User.prototype.getInfo = function(onCompleted) {
 };
 
 User.prototype.hasClimbed = function(mountainId) {
-  if (this._mountains.length === 0) return undefined;
-  var mountain = this._mountains.find(function(userMountain){
-    userMountain.id === mountainId;
-  });
-  if (mountain) return mountain.bagged;
+  for (var mountain of this._mountains) {
+    if (mountain.id === mountainId) return mountain.bagged;
+  }
   return false;
 };
 

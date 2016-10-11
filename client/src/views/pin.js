@@ -33,11 +33,9 @@ Pin.prototype = {
   },
   userLoggedIn: function(user) {
     this.user = user;
-    console.log(user);
-    this.mountBagged = user.hasClimbed(this.mountId); 
+    this.mountBagged = this.user.hasClimbed(this.mountId); 
     this.marker.setMap(null);
     this.createMarker();
-    console.log("Mountain bagged:", this.mountBagged)
   },
   createMarker: function(){
     this.marker = new google.maps.Marker({
