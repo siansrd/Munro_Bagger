@@ -29,46 +29,29 @@ List.prototype = {
   },
 
   populateTabSections: function(myMountains){
-    var divID="A";
-    var munroDiv = document.createElement('div');
-    munroDiv.setAttribute("id", divID);
-    //console.log(munroDiv);
-    document.getElementById("munroTabSections").appendChild(munroDiv);
-    //console.log(munroTabSection);
-    var munroList = document.createElement('ul');
+    var alphabet = [];
+    for (var c = 0; c < 26; c++) {
+      letter = String.fromCharCode('A'.charCodeAt() + c);
+      result = myMountains.filter(function(mtn) {
+        return mtn.name[0] === letter;
+      })
+      if (result.length > 0) alphabet.push({ letter: letter, mountains: result});
+    }
 
-    for (var i = 0;  i < myMountains.length; i++)
-    {
-      var mountainName = myMountains[i].name;
-      var mountInitial = mountainName.charAt(1)
-   // console.log(mountInitial +" "+ divID);
-   if (mountInitial === divID) { 
-    var munro = document.createElement('li');
-     console.log("IDs are the same");
-     munroList.appendChild(munro); 
-     munro.innerText = myMountains[i].name;
-     munroList.appendChild(munro); 
-   }else{
-    console.log("IDs have changed from "+divID+" to "+ mountInitial);
-    divID=mountInitial;
-    var munroDiv = document.createElement('div');
-    munroDiv.setAttribute("id", divID);
-
-    var munro = document.createElement('li');
-
-    console.log("The munro is " + munro);
-    munro.innerText = myMountains[i].name;
-    munroList.appendChild(munro); 
-    div = document.getElementById('foo');
-    newlink = document.createElement('a');
-    div.appendChild(newlink);
-
-
-  };
-};
-},
-
-
+    // var munroList = document.createElement('ul');
+    for (var i = 0;  i < alphabet.length; i++) {
+      var mountains = alphabet[i].mountains;
+      var divID = alphabet[i].letter;
+      var munroDiv = document.createElement('div');
+      munroDiv.setAttribute("id", divID);
+      for(var j = 0; j < mountains.length; j++) {
+        var munro = document.createElement('li');
+        munro.innerText = mountains[j].name;
+        munroDiv.appendChild(munro); 
+      }
+      document.getElementById("munroTabSections").appendChild(munroDiv);
+    }
+  },
 
   openSection: function(evt) {
      var i, tabcontent, tablinks;
