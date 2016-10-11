@@ -14,5 +14,5 @@ for (; userId <= 10; userId++) {
   linesOut += "\n      ]\n    }\n  },\n"
 }
 linesOut = linesOut.slice(0, -2);
-linesOut += "\n]);"
+linesOut += "\n]);\n"
 fs.writeFileSync("user_seeds.js", linesOut);

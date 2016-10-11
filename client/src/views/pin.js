@@ -9,12 +9,13 @@ function Pin (map, mountain) {
   this.mountHeight = mountain.height;
   this.mountGridRef = mountain.gridRef;
   this.mountlatLng = mountain.latLng;
+  this.dayNum = 0;
   // this.mountSunny = false;
 
   this.forecasts = new Forecasts();
 
   this.forecasts.forMountain(this.mountId, function() {
-    this.mountSunny = (this.forecasts.today.id === 800)
+    this.mountSunny = (this.forecasts.day[0].id === 800)
     this.createMarker();
   }.bind(this))
 
@@ -22,6 +23,14 @@ function Pin (map, mountain) {
 }
 
 Pin.prototype = {
+  changeForecast: function(dayNum) {
+    if (this.forecasts.day[this.dayNum].id !== this.forecasts.day[dayNum].id) {
+      this.mountSunny = (this.forecasts.day[dayNum].id === 800);
+      this.marker.setMap(null);
+      this.createMarker();
+    }
+    this.dayNum = dayNum;
+  },
   createMarker: function(){
     this.marker = new google.maps.Marker({
       position: this.mountain.latLng,
@@ -59,6 +68,8 @@ Pin.prototype = {
     gridText.innerText = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
     txtLatLng = document.querySelector('#txt_latlng');
     txtLatLng.innerText = this.mountlatLng.lat + ", " + this.mountlatLng.lng;  
+    txtWeather = document.querySelector('#weather');
+    txtWeather.innerText = this.forecasts.day[this.dayNum].description;
   },
   removeChildNodes: function(parent) {
     while (parent.hasChildNodes()) {   

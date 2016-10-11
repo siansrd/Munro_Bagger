@@ -21,6 +21,13 @@ var Forecasts = function(){
       return this._forecasts[2];
     }
   });
+
+  Object.defineProperty(this, "day", {
+    get: function(){
+      return this._forecasts;
+    }
+  });
+
 };
 
 Forecasts.prototype.forMountain = function(mountainId, onCompleted) {

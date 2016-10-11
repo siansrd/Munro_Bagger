@@ -32,6 +32,10 @@ h1, h2, h3 {
     float: right;
 }
 
+textarea:focus, input:focus, button:focus {
+    outline: none;
+}
+
 button {
     font-family: 'Hammersmith One', sans-serif;
     font-size: 14px;
