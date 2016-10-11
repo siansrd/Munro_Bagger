@@ -3,11 +3,10 @@ var Mountains = require('../models/mountains');
 var Pin = require('./pin');
 var User = require('../models/user')
 
-
 var Login = function(ui){
   this.ui = ui;
-  this.render(); 
-}
+  this.render();
+};
 
 Login.prototype = {
  loginPopUp: function() {
@@ -23,7 +22,7 @@ Login.prototype = {
  },
  createPopUp: function() {
    var close = document.getElementById("close");
-   close.setAttribute('src', '../../client/build/public/images/cross.png'); 
+   close.setAttribute('src', '../../client/build/public/images/cross.png');
  },
  login: function() {
   var loginSubmit = document.getElementById('login-submit');
@@ -44,6 +43,5 @@ Login.prototype = {
    this.login()
  }
 };
-
 
 module.exports = Login;
