@@ -1,3 +1,4 @@
 node_modules/
 client/build/bundle.*
 api/weather_api_key.js
+helpers/os_map_test/os_api_key.js
