@@ -14,7 +14,6 @@ function Pin (map, mountain) {
   this.mountBagged = null;
   // this.mountSunny = false;
   this.forecasts = new Forecasts();
-
   this.forecasts.forMountain(this.mountId, function() {
     this.mountSunny = (this.forecasts.day[0].id === 800)
     this.createMarker();
@@ -31,12 +30,14 @@ Pin.prototype = {
     }
     this.dayNum = dayNum;
   },
+
   userLoggedIn: function(user) {
     this.user = user;
     this.mountBagged = this.user.hasClimbed(this.mountId); 
     this.marker.setMap(null);
     this.createMarker();
   },
+
   createMarker: function(){
     this.marker = new google.maps.Marker({
       position: this.mountain.latLng,
@@ -44,7 +45,6 @@ Pin.prototype = {
       icon: { url: this.generateIcon(),
               scaledSize: new google.maps.Size(15, 15)}
     });
-
     this.marker.addListener('click', function() {
       this.createPopUp();
       this.openPopUp();
@@ -59,10 +59,12 @@ Pin.prototype = {
       }
     }.bind(this));
   },
+
   openPopUp: function(){
     var popUp = document.getElementById('popUp');
     popUp.style.display = "block";
   },
+
   createPopUp: function() {
     var close = document.getElementById("close");
     close.setAttribute('src', '/public/images/cross.png');
@@ -84,47 +86,55 @@ Pin.prototype = {
     txtWind = document.querySelector("#wind");
     txtWind.innerText = this.forecasts.day[this.dayNum].wind.speed + "m/s " + this.forecasts.day[this.dayNum].wind.compassBearing();
   },
+
   removeChildNodes: function(parent) {
     while (parent.hasChildNodes()) {   
       parent.removeChild(parent.firstChild);
     }
   },
+
   generateIcon: function(){
     var base = "/public/images/";
-    var sunny = "mntn-sunny.png";
-    var notSunny = "mntn-not-sunny.png";
-    var sunnyBagged = "mntn-bagged-sunny.png";
-    var sunnyNotBagged = "mntn-not-bagged-sunny.png";
-    var bagged = "mntn-bagged.png";
-    var notBagged = "mntn-not-bagged.png";
+    // var sunny = "mntn-sunny.png";
+    // var notSunny = "mntn-not-sunny.png";
+    // var sunnyBagged = "mntn-bagged-sunny.png";
+    // var sunnyNotBagged = "mntn-not-bagged-sunny.png";
+    // var bagged = "mntn-bagged.png";
+    // var notBagged = "mntn-not-bagged.png";
+    var fileName = base + "mntn-";
     if (this.user) {
-      if (this.mountSunny) {
-        if (this.mountBagged) {
-          return base + sunnyBagged
-        }
-        else {
-          return base + sunnyNotBagged     
-        }
-      } 
-      else {
-        if (this.mountBagged) {
-          return base + bagged
-        }
-        else {
-          return base + notBagged     
-        }
-      }
+      if (!this.mountBagged) fileName += "not-";
+      fileName += "bagged";
+      if (this.mountSunny) fileName += "-sunny";
+      // if (this.mountSunny) {
+      //   if (this.mountBagged) {
+      //     return base + sunnyBagged
+      //   }
+      //   else {
+      //     return base + sunnyNotBagged     
+      //   }
+      // } 
+      // else {
+      //   if (this.mountBagged) {
+      //     return base + bagged
+      //   }
+      //   else {
+      //     return base + notBagged     
+      //   }
+      // }
     } 
     else {
-      if (this.mountSunny) {
-        return base + sunny
-      } else {
-        return base + notSunny
-      }
+      if (!this.mountSunny) fileName += "not-";
+      fileName += "sunny";
+      // if (this.mountSunny) {
+      //   return base + sunny
+      // } else {
+      //   return base + notSunny
+      // }
     }
+    fileName += ".png";
+    return fileName;
   }
-
 }
-
 
 module.exports = Pin;
