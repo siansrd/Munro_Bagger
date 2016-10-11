@@ -22,6 +22,11 @@ function Pin (map, mountain) {
 }
 
 Pin.prototype = {
+  changeForecast: function(dayNum) {
+    
+
+
+  }
   createMarker: function(){
     this.marker = new google.maps.Marker({
       position: this.mountain.latLng,
