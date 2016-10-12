@@ -27,6 +27,4 @@ describe("Wind", function(){
     wind = new Wind({"speed": 5.71,"direction": 59.75});
     assert.strictEqual(wind.compassBearing(), "East North-East");
   });
-
-
 });

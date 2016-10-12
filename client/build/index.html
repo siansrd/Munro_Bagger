@@ -6,13 +6,18 @@
   <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./public/style.css">
 </head>
-<header><button id="login">Login</button></header>
+<header>
+    <div id="logoWrapper"><img id="logo" src="public/images/logo1.png" alt="Munro Bagger Logo"></div>
+  <button id="login">Login</button>
+</header>
 <body >
     <div id="mapContainer"></div>
-    <ul id="munroList"></ul>
-    <button id="day0">Today</button>
-    <button id="day1">Tomorrow</button>
-    <button id="day2">Day After</button>
+    <div id="leftContainer">
+      <button id="day0">Today</button>
+      <button id="day1">Tomorrow</button>
+      <button id="day2">Day After</button>
+      <ul id="munroList"></ul>
+    </div>
     <div id="popUp" class="popUp">
       <div id="popUp-content">
           <img src="" id="close">
@@ -30,18 +35,18 @@
             <div class="grid-item" id="Wind"></div>
           </div>
       </div>
-  </div>
-  <div id="loginPopUp" class="popUp">
-       <div id="loginPopUp-content">
-           <img src="" id="login-close">
-           <h2>Log In</h2>
-           <form action="">
-             <p>Email Address:</p>
-             <input type="text" name="email" id="email" value="user1@codeclan.com">
-             <p>Password:</p>
-             <input type="text" name="password" id="password">
-             <div><input type="submit" id="login-submit" value="Log In"></div>
-           </form>
+    </div>
+    <div id="loginPopUp" class="popUp">
+      <div id="loginPopUp-content">
+         <img src="" id="login-close">
+         <h2>Log In</h2>
+         <form action="">
+           <p>Email Address:</p>
+           <input type="text" name="email" id="email" value="user1@codeclan.com">
+           <p>Password:</p>
+           <input type="text" name="password" id="password">
+           <div><input type="submit" id="login-submit" value="Log In"></div>
+         </form>
        </div>
      </div>
 </body>
