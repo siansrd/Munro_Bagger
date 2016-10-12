@@ -36,11 +36,54 @@
 - OpenWeatherMap API
 - Munro API (tbc)
 
-## Team
-- John Easton
-- Phil Crooks
-- Sian Robinson Davies
-- Lee Lawrence
+## Installation Instructions
+
+- Install MongoDB
+
+```
+
+```
+
+- Install WebPack
+
+```
+npm install webpack -g
+```
+
+- Install the Packages from Package.JSON
+
+```
+npm install
+```
+
+- Run the seed file to populate MongoDB
+
+```
+mongo < db/mongo_init.js
+```
+
+- Run Express Server
+
+```
+npm start
+```
+
+-  Open a new Terminal tab and un WebPack from the client folder.
+
+```
+cd client
+```
+
+```
+webpack -w
+```
+
+-  Open a new Terminal tab and initialise MongoDB
+
+```
+mongod
+```
+Open a web-browser and visit localhost:3000/
 
 
 ***
