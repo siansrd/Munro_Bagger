@@ -12,18 +12,32 @@ body {
     font-size: 18px;
 }
 
+header {
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
+
+#logoWrapper {
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+}
+
 h1, h2, h3 {
     font-weight: normal;
 }
 
-#munroList {
+#leftContainer {
+    margin-top: 100px;
     width:50%;
     height:100%;
     float: right;
 }
 
 #mapContainer {
-    width: 45%; 
+    width: 50%; 
     height: 100%;
     float: left;
 }
@@ -39,13 +53,13 @@ textarea:focus, input:focus, button:focus {
 button {
     font-family: 'Hammersmith One', sans-serif;
     font-size: 16px;
-    color: buttontext;
-    background-color: buttonface;
+    color: #436E98;
+    background-color: #fff;
     box-sizing: border-box;
     padding: 2px 6px 3px;
     border-width: 2px;
     border-style: solid;
-    border-color: #000;
+    border-color: #436E98;
 }
 
 /* PopUp (background) */
