@@ -21,7 +21,8 @@ List.prototype = {
         var munro = document.createElement('li');
         var a = document.createElement("a")
         a.textContent = myMountains[i].name;
-        a.setAttribute('href',"#"+currentInitial);
+       // a.setAttribute('href',"#"+currentInitial);
+        a.setAttribute('name',currentInitial);
         munro.appendChild(a);
         document.getElementById('munroList').appendChild(munro); 
       }
