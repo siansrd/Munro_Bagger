@@ -92,6 +92,7 @@ Pin.prototype = {
     txtWind.innerText = this.forecasts.day[this.dayNum].wind.speed + "m/s " + this.forecasts.day[this.dayNum].wind.compassBearing();
 
     var bagged = document.querySelector("#bagged");
+    if(this.mountBagged) bagged.checked = "true";
     bagged.addEventListener("click", function(){
       console.log("clicked")
     })
