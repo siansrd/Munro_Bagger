@@ -31,10 +31,11 @@ h1, h2, h3 {
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 #rightContainer {
-    margin-top: 100px;
+    margin-top: 80px;
     width: 45%;
     height: 100%;
     position: fixed;
@@ -47,8 +48,21 @@ ul {
     float: left;
 }
 
+#weather-buttons {
+    position: fixed;
+    left: 0;
+    width: 95px;
+}
+#weather-buttons button {
+    display: block;
+    width: 100%;
+    margin: 10px 0 10px 10px;
+}
+
 #login {
-    float: right;
+    position: fixed;
+    right: 10px;
+    top: 10px;
 }
 
 #munroListScroll {
