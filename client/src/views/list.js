@@ -7,7 +7,7 @@ var List = function(){
 
 List.prototype = {
   populateList: function(myMountains){
-    var currentInitial = "A";
+    var currentInitial = "";
     for (var i = 0;  i < myMountains.length; i++){
       var getFirst = myMountains[i].name.charAt(0);
       console.log(getFirst);
