@@ -85,7 +85,7 @@ Pin.prototype = {
     txtWeather.innerText = upCase(desc);
 
     textTemp = document.querySelector('#temperature');
-    text.Temp = innerText = this.forecasts.day[this.dayNum].temperature;
+    textTemp = innerText = this.forecasts.day[this.dayNum].temperature;
 
     txtWind = document.querySelector("#wind");
     txtWind.innerText = this.forecasts.day[this.dayNum].wind.speed + "m/s " + this.forecasts.day[this.dayNum].wind.compassBearing();
