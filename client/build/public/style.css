@@ -91,7 +91,7 @@ h2#munro {
 }
 
 #munroListScroll {
-    height:610px;
+    height:100%;
     overflow: scroll;
 }
 
@@ -115,7 +115,7 @@ button {
 
 input[type="submit" i]:hover,
 button:hover {
-    background-color: #A5CEFD;
+    background-color: #e6f1fe;
 }
 
 input {
