@@ -52,6 +52,9 @@ User.prototype.saveChanges = function() {
   var changed = this._mountains.filter(function(mtn) {
     return mtn.isDirty();
   });
+  changed = changed.map(function(mtn){
+    return mtn.export();
+  })
   console.log("changed:", changed);
   var url = "http://localhost:3000/api/users/" + this._id;
   var apiRequest = new ApiRequest();
