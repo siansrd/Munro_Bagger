@@ -6,7 +6,7 @@ var User = require('../models/user')
 var mainMap;
 
 var UI = function(){
-  this.render(); 
+  this.render();
   this.mainMap = mainMap;
 };
 
@@ -37,28 +37,25 @@ UI.prototype = {
     day1.addEventListener("click", function(){
       this.pinNotifier(function(pin){
         pin.changeForecast(1);
-      })  
+      })
     }.bind(this));
 
     var day2 = document.querySelector('#day2');
     day2.addEventListener("click", function(){
       this.pinNotifier(function(pin){
         pin.changeForecast(2);
-      })  
+      })
     }.bind(this));
   },
   render: function() {
     this.displayMap();
     var newMount = new Mountains();
-    newMount.all(function(mtns){  
+    newMount.all(function(mtns){
       this.addMarkers(mtns);
-    }.bind(this)); 
+    }.bind(this));
     this.onclickListenersForcast();
   }
 };
 
 
 module.exports = UI;
-
-
-

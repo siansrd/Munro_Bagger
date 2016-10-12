@@ -12,7 +12,7 @@ function Pin (map, mountain) {
   this.mountlatLng = mountain.latLng;
   this.dayNum = 0;
   this.user = null;
-  this.mountBagged = null;
+  this.mountBagged = false;
   // this.mountSunny = false;
   this.forecasts = new Forecasts();
   this.forecasts.forMountain(this.mountId, function() {
@@ -34,6 +34,7 @@ Pin.prototype = {
   userLoggedIn: function(user) {
     this.user = user;
     this.mountBagged = this.user.hasClimbed(this.mountId);
+    // console.log(this)
     this.marker.setMap(null);
     this.createMarker();
   },
@@ -43,7 +44,7 @@ Pin.prototype = {
       position: this.mountain.latLng,
       map: this.map,
       icon: { url: this.generateIcon(),
-              scaledSize: new google.maps.Size(15, 15)}
+        scaledSize: new google.maps.Size(15, 15)}
     });
     this.marker.addListener('click', function() {
       this.createPopUp();
@@ -71,25 +72,37 @@ Pin.prototype = {
     var mountName = document.getElementById('mountName');
     mountName.innerHTML = this.mountName;
 
-    heightText = document.querySelector('#txt_height');
+    var heightText = document.querySelector('#txt_height');
     heightText.innerText = this.mountHeight + "m";
 
-    gridText = document.querySelector('#text_grid');
+    var gridText = document.querySelector('#text_grid');
     gridText.innerText = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
 
-    txtLatLng = document.querySelector('#txt_latlng');
+    var txtLatLng = document.querySelector('#txt_latlng');
     txtLatLng.innerText = this.mountlatLng.lat + ", " + this.mountlatLng.lng;
 
-    txtWeather = document.querySelector('#weather');
-    desc = this.forecasts.day[this.dayNum].description;
+    var txtWeather = document.querySelector('#weather');
+    var desc = this.forecasts.day[this.dayNum].description;
     txtWeather.innerText = upCase(desc);
 
-    textTemp = document.querySelector('#temperature');
-    temp = this.forecasts.day[this.dayNum].temperature;
+    var textTemp = document.querySelector('#temperature');
+    var temp = this.forecasts.day[this.dayNum].temperature;
     textTemp.innerText = Math.round(temp) + "°C";
 
-    txtWind = document.querySelector("#wind");
+    var txtWind = document.querySelector("#wind");
     txtWind.innerText = this.forecasts.day[this.dayNum].wind.speed + "m/s " + this.forecasts.day[this.dayNum].wind.compassBearing();
+
+    var bagged = document.querySelector("#bagged");
+    bagged.disabled = true;
+    if(this.user) bagged.disabled = false;
+    bagged.checked = false;
+    if(this.mountBagged) bagged.checked = true;
+    bagged.onclick = function(){
+      this.mountBagged = bagged.checked;
+      this.user.setHasClimbed(this.mountId, this.mountBagged);
+      this.marker.setMap(null);
+      this.createMarker();
+    }.bind(this)
   },
 
   removeChildNodes: function(parent) {
