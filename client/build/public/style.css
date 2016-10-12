@@ -47,6 +47,30 @@ ul {
     float: left;
 }
 
+.alphabutton {
+    display: block;
+    width: 120px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 0px;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.alphabutton1 {
+    display: block;
+    width: 30px;
+    height: 25px;
+    background: gray;
+    padding: 0px;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+}
+
 #login {
     float: right;
 }
