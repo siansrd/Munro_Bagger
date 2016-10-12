@@ -31,9 +31,10 @@ h1, h2, h3 {
 
 #leftContainer {
     margin-top: 100px;
-    width:50%;
-    height:100%;
-    float: right;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
 }
 
 #mapContainer {
@@ -45,6 +46,12 @@ h1, h2, h3 {
 #login {
     float: right;
 }
+
+#munroListScroll {
+    height:610px;
+    overflow: scroll;
+}
+
 
 textarea:focus, input:focus, button:focus {
     outline: none;
