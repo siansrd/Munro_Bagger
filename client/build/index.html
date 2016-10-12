@@ -2,37 +2,46 @@
 <head>
   <title>Munro Bagger</title>
   <script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js"> </script>
+<style>
+  
+  </style>
+
   <script src='bundle.js'></script>
   <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./public/style.css">
 </head>
 <header>
-    <div id="logoWrapper"><img id="logo" src="public/images/logo1.png" alt="Munro Bagger Logo"></div>
-  <button id="login">Login</button>
+<div id="weather-buttons">
+  <button id="day0">Today</button>
+  <button id="day1">Tomorrow</button>
+  <button id="day2">Day After</button>
+</div>
+<button id="login">Login</button>
+<div id="logoWrapper">
+    <img id="logo" src="public/images/logo1.png" alt="Munro Bagger Logo">
+</div> 
 </header>
 <body >
     <div id="mapContainer"></div>
     <div id="rightContainer">
-      <button id="day0">Today</button>
-      <button id="day1">Tomorrow</button>
-      <button id="day2">Day After</button>
-      
-      <div>
-        <a href="#A">A</a>
-        <a href="#B">B</a>
-        <a href="#C">C</a>
-        <a href="#D">D</a>
-        <a href="#E">E</a>
-        <a href="#F">F</a>
-        <a href="#G">G</a>
-        <a href="#L">L</a>
-        <a href="#M">M</a>
-        <a href="#N">N</a>
-        <a href="#R">R</a>
-        <a href="#S">S</a>
-        <a href="#T">T</a>        
+
+      <div id="letter-buttons">
+        <a href="#A" class="alphabutton1">A</a>
+        <a href="#B" class="alphabutton1">B</a>
+        <a href="#C" class="alphabutton1">C</a>
+        <a href="#D" class="alphabutton1">D</a>
+        <a href="#E" class="alphabutton1">E</a>
+        <a href="#F" class="alphabutton1">F</a>
+        <a href="#G" class="alphabutton1">G</a>
+        <a href="#L" class="alphabutton1">L</a>
+        <a href="#M" class="alphabutton1">M</a>
+        <a href="#N" class="alphabutton1">N</a>
+        <a href="#R" class="alphabutton1">R</a>
+        <a href="#S" class="alphabutton1">S</a>
+        <a href="#T" class="alphabutton1">T</a>        
       </div>
       <div id="munroListScroll">
+        <h2>Munros</h2>
         <ul id="munroList"></ul>
       </div>     
     </div>
@@ -54,9 +63,7 @@
             <div class="grid-item">Wind:</div>
             <div class="grid-item" id="Wind"></div>
           </div>
-          <!-- <div class="grid-item">Bagged:</div>
-          <div class="grid-item"><input type="checkbox"></div> -->
-          <label>Bagged: <input id="bagged" type="checkbox"> </label>
+          <label id="bagged-label">Bagged: <input id="bagged" type="checkbox"></label>
       </div>
     </div>
     <div id="loginPopUp" class="popUp">
@@ -64,10 +71,10 @@
          <img src="" id="login-close">
          <h2>Log In</h2>
          <form action="">
-           <p>Email Address:</p>
-           <input type="text" name="email" id="email" value="user1@codeclan.com">
-           <p>Password:</p>
-           <input type="text" name="password" id="password">
+           <p>Email Address:<br>
+           <input type="text" name="email" id="email" value="user1@codeclan.com"></p>
+           <p>Password:<br>
+           <input type="text" name="password" id="password"></p>
            <div><input type="submit" id="login-submit" value="Log In"></div>
          </form>
        </div>

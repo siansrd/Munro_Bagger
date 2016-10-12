@@ -25,16 +25,21 @@ header {
     width: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1, h2, h3 {
     font-weight: normal;
 }
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 #rightContainer {
-    margin-top: 100px;
+    margin-top: 73px;
     width: 45%;
     height: 100%;
     position: fixed;
@@ -47,8 +52,38 @@ ul {
     float: left;
 }
 
-#login {
+#weather-buttons {
+    position: fixed;
+    left: 0;
+    width: 95px;
+}
+#weather-buttons button {
+    display: block;
+    width: 100%;
+    margin: 10px 0 10px 10px;
+}
+
+#letter-buttons {
     float: right;
+    margin: 15px 10px 0 0 ;
+}
+
+.alphabutton1 {
+    display: block;
+    width: 28px;
+    height: 25px;
+    background: gray;
+    padding: 3px 0 0 0;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    margin: 2px 0;
+}
+
+#login {
+    position: fixed;
+    right: 10px;
+    top: 10px;
 }
 
 #munroListScroll {
@@ -61,6 +96,7 @@ textarea:focus, input:focus, button:focus {
     outline: none;
 }
 
+input[type="submit" i],
 button {
     font-family: 'Hammersmith One', sans-serif;
     font-size: 16px;
@@ -71,6 +107,24 @@ button {
     border-width: 2px;
     border-style: solid;
     border-color: #436E98;
+}
+
+input[type="submit" i]:hover,
+button:hover {
+    background-color: #A5CEFD;
+}
+
+input {
+    padding: 3px;
+    border-width: 2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #436E98;
+}
+
+#email, 
+#password {
+    width: 180px;
 }
 
 /* PopUp (background) */
@@ -92,7 +146,7 @@ button {
     background-color: #fff;
     margin: 15% auto;
     border: 3px solid #456F99;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
     width: 40%;
 }
 
@@ -102,7 +156,7 @@ button {
     margin: 15% auto;
     border: 3px solid #456F99;
     padding: 30px;
-    width: 200px;
+    width: 300px;
 }
 
 /* PopUp Close Button */
@@ -125,6 +179,7 @@ button {
     cursor: pointer;
 }
 
+label#bagged-label,
 h2#mountName {
     padding: 0 30px 0 40px;
 }
