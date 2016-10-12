@@ -55,7 +55,6 @@ User.prototype.saveChanges = function() {
   changed = changed.map(function(mtn){
     return mtn.export();
   })
-  console.log("changed:", changed);
   var url = "http://localhost:3000/api/users/" + this._id;
   var apiRequest = new ApiRequest();
   apiRequest.makePostRequest(url, { mountains: changed }, function(receivedStatus) {
