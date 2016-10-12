@@ -179,7 +179,7 @@ input {
     cursor: pointer;
 }
 
-label#bagged,
+label#bagged-label,
 h2#mountName {
     padding: 0 30px 0 40px;
 }
