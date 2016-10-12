@@ -1,8 +1,10 @@
-##JavaScript Project Specs
+#Munro Bagger
 
-#Munro Bagger (Task We Completed)
-
-You are required to build a day trip planner using Google Maps API and Google Places API. Users should be able to find out about interesting places or events near to where they're planning to go and save the ones they like most into an itinerary.
+## Team
+- John Easton
+- Phil Crooks
+- Sian Robinson Davies
+- Lee Lawrence
 
 ##MVP
 - Users should be able to see what Munros in Scotland are currently Sunny.

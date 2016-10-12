@@ -83,7 +83,9 @@ Pin.prototype = {
     txtWeather = document.querySelector('#weather');
     desc = this.forecasts.day[this.dayNum].description;
     txtWeather.innerText = upCase(desc);
-    // txtWeather.innerText = this.forecasts.day[this.dayNum].description;
+
+    textTemp = document.querySelector('#temperature');
+    text.Temp = innerText = this.forecasts.day[this.dayNum].temperature;
 
     txtWind = document.querySelector("#wind");
     txtWind.innerText = this.forecasts.day[this.dayNum].wind.speed + "m/s " + this.forecasts.day[this.dayNum].wind.compassBearing();
@@ -102,7 +104,7 @@ Pin.prototype = {
       if (!this.mountBagged) fileName += "not-";
       fileName += "bagged";
       if (this.mountSunny) fileName += "-sunny";
-    } 
+    }
     else {
       if (!this.mountSunny) fileName += "not-";
       fileName += "sunny";
