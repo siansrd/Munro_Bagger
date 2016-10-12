@@ -29,9 +29,13 @@ h1, h2, h3 {
     font-weight: normal;
 }
 
-#leftContainer {
+ul {
+    list-style: none;
+}
+
+#rightContainer {
     margin-top: 100px;
-    width: 50%;
+    width: 45%;
     height: 100%;
     position: fixed;
     right: 0;
