@@ -97,11 +97,12 @@ Pin.prototype = {
     if(this.user) bagged.disabled = false;
     bagged.checked = false;
     if(this.mountBagged) bagged.checked = true;
-    bagged.addEventListener("click", function(){
+    bagged.onclick = function(){
       this.mountBagged = bagged.checked;
+      this.user.setHasClimbed(this.mountId, this.mountBagged);
       this.marker.setMap(null);
       this.createMarker();
-    }.bind(this))
+    }.bind(this)
   },
 
   removeChildNodes: function(parent) {
