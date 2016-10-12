@@ -25,6 +25,10 @@ header {
     width: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1, h2, h3 {
     font-weight: normal;
 }
@@ -35,7 +39,7 @@ ul {
 }
 
 #rightContainer {
-    margin-top: 80px;
+    margin-top: 73px;
     width: 45%;
     height: 100%;
     position: fixed;
@@ -59,15 +63,21 @@ ul {
     margin: 10px 0 10px 10px;
 }
 
+#letter-buttons {
+    float: right;
+    margin: 15px 10px 0 0 ;
+}
+
 .alphabutton1 {
     display: block;
-    width: 30px;
+    width: 28px;
     height: 25px;
     background: gray;
-    padding: 0px;
+    padding: 3px 0 0 0;
     text-align: center;
     border-radius: 15px;
     color: white;
+    margin: 2px 0;
 }
 
 #login {
@@ -86,6 +96,7 @@ textarea:focus, input:focus, button:focus {
     outline: none;
 }
 
+input[type="submit" i],
 button {
     font-family: 'Hammersmith One', sans-serif;
     font-size: 16px;
@@ -93,6 +104,19 @@ button {
     background-color: #fff;
     box-sizing: border-box;
     padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #436E98;
+}
+
+input[type="submit" i]:hover,
+button:hover {
+    background-color: #A5CEFD;
+}
+
+input {
+    padding: 3px;
+    border-width: 2px;
     border-width: 2px;
     border-style: solid;
     border-color: #436E98;
