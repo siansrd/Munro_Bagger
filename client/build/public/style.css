@@ -38,9 +38,13 @@ ul {
     padding: 0;
 }
 
+h2#munro {
+    margin-top: 50px;
+}
+
 #rightContainer {
     margin-top: 73px;
-    width: 45%;
+    width: 43%;
     height: 100%;
     position: fixed;
     right: 0;
