@@ -12,7 +12,7 @@ function Pin (map, mountain) {
   this.mountlatLng = mountain.latLng;
   this.dayNum = 0;
   this.user = null;
-  this.mountBagged = null;
+  this.mountBagged = false;
   // this.mountSunny = false;
   this.forecasts = new Forecasts();
   this.forecasts.forMountain(this.mountId, function() {
@@ -34,6 +34,7 @@ Pin.prototype = {
   userLoggedIn: function(user) {
     this.user = user;
     this.mountBagged = this.user.hasClimbed(this.mountId);
+    // console.log(this)
     this.marker.setMap(null);
     this.createMarker();
   },
@@ -43,7 +44,7 @@ Pin.prototype = {
       position: this.mountain.latLng,
       map: this.map,
       icon: { url: this.generateIcon(),
-              scaledSize: new google.maps.Size(15, 15)}
+        scaledSize: new google.maps.Size(15, 15)}
     });
     this.marker.addListener('click', function() {
       this.createPopUp();
@@ -92,10 +93,15 @@ Pin.prototype = {
     txtWind.innerText = this.forecasts.day[this.dayNum].wind.speed + "m/s " + this.forecasts.day[this.dayNum].wind.compassBearing();
 
     var bagged = document.querySelector("#bagged");
-    if(this.mountBagged) bagged.checked = "true";
+    bagged.disabled = true;
+    if(this.user) bagged.disabled = false;
+    bagged.checked = false;
+    if(this.mountBagged) bagged.checked = true;
     bagged.addEventListener("click", function(){
-      console.log("clicked")
-    })
+      this.mountBagged = bagged.checked;
+      this.marker.setMap(null);
+      this.createMarker();
+    }.bind(this))
   },
 
   removeChildNodes: function(parent) {
