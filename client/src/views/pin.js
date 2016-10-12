@@ -100,6 +100,7 @@ Pin.prototype = {
     bagged.onclick = function(){
       this.mountBagged = bagged.checked;
       this.user.setHasClimbed(this.mountId, this.mountBagged);
+      this.user.saveChanges();
       this.marker.setMap(null);
       this.createMarker();
     }.bind(this)

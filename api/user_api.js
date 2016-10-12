@@ -10,6 +10,12 @@ var UserApi = function(app) {
       res.json( { user: data } );
     });
   });
+
+  app.post('/api/users/:userId', function(req, res) {
+    console.log("Received Post");
+    console.log(req.body.mountains);
+    res.sendStatus(200);
+  });
 }
 
 module.exports = UserApi;

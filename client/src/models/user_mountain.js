@@ -9,4 +9,8 @@ var UserMountain = function(options) {
   });
 };
 
+UserMountain.prototype.isDirty = function() {
+  return this._dirty;
+}
+
 module.exports = UserMountain;
