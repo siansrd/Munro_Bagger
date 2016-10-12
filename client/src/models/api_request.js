@@ -15,4 +15,16 @@ ApiRequest.prototype.makeRequest = function(url, callback) {
  request.send();
 };
 
+ApiRequest.prototype.makeGetRequest = ApiRequest.prototype.makeRequest;
+
+ApiRequest.prototype.makePostRequest = function(url, content, callback) {
+  var request = new XMLHttpRequest()
+  request.open("POST", url);
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.onload = function() {
+    callback(this.status);
+  };
+  request.send(JSON.stringify(content));
+}
+
 module.exports = ApiRequest;

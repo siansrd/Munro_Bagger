@@ -9,4 +9,12 @@ var UserMountain = function(options) {
   });
 };
 
+UserMountain.prototype.isDirty = function() {
+  return this._dirty;
+}
+
+UserMountain.prototype.export = function() {
+  return { mtn_id: this._id, bagged: this._bagged };
+}
+
 module.exports = UserMountain;
