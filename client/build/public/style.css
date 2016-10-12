@@ -59,6 +59,17 @@ ul {
     margin: 10px 0 10px 10px;
 }
 
+.alphabutton1 {
+    display: block;
+    width: 30px;
+    height: 25px;
+    background: gray;
+    padding: 0px;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+}
+
 #login {
     position: fixed;
     right: 10px;
