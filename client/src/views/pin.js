@@ -71,25 +71,30 @@ Pin.prototype = {
     var mountName = document.getElementById('mountName');
     mountName.innerHTML = this.mountName;
 
-    heightText = document.querySelector('#txt_height');
+    var heightText = document.querySelector('#txt_height');
     heightText.innerText = this.mountHeight + "m";
 
-    gridText = document.querySelector('#text_grid');
+    var gridText = document.querySelector('#text_grid');
     gridText.innerText = this.mountGridRef.letters + " " + this.mountGridRef.eastings + " " + this.mountGridRef.northings;
 
-    txtLatLng = document.querySelector('#txt_latlng');
+    var txtLatLng = document.querySelector('#txt_latlng');
     txtLatLng.innerText = this.mountlatLng.lat + ", " + this.mountlatLng.lng;
 
-    txtWeather = document.querySelector('#weather');
-    desc = this.forecasts.day[this.dayNum].description;
+    var txtWeather = document.querySelector('#weather');
+    var desc = this.forecasts.day[this.dayNum].description;
     txtWeather.innerText = upCase(desc);
 
-    textTemp = document.querySelector('#temperature');
-    temp = this.forecasts.day[this.dayNum].temperature;
+    var textTemp = document.querySelector('#temperature');
+    var temp = this.forecasts.day[this.dayNum].temperature;
     textTemp.innerText = Math.round(temp) + "°C";
 
-    txtWind = document.querySelector("#wind");
+    var txtWind = document.querySelector("#wind");
     txtWind.innerText = this.forecasts.day[this.dayNum].wind.speed + "m/s " + this.forecasts.day[this.dayNum].wind.compassBearing();
+
+    var bagged = document.querySelector("#bagged");
+    bagged.addEventListener("click", function(){
+      console.log("clicked")
+    })
   },
 
   removeChildNodes: function(parent) {
