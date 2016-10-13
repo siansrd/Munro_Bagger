@@ -1,4 +1,4 @@
-var UI = require('./views/map_view');
+var UI = require('./views/ui');
 var Login = require('./views/login');
 var List = require('./views/list');
 
