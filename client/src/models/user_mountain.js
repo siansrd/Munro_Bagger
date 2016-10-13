@@ -14,6 +14,7 @@ UserMountain.prototype.isDirty = function() {
 }
 
 UserMountain.prototype.export = function() {
+  this._dirty = false;
   return { mtn_id: this._id, bagged: this._bagged };
 }
 
