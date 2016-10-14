@@ -1,4 +1,4 @@
-var Pin = require('../views/pin');
+var Pin = require('./pin');
 
 var Map = function(container){
   this.googleMap = new google.maps.Map(container, {
@@ -10,8 +10,12 @@ var Map = function(container){
   this.pins = [];
 };
 
-Map.prototype.addPin = function(mountain) {
-  this.pins.push(new Pin(this.googleMap, mountain));
+Map.prototype.addPins = function(mtnsView) {
+  for (var mv of mtnsView) {
+    var pin = new Pin(this.googleMap, mv.mountain)
+    this.pins.push(pin);
+    mv.pin = pin;
+  } 
 };
 
 module.exports = Map;

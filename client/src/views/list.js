@@ -1,7 +1,5 @@
-var Map = require('../models/map');
-var Mountains = require('../models/mountains');
 
-var List = function(){
+var List = function(mountains){
   this.render(); 
 }
 

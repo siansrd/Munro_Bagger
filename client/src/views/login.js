@@ -1,11 +1,11 @@
-var Map = require('../models/map');
-var Mountains = require('../models/mountains');
-var Pin = require('./pin');
-var User = require('../models/user')
+var Login = function(){
+  this.loginPopUp();
+  this.login()
 
-var Login = function(ui){
-  this.ui = ui;
-  this.render();
+  Object.defineProperty(this, "onLogin", {
+    get: function(){ return this._onLogin; },
+    set: function(fn){ this._onLogin = fn; }
+  });
 };
 
 Login.prototype = {
@@ -27,8 +27,6 @@ Login.prototype = {
         console.log("close clicked")
          loginPopUp.style.display = "none";
        }
-       
-
    }.bind(this));
  },
  openPopUp: function(){
@@ -44,18 +42,9 @@ Login.prototype = {
   loginSubmit.addEventListener('click', function(event) {
     event.preventDefault();
     var email = document.getElementById('email').value;
-    var user = new User(email);
-    user.getInfo(function(){
-      this.ui.pinNotifier(function(pin) {
-        pin.userLoggedIn(user);
-      })
-    }.bind(this))
     loginPopUp.style.display = "none";
+    this._onLogon(email);
    }.bind(this))
- },
- render: function() {
-   this.loginPopUp();
-   this.login()
  }
 };
 
