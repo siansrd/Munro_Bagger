@@ -19,4 +19,10 @@ Map.prototype.addPins = function(mountainsView) {
   } 
 };
 
+Map.prototype.changeForecast = function(dayNum) {
+  for (var pin of this.pins) {
+    pin.changeForecast(dayNum);
+  }
+};
+
 module.exports = Map;
