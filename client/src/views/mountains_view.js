@@ -4,7 +4,7 @@ var MountainsView = function() {
   this.mountains = null;
 }
 
-MountainsView.all = function(onCompleted) {
+MountainsView.prototype.all = function(onCompleted) {
   new Mountains().all(function(mtns){
     this.mountains = mtns.map(function(mtn) {
       return {
@@ -29,3 +29,5 @@ MountainsView.prototype.getMountainMarker = function(mtnId) {
 MountainsView.prototype.getMountainListEntry = function(mtnId) {
 
 }
+
+module.exports = MountainsView;
