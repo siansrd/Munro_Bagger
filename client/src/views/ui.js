@@ -9,16 +9,14 @@ var UI = function(){
   // Initialise the map and the list of mountains
   var mapContainer = document.getElementById('mapContainer');
   this.map = new Map(mapContainer);
-  var mtnsView = new MountainsView();
-  mtnsView.all(function(mtns){
-    this.mountains = mtns;
-    this.map.addPins(mtns);
-    this.mtnList = new List(mtns);
-    console.log(mtns);
+  this.mtnsView = new MountainsView();
+  this.mtnsView.all(function(mtns){
+    this.map.addPins(this.mtnsView);
+    this.mtnList = new List(this.mtnsView);
 
     this.userView = new UserView();
     this.userView.onChangeForecast = function(dayNum) {
-      for (var mtn of this.mountains) {
+      for (var mtn of mtns) {
         mtn.pin.changeForecast(dayNum);
       }
     };

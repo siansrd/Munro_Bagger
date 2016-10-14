@@ -7,7 +7,7 @@ var search = function(mtnsView, mountainId) {
     var mid = first + Math.floor((last - first) / 2);
     var mountain = mtnsView[mid].mountain;
     var numberId = Number(mountain.id);
-    if (mId === numberId) return mountain;
+    if (mId === numberId) return mtnsView[mid];
     if (first === last) return undefined;
     if (mId < numberId)
       return binarySearch(first, mid - 1);
@@ -34,11 +34,6 @@ MountainsView.prototype.all = function(onCompleted) {
     });
     onCompleted(this.mountains);
   }.bind(this));
-}
-
-MountainsView.prototype.getMarkerById = function(mtnId) {
-  var pin = this.getPinById(mtnId);
-  return pin.marker;
 }
 
 MountainsView.prototype.getPinById = function(mtnId) {

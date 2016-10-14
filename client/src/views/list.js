@@ -1,7 +1,7 @@
 
 var List = function(mountainsView){
   this.mountainsView = mountainsView;
-  this.populateList(mountainsView); 
+  this.populateList(mountainsView.mountains); 
 }
 
 List.prototype = {
