@@ -10,8 +10,9 @@ var Map = function(container){
   this.pins = [];
 };
 
-Map.prototype.addPins = function(mtnsView) {
-  for (var mv of mtnsView) {
+Map.prototype.addPins = function(mountainsView) {
+  this.mountainsView = mountainsView;
+  for (var mv of mountainsView) {
     var pin = new Pin(this.googleMap, mv.mountain)
     this.pins.push(pin);
     mv.pin = pin;

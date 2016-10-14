@@ -1,24 +1,25 @@
 
-var List = function(mountains){
-  this.render(); 
+var List = function(mountainsView){
+  this.mountainsView = mountainsView;
+  this.populateList(mountainsView); 
 }
 
 List.prototype = {
   populateList: function(myMountains){
     var currentInitial = "";
     for (var i = 0;  i < myMountains.length; i++){
-      var getFirst = myMountains[i].name.charAt(0);
+      var getFirst = myMountains[i].mountain.name.charAt(0);
       console.log(getFirst);
       if (currentInitial == getFirst) { 
        var munro = document.createElement('li');
-       munro.innerHTML = myMountains[i].name;
+       munro.innerHTML = myMountains[i].mountain.name;
        document.getElementById('munroList').appendChild(munro); 
       }
       else {
         currentInitial=getFirst;
         var munro = document.createElement('li');
         var a = document.createElement("a")
-        a.textContent = myMountains[i].name;
+        a.textContent = myMountains[i].mountain.name;
        // a.setAttribute('href',"#"+currentInitial);
         a.setAttribute('name',currentInitial);
         munro.appendChild(a);
@@ -27,12 +28,6 @@ List.prototype = {
 
 
     };
-  },
-  render: function() {
-    var newMount = new Mountains();
-    newMount.all(function(mtns){  
-      this.populateList(mtns);
-    }.bind(this)); 
   }
 };
 

@@ -1,4 +1,5 @@
 var User = require('../models/user');
+var Login = require('./login');
 
 var UserView = function() {
   this.login = new Login();
