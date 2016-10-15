@@ -17,6 +17,4 @@ var MountainView = function(mtn) {
   });
 }
 
-
-
 module.exports = MountainView;

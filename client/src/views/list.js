@@ -24,8 +24,6 @@ List.prototype = {
         munro.appendChild(a);
         document.getElementById('munroList').appendChild(munro); 
       }
-
-
     };
   }
 };
