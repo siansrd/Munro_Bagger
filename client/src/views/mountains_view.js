@@ -1,4 +1,5 @@
 var Mountains = require('../models/mountains');
+var MountainView = require('./mountain_view')
 
 var search = function(mtnsView, mountainId) {
   var mId = Number(mountainId);
@@ -26,12 +27,7 @@ var MountainsView = function() {
 MountainsView.prototype.all = function(onCompleted) {
   new Mountains().all(function(mtns){
     this.mountains = mtns.map(function(mtn) {
-      return {
-        mountain: mtn,
-        bagged: false,
-        pin: null,
-        listEntry: null
-      }
+      return new MountainView(mtn);
     });
     onCompleted(this.mountains);
   }.bind(this));
