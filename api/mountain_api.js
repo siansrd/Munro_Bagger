@@ -1,4 +1,4 @@
-var jsonMountains = require('./json_mountains');
+var jsonMountains = require('./mountains');
 
 var MountainApi = function(app) {
 
