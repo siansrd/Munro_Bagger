@@ -15,13 +15,12 @@ var UI = function(){
     this.mtnList = new List(this.mtnsView);
 
     this.userView = new UserView();
-    this.userView.onChangeForecast = function(dayNum) {
-      for (var mtn of mtns) {
-        mtn.pin.changeForecast(dayNum);
-      }
-    };
-    this.userView.onLogin = function() {
-    }
+    this.userView.onChangeForecast = this.map.changeForecast.bind(this.map);
+    this.userView.onLogin = function(user) {
+      this.mtnsView.userLogin(user);
+      this.map.userLogin();
+      // this.mtnList.userLogin();
+    }.bind(this);
   }.bind(this));
 
 };

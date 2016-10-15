@@ -13,7 +13,7 @@ var Map = function(container){
 Map.prototype.addPins = function(mountainsView) {
   this.mountainsView = mountainsView;
   for (var mv of mountainsView.mountains) {
-    var pin = new Pin(this.googleMap, mv.mountain)
+    var pin = new Pin(this.googleMap, mv)
     this.pins.push(pin);
     mv.pin = pin;
   } 
@@ -22,6 +22,12 @@ Map.prototype.addPins = function(mountainsView) {
 Map.prototype.changeForecast = function(dayNum) {
   for (var pin of this.pins) {
     pin.changeForecast(dayNum);
+  }
+};
+
+Map.prototype.userLogin = function() {
+  for (var pin of this.pins) {
+    pin.userLoggedIn();
   }
 };
 

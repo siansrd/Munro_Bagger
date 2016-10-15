@@ -9,7 +9,6 @@ List.prototype = {
     var currentInitial = "";
     for (var i = 0;  i < myMountains.length; i++){
       var getFirst = myMountains[i].mountain.name.charAt(0);
-      console.log(getFirst);
       if (currentInitial == getFirst) { 
        var munro = document.createElement('li');
        munro.innerHTML = myMountains[i].mountain.name;

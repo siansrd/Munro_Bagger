@@ -20,6 +20,7 @@ var search = function(mtnsView, mountainId) {
 
 var MountainsView = function() {
   this.mountains = null;
+  this.user = null;
 }
 
 MountainsView.prototype.all = function(onCompleted) {
@@ -34,6 +35,13 @@ MountainsView.prototype.all = function(onCompleted) {
     });
     onCompleted(this.mountains);
   }.bind(this));
+}
+
+MountainsView.prototype.userLogin = function(user) {
+  this.user = user;
+  for (var mtn of this.mountains) {
+    mtn.bagged = user.hasClimbed(mtn.mountain.id);
+  }
 }
 
 MountainsView.prototype.getPinById = function(mtnId) {

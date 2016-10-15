@@ -1,7 +1,9 @@
 var Forecasts = require('../models/forecasts');
 var upCase = require("../models/upCase");
 
-function Pin (map, mountain) {
+function Pin (map, mtnView) {
+  this.mtnView = mtnView;
+  var mountain = mtnView.mountain;
   this.mountain = mountain;
   this.map = map;
   this.coords = mountain.latLng;
@@ -11,7 +13,7 @@ function Pin (map, mountain) {
   this.mountGridRef = mountain.gridRef;
   this.mountlatLng = mountain.latLng;
   this.dayNum = 0;
-  this.user = null;
+  this.loggedIn = false;
   this.mountBagged = false;
   // this.mountSunny = false;
   this.forecasts = new Forecasts();
@@ -31,10 +33,9 @@ Pin.prototype = {
     this.dayNum = dayNum;
   },
 
-  userLoggedIn: function(user) {
-    this.user = user;
-    this.mountBagged = this.user.hasClimbed(this.mountId);
-    // console.log(this)
+  userLoggedIn: function() {
+    this.loggedIn = true;
+    this.mountBagged = this.mtnView.bagged;
     this.marker.setMap(null);
     this.createMarker();
   },
@@ -115,7 +116,7 @@ Pin.prototype = {
   generateIcon: function(){
     var base = "/public/images/";
     var fileName = base + "mntn-";
-    if (this.user) {
+    if (this.loggedIn) {
       if (!this.mountBagged) fileName += "not-";
       fileName += "bagged";
       if (this.mountSunny) fileName += "-sunny";
