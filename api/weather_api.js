@@ -1,8 +1,10 @@
-var MountainQuery = require('../db/mountain_query');
+//var MountainQuery = require('../db/mountain_query');
 // var WeatherQuery = require('../db/weather_query');
 var WeatherStore = require('./weather_store')
 var ForecastTime = require('../client/src/models/forecast_time')
 var makeRequest = require('./utility').makeRequest;
+var mountainSearch = require('./utility').mountainSearch;
+var mountainObj = require('./mountains');
 var apiKey = require("./weather_api_key");
 var thirtyMins = 30 * 60 * 1000;
 var DEBUG = true;
@@ -60,38 +62,36 @@ var WeatherApi = function(app) {
   app.get('/api/weather', function(req, res) {
     if (req.query.m) {
       // req.query.m is a string
-      var mquery = new MountainQuery();
-      mquery.oneById(req.query.m, function(mtn) {
-        if (mtn) {
-          if (DEBUG) console.log("Getting weather for \"" + mtn.name + "\" (" + mtn.id + ")");
-          var weatherStn = mtn.weatherStation;
-          if (DEBUG) console.log("Using the weather station at", weatherStn.name);
-          var cachedForecast = weatherStore.getCachedForecast(weatherStn);
-          if (cachedForecast && !expired(cachedForecast.timeOfRequest)){
-            // return cachedForecast.forecast;
-            if (DEBUG) console.log("Using cached forecast for",  weatherStn.name + ": Timestamped",
-              new Date(cachedForecast.timeOfRequest).toString());
-            res.json(buildForecast(cachedForecast.forecast));
-          }
-          else {
-            // Don't have a valid cached entry so need to get the weather
-            if (DEBUG && cachedForecast) console.log("Cached forecast for",  weatherStn.name,
-              "expired: Timestamped", new Date(cachedForecast.timeOfRequest).toString());
-            makeRequest(urlGenerator(weatherStn.latLng), function(newForecast) {
-              // got the weather back
-              // now save it
-              if (DEBUG) console.log("Received updated forecast for", weatherStn.name);
-              if (DEBUG) console.log("Saving to Cache");
-              if (DEBUG && cachedForecast) console.log("Must overwrite existing cache entry");
-              weatherStore.cacheForecast(weatherStn, newForecast);
-              res.json(buildForecast(newForecast));
-            })
-          }
+      var mtn = mountainSearch(mountainObj.mountains, req.query.m);
+      if (mtn) {
+        if (DEBUG) console.log("Getting weather for \"" + mtn.name + "\" (" + mtn.id + ")");
+        var weatherStn = mtn.weatherStation;
+        if (DEBUG) console.log("Using the weather station at", weatherStn.name);
+        var cachedForecast = weatherStore.getCachedForecast(weatherStn);
+        if (cachedForecast && !expired(cachedForecast.timeOfRequest)){
+          // return cachedForecast.forecast;
+          if (DEBUG) console.log("Using cached forecast for",  weatherStn.name + ": Timestamped",
+            new Date(cachedForecast.timeOfRequest).toString());
+          res.json(buildForecast(cachedForecast.forecast));
         }
         else {
-          console.log("No mountains returned");
+          // Don't have a valid cached entry so need to get the weather
+          if (DEBUG && cachedForecast) console.log("Cached forecast for",  weatherStn.name,
+              "expired: Timestamped", new Date(cachedForecast.timeOfRequest).toString());
+            makeRequest(urlGenerator(weatherStn.latLng), function(newForecast) {
+            // got the weather back
+            // now save it
+            if (DEBUG) console.log("Received updated forecast for", weatherStn.name);
+            if (DEBUG) console.log("Saving to Cache");
+            if (DEBUG && cachedForecast) console.log("Must overwrite existing cache entry");
+            weatherStore.cacheForecast(weatherStn, newForecast);
+            res.json(buildForecast(newForecast));
+          })
         }
-      })
+      }
+      else {
+        console.log("No mountains returned");
+      }
     }
   });
 }
