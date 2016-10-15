@@ -27,8 +27,10 @@ var MountainsView = function() {
 MountainsView.prototype.all = function(onCompleted) {
   new Mountains().all(function(mtns){
     this.mountains = mtns.map(function(mtn) {
-      return new MountainView(mtn);
-    });
+      var mv = new MountainView(mtn);
+      mv.onChange = this.mountainViewChange.bind(this);
+      return mv;
+    }.bind(this));
     onCompleted(this.mountains);
   }.bind(this));
 }
@@ -36,7 +38,8 @@ MountainsView.prototype.all = function(onCompleted) {
 MountainsView.prototype.userLogin = function(user) {
   this.user = user;
   for (var mtn of this.mountains) {
-    mtn.bagged = user.hasClimbed(mtn.mountain.id);
+    // access private variable _bagged to sidestep callback
+    mtn._bagged = user.hasClimbed(mtn.mountain.id);
   }
 }
 
@@ -50,13 +53,9 @@ MountainsView.prototype.getListEntryById = function(mtnId) {
   return mtn.listEntry;
 }
 
-MountainsView.prototype.saveChanges = function() {
-  for (var mtn of this.mountains) {
-    if (mtn.bagged !== user.hasClimbed(mtn.mountain.id)) {
-      user.setHasClimbed(mtn.mountain.id, mtn.bagged);
-    }
-  }
-  user.saveChanges();
+MountainsView.prototype.mountainViewChange = function(changed) {
+  this.user.setHasClimbed(changed.mountain.id, changed.bagged);
+  this.user.saveChanges();
 }
 
 module.exports = MountainsView;
