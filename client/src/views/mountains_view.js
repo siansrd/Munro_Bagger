@@ -50,4 +50,13 @@ MountainsView.prototype.getListEntryById = function(mtnId) {
   return mtn.listEntry;
 }
 
+MountainsView.prototype.saveChanges = function() {
+  for (var mtn of this.mountains) {
+    if (mtn.bagged !== user.hasClimbed(mtn.mountain.id)) {
+      user.setHasClimbed(mtn.mountain.id, mtn.bagged);
+    }
+  }
+  user.saveChanges();
+}
+
 module.exports = MountainsView;

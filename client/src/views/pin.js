@@ -95,13 +95,12 @@ Pin.prototype = {
 
     var bagged = document.querySelector("#bagged");
     bagged.disabled = true;
-    if(this.user) bagged.disabled = false;
+    if(this.loggedIn) bagged.disabled = false;
     bagged.checked = false;
     if(this.mountBagged) bagged.checked = true;
     bagged.onclick = function(){
       this.mountBagged = bagged.checked;
-      this.user.setHasClimbed(this.mountId, this.mountBagged);
-      this.user.saveChanges();
+      this.mtnView.bagged = this.mountBagged;
       this.marker.setMap(null);
       this.createMarker();
     }.bind(this)

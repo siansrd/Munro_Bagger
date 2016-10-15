@@ -1,8 +1,9 @@
 var MountainView = function(mtn) {
-  this.mountain. mtn,
-  this.bagged: false,
-  this.pin: null,
-  this.listEntry: null
+  this._mountain = mtn;
+  this.bagged = false;
+  this.pin = null;
+  this.listEntry = null;
+  Object.defineProperty(this, "mountain", { get: function(){ return this._mountain; } });
 }
 
 module.exports = MountainView;
