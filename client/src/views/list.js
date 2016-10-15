@@ -1,7 +1,8 @@
 
-var List = function(mountainsView){
-  this.mountainsView = mountainsView;
-  this.populateList(mountainsView.mountains); 
+var List = function(ui){
+  this.ui = ui;
+  this.mountainsView = ui.getMountainsView();
+  this.populateList(this.mountainsView.mountains); 
 }
 
 List.prototype = {
@@ -27,7 +28,6 @@ List.prototype = {
     };
   }
 };
-
 
 module.exports = List;
 
