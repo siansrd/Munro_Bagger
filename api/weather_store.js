@@ -1,4 +1,19 @@
 var fs = require('fs');
+var cacheDir = "./cache";
+var cacheFile = "/forecasts";
+
+function makeDir(dir, callback) {
+  fs.mkdir(dir, 0777, function(err) {
+    if (err) {
+      if (err.code == 'EEXIST')
+        callback(null); // ignore the error if the folder already exists
+      else
+        callback(err); // something else went wrong
+    }
+    else
+      callback(null); // successfully created folder
+  });
+}
 
 var findCachedForecast = function(id, forecasts) {
   //if (forecasts.length === 0) return -1;
@@ -9,8 +24,16 @@ var findCachedForecast = function(id, forecasts) {
 }
 
 var WeatherStore = function() {
-  this._forecasts = []
-  // read cache from file
+  this._forecasts = [];
+  try  {
+    fs.statSync(cacheDir + cacheFile).isFile();
+    var cache = fs.readFileSync(cacheDir + cacheFile);
+    this._forecasts = JSON.parse(cache);
+  }
+  catch (e) {
+  }
+  this._changed = false;
+  setTimeout(this.backup.bind(this), 60000);
 }
 
 WeatherStore.prototype.cacheForecast = function(weatherStation, forecast) {
@@ -23,15 +46,41 @@ WeatherStore.prototype.cacheForecast = function(weatherStation, forecast) {
   if (index < 0)
     this._forecasts.push(doc);
   else
-    this._forecasts[index] = forecast;
-
-  // write cache to file
+    this._forecasts[index] = doc;
+  this._changed = true;
 }
 
 WeatherStore.prototype.getCachedForecast = function(weatherStation) {
   var index = findCachedForecast(weatherStation.id, this._forecasts);
   if (index < 0) return undefined;
   return this._forecasts[index];
+}
+
+WeatherStore.prototype.backup = function() {
+  console.log("Starting backup of forecasts cache.")
+  if (!this._changed) {
+    console.log("No changes to forecasts cache.")
+    setTimeout(this.backup.bind(this), 60000);
+    return;
+  }
+
+  makeDir(cacheDir, function(error){
+    if (error)
+      console.log(error);
+    else {
+      this._changed = false;
+      fs.writeFile(cacheDir + cacheFile, JSON.stringify(this._forecasts), function(error) {
+        if (error) {
+          console.log(error);
+        }
+        else {
+          console.log("Forecasts cache saved to ./cache/forecasts");
+          // backup successful so reset the timer
+          setTimeout(this.backup, 60000);
+        }
+      }); 
+    }
+  }.bind(this));
 }
 
 module.exports = WeatherStore;

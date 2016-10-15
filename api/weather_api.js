@@ -27,7 +27,6 @@ var filterForecast = function(forecast) {
     dt_txt: forecast.dt_txt,
     id: forecast.weather[0].id,
     description: forecast.weather[0].description,
-    main: forecast.weather[0].main,
     temperature: forecast.main.temp - 273.15,
     wind: {
       speed: forecast.wind.speed,
