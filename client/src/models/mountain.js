@@ -2,12 +2,12 @@ var GridRef = require ("./grid_ref")
 var WeatherStation = require("./weather_station")
 
 var Mountain = function(options){
-  this._id = options._id;
+  this._id = options.id;
   this._name = options.name;
   this._height = options.height;
   this._gridRef = new GridRef(options.gridRef);
   this._latLng = options.latLng;
-  this._weatherStation = new WeatherStation(options.city);
+  this._weatherStation = new WeatherStation(options.station);
 
   Object.defineProperty(this, "id", {
     get: function(){

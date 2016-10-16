@@ -19,7 +19,7 @@ var mountainSearch = function(mountains, mountainId) {
   var binarySearch = function(first, last) {
     var mid = first + Math.floor((last - first) / 2);
     var mountain = mountains[mid];
-    var numberId = Number(mountain._id);
+    var numberId = Number(mountain.id);
     if (mId === numberId) return mountain;
     if (first === last) return undefined;
     if (mId < numberId)

@@ -1,5 +1,3 @@
-//var MountainQuery = require('../db/mountain_query');
-// var WeatherQuery = require('../db/weather_query');
 var WeatherStore = require('./weather_store')
 var ForecastTime = require('../client/src/models/forecast_time')
 var makeRequest = require('./utility').makeRequest;
@@ -76,9 +74,10 @@ var WeatherApi = function(app) {
         }
         else {
           // Don't have a valid cached entry so need to get the weather
+          // Need to deal with the situation where the required weather has already been requested
           if (DEBUG && cachedForecast) console.log("Cached forecast for",  weatherStn.name,
               "expired: Timestamped", new Date(cachedForecast.timeOfRequest).toString());
-            makeRequest(urlGenerator(weatherStn.latLng), function(newForecast) {
+          makeRequest(urlGenerator(weatherStn.latLng), function(newForecast) {
             // got the weather back
             // now save it
             if (DEBUG) console.log("Received updated forecast for", weatherStn.name);

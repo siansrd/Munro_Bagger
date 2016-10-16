@@ -1,7 +1,7 @@
 var mountainsObj = {
   mountains: [
     {
-      _id: "1",
+      id: "1",
       name: "A'Bhuidheanach Bheag",
       height:  936.1,
       gridRef: {
@@ -13,7 +13,7 @@ var mountainsObj = {
         lat: 56.87039900,
         lng: -4.1988390
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -23,7 +23,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "2",
+      id: "2",
       name: "A'Chailleach",
       height:  997.0,
       gridRef: {
@@ -35,7 +35,7 @@ var mountainsObj = {
         lat: 57.69378200,
         lng: -5.1287300
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -45,7 +45,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "3",
+      id: "3",
       name: "A'Chailleach",
       height:  929.2,
       gridRef: {
@@ -57,7 +57,7 @@ var mountainsObj = {
         lat: 57.10956400,
         lng: -4.1792850
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -67,7 +67,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "4",
+      id: "4",
       name: "A'Chraileag (A'Chralaig)",
       height: 1120.0,
       gridRef: {
@@ -79,7 +79,7 @@ var mountainsObj = {
         lat: 57.18424000,
         lng: -5.1548420
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -89,7 +89,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "5",
+      id: "5",
       name: "A'Ghlas-bheinn",
       height:  918.0,
       gridRef: {
@@ -101,7 +101,7 @@ var mountainsObj = {
         lat: 57.25509000,
         lng: -5.3036870
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -111,7 +111,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "6",
+      id: "6",
       name: "A'Mhaighdean",
       height:  967.0,
       gridRef: {
@@ -123,7 +123,7 @@ var mountainsObj = {
         lat: 57.71964400,
         lng: -5.3467200
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -133,7 +133,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "7",
+      id: "7",
       name: "A'Mharconaich",
       height:  975.0,
       gridRef: {
@@ -145,7 +145,7 @@ var mountainsObj = {
         lat: 56.85699300,
         lng: -4.2906680
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -155,7 +155,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "8",
+      id: "8",
       name: "Am Basteir",
       height:  934.0,
       gridRef: {
@@ -167,7 +167,7 @@ var mountainsObj = {
         lat: 57.24793100,
         lng: -6.2029820
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -177,7 +177,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "9",
+      id: "9",
       name: "Am Bodach",
       height: 1031.8,
       gridRef: {
@@ -189,7 +189,7 @@ var mountainsObj = {
         lat: 56.74172700,
         lng: -4.9833930
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -199,7 +199,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "10",
+      id: "10",
       name: "Am Faochagach",
       height:  953.0,
       gridRef: {
@@ -211,7 +211,7 @@ var mountainsObj = {
         lat: 57.77180100,
         lng: -4.8538990
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -221,7 +221,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "11",
+      id: "11",
       name: "An Caisteal",
       height:  995.8,
       gridRef: {
@@ -233,7 +233,7 @@ var mountainsObj = {
         lat: 56.33860000,
         lng: -4.6243680
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -243,7 +243,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "12",
+      id: "12",
       name: "An Coileachan",
       height:  923.9,
       gridRef: {
@@ -255,7 +255,7 @@ var mountainsObj = {
         lat: 57.66762500,
         lng: -4.9494980
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -265,7 +265,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "13",
+      id: "13",
       name: "An Gearanach",
       height:  981.4,
       gridRef: {
@@ -277,7 +277,7 @@ var mountainsObj = {
         lat: 56.75914300,
         lng: -4.9662030
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -287,7 +287,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "14",
+      id: "14",
       name: "An Riabhachan",
       height: 1129.0,
       gridRef: {
@@ -299,7 +299,7 @@ var mountainsObj = {
         lat: 57.36242900,
         lng: -5.1047280
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -309,7 +309,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "15",
+      id: "15",
       name: "An Sgarsoch",
       height: 1006.0,
       gridRef: {
@@ -321,7 +321,7 @@ var mountainsObj = {
         lat: 56.93192800,
         lng: -3.7543670
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -331,7 +331,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "16",
+      id: "16",
       name: "An Socach",
       height: 1069.0,
       gridRef: {
@@ -343,7 +343,7 @@ var mountainsObj = {
         lat: 57.35022900,
         lng: -5.1586030
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -353,7 +353,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "17",
+      id: "17",
       name: "An Socach",
       height:  944.0,
       gridRef: {
@@ -365,7 +365,7 @@ var mountainsObj = {
         lat: 56.90229500,
         lng: -3.5131480
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -375,7 +375,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "18",
+      id: "18",
       name: "An Socach",
       height:  921.0,
       gridRef: {
@@ -387,7 +387,7 @@ var mountainsObj = {
         lat: 57.25753300,
         lng: -5.1712930
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -397,7 +397,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "19",
+      id: "19",
       name: "An Stuc",
       height: 1117.0,
       gridRef: {
@@ -409,7 +409,7 @@ var mountainsObj = {
         lat: 56.56009300,
         lng: -4.2162580
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -419,7 +419,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "20",
+      id: "20",
       name: "An Teallach-Bidein a'Ghlas Thuill",
       height: 1062.5,
       gridRef: {
@@ -431,7 +431,7 @@ var mountainsObj = {
         lat: 57.80709800,
         lng: -5.2517670
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -441,7 +441,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "21",
+      id: "21",
       name: "An Teallach-Sgurr Fiona",
       height: 1058.6,
       gridRef: {
@@ -453,7 +453,7 @@ var mountainsObj = {
         lat: 57.80072600,
         lng: -5.2594430
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -463,7 +463,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "22",
+      id: "22",
       name: "Aonach air Chrith",
       height: 1019.5,
       gridRef: {
@@ -475,7 +475,7 @@ var mountainsObj = {
         lat: 57.12464000,
         lng: -5.2212910
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -485,7 +485,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "23",
+      id: "23",
       name: "Aonach Beag",
       height: 1234.0,
       gridRef: {
@@ -497,7 +497,7 @@ var mountainsObj = {
         lat: 56.79999800,
         lng: -4.9541210
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -507,7 +507,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "24",
+      id: "24",
       name: "Aonach Beag",
       height: 1115.7,
       gridRef: {
@@ -519,7 +519,7 @@ var mountainsObj = {
         lat: 56.83349600,
         lng: -4.5291810
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -529,7 +529,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "25",
+      id: "25",
       name: "Aonach Eagach-Meall Dearg",
       height:  952.2,
       gridRef: {
@@ -541,7 +541,7 @@ var mountainsObj = {
         lat: 56.68072000,
         lng: -5.0032710
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -551,7 +551,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "26",
+      id: "26",
       name: "Aonach Eagach-Sgorr nam Fiannaidh",
       height:  967.0,
       gridRef: {
@@ -563,7 +563,7 @@ var mountainsObj = {
         lat: 56.67938700,
         lng: -5.0371430
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -573,7 +573,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "27",
+      id: "27",
       name: "Aonach Meadhoin",
       height: 1001.0,
       gridRef: {
@@ -585,7 +585,7 @@ var mountainsObj = {
         lat: 57.17308200,
         lng: -5.2291210
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -595,7 +595,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "28",
+      id: "28",
       name: "Aonach Mor",
       height: 1221.0,
       gridRef: {
@@ -607,7 +607,7 @@ var mountainsObj = {
         lat: 56.81293200,
         lng: -4.9617440
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -617,7 +617,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "29",
+      id: "29",
       name: "Beinn a'Bheithir-Sgorr Dhearg",
       height: 1024.0,
       gridRef: {
@@ -629,7 +629,7 @@ var mountainsObj = {
         lat: 56.65392100,
         lng: -5.1715100
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -639,7 +639,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "30",
+      id: "30",
       name: "Beinn a'Bheithir-Sgorr Dhonuill",
       height: 1001.0,
       gridRef: {
@@ -651,7 +651,7 @@ var mountainsObj = {
         lat: 56.65049900,
         lng: -5.1977570
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -661,7 +661,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "31",
+      id: "31",
       name: "Beinn a'Bhuird (Beinn a'Bhuird North Top)",
       height: 1197.0,
       gridRef: {
@@ -673,7 +673,7 @@ var mountainsObj = {
         lat: 57.08759000,
         lng: -3.4993660
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -683,7 +683,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "32",
+      id: "32",
       name: "Beinn a'Chaorainn",
       height: 1083.0,
       gridRef: {
@@ -695,7 +695,7 @@ var mountainsObj = {
         lat: 57.09329900,
         lng: -3.5774350
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -705,7 +705,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "33",
+      id: "33",
       name: "Beinn a'Chaorainn",
       height: 1052.0,
       gridRef: {
@@ -717,7 +717,7 @@ var mountainsObj = {
         lat: 56.92864300,
         lng: -4.6536280
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -727,7 +727,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "34",
+      id: "34",
       name: "Beinn a'Chlachair",
       height: 1087.0,
       gridRef: {
@@ -739,7 +739,7 @@ var mountainsObj = {
         lat: 56.86952500,
         lng: -4.5096840
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -749,7 +749,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "35",
+      id: "35",
       name: "Beinn a'Chleibh",
       height:  916.3,
       gridRef: {
@@ -761,7 +761,7 @@ var mountainsObj = {
         lat: 56.39023100,
         lng: -4.8356320
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -771,7 +771,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "36",
+      id: "36",
       name: "Beinn a'Chochuill",
       height:  980.0,
       gridRef: {
@@ -783,7 +783,7 @@ var mountainsObj = {
         lat: 56.44979000,
         lng: -5.0685360
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -793,7 +793,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "37",
+      id: "37",
       name: "Beinn a'Chreachain",
       height: 1080.6,
       gridRef: {
@@ -805,7 +805,7 @@ var mountainsObj = {
         lat: 56.56038200,
         lng: -4.6476180
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -815,7 +815,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "38",
+      id: "38",
       name: "Beinn a'Chroin",
       height:  941.4,
       gridRef: {
@@ -827,7 +827,7 @@ var mountainsObj = {
         lat: 56.33198700,
         lng: -4.6096380
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -837,7 +837,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "39",
+      id: "39",
       name: "Beinn a'Ghlo-Braigh Coire Chruinn-bhalgain",
       height: 1070.0,
       gridRef: {
@@ -849,7 +849,7 @@ var mountainsObj = {
         lat: 56.83108300,
         lng: -3.7295050
       },
-      city: {
+      station: {
         id: 2640255,
         name: "Pitlochry",
         latLng: {
@@ -859,7 +859,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "40",
+      id: "40",
       name: "Beinn a'Ghlo-Carn Liath",
       height:  976.0,
       gridRef: {
@@ -871,7 +871,7 @@ var mountainsObj = {
         lat: 56.80777000,
         lng: -3.7441060
       },
-      city: {
+      station: {
         id: 2640255,
         name: "Pitlochry",
         latLng: {
@@ -881,7 +881,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "41",
+      id: "41",
       name: "Beinn a'Ghlo-Carn nan Gabhar",
       height: 1121.9,
       gridRef: {
@@ -893,7 +893,7 @@ var mountainsObj = {
         lat: 56.83983700,
         lng: -3.6880060
       },
-      city: {
+      station: {
         id: 2640255,
         name: "Pitlochry",
         latLng: {
@@ -903,7 +903,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "42",
+      id: "42",
       name: "Beinn Achaladair",
       height: 1038.5,
       gridRef: {
@@ -915,7 +915,7 @@ var mountainsObj = {
         lat: 56.55188700,
         lng: -4.6945250
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -925,7 +925,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "43",
+      id: "43",
       name: "Beinn Alligin-Sgurr Mhor",
       height:  986.0,
       gridRef: {
@@ -937,7 +937,7 @@ var mountainsObj = {
         lat: 57.59082000,
         lng: -5.5727640
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -947,7 +947,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "44",
+      id: "44",
       name: "Beinn Alligin-Tom na Gruagaich",
       height:  922.0,
       gridRef: {
@@ -959,7 +959,7 @@ var mountainsObj = {
         lat: 57.58051900,
         lng: -5.5819120
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -969,7 +969,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "45",
+      id: "45",
       name: "Beinn an Dothaidh",
       height: 1004.0,
       gridRef: {
@@ -981,7 +981,7 @@ var mountainsObj = {
         lat: 56.53011300,
         lng: -4.7139470
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -991,7 +991,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "46",
+      id: "46",
       name: "Beinn Bheoil",
       height: 1019.0,
       gridRef: {
@@ -1003,7 +1003,7 @@ var mountainsObj = {
         lat: 56.81327600,
         lng: -4.4306460
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -1013,7 +1013,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "47",
+      id: "47",
       name: "Beinn Bhreac",
       height:  931.0,
       gridRef: {
@@ -1025,7 +1025,7 @@ var mountainsObj = {
         lat: 57.05506300,
         lng: -3.5534710
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -1035,7 +1035,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "48",
+      id: "48",
       name: "Beinn Bhrotain",
       height: 1157.0,
       gridRef: {
@@ -1047,7 +1047,7 @@ var mountainsObj = {
         lat: 57.00986800,
         lng: -3.7238130
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -1057,7 +1057,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "49",
+      id: "49",
       name: "Beinn Bhuidhe",
       height:  948.5,
       gridRef: {
@@ -1069,7 +1069,7 @@ var mountainsObj = {
         lat: 56.32666200,
         lng: -4.9067220
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -1079,7 +1079,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "50",
+      id: "50",
       name: "Beinn Chabhair",
       height:  932.1,
       gridRef: {
@@ -1091,7 +1091,7 @@ var mountainsObj = {
         lat: 56.32577500,
         lng: -4.6414850
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -1101,7 +1101,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "51",
+      id: "51",
       name: "Beinn Dearg",
       height: 1084.0,
       gridRef: {
@@ -1113,7 +1113,7 @@ var mountainsObj = {
         lat: 57.78635000,
         lng: -4.9295570
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -1123,7 +1123,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "52",
+      id: "52",
       name: "Beinn Dearg",
       height: 1008.7,
       gridRef: {
@@ -1135,7 +1135,7 @@ var mountainsObj = {
         lat: 56.87734600,
         lng: -3.8837190
       },
-      city: {
+      station: {
         id: 2640255,
         name: "Pitlochry",
         latLng: {
@@ -1145,7 +1145,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "53",
+      id: "53",
       name: "Beinn Dorain",
       height: 1076.0,
       gridRef: {
@@ -1157,7 +1157,7 @@ var mountainsObj = {
         lat: 56.50288800,
         lng: -4.7221420
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -1167,7 +1167,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "54",
+      id: "54",
       name: "Beinn Dubhchraig",
       height:  978.0,
       gridRef: {
@@ -1179,7 +1179,7 @@ var mountainsObj = {
         lat: 56.39130400,
         lng: -4.7431940
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -1189,7 +1189,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "55",
+      id: "55",
       name: "Beinn Eibhinn",
       height: 1103.2,
       gridRef: {
@@ -1201,7 +1201,7 @@ var mountainsObj = {
         lat: 56.82525400,
         lng: -4.5420820
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -1211,7 +1211,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "56",
+      id: "56",
       name: "Beinn Eighe-Ruadh-stac Mor",
       height: 1010.0,
       gridRef: {
@@ -1223,7 +1223,7 @@ var mountainsObj = {
         lat: 57.59373500,
         lng: -5.4294540
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -1233,7 +1233,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "57",
+      id: "57",
       name: "Beinn Eighe-Spidean Coire nan Clach",
       height:  993.0,
       gridRef: {
@@ -1245,7 +1245,7 @@ var mountainsObj = {
         lat: 57.58209800,
         lng: -5.4037060
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -1255,7 +1255,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "58",
+      id: "58",
       name: "Beinn Eunaich",
       height:  989.0,
       gridRef: {
@@ -1267,7 +1267,7 @@ var mountainsObj = {
         lat: 56.45035200,
         lng: -5.0266390
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -1277,7 +1277,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "59",
+      id: "59",
       name: "Beinn Fhada",
       height: 1032.0,
       gridRef: {
@@ -1289,7 +1289,7 @@ var mountainsObj = {
         lat: 57.22099300,
         lng: -5.2835180
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -1299,7 +1299,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "60",
+      id: "60",
       name: "Beinn Fhionnlaidh",
       height: 1005.0,
       gridRef: {
@@ -1311,7 +1311,7 @@ var mountainsObj = {
         lat: 57.30600400,
         lng: -5.1299110
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -1321,7 +1321,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "61",
+      id: "61",
       name: "Beinn Fhionnlaidh",
       height:  959.0,
       gridRef: {
@@ -1333,7 +1333,7 @@ var mountainsObj = {
         lat: 56.60097900,
         lng: -5.1047330
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -1343,7 +1343,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "62",
+      id: "62",
       name: "Beinn Ghlas",
       height: 1103.0,
       gridRef: {
@@ -1355,7 +1355,7 @@ var mountainsObj = {
         lat: 56.53600500,
         lng: -4.2369770
       },
-      city: {
+      station: {
         id: 2652478,
         name: "Comrie",
         latLng: {
@@ -1365,7 +1365,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "63",
+      id: "63",
       name: "Beinn Ime",
       height: 1011.0,
       gridRef: {
@@ -1377,7 +1377,7 @@ var mountainsObj = {
         lat: 56.23682000,
         lng: -4.8171590
       },
-      city: {
+      station: {
         id: 2648877,
         name: "Garelochhead",
         latLng: {
@@ -1387,7 +1387,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "64",
+      id: "64",
       name: "Beinn Iutharn Mhor",
       height: 1045.0,
       gridRef: {
@@ -1399,7 +1399,7 @@ var mountainsObj = {
         lat: 56.89499400,
         lng: -3.5682290
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -1409,7 +1409,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "65",
+      id: "65",
       name: "Beinn Liath Mhor",
       height:  926.0,
       gridRef: {
@@ -1421,7 +1421,7 @@ var mountainsObj = {
         lat: 57.51207400,
         lng: -5.4006170
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -1431,7 +1431,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "66",
+      id: "66",
       name: "Beinn Liath Mhor Fannaich",
       height:  954.0,
       gridRef: {
@@ -1443,7 +1443,7 @@ var mountainsObj = {
         lat: 57.70610400,
         lng: -4.9897760
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -1453,7 +1453,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "67",
+      id: "67",
       name: "Beinn Mhanach",
       height:  953.0,
       gridRef: {
@@ -1465,7 +1465,7 @@ var mountainsObj = {
         lat: 56.53404000,
         lng: -4.6460590
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -1475,7 +1475,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "68",
+      id: "68",
       name: "Beinn Mheadhoin",
       height: 1182.9,
       gridRef: {
@@ -1487,7 +1487,7 @@ var mountainsObj = {
         lat: 57.09584900,
         lng: -3.6114640
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -1497,7 +1497,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "69",
+      id: "69",
       name: "Beinn na Lap",
       height:  935.0,
       gridRef: {
@@ -1509,7 +1509,7 @@ var mountainsObj = {
         lat: 56.78939000,
         lng: -4.6599940
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -1519,7 +1519,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "70",
+      id: "70",
       name: "Beinn nan Aighenan",
       height:  960.0,
       gridRef: {
@@ -1531,7 +1531,7 @@ var mountainsObj = {
         lat: 56.52022100,
         lng: -5.0112330
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -1541,7 +1541,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "71",
+      id: "71",
       name: "Beinn Narnain",
       height:  927.0,
       gridRef: {
@@ -1553,7 +1553,7 @@ var mountainsObj = {
         lat: 56.22094700,
         lng: -4.7890020
       },
-      city: {
+      station: {
         id: 2648877,
         name: "Garelochhead",
         latLng: {
@@ -1563,7 +1563,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "72",
+      id: "72",
       name: "Beinn Sgritheall",
       height:  974.0,
       gridRef: {
@@ -1575,7 +1575,7 @@ var mountainsObj = {
         lat: 57.15382400,
         lng: -5.5797280
       },
-      city: {
+      station: {
         id: 2657204,
         name: "Ardvasar",
         latLng: {
@@ -1585,7 +1585,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "73",
+      id: "73",
       name: "Beinn Sgulaird",
       height:  937.0,
       gridRef: {
@@ -1597,7 +1597,7 @@ var mountainsObj = {
         lat: 56.56623200,
         lng: -5.1703650
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -1607,7 +1607,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "74",
+      id: "74",
       name: "Beinn Sheasgarnaich (Beinn Heasgarnich)",
       height: 1077.4,
       gridRef: {
@@ -1619,7 +1619,7 @@ var mountainsObj = {
         lat: 56.51027200,
         lng: -4.5792180
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -1629,7 +1629,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "75",
+      id: "75",
       name: "Beinn Tarsuinn",
       height:  937.0,
       gridRef: {
@@ -1641,7 +1641,7 @@ var mountainsObj = {
         lat: 57.70205200,
         lng: -5.2916010
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -1651,7 +1651,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "76",
+      id: "76",
       name: "Beinn Teallach",
       height:  914.6,
       gridRef: {
@@ -1663,7 +1663,7 @@ var mountainsObj = {
         lat: 56.93592800,
         lng: -4.6947570
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -1673,7 +1673,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "77",
+      id: "77",
       name: "Beinn Tulaichean",
       height:  945.8,
       gridRef: {
@@ -1685,7 +1685,7 @@ var mountainsObj = {
         lat: 56.34221600,
         lng: -4.5633300
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -1695,7 +1695,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "78",
+      id: "78",
       name: "Beinn Udlamain",
       height: 1011.0,
       gridRef: {
@@ -1707,7 +1707,7 @@ var mountainsObj = {
         lat: 56.83547200,
         lng: -4.3299130
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -1717,7 +1717,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "79",
+      id: "79",
       name: "Ben Alder",
       height: 1148.0,
       gridRef: {
@@ -1729,7 +1729,7 @@ var mountainsObj = {
         lat: 56.81379600,
         lng: -4.4650890
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -1739,7 +1739,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "80",
+      id: "80",
       name: "Ben Avon-Leabaidh an Daimh Bhuidhe",
       height: 1171.0,
       gridRef: {
@@ -1751,7 +1751,7 @@ var mountainsObj = {
         lat: 57.09934700,
         lng: -3.4344220
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -1761,7 +1761,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "81",
+      id: "81",
       name: "Ben Challum (Beinn Challuim)",
       height: 1025.0,
       gridRef: {
@@ -1773,7 +1773,7 @@ var mountainsObj = {
         lat: 56.45456500,
         lng: -4.6191830
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -1783,7 +1783,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "82",
+      id: "82",
       name: "Ben Chonzie",
       height:  931.0,
       gridRef: {
@@ -1795,7 +1795,7 @@ var mountainsObj = {
         lat: 56.45385100,
         lng: -3.9920570
       },
-      city: {
+      station: {
         id: 2652478,
         name: "Comrie",
         latLng: {
@@ -1805,7 +1805,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "83",
+      id: "83",
       name: "Ben Cruachan",
       height: 1127.0,
       gridRef: {
@@ -1817,7 +1817,7 @@ var mountainsObj = {
         lat: 56.42683900,
         lng: -5.1318280
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -1827,7 +1827,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "84",
+      id: "84",
       name: "Ben Hope",
       height:  927.0,
       gridRef: {
@@ -1839,7 +1839,7 @@ var mountainsObj = {
         lat: 58.41311300,
         lng: -4.6078600
       },
-      city: {
+      station: {
         id: 2645401,
         name: "Kinlochbervie",
         latLng: {
@@ -1849,7 +1849,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "85",
+      id: "85",
       name: "Ben Klibreck-Meall nan Con",
       height:  962.1,
       gridRef: {
@@ -1861,7 +1861,7 @@ var mountainsObj = {
         lat: 58.23520200,
         lng: -4.4111300
       },
-      city: {
+      station: {
         id: 2648341,
         name: "Golspie",
         latLng: {
@@ -1871,7 +1871,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "86",
+      id: "86",
       name: "Ben Lawers",
       height: 1214.0,
       gridRef: {
@@ -1883,7 +1883,7 @@ var mountainsObj = {
         lat: 56.54492200,
         lng: -4.2208600
       },
-      city: {
+      station: {
         id: 2652478,
         name: "Comrie",
         latLng: {
@@ -1893,7 +1893,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "87",
+      id: "87",
       name: "Ben Lomond",
       height:  974.0,
       gridRef: {
@@ -1905,7 +1905,7 @@ var mountainsObj = {
         lat: 56.19028400,
         lng: -4.6330080
       },
-      city: {
+      station: {
         id: 2648877,
         name: "Garelochhead",
         latLng: {
@@ -1915,7 +1915,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "88",
+      id: "88",
       name: "Ben Lui (Beinn Laoigh)",
       height: 1130.0,
       gridRef: {
@@ -1927,7 +1927,7 @@ var mountainsObj = {
         lat: 56.39701300,
         lng: -4.8105100
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -1937,7 +1937,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "89",
+      id: "89",
       name: "Ben Macdui (Beinn Macduibh)",
       height: 1309.0,
       gridRef: {
@@ -1949,7 +1949,7 @@ var mountainsObj = {
         lat: 57.07036800,
         lng: -3.6690990
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -1959,7 +1959,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "90",
+      id: "90",
       name: "Ben More",
       height: 1174.0,
       gridRef: {
@@ -1971,7 +1971,7 @@ var mountainsObj = {
         lat: 56.38595200,
         lng: -4.5401030
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -1981,7 +1981,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "91",
+      id: "91",
       name: "Ben More",
       height:  966.0,
       gridRef: {
@@ -1993,7 +1993,7 @@ var mountainsObj = {
         lat: 56.42482900,
         lng: -6.0140150
       },
-      city: {
+      station: {
         id: 7290043,
         name: "Isle Of Mull",
         latLng: {
@@ -2003,7 +2003,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "92",
+      id: "92",
       name: "Ben More Assynt",
       height:  998.0,
       gridRef: {
@@ -2015,7 +2015,7 @@ var mountainsObj = {
         lat: 58.13817300,
         lng: -4.8581920
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -2025,7 +2025,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "93",
+      id: "93",
       name: "Ben Nevis",
       height: 1344.5,
       gridRef: {
@@ -2037,7 +2037,7 @@ var mountainsObj = {
         lat: 56.79684900,
         lng: -5.0035250
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -2047,7 +2047,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "94",
+      id: "94",
       name: "Ben Oss",
       height: 1029.0,
       gridRef: {
@@ -2059,7 +2059,7 @@ var mountainsObj = {
         lat: 56.38927200,
         lng: -4.7754880
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -2069,7 +2069,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "95",
+      id: "95",
       name: "Ben Starav",
       height: 1078.0,
       gridRef: {
@@ -2081,7 +2081,7 @@ var mountainsObj = {
         lat: 56.53893900,
         lng: -5.0497980
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -2091,7 +2091,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "96",
+      id: "96",
       name: "Ben Vane",
       height:  915.8,
       gridRef: {
@@ -2103,7 +2103,7 @@ var mountainsObj = {
         lat: 56.24978600,
         lng: -4.7816390
       },
-      city: {
+      station: {
         id: 2648877,
         name: "Garelochhead",
         latLng: {
@@ -2113,7 +2113,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "97",
+      id: "97",
       name: "Ben Vorlich",
       height:  985.0,
       gridRef: {
@@ -2125,7 +2125,7 @@ var mountainsObj = {
         lat: 56.34268000,
         lng: -4.2194640
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -2135,7 +2135,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "98",
+      id: "98",
       name: "Ben Vorlich",
       height:  943.0,
       gridRef: {
@@ -2147,7 +2147,7 @@ var mountainsObj = {
         lat: 56.27403000,
         lng: -4.7550470
       },
-      city: {
+      station: {
         id: 2648877,
         name: "Garelochhead",
         latLng: {
@@ -2157,7 +2157,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "99",
+      id: "99",
       name: "Ben Wyvis-Glas Leathad Mor",
       height: 1046.0,
       gridRef: {
@@ -2169,7 +2169,7 @@ var mountainsObj = {
         lat: 57.67889500,
         lng: -4.5792820
       },
-      city: {
+      station: {
         id: 2651245,
         name: "Dingwall",
         latLng: {
@@ -2179,7 +2179,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "100",
+      id: "100",
       name: "Bidean nam Bian",
       height: 1149.4,
       gridRef: {
@@ -2191,7 +2191,7 @@ var mountainsObj = {
         lat: 56.64276800,
         lng: -5.0293350
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -2201,7 +2201,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "101",
+      id: "101",
       name: "Bidein a'Choire Sheasgaich",
       height:  945.0,
       gridRef: {
@@ -2213,7 +2213,7 @@ var mountainsObj = {
         lat: 57.41971800,
         lng: -5.2504730
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -2223,7 +2223,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "102",
+      id: "102",
       name: "Binnein Beag",
       height:  943.0,
       gridRef: {
@@ -2235,7 +2235,7 @@ var mountainsObj = {
         lat: 56.76699000,
         lng: -4.9110650
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -2245,7 +2245,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "103",
+      id: "103",
       name: "Binnein Mor",
       height: 1130.0,
       gridRef: {
@@ -2257,7 +2257,7 @@ var mountainsObj = {
         lat: 56.75435800,
         lng: -4.9257950
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -2267,7 +2267,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "104",
+      id: "104",
       name: "Bla Bheinn (Blabheinn) (Blaven)",
       height:  929.0,
       gridRef: {
@@ -2279,7 +2279,7 @@ var mountainsObj = {
         lat: 57.21956500,
         lng: -6.0932100
       },
-      city: {
+      station: {
         id: 2657204,
         name: "Ardvasar",
         latLng: {
@@ -2289,7 +2289,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "105",
+      id: "105",
       name: "Braeriach",
       height: 1296.0,
       gridRef: {
@@ -2301,7 +2301,7 @@ var mountainsObj = {
         lat: 57.07829800,
         lng: -3.7283890
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -2311,7 +2311,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "106",
+      id: "106",
       name: "Broad Cairn",
       height:  998.0,
       gridRef: {
@@ -2323,7 +2323,7 @@ var mountainsObj = {
         lat: 56.91914800,
         lng: -3.2490660
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -2333,7 +2333,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "107",
+      id: "107",
       name: "Bruach na Frithe",
       height:  958.0,
       gridRef: {
@@ -2345,7 +2345,7 @@ var mountainsObj = {
         lat: 57.24676100,
         lng: -6.2107950
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -2355,7 +2355,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "108",
+      id: "108",
       name: "Buachaille Etive Beag-Stob Coire Raineach",
       height:  925.0,
       gridRef: {
@@ -2367,7 +2367,7 @@ var mountainsObj = {
         lat: 56.64993800,
         lng: -4.9516860
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -2377,7 +2377,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "109",
+      id: "109",
       name: "Buachaille Etive Beag-Stob Dubh",
       height:  958.0,
       gridRef: {
@@ -2389,7 +2389,7 @@ var mountainsObj = {
         lat: 56.63815000,
         lng: -4.9707460
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -2399,7 +2399,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "110",
+      id: "110",
       name: "Buachaille Etive Mor-Stob Dearg",
       height: 1021.4,
       gridRef: {
@@ -2411,7 +2411,7 @@ var mountainsObj = {
         lat: 56.64622900,
         lng: -4.9003360
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -2421,7 +2421,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "111",
+      id: "111",
       name: "Buachaille Etive Mor-Stob na Broige",
       height:  953.4,
       gridRef: {
@@ -2433,7 +2433,7 @@ var mountainsObj = {
         lat: 56.62988000,
         lng: -4.9511510
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -2443,7 +2443,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "112",
+      id: "112",
       name: "Bynack More",
       height: 1090.0,
       gridRef: {
@@ -2455,7 +2455,7 @@ var mountainsObj = {
         lat: 57.13822000,
         lng: -3.5847160
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -2465,7 +2465,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "113",
+      id: "113",
       name: "Cairn Bannoch",
       height: 1012.0,
       gridRef: {
@@ -2477,7 +2477,7 @@ var mountainsObj = {
         lat: 56.92771900,
         lng: -3.2784020
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -2487,7 +2487,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "114",
+      id: "114",
       name: "Cairn Gorm",
       height: 1244.8,
       gridRef: {
@@ -2499,7 +2499,7 @@ var mountainsObj = {
         lat: 57.11671400,
         lng: -3.6444770
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -2509,7 +2509,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "115",
+      id: "115",
       name: "Cairn of Claise",
       height: 1064.0,
       gridRef: {
@@ -2521,7 +2521,7 @@ var mountainsObj = {
         lat: 56.89417800,
         lng: -3.3386540
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -2531,7 +2531,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "116",
+      id: "116",
       name: "Cairn Toul",
       height: 1291.0,
       gridRef: {
@@ -2543,7 +2543,7 @@ var mountainsObj = {
         lat: 57.05439700,
         lng: -3.7107730
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -2553,7 +2553,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "117",
+      id: "117",
       name: "Carn a'Chlamain",
       height:  963.5,
       gridRef: {
@@ -2565,7 +2565,7 @@ var mountainsObj = {
         lat: 56.86096800,
         lng: -3.7796290
       },
-      city: {
+      station: {
         id: 2640255,
         name: "Pitlochry",
         latLng: {
@@ -2575,7 +2575,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "118",
+      id: "118",
       name: "Carn a'Choire Bhoidheach",
       height: 1109.9,
       gridRef: {
@@ -2587,7 +2587,7 @@ var mountainsObj = {
         lat: 56.94577300,
         lng: -3.2727070
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -2597,7 +2597,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "119",
+      id: "119",
       name: "Carn a'Gheoidh",
       height:  975.0,
       gridRef: {
@@ -2609,7 +2609,7 @@ var mountainsObj = {
         lat: 56.87306500,
         lng: -3.4666160
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -2619,7 +2619,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "120",
+      id: "120",
       name: "Carn a'Mhaim",
       height: 1037.0,
       gridRef: {
@@ -2631,7 +2631,7 @@ var mountainsObj = {
         lat: 57.03687100,
         lng: -3.6584000
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -2641,7 +2641,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "121",
+      id: "121",
       name: "Carn an Fhidhleir (Carn Ealar)",
       height:  994.0,
       gridRef: {
@@ -2653,7 +2653,7 @@ var mountainsObj = {
         lat: 56.93591900,
         lng: -3.8016610
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -2663,7 +2663,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "122",
+      id: "122",
       name: "Carn an Righ",
       height: 1029.0,
       gridRef: {
@@ -2675,7 +2675,7 @@ var mountainsObj = {
         lat: 56.87656500,
         lng: -3.5952720
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -2685,7 +2685,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "123",
+      id: "123",
       name: "Carn an t-Sagairt Mor",
       height: 1047.0,
       gridRef: {
@@ -2697,7 +2697,7 @@ var mountainsObj = {
         lat: 56.94297300,
         lng: -3.3032270
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -2707,7 +2707,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "124",
+      id: "124",
       name: "Carn an Tuirc",
       height: 1019.0,
       gridRef: {
@@ -2719,7 +2719,7 @@ var mountainsObj = {
         lat: 56.90828300,
         lng: -3.3571250
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -2729,7 +2729,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "125",
+      id: "125",
       name: "Carn Aosda",
       height:  915.3,
       gridRef: {
@@ -2741,7 +2741,7 @@ var mountainsObj = {
         lat: 56.89569600,
         lng: -3.4232740
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -2751,7 +2751,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "126",
+      id: "126",
       name: "Carn Bhac",
       height:  945.1,
       gridRef: {
@@ -2763,7 +2763,7 @@ var mountainsObj = {
         lat: 56.93054100,
         lng: -3.5608800
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -2773,7 +2773,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "127",
+      id: "127",
       name: "Carn Dearg",
       height: 1034.0,
       gridRef: {
@@ -2785,7 +2785,7 @@ var mountainsObj = {
         lat: 56.85524100,
         lng: -4.4547090
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -2795,7 +2795,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "128",
+      id: "128",
       name: "Carn Dearg",
       height:  945.7,
       gridRef: {
@@ -2807,7 +2807,7 @@ var mountainsObj = {
         lat: 57.09226100,
         lng: -4.2532460
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -2817,7 +2817,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "129",
+      id: "129",
       name: "Carn Dearg",
       height:  941.0,
       gridRef: {
@@ -2829,7 +2829,7 @@ var mountainsObj = {
         lat: 56.75993100,
         lng: -4.5898880
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -2839,7 +2839,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "130",
+      id: "130",
       name: "Carn Eige (Carn Eighe)",
       height: 1183.0,
       gridRef: {
@@ -2851,7 +2851,7 @@ var mountainsObj = {
         lat: 57.28771100,
         lng: -5.1151270
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -2861,7 +2861,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "131",
+      id: "131",
       name: "Carn Ghluasaid",
       height:  957.0,
       gridRef: {
@@ -2873,7 +2873,7 @@ var mountainsObj = {
         lat: 57.16595000,
         lng: -5.0681580
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -2883,7 +2883,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "132",
+      id: "132",
       name: "Carn Gorm",
       height: 1029.0,
       gridRef: {
@@ -2895,7 +2895,7 @@ var mountainsObj = {
         lat: 56.62251900,
         lng: -4.2260520
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -2905,7 +2905,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "133",
+      id: "133",
       name: "Carn Liath",
       height: 1006.0,
       gridRef: {
@@ -2917,7 +2917,7 @@ var mountainsObj = {
         lat: 56.97878400,
         lng: -4.5153050
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -2927,7 +2927,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "134",
+      id: "134",
       name: "Carn Mairg",
       height: 1042.0,
       gridRef: {
@@ -2939,7 +2939,7 @@ var mountainsObj = {
         lat: 56.63466200,
         lng: -4.1456100
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -2949,7 +2949,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "135",
+      id: "135",
       name: "Carn Mor Dearg",
       height: 1220.0,
       gridRef: {
@@ -2961,7 +2961,7 @@ var mountainsObj = {
         lat: 56.80524600,
         lng: -4.9866160
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -2971,7 +2971,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "136",
+      id: "136",
       name: "Carn na Caim",
       height:  940.8,
       gridRef: {
@@ -2983,7 +2983,7 @@ var mountainsObj = {
         lat: 56.91173900,
         lng: -4.1744780
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -2993,7 +2993,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "137",
+      id: "137",
       name: "Carn nan Gobhar",
       height:  993.0,
       gridRef: {
@@ -3005,7 +3005,7 @@ var mountainsObj = {
         lat: 57.36330400,
         lng: -5.0245440
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -3015,7 +3015,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "138",
+      id: "138",
       name: "Carn nan Gobhar",
       height:  992.0,
       gridRef: {
@@ -3027,7 +3027,7 @@ var mountainsObj = {
         lat: 57.45233100,
         lng: -4.8799350
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -3037,7 +3037,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "139",
+      id: "139",
       name: "Carn Sgulain",
       height:  920.3,
       gridRef: {
@@ -3049,7 +3049,7 @@ var mountainsObj = {
         lat: 57.12437100,
         lng: -4.1769860
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -3059,7 +3059,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "140",
+      id: "140",
       name: "Chno Dearg",
       height: 1046.0,
       gridRef: {
@@ -3071,7 +3071,7 @@ var mountainsObj = {
         lat: 56.83008600,
         lng: -4.6608310
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -3081,7 +3081,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "141",
+      id: "141",
       name: "Ciste Dhubh",
       height:  979.0,
       gridRef: {
@@ -3093,7 +3093,7 @@ var mountainsObj = {
         lat: 57.19924300,
         lng: -5.2090160
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -3103,7 +3103,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "142",
+      id: "142",
       name: "Cona' Mheall",
       height:  978.0,
       gridRef: {
@@ -3115,7 +3115,7 @@ var mountainsObj = {
         lat: 57.79106800,
         lng: -4.9034000
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -3125,7 +3125,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "143",
+      id: "143",
       name: "Conival",
       height:  987.0,
       gridRef: {
@@ -3137,7 +3137,7 @@ var mountainsObj = {
         lat: 58.13568900,
         lng: -4.8834970
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -3147,7 +3147,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "144",
+      id: "144",
       name: "Creag a'Mhaim",
       height:  946.0,
       gridRef: {
@@ -3159,7 +3159,7 @@ var mountainsObj = {
         lat: 57.12097100,
         lng: -5.1600480
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -3169,7 +3169,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "145",
+      id: "145",
       name: "Creag Leacach",
       height:  988.2,
       gridRef: {
@@ -3181,7 +3181,7 @@ var mountainsObj = {
         lat: 56.85463100,
         lng: -3.3877510
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -3191,7 +3191,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "146",
+      id: "146",
       name: "Creag Meagaidh",
       height: 1128.0,
       gridRef: {
@@ -3203,7 +3203,7 @@ var mountainsObj = {
         lat: 56.95203300,
         lng: -4.6020840
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -3213,7 +3213,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "147",
+      id: "147",
       name: "Creag Mhor",
       height: 1047.0,
       gridRef: {
@@ -3225,7 +3225,7 @@ var mountainsObj = {
         lat: 56.48951000,
         lng: -4.6140210
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -3235,7 +3235,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "148",
+      id: "148",
       name: "Creag nan Damh",
       height:  918.0,
       gridRef: {
@@ -3247,7 +3247,7 @@ var mountainsObj = {
         lat: 57.14726300,
         lng: -5.3345970
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -3257,7 +3257,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "149",
+      id: "149",
       name: "Creag Pitridh",
       height:  924.0,
       gridRef: {
@@ -3269,7 +3269,7 @@ var mountainsObj = {
         lat: 56.89971300,
         lng: -4.4849550
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -3279,7 +3279,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "150",
+      id: "150",
       name: "Creise",
       height: 1099.8,
       gridRef: {
@@ -3291,7 +3291,7 @@ var mountainsObj = {
         lat: 56.61444900,
         lng: -4.8719790
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -3301,7 +3301,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "151",
+      id: "151",
       name: "Cruach Ardrain",
       height: 1045.9,
       gridRef: {
@@ -3313,7 +3313,7 @@ var mountainsObj = {
         lat: 56.35642900,
         lng: -4.5761510
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -3323,7 +3323,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "152",
+      id: "152",
       name: "Derry Cairngorm",
       height: 1155.0,
       gridRef: {
@@ -3335,7 +3335,7 @@ var mountainsObj = {
         lat: 57.06280100,
         lng: -3.6220040
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -3345,7 +3345,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "153",
+      id: "153",
       name: "Driesh",
       height:  947.0,
       gridRef: {
@@ -3357,7 +3357,7 @@ var mountainsObj = {
         lat: 56.84800300,
         lng: -3.1965230
       },
-      city: {
+      station: {
         id: 2645191,
         name: "Kirriemuir",
         latLng: {
@@ -3367,7 +3367,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "154",
+      id: "154",
       name: "Druim Shionnach",
       height:  987.0,
       gridRef: {
@@ -3379,7 +3379,7 @@ var mountainsObj = {
         lat: 57.12679400,
         lng: -5.1828570
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -3389,7 +3389,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "155",
+      id: "155",
       name: "Eididh nan Clach Geala",
       height:  927.0,
       gridRef: {
@@ -3401,7 +3401,7 @@ var mountainsObj = {
         lat: 57.81349200,
         lng: -4.9342180
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -3411,7 +3411,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "156",
+      id: "156",
       name: "Fionn Bheinn",
       height:  933.0,
       gridRef: {
@@ -3423,7 +3423,7 @@ var mountainsObj = {
         lat: 57.61114800,
         lng: -5.1027130
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -3433,7 +3433,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "157",
+      id: "157",
       name: "Gairich",
       height:  919.0,
       gridRef: {
@@ -3445,7 +3445,7 @@ var mountainsObj = {
         lat: 57.04487900,
         lng: -5.2558270
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -3455,7 +3455,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "158",
+      id: "158",
       name: "Garbh Chioch Mhor",
       height: 1013.0,
       gridRef: {
@@ -3467,7 +3467,7 @@ var mountainsObj = {
         lat: 57.00855600,
         lng: -5.4443380
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -3477,7 +3477,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "159",
+      id: "159",
       name: "Geal Charn",
       height: 1049.0,
       gridRef: {
@@ -3489,7 +3489,7 @@ var mountainsObj = {
         lat: 56.89776300,
         lng: -4.4572360
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -3499,7 +3499,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "160",
+      id: "160",
       name: "Geal Charn",
       height:  926.0,
       gridRef: {
@@ -3511,7 +3511,7 @@ var mountainsObj = {
         lat: 57.05741800,
         lng: -4.3735720
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -3521,7 +3521,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "161",
+      id: "161",
       name: "Geal-charn",
       height: 1132.0,
       gridRef: {
@@ -3533,7 +3533,7 @@ var mountainsObj = {
         lat: 56.83783600,
         lng: -4.5097270
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -3543,7 +3543,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "162",
+      id: "162",
       name: "Geal-charn",
       height:  917.1,
       gridRef: {
@@ -3555,7 +3555,7 @@ var mountainsObj = {
         lat: 56.87443300,
         lng: -4.3045190
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -3565,7 +3565,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "163",
+      id: "163",
       name: "Glas Bheinn Mhor",
       height:  997.0,
       gridRef: {
@@ -3577,7 +3577,7 @@ var mountainsObj = {
         lat: 56.54243400,
         lng: -5.0052360
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -3587,7 +3587,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "164",
+      id: "164",
       name: "Glas Maol",
       height: 1068.0,
       gridRef: {
@@ -3599,7 +3599,7 @@ var mountainsObj = {
         lat: 56.87305900,
         lng: -3.3682360
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -3609,7 +3609,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "165",
+      id: "165",
       name: "Glas Tulaichean",
       height: 1051.0,
       gridRef: {
@@ -3621,7 +3621,7 @@ var mountainsObj = {
         lat: 56.86576600,
         lng: -3.5581800
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -3631,7 +3631,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "166",
+      id: "166",
       name: "Gleouraich",
       height: 1035.0,
       gridRef: {
@@ -3643,7 +3643,7 @@ var mountainsObj = {
         lat: 57.09716300,
         lng: -5.2380350
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -3653,7 +3653,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "167",
+      id: "167",
       name: "Gulvain (Gaor Bheinn)",
       height:  987.0,
       gridRef: {
@@ -3665,7 +3665,7 @@ var mountainsObj = {
         lat: 56.93620200,
         lng: -5.2845260
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -3675,7 +3675,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "168",
+      id: "168",
       name: "Ladhar Bheinn",
       height: 1020.0,
       gridRef: {
@@ -3687,7 +3687,7 @@ var mountainsObj = {
         lat: 57.07526300,
         lng: -5.5917450
       },
-      city: {
+      station: {
         id: 2657204,
         name: "Ardvasar",
         latLng: {
@@ -3697,7 +3697,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "169",
+      id: "169",
       name: "Liathach-Mullach an Rathain",
       height: 1023.0,
       gridRef: {
@@ -3709,7 +3709,7 @@ var mountainsObj = {
         lat: 57.56089100,
         lng: -5.4925500
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -3719,7 +3719,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "170",
+      id: "170",
       name: "Liathach-Spidean a'Choire Leith",
       height: 1055.0,
       gridRef: {
@@ -3731,7 +3731,7 @@ var mountainsObj = {
         lat: 57.56419800,
         lng: -5.4635920
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -3741,7 +3741,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "171",
+      id: "171",
       name: "Lochnagar-Cac Carn Beag",
       height: 1156.0,
       gridRef: {
@@ -3753,7 +3753,7 @@ var mountainsObj = {
         lat: 56.96025400,
         lng: -3.2452600
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -3763,7 +3763,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "172",
+      id: "172",
       name: "Luinne Bheinn",
       height:  939.0,
       gridRef: {
@@ -3775,7 +3775,7 @@ var mountainsObj = {
         lat: 57.04832500,
         lng: -5.5136070
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -3785,7 +3785,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "173",
+      id: "173",
       name: "Lurg Mhor",
       height:  987.0,
       gridRef: {
@@ -3797,7 +3797,7 @@ var mountainsObj = {
         lat: 57.41309100,
         lng: -5.2236500
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -3807,7 +3807,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "174",
+      id: "174",
       name: "Mam Sodhail",
       height: 1179.4,
       gridRef: {
@@ -3819,7 +3819,7 @@ var mountainsObj = {
         lat: 57.27980100,
         lng: -5.1202670
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -3829,7 +3829,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "175",
+      id: "175",
       name: "Maoile Lunndaidh",
       height: 1004.9,
       gridRef: {
@@ -3841,7 +3841,7 @@ var mountainsObj = {
         lat: 57.46447700,
         lng: -5.1110020
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -3851,7 +3851,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "176",
+      id: "176",
       name: "Maol Chean-dearg",
       height:  933.0,
       gridRef: {
@@ -3863,7 +3863,7 @@ var mountainsObj = {
         lat: 57.49169700,
         lng: -5.4655490
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -3873,7 +3873,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "177",
+      id: "177",
       name: "Maol Chinn-dearg",
       height:  980.3,
       gridRef: {
@@ -3885,7 +3885,7 @@ var mountainsObj = {
         lat: 57.12756000,
         lng: -5.2526510
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -3895,7 +3895,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "178",
+      id: "178",
       name: "Mayar",
       height:  928.0,
       gridRef: {
@@ -3907,7 +3907,7 @@ var mountainsObj = {
         lat: 56.84893600,
         lng: -3.2463160
       },
-      city: {
+      station: {
         id: 2645191,
         name: "Kirriemuir",
         latLng: {
@@ -3917,7 +3917,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "179",
+      id: "179",
       name: "Meall a'Bhuiridh",
       height: 1108.0,
       gridRef: {
@@ -3929,7 +3929,7 @@ var mountainsObj = {
         lat: 56.61221800,
         lng: -4.8520780
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -3939,7 +3939,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "180",
+      id: "180",
       name: "Meall a'Choire Leith",
       height:  925.5,
       gridRef: {
@@ -3951,7 +3951,7 @@ var mountainsObj = {
         lat: 56.56631200,
         lng: -4.2596250
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -3961,7 +3961,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "181",
+      id: "181",
       name: "Meall a'Chrasgaidh",
       height:  934.0,
       gridRef: {
@@ -3973,7 +3973,7 @@ var mountainsObj = {
         lat: 57.71287600,
         lng: -5.0487260
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -3983,7 +3983,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "182",
+      id: "182",
       name: "Meall Buidhe",
       height:  946.0,
       gridRef: {
@@ -3995,7 +3995,7 @@ var mountainsObj = {
         lat: 57.03155200,
         lng: -5.5463340
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -4005,7 +4005,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "183",
+      id: "183",
       name: "Meall Buidhe",
       height:  932.0,
       gridRef: {
@@ -4017,7 +4017,7 @@ var mountainsObj = {
         lat: 56.61724000,
         lng: -4.4486080
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -4027,7 +4027,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "184",
+      id: "184",
       name: "Meall Chuaich",
       height:  951.0,
       gridRef: {
@@ -4039,7 +4039,7 @@ var mountainsObj = {
         lat: 56.96385100,
         lng: -4.1125520
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -4049,7 +4049,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "185",
+      id: "185",
       name: "Meall Corranaich",
       height: 1069.0,
       gridRef: {
@@ -4061,7 +4061,7 @@ var mountainsObj = {
         lat: 56.54094600,
         lng: -4.2534690
       },
-      city: {
+      station: {
         id: 2652478,
         name: "Comrie",
         latLng: {
@@ -4071,7 +4071,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "186",
+      id: "186",
       name: "Meall Garbh",
       height: 1123.0,
       gridRef: {
@@ -4083,7 +4083,7 @@ var mountainsObj = {
         lat: 56.56612200,
         lng: -4.2077070
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -4093,7 +4093,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "187",
+      id: "187",
       name: "Meall Garbh",
       height:  968.0,
       gridRef: {
@@ -4105,7 +4105,7 @@ var mountainsObj = {
         lat: 56.63737200,
         lng: -4.2074560
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -4115,7 +4115,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "188",
+      id: "188",
       name: "Meall Ghaordaidh",
       height: 1039.8,
       gridRef: {
@@ -4127,7 +4127,7 @@ var mountainsObj = {
         lat: 56.52580900,
         lng: -4.4166540
       },
-      city: {
+      station: {
         id: 2652478,
         name: "Comrie",
         latLng: {
@@ -4137,7 +4137,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "189",
+      id: "189",
       name: "Meall Glas",
       height:  959.0,
       gridRef: {
@@ -4149,7 +4149,7 @@ var mountainsObj = {
         lat: 56.45571200,
         lng: -4.5468210
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -4159,7 +4159,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "190",
+      id: "190",
       name: "Meall Gorm",
       height:  949.0,
       gridRef: {
@@ -4171,7 +4171,7 @@ var mountainsObj = {
         lat: 57.68083700,
         lng: -4.9838010
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -4181,7 +4181,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "191",
+      id: "191",
       name: "Meall Greigh",
       height: 1001.0,
       gridRef: {
@@ -4193,7 +4193,7 @@ var mountainsObj = {
         lat: 56.56742600,
         lng: -4.1595430
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -4203,7 +4203,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "192",
+      id: "192",
       name: "Meall na Aighean",
       height:  981.0,
       gridRef: {
@@ -4215,7 +4215,7 @@ var mountainsObj = {
         lat: 56.62061800,
         lng: -4.1287400
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -4225,7 +4225,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "193",
+      id: "193",
       name: "Meall na Teanga",
       height:  918.0,
       gridRef: {
@@ -4237,7 +4237,7 @@ var mountainsObj = {
         lat: 56.98907500,
         lng: -4.9309270
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -4247,7 +4247,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "194",
+      id: "194",
       name: "Meall nan Ceapraichean",
       height:  977.0,
       gridRef: {
@@ -4259,7 +4259,7 @@ var mountainsObj = {
         lat: 57.79850500,
         lng: -4.9340110
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -4269,7 +4269,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "195",
+      id: "195",
       name: "Meall nan Eun",
       height:  928.0,
       gridRef: {
@@ -4281,7 +4281,7 @@ var mountainsObj = {
         lat: 56.56117700,
         lng: -4.9428930
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -4291,7 +4291,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "196",
+      id: "196",
       name: "Meall nan Tarmachan",
       height: 1043.5,
       gridRef: {
@@ -4303,7 +4303,7 @@ var mountainsObj = {
         lat: 56.52165500,
         lng: -4.3013430
       },
-      city: {
+      station: {
         id: 2652478,
         name: "Comrie",
         latLng: {
@@ -4313,7 +4313,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "197",
+      id: "197",
       name: "Monadh Mor",
       height: 1113.0,
       gridRef: {
@@ -4325,7 +4325,7 @@ var mountainsObj = {
         lat: 57.02679000,
         lng: -3.7501020
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -4335,7 +4335,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "198",
+      id: "198",
       name: "Moruisg",
       height:  928.0,
       gridRef: {
@@ -4347,7 +4347,7 @@ var mountainsObj = {
         lat: 57.49971200,
         lng: -5.1706300
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -4357,7 +4357,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "199",
+      id: "199",
       name: "Mount Keen",
       height:  939.0,
       gridRef: {
@@ -4369,7 +4369,7 @@ var mountainsObj = {
         lat: 56.96975100,
         lng: -2.9736220
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -4379,7 +4379,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "200",
+      id: "200",
       name: "Mullach Clach a'Bhlair",
       height: 1019.0,
       gridRef: {
@@ -4391,7 +4391,7 @@ var mountainsObj = {
         lat: 57.01187900,
         lng: -3.8412710
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -4401,7 +4401,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "201",
+      id: "201",
       name: "Mullach Coire Mhic Fhearchair",
       height: 1015.2,
       gridRef: {
@@ -4413,7 +4413,7 @@ var mountainsObj = {
         lat: 57.70902200,
         lng: -5.2713420
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -4423,7 +4423,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "202",
+      id: "202",
       name: "Mullach Fraoch-choire",
       height: 1102.0,
       gridRef: {
@@ -4435,7 +4435,7 @@ var mountainsObj = {
         lat: 57.20545000,
         lng: -5.1556910
       },
-      city: {
+      station: {
         id: 2646091,
         name: "Invermoriston",
         latLng: {
@@ -4445,7 +4445,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "203",
+      id: "203",
       name: "Mullach na Dheiragain",
       height:  982.0,
       gridRef: {
@@ -4457,7 +4457,7 @@ var mountainsObj = {
         lat: 57.28339900,
         lng: -5.1863500
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -4467,7 +4467,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "204",
+      id: "204",
       name: "Mullach nan Coirean",
       height:  939.0,
       gridRef: {
@@ -4479,7 +4479,7 @@ var mountainsObj = {
         lat: 56.74986700,
         lng: -5.0723810
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -4489,7 +4489,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "205",
+      id: "205",
       name: "Na Gruagaichean",
       height: 1054.2,
       gridRef: {
@@ -4501,7 +4501,7 @@ var mountainsObj = {
         lat: 56.74368700,
         lng: -4.9398750
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -4511,7 +4511,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "206",
+      id: "206",
       name: "Ruadh Stac Mor",
       height:  918.7,
       gridRef: {
@@ -4523,7 +4523,7 @@ var mountainsObj = {
         lat: 57.72678100,
         lng: -5.3292880
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -4533,7 +4533,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "207",
+      id: "207",
       name: "Sail Chaorainn (Sail Chaoruinn)",
       height: 1002.0,
       gridRef: {
@@ -4545,7 +4545,7 @@ var mountainsObj = {
         lat: 57.19180400,
         lng: -5.0910980
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -4555,7 +4555,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "208",
+      id: "208",
       name: "Saileag",
       height:  956.0,
       gridRef: {
@@ -4567,7 +4567,7 @@ var mountainsObj = {
         lat: 57.18127300,
         lng: -5.2813320
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -4577,7 +4577,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "209",
+      id: "209",
       name: "Schiehallion",
       height: 1083.0,
       gridRef: {
@@ -4589,7 +4589,7 @@ var mountainsObj = {
         lat: 56.66694200,
         lng: -4.1002130
       },
-      city: {
+      station: {
         id: 2657820,
         name: "Aberfeldy",
         latLng: {
@@ -4599,7 +4599,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "210",
+      id: "210",
       name: "Seana Bhraigh",
       height:  926.0,
       gridRef: {
@@ -4611,7 +4611,7 @@ var mountainsObj = {
         lat: 57.84733000,
         lng: -4.8966200
       },
-      city: {
+      station: {
         id: 2635199,
         name: "Ullapool",
         latLng: {
@@ -4621,7 +4621,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "211",
+      id: "211",
       name: "Sgairneach Mhor",
       height:  991.0,
       gridRef: {
@@ -4633,7 +4633,7 @@ var mountainsObj = {
         lat: 56.82844700,
         lng: -4.2977920
       },
-      city: {
+      station: {
         id: 2645409,
         name: "Kingussie",
         latLng: {
@@ -4643,7 +4643,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "212",
+      id: "212",
       name: "Sgiath Chuil",
       height:  920.0,
       gridRef: {
@@ -4655,7 +4655,7 @@ var mountainsObj = {
         lat: 56.45314900,
         lng: -4.4956530
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -4665,7 +4665,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "213",
+      id: "213",
       name: "Sgor an Lochain Uaine",
       height: 1258.0,
       gridRef: {
@@ -4677,7 +4677,7 @@ var mountainsObj = {
         lat: 57.05836900,
         lng: -3.7257970
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -4687,7 +4687,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "214",
+      id: "214",
       name: "Sgor Gaibhre",
       height:  955.0,
       gridRef: {
@@ -4699,7 +4699,7 @@ var mountainsObj = {
         lat: 56.77254400,
         lng: -4.5464980
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -4709,7 +4709,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "215",
+      id: "215",
       name: "Sgor Gaoith",
       height: 1118.0,
       gridRef: {
@@ -4721,7 +4721,7 @@ var mountainsObj = {
         lat: 57.06856100,
         lng: -3.8108560
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -4731,7 +4731,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "216",
+      id: "216",
       name: "Sgor na h-Ulaidh",
       height:  994.0,
       gridRef: {
@@ -4743,7 +4743,7 @@ var mountainsObj = {
         lat: 56.61981300,
         lng: -5.0800780
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -4753,7 +4753,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "217",
+      id: "217",
       name: "Sgorr Ruadh",
       height:  960.7,
       gridRef: {
@@ -4765,7 +4765,7 @@ var mountainsObj = {
         lat: 57.49862200,
         lng: -5.4077470
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -4775,7 +4775,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "218",
+      id: "218",
       name: "Sgurr a'Bhealaich Dheirg",
       height: 1036.0,
       gridRef: {
@@ -4787,7 +4787,7 @@ var mountainsObj = {
         lat: 57.17782500,
         lng: -5.2521770
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -4797,7 +4797,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "219",
+      id: "219",
       name: "Sgurr a'Chaorachain",
       height: 1053.0,
       gridRef: {
@@ -4809,7 +4809,7 @@ var mountainsObj = {
         lat: 57.45249200,
         lng: -5.1893000
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -4819,7 +4819,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "220",
+      id: "220",
       name: "Sgurr a'Choire Ghlais",
       height: 1083.0,
       gridRef: {
@@ -4831,7 +4831,7 @@ var mountainsObj = {
         lat: 57.44428800,
         lng: -4.9037570
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -4841,7 +4841,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "221",
+      id: "221",
       name: "Sgurr a'Ghreadaidh",
       height:  973.0,
       gridRef: {
@@ -4853,7 +4853,7 @@ var mountainsObj = {
         lat: 57.22728600,
         lng: -6.2344380
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -4863,7 +4863,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "222",
+      id: "222",
       name: "Sgurr a'Mhadaidh",
       height:  918.0,
       gridRef: {
@@ -4875,7 +4875,7 @@ var mountainsObj = {
         lat: 57.23086900,
         lng: -6.2319310
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -4885,7 +4885,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "223",
+      id: "223",
       name: "Sgurr a'Mhaim",
       height: 1099.0,
       gridRef: {
@@ -4897,7 +4897,7 @@ var mountainsObj = {
         lat: 56.75592000,
         lng: -5.0036900
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -4907,7 +4907,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "224",
+      id: "224",
       name: "Sgurr a'Mhaoraich",
       height: 1027.0,
       gridRef: {
@@ -4919,7 +4919,7 @@ var mountainsObj = {
         lat: 57.10557300,
         lng: -5.3304340
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -4929,7 +4929,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "225",
+      id: "225",
       name: "Sgurr Alasdair",
       height:  992.0,
       gridRef: {
@@ -4941,7 +4941,7 @@ var mountainsObj = {
         lat: 57.20659800,
         lng: -6.2241440
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -4951,7 +4951,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "226",
+      id: "226",
       name: "Sgurr an Doire Leathain",
       height: 1010.0,
       gridRef: {
@@ -4963,7 +4963,7 @@ var mountainsObj = {
         lat: 57.13686100,
         lng: -5.2815300
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -4973,7 +4973,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "227",
+      id: "227",
       name: "Sgurr an Lochain",
       height: 1004.0,
       gridRef: {
@@ -4985,7 +4985,7 @@ var mountainsObj = {
         lat: 57.14123200,
         lng: -5.2975270
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -4995,7 +4995,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "228",
+      id: "228",
       name: "Sgurr Ban",
       height:  989.0,
       gridRef: {
@@ -5007,7 +5007,7 @@ var mountainsObj = {
         lat: 57.71853800,
         lng: -5.2659030
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -5017,7 +5017,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "229",
+      id: "229",
       name: "Sgurr Breac",
       height:  999.0,
       gridRef: {
@@ -5029,7 +5029,7 @@ var mountainsObj = {
         lat: 57.69205000,
         lng: -5.0917220
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -5039,7 +5039,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "230",
+      id: "230",
       name: "Sgurr Choinnich",
       height:  999.2,
       gridRef: {
@@ -5051,7 +5051,7 @@ var mountainsObj = {
         lat: 57.45102600,
         lng: -5.2079160
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -5061,7 +5061,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "231",
+      id: "231",
       name: "Sgurr Choinnich Mor",
       height: 1094.0,
       gridRef: {
@@ -5073,7 +5073,7 @@ var mountainsObj = {
         lat: 56.80043100,
         lng: -4.9039430
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -5083,7 +5083,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "232",
+      id: "232",
       name: "Sgurr Dearg-Inaccessible Pinnacle",
       height:  986.0,
       gridRef: {
@@ -5095,7 +5095,7 @@ var mountainsObj = {
         lat: 57.21327000,
         lng: -6.2348190
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -5105,7 +5105,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "233",
+      id: "233",
       name: "Sgurr Dubh Mor",
       height:  944.0,
       gridRef: {
@@ -5117,7 +5117,7 @@ var mountainsObj = {
         lat: 57.20489400,
         lng: -6.2114210
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -5127,7 +5127,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "234",
+      id: "234",
       name: "Sgurr Eilde Mor",
       height: 1010.0,
       gridRef: {
@@ -5139,7 +5139,7 @@ var mountainsObj = {
         lat: 56.75002400,
         lng: -4.8954530
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -5149,7 +5149,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "235",
+      id: "235",
       name: "Sgurr Fhuar-thuill",
       height: 1049.0,
       gridRef: {
@@ -5161,7 +5161,7 @@ var mountainsObj = {
         lat: 57.44968000,
         lng: -4.9417800
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -5171,7 +5171,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "236",
+      id: "236",
       name: "Sgurr Fhuaran",
       height: 1067.0,
       gridRef: {
@@ -5183,7 +5183,7 @@ var mountainsObj = {
         lat: 57.19614200,
         lng: -5.3476160
       },
-      city: {
+      station: {
         id: 2657204,
         name: "Ardvasar",
         latLng: {
@@ -5193,7 +5193,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "237",
+      id: "237",
       name: "Sgurr Mhic Choinnich",
       height:  948.0,
       gridRef: {
@@ -5205,7 +5205,7 @@ var mountainsObj = {
         lat: 57.20896400,
         lng: -6.2241000
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -5215,7 +5215,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "238",
+      id: "238",
       name: "Sgurr Mor",
       height: 1108.0,
       gridRef: {
@@ -5227,7 +5227,7 @@ var mountainsObj = {
         lat: 57.70013400,
         lng: -5.0167480
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -5237,7 +5237,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "239",
+      id: "239",
       name: "Sgurr Mor",
       height: 1003.0,
       gridRef: {
@@ -5249,7 +5249,7 @@ var mountainsObj = {
         lat: 57.02843700,
         lng: -5.3541880
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -5259,7 +5259,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "240",
+      id: "240",
       name: "Sgurr na Banachdich",
       height:  965.0,
       gridRef: {
@@ -5271,7 +5271,7 @@ var mountainsObj = {
         lat: 57.22096400,
         lng: -6.2416200
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -5281,7 +5281,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "241",
+      id: "241",
       name: "Sgurr na Carnach",
       height: 1002.0,
       gridRef: {
@@ -5293,7 +5293,7 @@ var mountainsObj = {
         lat: 57.18902500,
         lng: -5.3492240
       },
-      city: {
+      station: {
         id: 2657204,
         name: "Ardvasar",
         latLng: {
@@ -5303,7 +5303,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "242",
+      id: "242",
       name: "Sgurr na Ciche",
       height: 1040.0,
       gridRef: {
@@ -5315,7 +5315,7 @@ var mountainsObj = {
         lat: 57.01345200,
         lng: -5.4568540
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -5325,7 +5325,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "243",
+      id: "243",
       name: "Sgurr na Ciste Duibhe",
       height: 1027.0,
       gridRef: {
@@ -5337,7 +5337,7 @@ var mountainsObj = {
         lat: 57.18092300,
         lng: -5.3371510
       },
-      city: {
+      station: {
         id: 2657204,
         name: "Ardvasar",
         latLng: {
@@ -5347,7 +5347,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "244",
+      id: "244",
       name: "Sgurr na Lapaich",
       height: 1151.0,
       gridRef: {
@@ -5359,7 +5359,7 @@ var mountainsObj = {
         lat: 57.36931100,
         lng: -5.0597260
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -5369,7 +5369,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "245",
+      id: "245",
       name: "Sgurr na Ruaidhe",
       height:  993.0,
       gridRef: {
@@ -5381,7 +5381,7 @@ var mountainsObj = {
         lat: 57.44149700,
         lng: -4.8524650
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -5391,7 +5391,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "246",
+      id: "246",
       name: "Sgurr na Sgine",
       height:  946.0,
       gridRef: {
@@ -5403,7 +5403,7 @@ var mountainsObj = {
         lat: 57.14709800,
         lng: -5.3966340
       },
-      city: {
+      station: {
         id: 2657204,
         name: "Ardvasar",
         latLng: {
@@ -5413,7 +5413,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "247",
+      id: "247",
       name: "Sgurr nan Ceathreamhnan (Sgurr nan Ceathramhnan)",
       height: 1151.0,
       gridRef: {
@@ -5425,7 +5425,7 @@ var mountainsObj = {
         lat: 57.25491100,
         lng: -5.2227320
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -5435,7 +5435,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "248",
+      id: "248",
       name: "Sgurr nan Clach Geala",
       height: 1093.0,
       gridRef: {
@@ -5447,7 +5447,7 @@ var mountainsObj = {
         lat: 57.69628700,
         lng: -5.0482380
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -5457,7 +5457,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "249",
+      id: "249",
       name: "Sgurr nan Coireachan",
       height:  956.0,
       gridRef: {
@@ -5469,7 +5469,7 @@ var mountainsObj = {
         lat: 56.93572800,
         lng: -5.4485510
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -5479,7 +5479,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "250",
+      id: "250",
       name: "Sgurr nan Coireachan",
       height:  953.0,
       gridRef: {
@@ -5491,7 +5491,7 @@ var mountainsObj = {
         lat: 57.00715800,
         lng: -5.4054400
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -5501,7 +5501,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "251",
+      id: "251",
       name: "Sgurr nan Conbhairean",
       height: 1109.0,
       gridRef: {
@@ -5513,7 +5513,7 @@ var mountainsObj = {
         lat: 57.17761300,
         lng: -5.0954070
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -5523,7 +5523,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "252",
+      id: "252",
       name: "Sgurr nan Each",
       height:  923.0,
       gridRef: {
@@ -5535,7 +5535,7 @@ var mountainsObj = {
         lat: 57.68101700,
         lng: -5.0463510
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -5545,7 +5545,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "253",
+      id: "253",
       name: "Sgurr nan Eag",
       height:  926.2,
       gridRef: {
@@ -5557,7 +5557,7 @@ var mountainsObj = {
         lat: 57.19581000,
         lng: -6.2112640
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -5567,7 +5567,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "254",
+      id: "254",
       name: "Sgurr nan Gillean",
       height:  964.0,
       gridRef: {
@@ -5579,7 +5579,7 @@ var mountainsObj = {
         lat: 57.24826200,
         lng: -6.1930980
       },
-      city: {
+      station: {
         id: 2640006,
         name: "Portree",
         latLng: {
@@ -5589,7 +5589,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "255",
+      id: "255",
       name: "Sgurr Thuilm",
       height:  963.0,
       gridRef: {
@@ -5601,7 +5601,7 @@ var mountainsObj = {
         lat: 56.93705600,
         lng: -5.3892070
       },
-      city: {
+      station: {
         id: 2643857,
         name: "Lochailort",
         latLng: {
@@ -5611,7 +5611,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "256",
+      id: "256",
       name: "Slioch",
       height:  981.0,
       gridRef: {
@@ -5623,7 +5623,7 @@ var mountainsObj = {
         lat: 57.66717600,
         lng: -5.3470470
       },
-      city: {
+      station: {
         id: 2645398,
         name: "Kinlochewe",
         latLng: {
@@ -5633,7 +5633,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "257",
+      id: "257",
       name: "Spidean Mialach",
       height:  996.0,
       gridRef: {
@@ -5645,7 +5645,7 @@ var mountainsObj = {
         lat: 57.08896400,
         lng: -5.1936140
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -5655,7 +5655,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "258",
+      id: "258",
       name: "Sron a'Choire Ghairbh",
       height:  937.0,
       gridRef: {
@@ -5667,7 +5667,7 @@ var mountainsObj = {
         lat: 57.00783900,
         lng: -4.9287630
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -5677,7 +5677,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "259",
+      id: "259",
       name: "Stob a'Choire Mheadhoin",
       height: 1105.0,
       gridRef: {
@@ -5689,7 +5689,7 @@ var mountainsObj = {
         lat: 56.82369300,
         lng: -4.7602000
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -5699,7 +5699,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "260",
+      id: "260",
       name: "Stob a'Choire Odhair",
       height:  945.0,
       gridRef: {
@@ -5711,7 +5711,7 @@ var mountainsObj = {
         lat: 56.57330800,
         lng: -4.8383020
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -5721,7 +5721,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "261",
+      id: "261",
       name: "Stob Ban",
       height:  999.0,
       gridRef: {
@@ -5733,7 +5733,7 @@ var mountainsObj = {
         lat: 56.74369700,
         lng: -5.0303430
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -5743,7 +5743,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "262",
+      id: "262",
       name: "Stob Ban",
       height:  977.0,
       gridRef: {
@@ -5755,7 +5755,7 @@ var mountainsObj = {
         lat: 56.81064700,
         lng: -4.8408760
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -5765,7 +5765,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "263",
+      id: "263",
       name: "Stob Binnein",
       height: 1165.0,
       gridRef: {
@@ -5777,7 +5777,7 @@ var mountainsObj = {
         lat: 56.37072600,
         lng: -4.5357530
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -5787,7 +5787,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "264",
+      id: "264",
       name: "Stob Choire Claurigh",
       height: 1177.0,
       gridRef: {
@@ -5799,7 +5799,7 @@ var mountainsObj = {
         lat: 56.82378600,
         lng: -4.8496240
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -5809,7 +5809,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "265",
+      id: "265",
       name: "Stob Coir' an Albannaich",
       height: 1044.0,
       gridRef: {
@@ -5821,7 +5821,7 @@ var mountainsObj = {
         lat: 56.55492100,
         lng: -4.9798100
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -5831,7 +5831,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "266",
+      id: "266",
       name: "Stob Coire a'Chairn",
       height:  981.4,
       gridRef: {
@@ -5843,7 +5843,7 @@ var mountainsObj = {
         lat: 56.75074400,
         lng: -4.9690250
       },
-      city: {
+      station: {
         id: 2649169,
         name: "Fort William",
         latLng: {
@@ -5853,7 +5853,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "267",
+      id: "267",
       name: "Stob Coire an Laoigh",
       height: 1116.0,
       gridRef: {
@@ -5865,7 +5865,7 @@ var mountainsObj = {
         lat: 56.81087700,
         lng: -4.8848910
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -5875,7 +5875,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "268",
+      id: "268",
       name: "Stob Coire Easain",
       height: 1115.0,
       gridRef: {
@@ -5887,7 +5887,7 @@ var mountainsObj = {
         lat: 56.81819000,
         lng: -4.7737100
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -5897,7 +5897,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "269",
+      id: "269",
       name: "Stob Coire Sgreamhach",
       height: 1072.0,
       gridRef: {
@@ -5909,7 +5909,7 @@ var mountainsObj = {
         lat: 56.63832200,
         lng: -5.0102850
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -5919,7 +5919,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "270",
+      id: "270",
       name: "Stob Coire Sgriodain",
       height:  979.0,
       gridRef: {
@@ -5931,7 +5931,7 @@ var mountainsObj = {
         lat: 56.83173600,
         lng: -4.6949170
       },
-      city: {
+      station: {
         id: 2637248,
         name: "Spean Bridge",
         latLng: {
@@ -5941,7 +5941,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "271",
+      id: "271",
       name: "Stob Daimh (Stob Diamh)",
       height:  999.2,
       gridRef: {
@@ -5953,7 +5953,7 @@ var mountainsObj = {
         lat: 56.43132700,
         lng: -5.0913190
       },
-      city: {
+      station: {
         id: 2636159,
         name: "Taynuilt",
         latLng: {
@@ -5963,7 +5963,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "272",
+      id: "272",
       name: "Stob Ghabhar",
       height: 1090.0,
       gridRef: {
@@ -5975,7 +5975,7 @@ var mountainsObj = {
         lat: 56.56810300,
         lng: -4.8820990
       },
-      city: {
+      station: {
         id: 2650401,
         name: "East Laroch",
         latLng: {
@@ -5985,7 +5985,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "273",
+      id: "273",
       name: "Stob Poite Coire Ardair",
       height: 1054.0,
       gridRef: {
@@ -5997,7 +5997,7 @@ var mountainsObj = {
         lat: 56.96403700,
         lng: -4.5857450
       },
-      city: {
+      station: {
         id: 2646086,
         name: "Inverness-shire",
         latLng: {
@@ -6007,7 +6007,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "274",
+      id: "274",
       name: "Stuc a'Chroin",
       height:  975.0,
       gridRef: {
@@ -6019,7 +6019,7 @@ var mountainsObj = {
         lat: 56.32931500,
         lng: -4.2375330
       },
-      city: {
+      station: {
         id: 2653989,
         name: "Callander",
         latLng: {
@@ -6029,7 +6029,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "275",
+      id: "275",
       name: "Stuchd an Lochain (Stuc an Lochain)",
       height:  960.0,
       gridRef: {
@@ -6041,7 +6041,7 @@ var mountainsObj = {
         lat: 56.57090700,
         lng: -4.4706190
       },
-      city: {
+      station: {
         id: 2652478,
         name: "Comrie",
         latLng: {
@@ -6051,7 +6051,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "276",
+      id: "276",
       name: "The Cairnwell",
       height:  933.0,
       gridRef: {
@@ -6063,7 +6063,7 @@ var mountainsObj = {
         lat: 56.87950200,
         lng: -3.4211980
       },
-      city: {
+      station: {
         id: 7303904,
         name: "Milton of Edradour",
         latLng: {
@@ -6073,7 +6073,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "277",
+      id: "277",
       name: "The Devil's Point",
       height: 1004.0,
       gridRef: {
@@ -6085,7 +6085,7 @@ var mountainsObj = {
         lat: 57.03572800,
         lng: -3.6887880
       },
-      city: {
+      station: {
         id: 2656752,
         name: "Aviemore",
         latLng: {
@@ -6095,7 +6095,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "278",
+      id: "278",
       name: "The Saddle",
       height: 1011.4,
       gridRef: {
@@ -6107,7 +6107,7 @@ var mountainsObj = {
         lat: 57.16239500,
         lng: -5.4147210
       },
-      city: {
+      station: {
         id: 2657204,
         name: "Ardvasar",
         latLng: {
@@ -6117,7 +6117,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "279",
+      id: "279",
       name: "Toll Creagach",
       height: 1054.0,
       gridRef: {
@@ -6129,7 +6129,7 @@ var mountainsObj = {
         lat: 57.30922700,
         lng: -4.9999530
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -6139,7 +6139,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "280",
+      id: "280",
       name: "Tolmount",
       height:  958.0,
       gridRef: {
@@ -6151,7 +6151,7 @@ var mountainsObj = {
         lat: 56.90473300,
         lng: -3.2979460
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
@@ -6161,7 +6161,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "281",
+      id: "281",
       name: "Tom a'Choinich",
       height: 1112.0,
       gridRef: {
@@ -6173,7 +6173,7 @@ var mountainsObj = {
         lat: 57.29955400,
         lng: -5.0489620
       },
-      city: {
+      station: {
         id: 2646944,
         name: "Highland",
         latLng: {
@@ -6183,7 +6183,7 @@ var mountainsObj = {
       }
     },
     {
-      _id: "282",
+      id: "282",
       name: "Tom Buidhe",
       height:  957.0,
       gridRef: {
@@ -6195,7 +6195,7 @@ var mountainsObj = {
         lat: 56.89361500,
         lng: -3.2923560
       },
-      city: {
+      station: {
         id: 2656565,
         name: "Ballater",
         latLng: {
