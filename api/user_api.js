@@ -1,4 +1,4 @@
-var UserQuery = require('../db/user_query');
+var UserQuery = require('../db/user_query_sql');
 
 var UserApi = function(app) {
 
