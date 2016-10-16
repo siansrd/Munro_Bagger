@@ -1,10 +1,11 @@
-var jsonMountains = require('./mountains');
+var mountains = require('./mountains');
 
 var MountainApi = function(app) {
 
   //mountain index
   app.get('/api/mountains', function(req, res) {
-    res.json( jsonMountains );
+    // would like to be able to JSON.stringify(mountains) one and return many times.
+    res.json( mountains );
   });
 }
 

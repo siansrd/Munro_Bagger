@@ -68,19 +68,21 @@ WeatherStore.prototype.backup = function() {
     if (error)
       console.log(error);
     else {
-      this._changed = false;
       fs.writeFile(cacheDir + cacheFile, JSON.stringify(this._forecasts), function(error) {
         if (error) {
           console.log(error);
         }
         else {
+          // backup successful
+          this._changed = false;
           console.log("Forecasts cache saved to ./cache/forecasts");
-          // backup successful so reset the timer
-          setTimeout(this.backup, 60000);
         }
       }); 
     }
+    // reset the timer even if backup failed
+    setTimeout(this.backup, 60000);
   }.bind(this));
+
 }
 
 module.exports = WeatherStore;
