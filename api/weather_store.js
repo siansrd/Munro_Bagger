@@ -33,7 +33,9 @@ var WeatherStore = function() {
   catch (e) {
   }
   this._changed = false;
-  setTimeout(this.backup.bind(this), 60000);
+  setTimeout(function() {
+    this.backup();
+  }.bind(this), 60000);
 }
 
 WeatherStore.prototype.cacheForecast = function(weatherStation, forecast) {
@@ -57,10 +59,13 @@ WeatherStore.prototype.getCachedForecast = function(weatherStation) {
 }
 
 WeatherStore.prototype.backup = function() {
-  console.log("Starting backup of forecasts cache.")
+
+  console.log(new Date().toTimeString() + ": Starting backup of forecasts cache.")
   if (!this._changed) {
-    console.log("No changes to forecasts cache.")
-    setTimeout(this.backup.bind(this), 60000);
+    console.log(new Date().toTimeString() + ": No changes to forecasts cache.")
+    setTimeout(function() {
+      this.backup();
+    }.bind(this), 60000);
     return;
   }
 
@@ -75,12 +80,14 @@ WeatherStore.prototype.backup = function() {
         else {
           // backup successful
           this._changed = false;
-          console.log("Forecasts cache saved to ./cache/forecasts");
+          console.log(new Date().toTimeString() + ": Forecasts cache saved to ./cache/forecasts");
         }
-      }); 
+      }.bind(this)); 
     }
     // reset the timer even if backup failed
-    setTimeout(this.backup, 60000);
+    setTimeout(function() {
+      this.backup();
+    }.bind(this), 60000);
   }.bind(this));
 
 }

@@ -53,10 +53,20 @@ var buildForecast = function(fullForecast) {
   return forecasts;
 }
 
+var existingRequest = function(weatherStn, requests) {
+  for (var c = 0; c < requests.length; c++) {
+    if (requests[c].station.id === weatherStn.id) {
+      // already have a request outstanding to this destination
+      return requests[c];
+    }
+  }
+  return undefined;
+}
+
 var WeatherApi = function(app) {
   var weatherStore = new WeatherStore();
+  var requests = [];
 
-  if (DEBUG) console.log("********** Weather API starting **********");
   app.get('/api/weather', function(req, res) {
     if (req.query.m) {
       // req.query.m is a string
@@ -74,18 +84,37 @@ var WeatherApi = function(app) {
         }
         else {
           // Don't have a valid cached entry so need to get the weather
-          // Need to deal with the situation where the required weather has already been requested
           if (DEBUG && cachedForecast) console.log("Cached forecast for",  weatherStn.name,
               "expired: Timestamped", new Date(cachedForecast.timeOfRequest).toString());
-          makeRequest(urlGenerator(weatherStn.latLng), function(newForecast) {
-            // got the weather back
-            // now save it
-            if (DEBUG) console.log("Received updated forecast for", weatherStn.name);
-            if (DEBUG) console.log("Saving to Cache");
-            if (DEBUG && cachedForecast) console.log("Must overwrite existing cache entry");
-            weatherStore.cacheForecast(weatherStn, newForecast);
-            res.json(buildForecast(newForecast));
-          })
+          var request = existingRequest(weatherStn, requests);
+          if (request) {
+            // a request is outstanding so resgister interest in the response
+            request.responses.push(res);
+            if (DEBUG) console.log("There are", request.responses.length, "requests outstanding for", weatherStn.name);
+          }
+          else {
+            // No request has been made to this weatherstation yet so make it now
+            requests.push({ station: weatherStn, responses: [res] });
+            makeRequest(urlGenerator(weatherStn.latLng), function(newForecast) {
+              // got the weather back
+              // now save it
+              if (DEBUG) console.log("Received updated forecast for", weatherStn.name);
+              if (DEBUG && cachedForecast) console.log("Must overwrite existing cache entry for", weatherStn.name);
+              weatherStore.cacheForecast(weatherStn, newForecast);
+              var forecast = buildForecast(newForecast);
+              for (var c = 0; c < requests.length; c++) {
+                if (requests[c].station.id === weatherStn.id) {
+                  if (DEBUG) console.log("Replying to", requests[c].responses.length, "requests for", weatherStn.name);
+                  for (var res of requests[c].responses) {
+                    // reply to all the requests to the same weather station
+                    res.json(forecast);
+                  }
+                  // delete the record of the request
+                  requests.splice(c, 1)
+                }
+              }
+            })
+          }
         }
       }
       else {
