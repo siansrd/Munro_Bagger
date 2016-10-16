@@ -63,7 +63,7 @@ var WeatherApi = function(app) {
       var mtn = mountainSearch(mountainObj.mountains, req.query.m);
       if (mtn) {
         if (DEBUG) console.log("Getting weather for \"" + mtn.name + "\" (" + mtn.id + ")");
-        var weatherStn = mtn.weatherStation;
+        var weatherStn = mtn.station;
         if (DEBUG) console.log("Using the weather station at", weatherStn.name);
         var cachedForecast = weatherStore.getCachedForecast(weatherStn);
         if (cachedForecast && !expired(cachedForecast.timeOfRequest)){

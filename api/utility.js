@@ -1,5 +1,4 @@
 var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-var Mountain = require('../client/src/models/mountain');
 
 var makeRequest = function(url, callback) {
  var request = new XMLHttpRequest()
@@ -28,9 +27,7 @@ var mountainSearch = function(mountains, mountainId) {
       return binarySearch(mid + 1, last);
   };
 
-  var searchResult = binarySearch(0, mountains.length-1);
-  if (searchResult) return new Mountain(searchResult);
-  return undefined;
+  return binarySearch(0, mountains.length-1);
 };
 
 module.exports = {
