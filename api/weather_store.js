@@ -1,6 +1,7 @@
 var fs = require('fs');
 var cacheDir = "./cache";
 var cacheFile = "/forecasts";
+var DEBUG = true;
 
 function makeDir(dir, callback) {
   fs.mkdir(dir, 0777, function(err) {
@@ -25,17 +26,19 @@ var findCachedForecast = function(id, forecasts) {
 
 var WeatherStore = function() {
   this._forecasts = [];
-  try  {
-    fs.statSync(cacheDir + cacheFile).isFile();
-    var cache = fs.readFileSync(cacheDir + cacheFile);
-    this._forecasts = JSON.parse(cache);
-  }
-  catch (e) {
-  }
   this._changed = false;
-  setTimeout(function() {
-    this.backup();
-  }.bind(this), 60000);
+  if (DEBUG) {
+    try  {
+      fs.statSync(cacheDir + cacheFile).isFile();
+      var cache = fs.readFileSync(cacheDir + cacheFile);
+      this._forecasts = JSON.parse(cache);
+    }
+    catch (e) {
+    }
+    setTimeout(function() {
+      this.backup();
+    }.bind(this), 60000);
+  }
 }
 
 WeatherStore.prototype.cacheForecast = function(weatherStation, forecast) {
@@ -59,6 +62,7 @@ WeatherStore.prototype.getCachedForecast = function(weatherStation) {
 }
 
 WeatherStore.prototype.backup = function() {
+  // This function only called if DEBUG === true
 
   console.log(new Date().toTimeString() + ": Starting backup of forecasts cache.")
   if (!this._changed) {
