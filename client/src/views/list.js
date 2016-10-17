@@ -1,4 +1,5 @@
 
+
 var List = function(ui){
   this.ui = ui;
   this.mountainsView = ui.getMountainsView();
@@ -7,12 +8,19 @@ var List = function(ui){
 
 List.prototype = {
   populateList: function(myMountains){
+
+    var map = this.ui.getMap();
     var currentInitial = "";
     for (var i = 0;  i < myMountains.length; i++){
       var getFirst = myMountains[i].mountain.name.charAt(0);
       if (currentInitial == getFirst) { 
        var munro = document.createElement('li');
        munro.innerHTML = myMountains[i].mountain.name;
+       //munro.value = i;
+       munro.onclick = function() {
+        console.log(myMountains[i])
+         map.zoomToPin(myMountains[i].pin);
+      }
        document.getElementById('munroList').appendChild(munro); 
       }
       else {

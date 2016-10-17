@@ -32,4 +32,13 @@ Map.prototype.userLogin = function() {
   }
 };
 
+Map.prototype.centreOnPin = function(pin) {
+  this.googleMap.setCenter(pin.coords);
+}
+
+Map.prototype.zoomToPin = function(pin) {
+  this.googleMap.setCenter(pin.coords); 
+  this.googleMap.setZoom(20);
+}
+
 module.exports = Map;
