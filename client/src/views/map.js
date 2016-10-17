@@ -38,7 +38,7 @@ Map.prototype.centreOnPin = function(pin) {
 
 Map.prototype.zoomToPin = function(pin) {
   this.googleMap.setCenter(pin.coords); 
-  this.googleMap.setZoom(20);
+  this.googleMap.setZoom(10);
 }
 
 module.exports = Map;

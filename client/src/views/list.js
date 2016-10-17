@@ -11,20 +11,23 @@ List.prototype = {
 
     var map = this.ui.getMap();
     var currentInitial = "";
+
+    var createListEntry = function(mtn) {
+      var munro = document.createElement('li');
+      munro.innerHTML = mtn.mountain.name;
+      munro.onclick = function() {
+         map.zoomToPin(mtn.pin);
+      }
+      document.getElementById('munroList').appendChild(munro); 
+    }
+    
     for (var i = 0;  i < myMountains.length; i++){
       var getFirst = myMountains[i].mountain.name.charAt(0);
       if (currentInitial == getFirst) { 
-       var munro = document.createElement('li');
-       munro.innerHTML = myMountains[i].mountain.name;
-       //munro.value = i;
-       munro.onclick = function() {
-        console.log(myMountains[i])
-         map.zoomToPin(myMountains[i].pin);
-      }
-       document.getElementById('munroList').appendChild(munro); 
+        createListEntry(myMountains[i]);
       }
       else {
-        currentInitial=getFirst;
+        currentInitial = getFirst;
         var munro = document.createElement('li');
         var a = document.createElement("a")
         a.textContent = myMountains[i].mountain.name;
