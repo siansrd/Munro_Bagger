@@ -1,7 +1,7 @@
 var Map = require('./map');
 var Mountains = require('../models/mountains');
 var Pin = require('./pin');
-var List = require('./list');
+var renderList = require('./list/render_list.jsx');
 var UserView = require('./user_view');
 var MountainsView = require('./mountains_view');
 
@@ -12,7 +12,12 @@ var UI = function(){
   this.mtnsView = new MountainsView();
   this.mtnsView.all(function(mtns){
     this.map.addPins();
-    this.mtnList = new List(this);
+    // this.mtnList = new List(this);
+    renderList(this.mtnsView.mountains, function(mtnId) {
+      console.log(mtnId);
+      var pin = this.mtnsView.getPinById(mtnId);
+      this.map.zoomToPin(pin);
+    }.bind(this));
 
     this.userView = new UserView();
     this.userView.onChangeForecast = this.map.changeForecast.bind(this.map);
