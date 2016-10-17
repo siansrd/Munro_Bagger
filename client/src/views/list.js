@@ -1,4 +1,11 @@
-
+var createListEntry = function(mtn, map) {
+  var munro = document.createElement('li');
+  munro.innerHTML = mtn.mountain.name;
+  munro.onclick = function() {
+     map.zoomToPin(mtn.pin);
+  }
+  document.getElementById('munroList').appendChild(munro); 
+}
 
 var List = function(ui){
   this.ui = ui;
@@ -12,19 +19,10 @@ List.prototype = {
     var map = this.ui.getMap();
     var currentInitial = "";
 
-    var createListEntry = function(mtn) {
-      var munro = document.createElement('li');
-      munro.innerHTML = mtn.mountain.name;
-      munro.onclick = function() {
-         map.zoomToPin(mtn.pin);
-      }
-      document.getElementById('munroList').appendChild(munro); 
-    }
-    
     for (var i = 0;  i < myMountains.length; i++){
       var getFirst = myMountains[i].mountain.name.charAt(0);
       if (currentInitial == getFirst) { 
-        createListEntry(myMountains[i]);
+        createListEntry(myMountains[i], map);
       }
       else {
         currentInitial = getFirst;
