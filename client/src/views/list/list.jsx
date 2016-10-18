@@ -3,7 +3,8 @@ var ListEntry = require('./list_entry.jsx').ListEntry;
 var ListAnchor = require('./list_entry.jsx').ListAnchor;
 
 var List = React.createClass({
-  render: function() {
+
+  getInitialState: function() {
 
     var alphabet = [];
 
@@ -15,16 +16,33 @@ var List = React.createClass({
       if (result.length > 0) alphabet.push({ letter: letter, mountains: result});
     }
 
-    var mtnList = [];
+    return {
+      alphabet: alphabet,
+      selected: null
+    }
+  },
 
-    for (i = 0; i < alphabet.length; i++) {
+  clickHandler: function(mtnId) {
+    // TODO: Ask for the list to be redrawn with entry mtnId highlighted
+
+    this.setState({selected: mtnId});
+    this.render();
+    this.props.clicked(mtnId);
+  },
+
+  render: function() {
+
+    var mtnList = [];
+    var alphabet = this.state.alphabet;
+    for (var i = 0; i < alphabet.length; i++) {
       var mtns = alphabet[i].mountains;
       mtnList.push(
         <ListAnchor
           key={mtns[0].id}
           id={mtns[0].id}
-          clicked={this.props.clicked}
-          initial={alphabet[i].letter}>
+          clicked={this.clickHandler}
+          initial={alphabet[i].letter}
+          highlighted={this.state.selected===mtns[0].id}>
           {mtns[0].mountain.name}
         </ListAnchor>
       )
@@ -33,7 +51,8 @@ var List = React.createClass({
           <ListEntry
             key={mtns[j].id}
             id={mtns[j].id}
-            clicked={this.props.clicked}>
+            clicked={this.clickHandler}
+            highlighted={this.state.selected===mtns[j].id}>
             {mtns[j].mountain.name}
           </ListEntry>
         )

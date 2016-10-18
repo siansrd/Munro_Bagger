@@ -7,7 +7,9 @@ var ListEntry = React.createClass({
   },
 
   render: function() {
-    return(<li onClick={this.clickHandler}>{this.props.children}</li>)
+    var style = (this.props.highlighted) ? {color: "red"} : {};
+    console.log(this.props.highlighted);
+    return(<li onClick={this.clickHandler} style={style}>{this.props.children}</li>);
   }
 })
 
@@ -18,7 +20,9 @@ var ListAnchor = React.createClass({
   },
 
   render: function() {
-    return(<li onClick={this.clickHandler}><a name={this.props.initial}>{this.props.children}</a></li>)
+    var style = (this.props.highlighted) ? {color: "red"} : {};
+    console.log(this.props.highlighted);
+    return(<li onClick={this.clickHandler}><a name={this.props.initial} style={style}>{this.props.children}</a></li>);
   }
 })
 

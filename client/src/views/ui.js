@@ -14,7 +14,6 @@ var UI = function(){
     this.map.addPins();
     // this.mtnList = new List(this);
     renderList(this.mtnsView.mountains, function(mtnId) {
-      console.log(mtnId);
       var pin = this.mtnsView.getPinById(mtnId);
       this.map.zoomToPin(pin);
     }.bind(this));
