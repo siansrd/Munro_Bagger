@@ -23,10 +23,9 @@ var List = React.createClass({
   },
 
   clickHandler: function(mtnId) {
-    // TODO: Ask for the list to be redrawn with entry mtnId highlighted
 
+    // changing the state will cause a rerender
     this.setState({selected: mtnId});
-    this.render();
     this.props.clicked(mtnId);
   },
 
