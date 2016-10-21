@@ -1,0 +1,14 @@
+DROP TABLE users;
+DROP TABLE bagged;
+
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY,
+  username TEXT
+);
+
+CREATE TABLE bagged (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  mtn_id INTEGER(2),
+  bagged INTEGER(1)
+);
