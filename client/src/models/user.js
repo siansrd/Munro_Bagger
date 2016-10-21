@@ -26,9 +26,22 @@ User.prototype.hasClimbed = function(mountainId) {
   return false;
 };
 
+User.prototype.getBaggedIdList = function() {
+  var bagged = this._mountains.filter(function(mtn) {
+    return mtn.bagged;
+  });
+  return bagged.map(function(mtn) {
+    return mtn.id ;
+  })
+}
+
 User.prototype.setHasClimbed = function(mountainId, value) {
   var mountain = search(this._mountains, mountainId);
-  if (mountain) mountain.bagged = value;
+  if (!mountain) {
+    mountain = new UserMountain({ mtn_id: mountainId });
+    this._mountains.push(mountain);
+  }
+  mountain.bagged = value;
 };
 
 User.prototype.saveChanges = function() {

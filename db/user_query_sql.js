@@ -11,7 +11,7 @@ UserQuery.prototype.oneById = function(username, onCompleted) {
   var db = new sqlite3.Database(__dirname + '/users.db');
   var sql = "SELECT bagged.mtn_id, bagged.bagged " +
     "FROM users INNER JOIN bagged ON users.id = bagged.user_id WHERE users.username = " +
-    quote(username);
+    quote(username) + " ORDER BY bagged.mtn_id ASC";
   db.all(sql, function (err, rows) {
     if (rows) {
       rows.forEach(function(row) {

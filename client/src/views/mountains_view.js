@@ -20,9 +20,18 @@ MountainsView.prototype.all = function(onCompleted) {
 
 MountainsView.prototype.userLogin = function(user) {
   this.user = user;
-  for (var mtn of this.mountains) {
+  // clear any existing user settings
+  var mtn;
+  for (mtn of this.mountains) {
     // access private variable _bagged to sidestep callback
-    mtn._bagged = user.hasClimbed(mtn.id);
+    mtn._bagged = false
+  }
+  var mtnId;
+  var mtnIds = user.getBaggedIdList();
+  for (mtnId of mtnIds) {
+    mtn = search(this.mountains, mtnId);
+    // access private variable _bagged to sidestep callback
+    mtn._bagged = true;
   }
 }
 

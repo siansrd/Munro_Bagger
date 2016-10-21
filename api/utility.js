@@ -27,6 +27,7 @@ var mountainSearch = function(mountains, mountainId) {
       return binarySearch(mid + 1, last);
   };
 
+  if (mountains.length === 0) return undefined;
   return binarySearch(0, mountains.length-1);
 };
 

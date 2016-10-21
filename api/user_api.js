@@ -7,7 +7,7 @@ var UserApi = function(app) {
   app.get('/api/users/:userId', function(req, res) {
     // no security at the moment
     query.oneById(req.params.userId, function(data) {
-      res.json( { user: data } );
+      res.json( { user: { mountains : data } } );
     });
   });
 
