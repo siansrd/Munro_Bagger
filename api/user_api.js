@@ -11,13 +11,13 @@ var UserApi = function(app) {
     });
   });
 
-  // app.post('/api/users/:userId', function(req, res) {
-  //   // console.log("Received Post");
-  //   // console.log(req.body.mountains);
-  //   query.updateBaggedList(req.params.userId, req.body.mountains, function(){
-  //     res.sendStatus(200);
-  //   })
-  // });
+  app.post('/api/users/:userId', function(req, res) {
+    // console.log("Received Post");
+    // console.log(req.body.mountains);
+    query.updateBaggedList(req.params.userId, req.body.mountains, function(){
+      res.sendStatus(200);
+    })
+  });
 }
 
 module.exports = UserApi;
