@@ -18,8 +18,11 @@ for (mtn of mountainList.mountains) {
 }
 
 var linesOut = "";
+var m;
 for (var i = 0; i < mountains.length; i++) {
-  linesOut += (i+1) + ",\"" + mountains[i].name + "\"," + mountains[i].weatherStation.id + ",\"" +
-    mountains[i].weatherStation.name + "\"," + mountains[i].weatherStation.latitude + "," + mountains[i].weatherStation.longitude + "\n";
+  m = mountains[i]
+  linesOut += (i+1) + ",\"" + m.name + "\"," + m.weatherStation.id + ",\"" + m.weatherStation.name + "\"," +
+    m.weatherStation.latitude + "," + m.weatherStation.longitude + "," + m.weatherStation.elevation + "," +
+    m.wsDistance + "\n"
 }
 fs.writeFileSync("weather_stations.csv", linesOut);
