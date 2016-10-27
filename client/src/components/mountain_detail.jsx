@@ -5,7 +5,10 @@ const MountDetail = React.createClass({
   render: function() {
 
     return (
-      <h3>HELLO</h3>
+      <div id="mountDetail">
+        <h3>Name</h3>
+        <h3>Details</h3>
+      </div>
     )
   }
 
