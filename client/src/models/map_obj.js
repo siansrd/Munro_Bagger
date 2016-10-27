@@ -15,4 +15,11 @@ var MapObject = function(container) {
   
 }
 
+MapObject.prototype.addMarker = function(latlng) {
+  const marker =  new google.maps.Marker({
+    position: latlng,
+    map: this.map
+  })
+};
+
 module.exports = MapObject;

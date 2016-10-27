@@ -6,7 +6,7 @@ const UI = require('./components/ui')
 window.onload = function(){
   const mapObj = new MapObject(document.getElementById('map'));
   ReactDOM.render(
-    <UI mapObject={mapObj}/>,
+    <UI mapObj={mapObj}/>,
     document.getElementById('ui')
   );
 }
