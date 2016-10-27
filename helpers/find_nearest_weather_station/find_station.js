@@ -21,8 +21,8 @@ var linesOut = "";
 var m;
 for (var i = 0; i < mountains.length; i++) {
   m = mountains[i]
-  linesOut += (i+1) + ",\"" + m.name + "\"," + m.weatherStation.id + ",\"" + m.weatherStation.name + "\"," +
-    m.weatherStation.latitude + "," + m.weatherStation.longitude + "," + m.weatherStation.elevation + "," +
-    m.wsDistance + "\n"
+  linesOut += (i+1) + ",\"" + m.name + "\"," + m.height + "," + m.weatherStation.id + ",\"" +
+  	m.weatherStation.name + "\"," + m.weatherStation.latitude + "," + m.weatherStation.longitude + "," +
+  	m.weatherStation.elevation + "," + m.wsDistance + "\n"
 }
 fs.writeFileSync("weather_stations.csv", linesOut);

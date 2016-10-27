@@ -6,11 +6,12 @@ var Mountain = function(options) {
   this._latLng = options.latLng;
   this._weatherStation = { station: undefined, distance: undefined };
   Object.defineProperty(this, "name", { get: function(){ return this._name; } });
+  Object.defineProperty(this, "height", { get: function(){ return this._height; } });
   Object.defineProperty(this, "weatherStation", { get: function(){ return this._weatherStation.station; } });
   Object.defineProperty(this, "wsDistance", {
     get: function(){ return Math.round(this._weatherStation.distance * 10) / 10; }
   });
-  
+
 }
 
 Mountain.prototype.calculateDistanceTo = function( latLng ) {
