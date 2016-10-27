@@ -12,6 +12,14 @@ body {
     font-size: 18px;
 }
 
+#map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 header {
     height: 90px;
     width: 100%;
