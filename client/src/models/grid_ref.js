@@ -1,4 +1,4 @@
-var baseGrids = require('./grid_base')
+var baseGrids = require('./grid_base');
 
 var GridRef = function(options){
   this._letters = options.letters;
@@ -26,7 +26,7 @@ GridRef.prototype.toString = function(){
   return this._letters + this._eastings.substring(0,3) + this._northings.substring(0,3);
 };
 
-GridRef.protoype.toCoords = function() {
+GridRef.prototype.toCoords = function() {
   for(var baseGrid of baseGrids) {
     if (this._letters === baseGrid.letters) {
       var eastings = baseGrid.eastings + this._eastings;
