@@ -1,5 +1,5 @@
 const React = require('react');
-const MountDetail = require('./mountain_detail')
+const MountainDetail = require('./mountain_detail')
 
 const UI = React.createClass({
 
@@ -25,7 +25,9 @@ const UI = React.createClass({
     }.bind(this))
     
     return (
-      <h3>Yo</h3>
+      <div>
+        <MountainDetail/>
+      </div>
     )
   }
 })
