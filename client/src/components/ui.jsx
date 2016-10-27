@@ -15,24 +15,16 @@ const UI = React.createClass({
     }
   },
 
-  componentDidMount: function() {
-    new Mountains().all(){
-      this.setState(mountains: mountains)   
-    }.bind(this));
-  },
-
-  // MountainsView.prototype.all = function(onCompleted) {
+  // componentDidMount: function(onCompleted) {
   //   new Mountains().all(function(mtns){
   //     this.mountains = mtns.map(function(mtn) {
   //       var mv = new MountainView(mtn);
   //       mv.onChange = this.mountainViewChange.bind(this);
   //       return mv;
   //     }.bind(this));
-  //     onCompleted(this.mountains);
+  //     onCompleted(this.setState({ mountains: this.mountains}));
   //   }.bind(this));
-  // }
-
-
+  // },
 
   createMarker: function(latlng) {
     this.props.mapObj.addMarker(latlng)
