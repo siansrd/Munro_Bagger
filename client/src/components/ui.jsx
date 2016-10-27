@@ -1,5 +1,6 @@
 const React = require('react');
-const MountainDetail = require('./mountain_detail')
+const Mountains = require('../models/mountains');
+const MountainDetail = require('./mountain_detail');
 
 const UI = React.createClass({
 
@@ -13,6 +14,25 @@ const UI = React.createClass({
       user:           null
     }
   },
+
+  componentDidMount: function() {
+    new Mountains().all(){
+      this.setState(mountains: mountains)   
+    }.bind(this));
+  },
+
+  // MountainsView.prototype.all = function(onCompleted) {
+  //   new Mountains().all(function(mtns){
+  //     this.mountains = mtns.map(function(mtn) {
+  //       var mv = new MountainView(mtn);
+  //       mv.onChange = this.mountainViewChange.bind(this);
+  //       return mv;
+  //     }.bind(this));
+  //     onCompleted(this.mountains);
+  //   }.bind(this));
+  // }
+
+
 
   createMarker: function(latlng) {
     this.props.mapObj.addMarker(latlng)
