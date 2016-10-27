@@ -12,6 +12,8 @@ var MapObject = function(container) {
   this.bounds = new google.maps.LatLngBounds(sw, ne);
   
   this.map.fitBounds(this.bounds);
+
+  this.prevInfoWindow = null;
   
 }
 
@@ -19,13 +21,26 @@ MapObject.prototype.addMarker = function(latlng) {
   const marker =  new google.maps.Marker({
     position: latlng,
     map: this.map
-  });
-  const infowindow = new google.maps.InfoWindow({
+  }); 
+  
+  const infoWindow = new google.maps.InfoWindow({
       content: "Mountain Name"
   });
-  marker.addListener('click', function() {
-    infowindow.open(this.map, marker);
-  });
+  
+  google.maps.event.addListener(marker, 'click', function(){
+    if( this.prevInfoWindow ) {
+       this.prevInfoWindow.close();
+    }
+    this.prevInfoWindow = infoWindow;
+    infoWindow.open(this.map, marker);
+  }.bind(this));
 };
+
+
+
+
+
+
+
 
 module.exports = MapObject;
