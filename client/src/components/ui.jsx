@@ -1,10 +1,11 @@
 const React = require('react');
+const MountView = require('./mountain_view')
 
 const UI = React.createClass({
 
   render: function() {
     return (
-      <h3>Hey Hey Hey</h3>
+      <MountView mapObject={this.props.mapObj}/>
     )
   }
 })

@@ -4,8 +4,9 @@ const MapObject = require('./models/map_obj.js')
 const UI = require('./components/ui')
 
 window.onload = function(){
+  const mapObj = new MapObject(document.getElementById('map'));
   ReactDOM.render(
-    <UI mapObject={new MapObject(document.getElementById('map'))}/>,
+    <UI mapObject={mapObj}/>,
     document.getElementById('ui')
   );
 }
