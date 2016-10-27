@@ -19,7 +19,13 @@ MapObject.prototype.addMarker = function(latlng) {
   const marker =  new google.maps.Marker({
     position: latlng,
     map: this.map
-  })
+  });
+  const infowindow = new google.maps.InfoWindow({
+      content: "Mountain Name"
+  });
+  marker.addListener('click', function() {
+    infowindow.open(this.map, marker);
+  });
 };
 
 module.exports = MapObject;
