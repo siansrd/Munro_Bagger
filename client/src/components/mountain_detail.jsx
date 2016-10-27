@@ -1,6 +1,6 @@
 const React = require('react');
 
-const MountView = React.createClass({
+const MountDetail = React.createClass({
 
   render: function() {
 
@@ -11,4 +11,4 @@ const MountView = React.createClass({
 
 })
 
-module.exports = MountView;
+module.exports = MountDetail;
