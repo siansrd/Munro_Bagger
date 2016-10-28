@@ -35,7 +35,6 @@ const UI = React.createClass({
   onMarkerClick: function(mtnId) {
     const mtn = search(this.state.mountains, mtnId);
     this.setState({focusMountain: mtn})
-    console.log(mtn)
   },
 
   render: function() {
@@ -49,7 +48,7 @@ const UI = React.createClass({
     
     return (
       <div>
-        <MountainDetail/>
+        <MountainDetail focusMount={this.state.focusMountain}/>
       </div>
     )
   }
