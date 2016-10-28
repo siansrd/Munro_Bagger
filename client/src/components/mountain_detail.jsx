@@ -21,11 +21,15 @@ const MountDetail = React.createClass({
           <div className="grid-item">{this.props.focusMount.mountain.gridRef.letters} {this.props.focusMount.mountain.gridRef.eastings} {this.props.focusMount.mountain.gridRef.northings}</div>
           <div className="grid-item">Lat/Lon:</div> 
           <div className="grid-item">{this.props.focusMount.mountain.latLng.lat} {this.props.focusMount.mountain.latLng.lng}</div>
+          <div className="grid-item">Bagged:</div>
+          <div className="grid-item"><input type="checkbox"/></div>
         </div>
       </div>
     )
   }
-
 })
+
+
+
 
 module.exports = MountDetail;
