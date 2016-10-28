@@ -1,6 +1,6 @@
 const React = require('react');
 const Mountains = require('../models/mountains');
-// const MountainDetail = require('./mountain_detail');
+const MountainDetail = require('./mountain_detail');
 const MountainView = require('../views/mountain_view');
 
 
@@ -46,14 +46,10 @@ const UI = React.createClass({
     for (let mountain of this.state.mountains) {
       this.createMarker(mountain.mountain, this.onMarkerClick)
     }
-
-    // this.state.mountains.forEach(function(mountainDetail, index){
-    //   this.createMarker(mountainDetail.mountain, this.onMarkerClick)
-    // }.bind(this))
     
     return (
       <div>
-        <h3>Hi</h3>
+        <MountainDetail/>
       </div>
     )
   }
