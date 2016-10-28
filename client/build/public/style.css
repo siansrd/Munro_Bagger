@@ -43,7 +43,11 @@ ul {
 }
 
 #filter label {
-    margin: 0 20px 0 5px;
+    margin: 0 10px 0 5px;
+}
+
+input[type="radio" i] {
+    margin: 0 5px;
 }
 
 #mountDetail {

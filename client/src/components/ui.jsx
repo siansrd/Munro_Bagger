@@ -46,6 +46,10 @@ const UI = React.createClass({
     console.log("baggedStatusChanged", this.state.focusMountBagged)
   },
 
+  setFilterOption: function(value) {
+    console.log("setFilterOption", value);
+  },
+
   render: function() {
 
     // TODO: Refactor this
@@ -58,7 +62,7 @@ const UI = React.createClass({
     return (
       <div>
         <MountainDetail focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
-        <Filter/>
+        <Filter filterOption={this.setFilterOption}/>
       </div>
     )
   }
