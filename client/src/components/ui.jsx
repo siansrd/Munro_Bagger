@@ -2,6 +2,7 @@ const React = require('react');
 const Mountains = require('../models/mountains');
 const MountainDetail = require('./mountain_detail');
 const MountainView = require('../views/mountain_view');
+var search = require('../utility').mountainSearch;
 
 
 const UI = React.createClass({
@@ -23,7 +24,6 @@ const UI = React.createClass({
         return mv;
       });
       this.setState({mountains: mountains, ready: true});
-      console.log(mountains[0]);
     }.bind(this));
   },
 
@@ -32,17 +32,17 @@ const UI = React.createClass({
 
   },
 
-  onMarkerClick: function(mountId) {
-    // TODO : setstate in here
-    console.log('clicked in ui')
+  onMarkerClick: function(mtnId) {
+    const mtn = search(this.state.mountains, mtnId);
+    this.setState({focusMountain: mtn})
+    console.log(mtn)
   },
 
   render: function() {
 
+    // TODO: Refactor this
     if (!this.state.ready) return <div></div>;
-    console.log("in render");
-    console.log("in redner", this.state.mountains[0]);
-
+    
     for (let mountain of this.state.mountains) {
       this.createMarker(mountain.mountain, this.onMarkerClick)
     }

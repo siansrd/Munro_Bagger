@@ -22,7 +22,6 @@ var MapObject = function(container) {
 }
 
 MapObject.prototype.addMarker = function(mountain, callback) {
-  console.log("in addMaker", mountain)
   const marker =  new google.maps.Marker({
     position: mountain.latLng,
     map: this.map
