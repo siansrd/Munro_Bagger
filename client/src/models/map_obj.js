@@ -21,9 +21,10 @@ var MapObject = function(container) {
   
 }
 
-MapObject.prototype.addMarker = function(latlng) {
+MapObject.prototype.addMarker = function(mountain, callback) {
+  console.log("in addMaker", mountain)
   const marker =  new google.maps.Marker({
-    position: latlng,
+    position: mountain.latLng,
     map: this.map
   }); 
   
@@ -32,6 +33,8 @@ MapObject.prototype.addMarker = function(latlng) {
   });
   
   google.maps.event.addListener(marker, 'click', function(){
+    callback(mountain.id);
+
     if( this.prevInfoWindow ) {
        this.prevInfoWindow.close();
     }
