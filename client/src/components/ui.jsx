@@ -1,6 +1,9 @@
 const React = require('react');
-const Mountains = require('../models/mountains');
+
 const MountainDetail = require('./mountain_detail');
+const Filter = require('./filter');
+
+const Mountains = require('../models/mountains');
 const MountainView = require('../views/mountain_view');
 var search = require('../utility').mountainSearch;
 
@@ -55,6 +58,7 @@ const UI = React.createClass({
     return (
       <div>
         <MountainDetail focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
+        <Filter/>
       </div>
     )
   }

@@ -33,6 +33,14 @@ ul {
     height: 100%;
 }
 
+#filter {
+    position: fixed;
+    right: 5%;
+    top: 100px;
+    width: 320px;
+    z-index: 1;
+}
+
 #mountDetail {
     position: fixed;
     right: 5%;
