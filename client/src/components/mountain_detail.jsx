@@ -4,6 +4,12 @@ const MountDetail = React.createClass({
 
   render: function() {
 
+    if (!this.props.focusMount) return (
+      <div id="mountDetail">
+        <h2>Welcome</h2>
+      </div>
+    )
+
     return (
       <div id="mountDetail">
         <h3>{this.props.focusMount.mountain.name}</h3>
