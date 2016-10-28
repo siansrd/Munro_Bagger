@@ -28,7 +28,7 @@ MapObject.prototype.addMarker = function(mountain, callback) {
   }); 
   
   const infoWindow = new google.maps.InfoWindow({
-      content: "Mountain Name"
+      content: mountain.name
   });
   
   google.maps.event.addListener(marker, 'click', function(){

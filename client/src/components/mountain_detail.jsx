@@ -3,7 +3,6 @@ const React = require('react');
 const MountDetail = React.createClass({
 
   render: function() {
-    console.log(this.props.focusMount.mountain)
 
     return (
       <div id="mountDetail">
