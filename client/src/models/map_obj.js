@@ -21,10 +21,19 @@ var MapObject = function(container) {
   
 }
 
+MapObject.prototype.generateIcon = function(){
+  var base = "/public/images/mntn-";
+  var fileName = base;
+  return fileName += "not-sunny.png";
+}
+
 MapObject.prototype.addMarker = function(mountain, callback) {
+
   const marker =  new google.maps.Marker({
     position: mountain.latLng,
-    map: this.map
+    map: this.map,
+      icon: { url: this.generateIcon(),
+        scaledSize: new google.maps.Size(15, 15) }
   }); 
   
   const infoWindow = new google.maps.InfoWindow({
