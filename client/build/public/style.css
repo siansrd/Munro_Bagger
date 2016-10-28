@@ -37,7 +37,7 @@ ul {
     position: fixed;
     right: 5%;
     top: 200px;
-    width: 300px;
+    width: 310px;
     height: 300px;
     padding: 30px;
     border: 3px solid #fff;
@@ -45,7 +45,18 @@ ul {
     z-index: 1;
 }
 
-
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid-item {
+  flex: 1 1 calc(100% - 120px);
+  height: 25px;
+}
+.grid-item:nth-child(odd) {
+  flex: 0 0 120px;
+  height: 25px;
+}
 
 
 
@@ -213,16 +224,4 @@ h2#mountName {
     padding: 0 30px 0 40px;
 }
 
-.flex-grid {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px 10px 20px 40px;
-}
-.grid-item {
-  flex: 1 1 calc(100% - 120px);
-  height: 25px;
-}
-.grid-item:nth-child(odd) {
-  flex: 0 0 120px;
-  height: 25px;
-}
+
