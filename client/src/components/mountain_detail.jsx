@@ -2,6 +2,11 @@ const React = require('react');
 
 const MountDetail = React.createClass({
 
+  handleBaggedChange: function(event) {
+    let status = event.target.checked;
+    this.props.bagged(status)
+  },
+
   render: function() {
 
     if (!this.props.focusMount) return (
@@ -22,7 +27,7 @@ const MountDetail = React.createClass({
           <div className="grid-item">Lat/Lon:</div> 
           <div className="grid-item">{this.props.focusMount.mountain.latLng.lat} {this.props.focusMount.mountain.latLng.lng}</div>
           <div className="grid-item">Bagged:</div>
-          <div className="grid-item"><input type="checkbox"/></div>
+          <div className="grid-item"><input type="checkbox" onClick={this.handleBaggedChange}/></div>
         </div>
       </div>
     )

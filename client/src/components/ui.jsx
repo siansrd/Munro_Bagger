@@ -10,10 +10,11 @@ const UI = React.createClass({
   getInitialState: function() {
 
     return {
-      ready:          false,
-      focusMountain:  null,
-      user:           null,
-      mountains:      []
+      ready:            false,
+      focusMountain:    null,
+      focusMountBagged: null,
+      user:             null,
+      mountains:        []
     }
   },
 
@@ -37,6 +38,11 @@ const UI = React.createClass({
     this.setState({focusMountain: mtn})
   },
 
+  baggedStatusChanged: function(status) {
+    this.setState({focusMountBagged: status})
+    console.log("baggedStatusChanged", this.state.focusMountBagged)
+  },
+
   render: function() {
 
     // TODO: Refactor this
@@ -48,7 +54,7 @@ const UI = React.createClass({
     
     return (
       <div>
-        <MountainDetail focusMount={this.state.focusMountain}/>
+        <MountainDetail focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
       </div>
     )
   }
