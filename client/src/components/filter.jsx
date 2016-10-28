@@ -6,7 +6,13 @@ const Filter = React.createClass({
 
     return (
       <div id="filter">
-        Hi
+        <label>Filter:</label>
+        <input type="radio" name="filter" value="all"/>
+        <label>All</label>
+        <input type="radio" name="filter" value="bagged"/>
+        <label>Bagged</label>
+        <input type="radio" name="filter" value="notBagged"/>
+        <label>Not Bagged</label>
       </div>
     )
   }
