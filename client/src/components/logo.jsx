@@ -5,7 +5,7 @@ const Logo = React.createClass({
   render: function() {
     return (
       <div id="logo">
-        <img alt="logo" src="/public/images/munrobagger_logo.png"/>
+        <h1>Munro Bagger</h1>
       </div>
     )
   }
