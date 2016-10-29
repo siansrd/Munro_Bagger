@@ -63,7 +63,7 @@ const UI = React.createClass({
     
     return (
       <div>
-        <Search/>
+        <Search mountains={this.state.mountains}/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>
         <MountainDetail focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>

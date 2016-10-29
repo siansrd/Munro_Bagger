@@ -1,6 +1,80 @@
 /*Blue: #A5CEFD*/
 /*Dark Blue: #456F99*/
 
+/*auto suggest*/
+
+.react-autosuggest__container {
+  position: relative;
+}
+
+.react-autosuggest__input {
+  width: 240px;
+  height: 30px;
+  padding: 10px 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.react-autosuggest__input:focus {
+  outline: none;
+}
+
+.react-autosuggest__container--open .react-autosuggest__input {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__container--open .react-autosuggest__suggestions-container {
+  display: block;
+  position: absolute;
+  top: 51px;
+  width: 280px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 99999999;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--focused {
+  background-color: #ddd;
+}
+
+.react-autosuggest__section-title {
+  padding: 10px 0 0 10px;
+  font-size: 12px;
+  color: #777;
+  border-top: 1px dashed #ccc;
+}
+
+.react-autosuggest__section-container:first-child .react-autosuggest__section-title {
+  border-top: 0;
+}
+
+
+/*End*/
+
 html, body {
     width: 100%;
     height: 100%;
@@ -31,6 +105,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
 }
 
 #search {
@@ -38,7 +113,6 @@ ul {
     right: 5%;
     top: 10px;
     width: 386px;
-    z-index: 1;
 }
 
 #logo {
@@ -46,7 +120,6 @@ ul {
     right: 5%;
     top: 50px;
     width: 386px;
-    z-index: 1;
 }
 
 #logo img {
@@ -59,7 +132,6 @@ ul {
     top: 110px;
     width: 370px;
     padding: 10px;
-    z-index: 1;
 }
 
 #filter label {
@@ -79,7 +151,6 @@ input[type="radio" i] {
     padding: 30px;
     border: 3px solid #fff;
     background: #A5CEFD;
-    z-index: 1;
 }
 
 .flex-grid {
