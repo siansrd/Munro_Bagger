@@ -24,7 +24,7 @@ const Search = React.createClass({
   renderSuggestion: function(suggestion){
     return (
     <div>
-      {suggestion.name}
+      {suggestion.mountain.name}
     </div>
     )
   },
