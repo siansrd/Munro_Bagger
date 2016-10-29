@@ -14,7 +14,7 @@ const Search = React.createClass({
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : this.props.mountains.filter(mount =>
+    return inputLength <= 4 ? [] : this.props.mountains.filter(mount =>
       mount.mountain.name.toLowerCase().slice(0, inputLength) === inputValue
     );
   },
@@ -30,6 +30,7 @@ const Search = React.createClass({
   },
 
   onChange: function(event, { newValue }) {
+    // TODO: pass mountain back up to UI
     this.setState({
       value: newValue
     });
