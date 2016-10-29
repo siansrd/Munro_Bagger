@@ -33,6 +33,18 @@ ul {
     height: 100%;
 }
 
+#logo {
+    position: fixed;
+    right: 5%;
+    top: 20px;
+    width: 386px;
+    z-index: 1;
+}
+
+#logo img {
+    max-width:100%;
+}
+
 #filter {
     position: fixed;
     right: 5%;
