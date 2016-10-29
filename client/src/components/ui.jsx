@@ -1,5 +1,6 @@
 const React = require('react');
 
+const Search = require('./search');
 const Logo = require('./logo');
 const MountainDetail = require('./mountain_detail');
 const Filter = require('./filter');
@@ -62,9 +63,10 @@ const UI = React.createClass({
     
     return (
       <div>
+        <Search/>
         <Logo/>
-        <MountainDetail focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
         <Filter filterOption={this.setFilterOption}/>
+        <MountainDetail focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
       </div>
     )
   }
