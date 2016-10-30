@@ -1,6 +1,5 @@
 /*Light Blue: #dbebff;
 /*Blue: #A5CEFD*/
-/*Darkish Blue: #6BB0FF;
 /*Dark Blue: #456F99*/
 
 
@@ -148,7 +147,7 @@ input[type="radio" i] {
   position: absolute;
   top: 35px;
   width: 300px;
-  border: 2px solid #6BB0FF;
+  border: 2px solid #456F99;
   background-color: #fff;
   font-family: 'Hammersmith One', sans-serif;
   font-size: 16px;

@@ -55,7 +55,7 @@ const Search = React.createClass({
 
     const { value, suggestions } = this.state;
     const inputProps = {
-      placeholder: 'Search Munros',
+      placeholder: 'Search Munros...',
       value,
       onChange: this.onChange
     };
