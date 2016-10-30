@@ -19,7 +19,11 @@ const Search = React.createClass({
     );
   },
 
-  getSuggestionValue: function(suggestion) {return suggestion.mountain.name},
+  getSuggestionValue: function(suggestion) {
+    let mountId = suggestion.mountain.id;
+    this.props.searchedMount(mountId);
+    return suggestion.mountain.name;
+  },
 
   renderSuggestion: function(suggestion){
     return (
@@ -30,7 +34,6 @@ const Search = React.createClass({
   },
 
   onChange: function(event, { newValue }) {
-    // TODO: pass mountain back up to UI
     this.setState({
       value: newValue
     });

@@ -39,7 +39,7 @@ const UI = React.createClass({
 
   },
 
-  onMarkerClick: function(mtnId) {
+  setFocusMountain: function(mtnId) {
     const mtn = search(this.state.mountains, mtnId);
     this.setState({focusMountain: mtn})
   },
@@ -60,12 +60,12 @@ const UI = React.createClass({
     if (!this.state.ready) return <div></div>;
     
     for (let mountain of this.state.mountains) {
-      this.createMarker(mountain.mountain, this.onMarkerClick)
+      this.createMarker(mountain.mountain, this.setFocusMountain)
     }
     
     return (
       <div>
-        <Search mountains={this.state.mountains}/>
+        <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>
         <MountainDetail focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
