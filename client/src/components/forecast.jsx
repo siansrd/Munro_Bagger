@@ -3,7 +3,8 @@ const React = require('react');
 const Forecast = React.createClass ({
 
   changeForecast: function(event) {
-    console.log(event.target.value)
+    let dayNum = event.target.value
+    this.props.selectForecast(dayNum);
   },
 
   render: function() {

@@ -55,6 +55,10 @@ const UI = React.createClass({
     console.log(this.state.filter);
   },
 
+  setForecastDay: function(dayNum) {
+    console.log(dayNum)
+  },
+
   render: function() {
 
     // TODO: Refactor this
@@ -66,7 +70,7 @@ const UI = React.createClass({
     
     return (
       <div>
-        <Forecast/>
+        <Forecast selectForecast={this.setForecastDay}/>
         <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>
