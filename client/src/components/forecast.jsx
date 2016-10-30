@@ -2,16 +2,18 @@ const React = require('react');
 
 const Forecast = React.createClass ({
 
-  render: function() {
+  changeForecast: function(event) {
+    console.log(event.target.value)
+  },
 
+  render: function() {
     return (
       <div id="weather-buttons">
-        <button id="day0">Today</button>
-        <button id="day1">Tomorrow</button>
-        <button id="day2">Day After</button>
+        <button value="0" onClick={this.changeForecast}>Today</button>
+        <button value="1" onClick={this.changeForecast}>Tomorrow</button>
+        <button value="2" onClick={this.changeForecast}>Day After</button>
       </div>
     )
-
   }
 
 
