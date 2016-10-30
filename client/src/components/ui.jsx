@@ -16,6 +16,7 @@ const UI = React.createClass({
   getInitialState: function() {
 
     return {
+      forecastDayNum:   0,
       filter:           "all", 
       ready:            false,
       focusMountain:    null,
@@ -51,12 +52,12 @@ const UI = React.createClass({
   },
 
   setFilterOption: function(value) {
-    this.setState({filter: value})
+    this.setState({filter: value});
     console.log(this.state.filter);
   },
 
   setForecastDay: function(dayNum) {
-    console.log(dayNum)
+    this.setState({forecastDayNum: dayNum})
   },
 
   render: function() {
