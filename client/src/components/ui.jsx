@@ -15,6 +15,7 @@ const UI = React.createClass({
   getInitialState: function() {
 
     return {
+      filter:           "all", 
       ready:            false,
       focusMountain:    null,
       focusMountBagged: null,
@@ -49,7 +50,8 @@ const UI = React.createClass({
   },
 
   setFilterOption: function(value) {
-    console.log("setFilterOption", value);
+    this.setState({filter: value})
+    console.log(this.state.filter);
   },
 
   render: function() {
