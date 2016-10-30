@@ -53,9 +53,4 @@ MapObject.prototype.addMarker = function(mountain, callback) {
 
 
 
-
-
-
-
-
 module.exports = MapObject;

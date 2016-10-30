@@ -1,5 +1,6 @@
 const React = require('react');
 
+const Forecast = require('./forecast');
 const Search = require('./search');
 const Logo = require('./logo');
 const MountainDetail = require('./mountain_detail');
@@ -65,6 +66,7 @@ const UI = React.createClass({
     
     return (
       <div>
+        <Forecast/>
         <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>

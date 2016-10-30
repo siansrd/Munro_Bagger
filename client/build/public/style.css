@@ -1,4 +1,6 @@
-/*Light Blue: #dbebff;
+/*
+Light Blue: #DBEBFF;
+
 /*Blue: #A5CEFD*/
 /*Dark Blue: #456F99*/
 
@@ -59,6 +61,23 @@ input {
     width: 100%;
     height: 100%;
     z-index: 0;
+}
+
+#weather-buttons {
+    position: fixed;
+    left: 0;
+    width: 95px;
+    z-index: 1;
+}
+#weather-buttons button {
+    display: block;
+    width: 100%;
+    margin: 10px 0 10px 10px;
+}
+
+input[type="submit" i]:hover,
+button:hover {
+    background-color: #DBEBFF;
 }
 
 #search {
@@ -169,7 +188,7 @@ input[type="radio" i] {
 }
 
 .react-autosuggest__suggestion--focused {
-  background-color: #dbebff;
+  background-color: #DBEBFF;
 }
 
 /*---------*/
@@ -180,18 +199,6 @@ input[type="radio" i] {
 
 
 /* Old !!!! */
-
-
-#weather-buttons {
-    position: fixed;
-    left: 0;
-    width: 95px;
-}
-#weather-buttons button {
-    display: block;
-    width: 100%;
-    margin: 10px 0 10px 10px;
-}
 
 
 #login {
@@ -216,11 +223,6 @@ button {
     border-width: 2px;
     border-style: solid;
     border-color: #436E98;
-}
-
-input[type="submit" i]:hover,
-button:hover {
-    background-color: #e6f1fe;
 }
 
 
