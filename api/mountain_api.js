@@ -1,15 +1,7 @@
-var mountainsObj = require('./mountains');
+var getMountains = require('./mountains');
 
 var MountainApi = function(app) {
-  var mountains = mountainsObj.mountains.map(function(mtn) {
-    return {
-      id: mtn.id,
-      name: mtn.name,
-      height: mtn.height,
-      gridRef: mtn.gridRef,
-      latLng: mtn.latLng
-    }
-  })
+  var mountains = getMountains();
 
   //mountain index
   app.get('/api/mountains', function(req, res) {
