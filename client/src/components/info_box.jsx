@@ -15,15 +15,24 @@ const InfoBox = React.createClass({
     </div>
   )
 
-  if (this.props.infoBox) return (
+  if (this.props.infoBox === "mountain") return (
     <div id="infoBox">
       <MountainDetail focusMount={this.props.focusMount} bagged={this.props.baggedStatusChanged}/>
+    </div>
+  )
+
+  if (this.props.infoBox === "login") return (
+    <div id="infoBox">
+      <UserLogin/>
       <UserLogin/>
       <UserSignUp/>
       <UserNewPassword/>
     </div>
   )
+
+
  }
+
 
 })
 

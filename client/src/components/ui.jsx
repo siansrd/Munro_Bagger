@@ -2,6 +2,7 @@ const React = require('react');
 
 const Forecast = require('./forecast');
 const Search = require('./search');
+const LoginLink = require('./login_link');
 const Logo = require('./logo');
 const Filter = require('./filter');
 const InfoBox = require('./info_box');
@@ -75,6 +76,7 @@ const UI = React.createClass({
       <div>
         <Forecast selectForecast={this.setForecastDay}/>
         <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
+        <LoginLink/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>
         <InfoBox focusMount={this.state.focusMountain} infoBox={this.state.infoBoxStatus} bagged={this.baggedStatusChanged}/>
