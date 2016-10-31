@@ -54,6 +54,10 @@ const UI = React.createClass({
     console.log("UI:", this.state.focusMountain.mountain.name, this.state.focusMountBagged)
   },
 
+  loginLinkClicked: function() {
+    this.setState({infoBoxStatus: "login"})
+  },
+
   setFilterOption: function(value) {
     this.setState({filter: value});
     console.log("UI: setFilterOption", this.state.filter);
@@ -76,7 +80,7 @@ const UI = React.createClass({
       <div>
         <Forecast selectForecast={this.setForecastDay}/>
         <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
-        <LoginLink/>
+        <LoginLink linkClicked={this.loginLinkClicked}/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>
         <InfoBox focusMount={this.state.focusMountain} infoBox={this.state.infoBoxStatus} bagged={this.baggedStatusChanged}/>

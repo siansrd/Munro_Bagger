@@ -96,9 +96,9 @@ button:hover {
 
 #search {
     position: fixed;
-    right: 5%;
+    right: 15%;
     top: 10px;
-    width: 386px;
+    width: 240px;
     z-index: 5;
 }
 
@@ -108,6 +108,7 @@ button:hover {
   top: 10px;
   width: 100px;
   z-index: 1;
+  cursor: pointer;
 }
 
 #logo {
