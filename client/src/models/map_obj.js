@@ -1,3 +1,5 @@
+var search = require('../utility').mountainSearch;
+
 var MapObject = function(container) {
 
   this.map = new google.maps.Map(container, {
@@ -18,6 +20,7 @@ var MapObject = function(container) {
   this.map.fitBounds(this.bounds);
 
   this.prevInfoWindow = null;
+  this.allMarkers = [];
   
 }
 
@@ -27,27 +30,46 @@ MapObject.prototype.generateIcon = function(){
   return fileName += "not-sunny.png";
 };
 
+MapObject.prototype.openInfoWindow = function(marker, mountain){
+
+  const infoWindow = new google.maps.InfoWindow({
+      content: mountain.name
+  });
+
+  if( this.prevInfoWindow ) {
+     this.prevInfoWindow.close();
+  }
+  this.prevInfoWindow = infoWindow;
+  infoWindow.open(this.map, marker);
+};
+
+MapObject.prototype.openInfoWindowForMountain = function(mountain){
+  const markerIdObj = search(this.allMarkers, mountain.id);
+  // console.log(mountain);
+  this.openInfoWindow(markerIdObj.marker, mountain)
+};
+  
 MapObject.prototype.addMarker = function(mountain, callback) {
+
+  // this.mountId = mountain.id;
 
   const marker =  new google.maps.Marker({
     position: mountain.latLng,
     map: this.map,
       icon: { url: this.generateIcon(),
         scaledSize: new google.maps.Size(15, 15) }
-  }); 
-  
-  const infoWindow = new google.maps.InfoWindow({
-      content: mountain.name
   });
+  this.allMarkers.push({marker: marker, id: mountain.id}); 
   
   google.maps.event.addListener(marker, 'click', function(){
     callback(mountain.id);
 
-    if( this.prevInfoWindow ) {
-       this.prevInfoWindow.close();
-    }
-    this.prevInfoWindow = infoWindow;
-    infoWindow.open(this.map, marker);
+    // if( this.prevInfoWindow ) {
+    //    this.prevInfoWindow.close();
+    // }
+    // this.prevInfoWindow = infoWindow;
+    // infoWindow.open(this.map, marker);
+    this.openInfoWindow(marker, mountain)
   }.bind(this));
 };
 

@@ -38,12 +38,12 @@ const UI = React.createClass({
 
   createMarker: function(mountain, callback) {
     this.props.mapObj.addMarker(mountain, callback)
-
   },
 
   setFocusMountain: function(mtnId) {
     const mtn = search(this.state.mountains, mtnId);
     this.setState({focusMountain: mtn})
+    this.props.mapObj.openInfoWindowForMountain(mtn.mountain)
   },
 
   baggedStatusChanged: function(status) {
