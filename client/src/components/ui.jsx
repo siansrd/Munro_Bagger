@@ -58,6 +58,10 @@ const UI = React.createClass({
     this.setState({infoBoxStatus: "login"})
   },
 
+  setSignUpForm: function() {
+    this.setState({infoBoxStatus: "signUp"})
+  },
+
   setFilterOption: function(value) {
     this.setState({filter: value});
     console.log("UI: setFilterOption", this.state.filter);
@@ -83,7 +87,7 @@ const UI = React.createClass({
         <LoginLink linkClicked={this.loginLinkClicked}/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>
-        <InfoBox focusMount={this.state.focusMountain} infoBox={this.state.infoBoxStatus} bagged={this.baggedStatusChanged}/>
+        <InfoBox focusMount={this.state.focusMountain} infoBox={this.state.infoBoxStatus} bagged={this.baggedStatusChanged} signUpClicked={this.setSignUpForm}/>
       </div>
     )
   }

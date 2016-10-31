@@ -108,6 +108,9 @@ button:hover {
   top: 10px;
   width: 100px;
   z-index: 1;
+}
+
+.user-link {
   cursor: pointer;
 }
 
