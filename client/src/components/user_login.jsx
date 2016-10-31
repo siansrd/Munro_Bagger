@@ -1,6 +1,6 @@
 const React = require('react');
 
-const UserLogin = createClass({
+const UserLogin = React.createClass({
 
   render: function(){
 
