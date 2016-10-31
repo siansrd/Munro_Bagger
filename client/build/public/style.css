@@ -89,6 +89,10 @@ button {
     margin-bottom: 8px;
 }
 
+input[type="submit" i]{
+  margin-top: 10px;
+}
+
 input[type="submit" i]:hover,
 button:hover {
     background-color: #DBEBFF;
@@ -226,73 +230,9 @@ input[type="radio" i] {
 /* Old !!!! */
 
 
-#login {
-    position: fixed;
-    right: 10px;
-    top: 10px;
-}
-
 
 textarea:focus, input:focus, button:focus {
     outline: none;
-}
-
-
-/* PopUp (background) */
-.popUp {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(165,206,253); /* Fallback color */
-    background-color: rgba(165,206,253,0.5);
-}
-
-/* PopUp Content/Box */
-#popUp-content {
-    background-color: #fff;
-    margin: 15% auto;
-    border: 3px solid #456F99;
-    padding: 20px 20px 40px 20px;
-    width: 40%;
-}
-
-/* PopUp Content/Box */
-#loginPopUp-content {
-    background-color: #fff;
-    margin: 15% auto;
-    border: 3px solid #456F99;
-    padding: 30px;
-    width: 300px;
-}
-
-/* PopUp Close Button */
-#close {
-    width: 20px;
-    float: right;
-}
-#close:hover,
-#close:focus {
-    cursor: pointer;
-}
-
-/* LogIn Close Button */
-#login-close {
-    width: 20px;
-    float: right;
-}
-#login-close:hover,
-#login-close:focus {
-    cursor: pointer;
-}
-
-label#bagged-label,
-h2#mountName {
-    padding: 0 30px 0 40px;
 }
 
 

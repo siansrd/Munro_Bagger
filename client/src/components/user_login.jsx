@@ -19,7 +19,7 @@ const UserLogin = React.createClass({
         <form>
           <div>
             <label>Email</label><br />
-            <input type="email" value="" name="user[email]" id="user_email" />
+            <input type="email" name="user[email]" id="user_email" />
           </div>
           <div>
             <label>Password</label><br />
