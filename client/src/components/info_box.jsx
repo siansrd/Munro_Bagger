@@ -2,6 +2,8 @@ const React = require('react');
 const Welcome = require('./welcome');
 const MountainDetail = require('./mountain_detail');
 const UserLogin = require('./user_login');
+const UserSignUp = require('./user_signup');
+const UserNewPassword = require('./user_new_password');
 
 const InfoBox = React.createClass({
 
@@ -17,6 +19,8 @@ const InfoBox = React.createClass({
     <div id="infoBox">
       <MountainDetail focusMount={this.props.focusMount} bagged={this.props.baggedStatusChanged}/>
       <UserLogin/>
+      <UserSignUp/>
+      <UserNewPassword/>
     </div>
   )
  }

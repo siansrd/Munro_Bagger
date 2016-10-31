@@ -1,0 +1,40 @@
+const React = require('react');
+
+const UserSignUp = React.createClass({
+
+  render: function(){
+
+    return (
+      <div>
+        <h3>Sign Up</h3>
+
+        <form>
+          <div>
+            <label>Email</label><br />
+            <input type="email" value="" name="user[email]" id="user_email" />
+          </div>
+
+          <div>
+            <label>Password</label>
+            <em>(6 characters minimum)</em><br />
+            <input type="password" name="user[password]" id="user_password" />
+          </div>
+
+          <div>
+            <label>Password confirmation</label><br />
+            <input type="password" name="user[password_confirmation]" id="user_password_confirmation" />
+          </div>
+
+          <div>
+            <input type="submit" value="Sign up" />
+          </div>
+        </form>
+        <a href="/users/sign_in">Log in</a><br />
+      </div>
+    )
+
+  }
+
+})
+
+module.exports = UserSignUp;
