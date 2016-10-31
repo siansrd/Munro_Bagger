@@ -9,13 +9,13 @@ const InfoBox = React.createClass({
 
  render: function() {
 
-  if (!this.props.focusMount) return (
+  if (!this.props.infoBox) return (
     <div id="infoBox">
       <Welcome/>
     </div>
   )
 
-  return (
+  if (this.props.infoBox) return (
     <div id="infoBox">
       <MountainDetail focusMount={this.props.focusMount} bagged={this.props.baggedStatusChanged}/>
       <UserLogin/>

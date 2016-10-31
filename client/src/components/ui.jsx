@@ -21,6 +21,7 @@ const UI = React.createClass({
       ready:            false,
       focusMountain:    null,
       focusMountBagged: null,
+      infoBoxStatus:    null,
       user:             null,
       mountains:        []
     }
@@ -43,7 +44,8 @@ const UI = React.createClass({
   setFocusMountain: function(mtnId) {
     const mtn = search(this.state.mountains, mtnId);
     this.setState({focusMountain: mtn})
-    this.props.mapObj.openInfoWindowForMountain(mtn.mountain)
+    this.props.mapObj.openInfoWindowForMountain(mtn.mountain);
+    this.setState({infoBoxStatus: "mountain"})
   },
 
   baggedStatusChanged: function(status) {
@@ -75,7 +77,7 @@ const UI = React.createClass({
         <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>
-        <InfoBox focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
+        <InfoBox focusMount={this.state.focusMountain} infoBox={this.state.infoBoxStatus} bagged={this.baggedStatusChanged}/>
       </div>
     )
   }
