@@ -2,6 +2,10 @@ const React = require('react');
 
 const UserSignUp = React.createClass({
 
+  clickLogin: function(){
+    this.props.loginClicked();
+  },
+
   render: function(){
 
     return (
@@ -29,7 +33,7 @@ const UserSignUp = React.createClass({
             <input type="submit" value="Sign up" />
           </div>
         </form>
-        <a href="/users/sign_in">Log in</a><br />
+        <p className="user-link" onClick={this.clickLogin}>Log in</p>
       </div>
     )
 
