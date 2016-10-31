@@ -25,7 +25,7 @@ MapObject.prototype.generateIcon = function(){
   var base = "/public/images/mntn-";
   var fileName = base;
   return fileName += "not-sunny.png";
-}
+};
 
 MapObject.prototype.addMarker = function(mountain, callback) {
 

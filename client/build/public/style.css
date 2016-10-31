@@ -68,11 +68,20 @@ input {
     left: 0;
     width: 95px;
     z-index: 1;
+    padding: 10px;
 }
+
+#weather-buttons h4 {
+  margin-bottom: 8px;
+  color:#456F99;
+  text-align: center;
+}
+
+
 #weather-buttons button {
     display: block;
     width: 100%;
-    margin: 10px 0 10px 10px;
+    margin-bottom: 8px;
 }
 
 input[type="submit" i]:hover,
