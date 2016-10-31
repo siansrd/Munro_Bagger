@@ -46,9 +46,14 @@ input, textarea, keygen, select, button {
    color: #456F99;  
 }
 
-input {
-    padding: 3px;
-    border-width: 2px;
+input[type="submit" i],
+button {
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 16px;
+    color: #436E98;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 3px 6px 2px;
     border-width: 2px;
     border-style: solid;
     border-color: #436E98;
@@ -115,7 +120,7 @@ button:hover {
 #filter {
     position: fixed;
     right: 5%;
-    top: 110px;
+    top: 130px;
     width: 370px;
     padding: 10px;
     z-index: 1;
@@ -134,7 +139,6 @@ input[type="radio" i] {
     right: 5%;
     top: 180px;
     width: 320px;
-    /*height: 300px;*/
     padding: 30px;
     border: 3px solid #fff;
     background: #A5CEFD;
@@ -219,19 +223,6 @@ input[type="radio" i] {
 
 textarea:focus, input:focus, button:focus {
     outline: none;
-}
-
-input[type="submit" i],
-button {
-    font-family: 'Hammersmith One', sans-serif;
-    font-size: 16px;
-    color: #436E98;
-    background-color: #fff;
-    box-sizing: border-box;
-    padding: 2px 6px 3px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #436E98;
 }
 
 
