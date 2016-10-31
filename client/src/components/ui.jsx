@@ -3,8 +3,8 @@ const React = require('react');
 const Forecast = require('./forecast');
 const Search = require('./search');
 const Logo = require('./logo');
-const MountainDetail = require('./mountain_detail');
 const Filter = require('./filter');
+const Window = require('./window');
 
 const Mountains = require('../models/mountains');
 const MountainView = require('../views/mountain_view');
@@ -48,12 +48,12 @@ const UI = React.createClass({
 
   baggedStatusChanged: function(status) {
     this.setState({focusMountBagged: status})
-    console.log("baggedStatusChanged", this.state.focusMountBagged)
+    console.log("UI:", this.state.focusMountain.mountain.name, this.state.focusMountBagged)
   },
 
   setFilterOption: function(value) {
     this.setState({filter: value});
-    console.log(this.state.filter);
+    console.log("UI: setFilterOption", this.state.filter);
   },
 
   setForecastDay: function(dayNum) {
@@ -75,7 +75,7 @@ const UI = React.createClass({
         <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>
-        <MountainDetail focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
+        <Window focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
       </div>
     )
   }

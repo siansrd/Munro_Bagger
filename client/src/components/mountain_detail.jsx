@@ -10,14 +10,14 @@ const MountDetail = React.createClass({
   render: function() {
 
     if (!this.props.focusMount) return (
-      <div id="mountDetail">
+      <div>
         <p>Welcome to Munro Bagger. The weather displayed is taken from the Met Office as an averge of each day.</p>
         <p>Register to be able to track your bagged Munros</p>
       </div>
     )
 
     return (
-      <div id="mountDetail">
+      <div>
         <h3>{this.props.focusMount.mountain.name}</h3>
         <div className="flex-grid">
           <div className="grid-item">Height:</div> 
