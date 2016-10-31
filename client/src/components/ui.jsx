@@ -4,7 +4,7 @@ const Forecast = require('./forecast');
 const Search = require('./search');
 const Logo = require('./logo');
 const Filter = require('./filter');
-const Window = require('./window');
+const InfoBox = require('./info_box');
 
 const Mountains = require('../models/mountains');
 const MountainView = require('../views/mountain_view');
@@ -75,7 +75,7 @@ const UI = React.createClass({
         <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
         <Logo/>
         <Filter filterOption={this.setFilterOption}/>
-        <Window focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
+        <InfoBox focusMount={this.state.focusMountain} bagged={this.baggedStatusChanged}/>
       </div>
     )
   }

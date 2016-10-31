@@ -2,18 +2,18 @@ const React = require('react');
 const Welcome = require('./welcome');
 const MountainDetail = require('./mountain_detail');
 
-const Window = React.createClass({
+const InfoBox = React.createClass({
 
  render: function() {
 
   if (!this.props.focusMount) return (
-    <div id="window">
+    <div id="infoBox">
       <Welcome/>
     </div>
   )
 
   return (
-    <div id="window">
+    <div id="infoBox">
       <MountainDetail focusMount={this.props.focusMount} bagged={this.props.baggedStatusChanged}/>
     </div>
   )
@@ -21,4 +21,4 @@ const Window = React.createClass({
 
 })
 
-module.exports = Window;
+module.exports = InfoBox;

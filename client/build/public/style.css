@@ -134,7 +134,7 @@ input[type="radio" i] {
     margin: 0 5px;
 }
 
-#window {
+#infoBox {
     position: fixed;
     right: 5%;
     top: 180px;
