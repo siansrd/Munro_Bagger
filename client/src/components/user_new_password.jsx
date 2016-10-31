@@ -2,6 +2,14 @@ const React = require('react');
 
 const UserNewPassword = React.createClass({
 
+  clickLogin: function(){
+    this.props.loginClicked();
+  },
+
+  clickSignUp: function() {
+    this.props.signUpClicked()
+  },
+
   render: function(){
 
     return (
@@ -17,8 +25,8 @@ const UserNewPassword = React.createClass({
                 <input type="submit" value="Send me reset password instructions" />
             </div>
         </form>
-        <a href="/users/sign_in">Log in</a><br />
-        <a href="/users/sign_up">Sign up</a><br />
+        <p className="user-link" onClick={this.clickLogin}>Log in</p>
+        <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
       </div>
     )
 

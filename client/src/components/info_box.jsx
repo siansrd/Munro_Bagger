@@ -35,7 +35,7 @@ const InfoBox = React.createClass({
 
   if (this.props.infoBox === "password" ) return (
     <div id="infoBox">
-      <UserNewPassword/>
+      <UserNewPassword loginClicked={this.props.loginClicked} signUpClicked={this.props.signUpClicked}/>
     </div>
   )
 
