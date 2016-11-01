@@ -22,7 +22,7 @@ const UserNewPassword = React.createClass({
                 <input type="email" name="user[email]" id="user_email" />
             </div>
             <div>
-                <input type="submit" value="Send me reset password instructions" />
+              <button>Send me reset password instructions</button>
             </div>
         </form>
         <p className="user-link" onClick={this.clickLogin}>Log in</p>

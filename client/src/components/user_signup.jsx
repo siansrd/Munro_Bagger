@@ -30,7 +30,7 @@ const UserSignUp = React.createClass({
           </div>
 
           <div>
-            <input type="submit" value="Sign up" />
+            <button>Sign up</button>
           </div>
         </form>
         <p className="user-link" onClick={this.clickLogin}>Log in</p>

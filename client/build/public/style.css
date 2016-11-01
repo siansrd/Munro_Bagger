@@ -89,10 +89,6 @@ button {
     margin-bottom: 8px;
 }
 
-input[type="submit" i]{
-  margin-top: 10px;
-}
-
 input[type="submit" i]:hover,
 button:hover {
     background-color: #DBEBFF;
@@ -148,6 +144,10 @@ button:hover {
 
 input[type="radio" i] {
     margin: 0 5px;
+}
+
+#infoBox button {
+    margin-top: 10px;
 }
 
 #infoBox {

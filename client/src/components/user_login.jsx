@@ -26,7 +26,7 @@ const UserLogin = React.createClass({
             <input type="password" name="user[password]" id="user_password" />
           </div>
           <div>
-            <input type="submit" value="Log in" />
+            <button>Log in</button>
           </div>
         </form>
 
