@@ -26,6 +26,10 @@ h1, h2, h3, h4 {
     margin-bottom: 10px;
 }
 
+#infoBox h3 {
+    margin-bottom: 3px;
+}
+
 ul {
     list-style: none;
     padding: 0;
