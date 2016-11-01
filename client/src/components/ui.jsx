@@ -17,7 +17,7 @@ const UI = React.createClass({
   getInitialState: function() {
 
     return {
-      forecastDayNum:   0,
+      dayNum:           0,
       filter:           "all", 
       ready:            false,
       focusMountain:    null,
@@ -38,8 +38,8 @@ const UI = React.createClass({
     }.bind(this));
   },
 
-  createMarker: function(mountain, callback) {
-    this.props.mapObj.addMarker(mountain, callback)
+  createMarker: function(mountain, dayNum, callback) {
+    this.props.mapObj.addMarker(mountain, dayNum, callback)
   },
 
   setFocusMountain: function(mtnId) {
@@ -72,7 +72,7 @@ const UI = React.createClass({
   },
 
   setForecastDay: function(dayNum) {
-    this.setState({forecastDayNum: dayNum})
+    this.setState({dayNum: dayNum})
   },
 
   render: function() {
@@ -80,8 +80,9 @@ const UI = React.createClass({
     // TODO: Refactor this
     if (!this.state.ready) return <div></div>;
     
+    this.props.mapObj.clearMarkers();
     for (let mountain of this.state.mountains) {
-      this.createMarker(mountain.mountain, this.setFocusMountain)
+      this.createMarker(mountain.mountain, this.state.dayNum, this.setFocusMountain)
     }
     
     return (

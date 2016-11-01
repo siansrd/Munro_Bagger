@@ -24,10 +24,10 @@ var MapObject = function(container) {
   
 }
 
-MapObject.prototype.generateIcon = function(mountain){
+MapObject.prototype.generateIcon = function(mountain, dayNum){
   var base = "/public/images/mntn-";
   var fileName = base;
-  if (mountain.forecasts.day[0].code <= 3) return fileName += "sunny.png";
+  if (mountain.forecasts.day[dayNum].code <= 3) return fileName += "sunny.png";
   return fileName += "not-sunny.png";
 };
 
@@ -48,19 +48,23 @@ MapObject.prototype.openInfoWindowForMountain = function(mountain){
   const markerIdObj = search(this.allMarkers, mountain.id);
   this.openInfoWindow(markerIdObj.marker, mountain)
 };
-  
-MapObject.prototype.addMarker = function(mountain, callback) {
 
-  // this.mountId = mountain.id;
-  // console.log(mountain.forecasts.day[0].code)
+MapObject.prototype.clearMarkers = function() {
+  for (let marker of this.allMarkers) {
+     marker.marker.setMap(null);
+  }
+  this.allMarkers = []
+};
+  
+MapObject.prototype.addMarker = function(mountain, dayNum, callback) {
 
   const marker =  new google.maps.Marker({
     position: mountain.latLng,
     map: this.map,
-      icon: { url: this.generateIcon(mountain),
+      icon: { url: this.generateIcon(mountain, dayNum),
         scaledSize: new google.maps.Size(15, 15) }
   });
-  this.allMarkers.push({marker: marker, id: mountain.id}); 
+  this.allMarkers.push({marker: marker, id: mountain.id, mountain: mountain}); 
   
   google.maps.event.addListener(marker, 'click', function(){
     callback(mountain.id);
