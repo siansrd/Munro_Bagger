@@ -87,12 +87,23 @@ const UI = React.createClass({
     
     return (
       <div>
-        <Forecast selectForecast={this.setForecastDay}/>
-        <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
-        <LoginLink linkClicked={this.setLoginForm}/>
+        <Forecast 
+          selectForecast={this.setForecastDay}/>
+        <Search 
+          mountains={this.state.mountains} 
+          searchedMount={this.setFocusMountain}/>
+        <LoginLink 
+          linkClicked={this.setLoginForm}/>
         <Logo/>
-        <Filter filterOption={this.setFilterOption}/>
-        <InfoBox focusMount={this.state.focusMountain} infoBox={this.state.infoBoxStatus} bagged={this.baggedStatusChanged} signUpClicked={this.setSignUpForm} forgotPassClicked={this.setPasswordForm} loginClicked={this.setLoginForm}/>
+        <Filter 
+          filterOption={this.setFilterOption}/>
+        <InfoBox 
+          focusMount={this.state.focusMountain} 
+          infoBox={this.state.infoBoxStatus} 
+          bagged={this.baggedStatusChanged} 
+          signUpClicked={this.setSignUpForm} 
+          forgotPassClicked={this.setPasswordForm} 
+          loginClicked={this.setLoginForm}/>
       </div>
     )
   }

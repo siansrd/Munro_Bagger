@@ -17,25 +17,32 @@ const InfoBox = React.createClass({
 
   if (this.props.infoBox === "mountain") return (
     <div id="infoBox">
-      <MountainDetail focusMount={this.props.focusMount} bagged={this.props.baggedStatusChanged}/>
+      <MountainDetail 
+        focusMount={this.props.focusMount} 
+        bagged={this.props.bagged}/>
     </div>
   )
 
   if (this.props.infoBox === "login") return (
     <div id="infoBox">
-      <UserLogin signUpClicked={this.props.signUpClicked} forgotPassClicked={this.props.forgotPassClicked}/>
+      <UserLogin 
+        signUpClicked={this.props.signUpClicked} 
+        forgotPassClicked={this.props.forgotPassClicked}/>
     </div>
   )
 
   if (this.props.infoBox === "signUp" ) return (
     <div id="infoBox">
-      <UserSignUp loginClicked={this.props.loginClicked}/>
+      <UserSignUp 
+        loginClicked={this.props.loginClicked}/>
     </div>
   )
 
   if (this.props.infoBox === "password" ) return (
     <div id="infoBox">
-      <UserNewPassword loginClicked={this.props.loginClicked} signUpClicked={this.props.signUpClicked}/>
+      <UserNewPassword 
+        loginClicked={this.props.loginClicked} 
+        signUpClicked={this.props.signUpClicked}/>
     </div>
   )
 
