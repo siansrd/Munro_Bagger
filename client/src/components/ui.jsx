@@ -8,8 +8,9 @@ const Filter = require('./filter');
 const InfoBox = require('./info_box');
 
 const Mountains = require('../models/mountains');
-const MountainView = require('../views/mountain_view');
-var search = require('../utility').mountainSearch;
+const MountainsView = require('../views/mountains_view');
+const search = require('../utility').mountainSearch;
+const User = require('../models/user');
 
 
 const UI = React.createClass({
@@ -24,18 +25,25 @@ const UI = React.createClass({
       focusMountBagged: null,
       infoBoxStatus:    null,
       user:             null,
-      mountains:        []
+      mountains:        [],
+      user:             null
     }
   },
 
   componentDidMount: function() {
-    new Mountains().all(function(mtns){
-      let mountains = mtns.map(function(mtn) {
-        var mv = new MountainView(mtn);
-        return mv;
-      });
-      this.setState({mountains: mountains, ready: true});
-    }.bind(this));
+    let mtnsView = new MountainsView();
+    mtnsView.all(function() {
+      this.setState({mountains: mtnsView, ready: true});
+    }.bind(this))
+  },
+
+  setUser: function(email) {
+    let user = new User();
+    this.setState({user: user})
+    user.getInfo(function() {
+      this.state.mountains.userLogin(user);
+      console.log(this.state.mountains)
+    }.bind(this))
   },
 
   createMarker: function(mountain, dayNum, callback) {
@@ -43,7 +51,7 @@ const UI = React.createClass({
   },
 
   setFocusMountain: function(mtnId) {
-    const mtn = search(this.state.mountains, mtnId);
+    const mtn = search(this.state.mountains.mountains, mtnId);
     this.setState({focusMountain: mtn})
     this.props.mapObj.openInfoWindowForMountain(mtn.mountain);
     this.setState({infoBoxStatus: "mountain"})
@@ -85,7 +93,7 @@ const UI = React.createClass({
     if (!this.state.ready) return <div></div>;
     
     this.props.mapObj.clearMarkers();
-    for (let mountain of this.state.mountains) {
+    for (let mountain of this.state.mountains.mountains) {
       this.createMarker(mountain.mountain, this.state.dayNum, this.setFocusMountain)
     }
     
@@ -94,7 +102,7 @@ const UI = React.createClass({
         <Forecast 
           selectForecast={this.setForecastDay}/>
         <Search 
-          mountains={this.state.mountains} 
+          mountains={this.state.mountains.mountains} 
           searchedMount={this.setFocusMountain}/>
         <LoginLink 
           linkClicked={this.setLoginForm}/>
@@ -108,7 +116,8 @@ const UI = React.createClass({
           date={this.setDate}
           signUpClicked={this.setSignUpForm} 
           forgotPassClicked={this.setPasswordForm} 
-          loginClicked={this.setLoginForm}/>
+          loginClicked={this.setLoginForm}
+          user={this.setUser}/>
       </div>
     )
   }

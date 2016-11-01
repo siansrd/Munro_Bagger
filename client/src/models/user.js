@@ -2,17 +2,17 @@ var UserMountain = require('./user_mountain');
 var ApiRequest = require('./api_request');
 var search = require('../utility').mountainSearch;
 
-var User = function(userId) {
-  this._id = userId;
+var User = function() {
+  // this._id = userId;
   this._mountains = [];
-  Object.defineProperty(this, "id", { get: function(){ return this._id; } });
+  // Object.defineProperty(this, "id", { get: function(){ return this._id; } });
 };
 
 User.prototype.getInfo = function(onCompleted) {
   var url = "http://localhost:3000/bagged_munros";
   var apiRequest = new ApiRequest();
-  apiRequest.makeGetRequest(url, function(receivedData) {
-    var mountains = receivedData.user.mountains;
+  apiRequest.makeGetRequest(url, function(mountains) {
+//    var mountains = receivedData;
     for (var mountain of mountains) {
       this._mountains.push(new UserMountain(mountain));
     }

@@ -20,13 +20,14 @@ const UserLogin = React.createClass({
 
   signIn: function(event) {
     event.preventDefault();
-    const url = "http://www.munrobagger.scot/users/sign_in.json"
-    const content = { user: {
-      email: this.state.email, 
-      password: this.state.password
-    }}
-    const request = new ApiRequest();
-    request.makePostRequest(url, content, function(status){console.log(status)})
+    // const url = "http://www.munrobagger.scot/users/sign_in.json"
+    // const content = { user: {
+    //   email: this.state.email, 
+    //   password: this.state.password
+    // }}
+    // const request = new ApiRequest();
+    // request.makePostRequest(url, content, function(status){console.log(status)})
+    this.props.user("user@email.com")
   },
 
   clickSignUp: function() {

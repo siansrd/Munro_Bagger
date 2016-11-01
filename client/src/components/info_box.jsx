@@ -28,7 +28,8 @@ const InfoBox = React.createClass({
     <div id="infoBox">
       <UserLogin 
         signUpClicked={this.props.signUpClicked} 
-        forgotPassClicked={this.props.forgotPassClicked}/>
+        forgotPassClicked={this.props.forgotPassClicked}
+        user={this.props.user}/>
     </div>
   )
 
