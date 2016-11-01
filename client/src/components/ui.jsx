@@ -54,6 +54,10 @@ const UI = React.createClass({
     console.log("UI:", this.state.focusMountain.mountain.name, this.state.focusMountBagged)
   },
 
+  setDate: function() {
+    // Do something here with date
+  },
+
   setLoginForm: function() {
     this.setState({infoBoxStatus: "login"})
   },
@@ -101,6 +105,7 @@ const UI = React.createClass({
           focusMount={this.state.focusMountain} 
           infoBox={this.state.infoBoxStatus} 
           bagged={this.baggedStatusChanged} 
+          date={this.setDate}
           signUpClicked={this.setSignUpForm} 
           forgotPassClicked={this.setPasswordForm} 
           loginClicked={this.setLoginForm}/>

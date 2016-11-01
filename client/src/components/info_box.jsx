@@ -19,7 +19,8 @@ const InfoBox = React.createClass({
     <div id="infoBox">
       <MountainDetail 
         focusMount={this.props.focusMount} 
-        bagged={this.props.bagged}/>
+        bagged={this.props.bagged}
+        date={this.props.date} />
     </div>
   )
 
