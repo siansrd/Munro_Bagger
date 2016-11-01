@@ -5,11 +5,11 @@ var Mountains = function(){
 };
 
 Mountains.prototype.all = function(onCompleted) {
-  var url = "http://localhost:3000/api/mountains";
+  var url = "http://www.munrobagger.scot/munros";
   var apiRequest = new ApiRequest();
   apiRequest.makeRequest(url, function(receivedMtns) {
     var mountains = [];
-    for (var receivedMtn of receivedMtns.mountains) {
+    for (var receivedMtn of receivedMtns) {
       var mtn = new Mountain(receivedMtn);
       mountains.push(mtn);
     }
