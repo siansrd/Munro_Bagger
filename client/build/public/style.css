@@ -13,7 +13,7 @@ html, body {
 
 body {
     font-family: 'Hammersmith One', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 a {
@@ -23,6 +23,7 @@ a {
 h1, h2, h3, h4 {
     font-weight: normal;
     margin-top: 0;
+    margin-bottom: 10px;
 }
 
 ul {
@@ -167,11 +168,11 @@ input[type="radio" i] {
 }
 .grid-item {
   flex: 1 1 calc(100% - 120px);
-  height: 25px;
+  /*height: 25px;*/
 }
 .grid-item:nth-child(odd) {
   flex: 0 0 120px;
-  height: 25px;
+  /*height: 25px;*/
 }
 
 /*-------- auto suggest -------*/
