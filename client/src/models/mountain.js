@@ -1,11 +1,17 @@
-var GridRef = require ("./grid_ref")
+var GridRef = require ("./grid_ref");
+var Forecasts = require("./forecasts");
 
 var Mountain = function(options){
   this._id = options.id;
+  this._smcId = options.smcId;
   this._name = options.name;
   this._height = options.height;
   this._gridRef = new GridRef(options.gridRef);
   this._latLng = options.latLng;
+  this._meaning = options.meaning;
+  this._region = options.region;
+  this._weatherId = options.weatherId;
+  this._forecasts = new Forecasts(options.forecast.data.Location.Period);
 
   Object.defineProperty(this, "id", {
     get: function(){
@@ -37,15 +43,21 @@ var Mountain = function(options){
     }
   });
 
-  Object.defineProperty(this, "bagged", {
+  Object.defineProperty(this, "meaning", {
     get: function(){
-      return this._bagged;
+      return this._meaning;
     }
   });
 
-  Object.defineProperty(this, "weatherStation", {
+  Object.defineProperty(this, "region", {
     get: function(){
-      return this._weatherStation;
+      return this._region;
+    }
+  });
+
+  Object.defineProperty(this, "forecasts", {
+    get: function(){
+      return this._forecasts;
     }
   });
 };
