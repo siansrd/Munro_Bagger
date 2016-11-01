@@ -33,7 +33,7 @@ MountainsView.prototype.userLogin = function(user) {
     mtn = search(this.mountains, user_mtn.id);
     // access private variable _bagged to sidestep callback
     mtn._bagged = true;
-    mtn._climbed_on = user_mtn._climbed_on;
+    mtn._climbed_on = user_mtn.climbed_on;
   }
 }
 
