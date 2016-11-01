@@ -24,9 +24,10 @@ var MapObject = function(container) {
   
 }
 
-MapObject.prototype.generateIcon = function(){
+MapObject.prototype.generateIcon = function(mountain){
   var base = "/public/images/mntn-";
   var fileName = base;
+  if (mountain.forecasts.day[0].code <= 3) return fileName += "sunny.png";
   return fileName += "not-sunny.png";
 };
 
@@ -45,30 +46,24 @@ MapObject.prototype.openInfoWindow = function(marker, mountain){
 
 MapObject.prototype.openInfoWindowForMountain = function(mountain){
   const markerIdObj = search(this.allMarkers, mountain.id);
-  // console.log(mountain);
   this.openInfoWindow(markerIdObj.marker, mountain)
 };
   
 MapObject.prototype.addMarker = function(mountain, callback) {
 
   // this.mountId = mountain.id;
+  // console.log(mountain.forecasts.day[0].code)
 
   const marker =  new google.maps.Marker({
     position: mountain.latLng,
     map: this.map,
-      icon: { url: this.generateIcon(),
+      icon: { url: this.generateIcon(mountain),
         scaledSize: new google.maps.Size(15, 15) }
   });
   this.allMarkers.push({marker: marker, id: mountain.id}); 
   
   google.maps.event.addListener(marker, 'click', function(){
     callback(mountain.id);
-
-    // if( this.prevInfoWindow ) {
-    //    this.prevInfoWindow.close();
-    // }
-    // this.prevInfoWindow = infoWindow;
-    // infoWindow.open(this.map, marker);
     this.openInfoWindow(marker, mountain)
   }.bind(this));
 };
