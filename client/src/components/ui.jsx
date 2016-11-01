@@ -54,6 +54,10 @@ const UI = React.createClass({
     console.log("UI:", this.state.focusMountain.mountain.name, this.state.focusMountBagged)
   },
 
+  setDate: function() {
+    // Do something here with date
+  },
+
   setLoginForm: function() {
     this.setState({infoBoxStatus: "login"})
   },
@@ -76,7 +80,7 @@ const UI = React.createClass({
   },
 
   render: function() {
-
+    
     // TODO: Refactor this
     if (!this.state.ready) return <div></div>;
     
@@ -87,12 +91,24 @@ const UI = React.createClass({
     
     return (
       <div>
-        <Forecast selectForecast={this.setForecastDay}/>
-        <Search mountains={this.state.mountains} searchedMount={this.setFocusMountain}/>
-        <LoginLink linkClicked={this.setLoginForm}/>
+        <Forecast 
+          selectForecast={this.setForecastDay}/>
+        <Search 
+          mountains={this.state.mountains} 
+          searchedMount={this.setFocusMountain}/>
+        <LoginLink 
+          linkClicked={this.setLoginForm}/>
         <Logo/>
-        <Filter filterOption={this.setFilterOption}/>
-        <InfoBox focusMount={this.state.focusMountain} infoBox={this.state.infoBoxStatus} bagged={this.baggedStatusChanged} signUpClicked={this.setSignUpForm} forgotPassClicked={this.setPasswordForm} loginClicked={this.setLoginForm}/>
+        <Filter 
+          filterOption={this.setFilterOption}/>
+        <InfoBox 
+          focusMount={this.state.focusMountain} 
+          infoBox={this.state.infoBoxStatus} 
+          bagged={this.baggedStatusChanged} 
+          date={this.setDate}
+          signUpClicked={this.setSignUpForm} 
+          forgotPassClicked={this.setPasswordForm} 
+          loginClicked={this.setLoginForm}/>
       </div>
     )
   }

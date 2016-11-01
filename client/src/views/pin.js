@@ -16,15 +16,17 @@ function Pin (map, mtnView) {
   this.loggedIn = false;
   this.mountBagged = false;
   // this.mountSunny = false;
-  this.forecasts = mtnView.mountain.forecasts;
-  this.mountSunny = (this.forecasts.day[0].code === 1)
-  this.createMarker();
+  this.forecasts = new Forecasts();
+  this.forecasts.forMountain(this.mountId, function() {
+    this.mountSunny = (this.forecasts.day[0].id === 800)
+    this.createMarker();
+  }.bind(this))
 };
 
 Pin.prototype = {
   changeForecast: function(dayNum) {
     if (this.forecasts.day[this.dayNum].id !== this.forecasts.day[dayNum].id) {
-      this.mountSunny = (this.forecasts.day[dayNum].code === 1);
+      this.mountSunny = (this.forecasts.day[dayNum].id === 800);
       this.marker.setMap(null);
       this.createMarker();
     }
