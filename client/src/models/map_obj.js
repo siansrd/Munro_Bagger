@@ -20,8 +20,7 @@ var MapObject = function(container) {
   this.map.fitBounds(this.bounds);
 
   this.prevInfoWindow = null;
-  this.allMarkers = [];
-  
+  this.allMarkers = []; 
 }
 
 MapObject.prototype.generateIcon = function(mountain, dayNum){
@@ -32,7 +31,6 @@ MapObject.prototype.generateIcon = function(mountain, dayNum){
 };
 
 MapObject.prototype.openInfoWindow = function(marker, mountain){
-
   const infoWindow = new google.maps.InfoWindow({
       content: mountain.name
   });
@@ -57,7 +55,6 @@ MapObject.prototype.clearMarkers = function() {
 };
   
 MapObject.prototype.addMarker = function(mountain, dayNum, callback) {
-
   const marker =  new google.maps.Marker({
     position: mountain.latLng,
     map: this.map,
@@ -71,7 +68,6 @@ MapObject.prototype.addMarker = function(mountain, dayNum, callback) {
     this.openInfoWindow(marker, mountain)
   }.bind(this));
 };
-
 
 
 module.exports = MapObject;
