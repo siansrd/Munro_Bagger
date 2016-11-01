@@ -2,82 +2,15 @@
 <head>
   <title>Munro Bagger</title>
   <script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js"> </script>
-<style>
-  
-  </style>
-
   <script src='bundle.js'></script>
   <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./public/style.css">
 </head>
-<header>
-<div id="weather-buttons">
-  <button id="day0">Today</button>
-  <button id="day1">Tomorrow</button>
-  <button id="day2">Day After</button>
-</div>
+<!-- <header>
 <button id="login">Login</button>
-<div id="logoWrapper">
-    <img id="logo" src="public/images/logo1.png" alt="Munro Bagger Logo">
-</div> 
-</header>
+</header> -->
 <body >
-    <div id="mapContainer"></div>
-    <div id="rightContainer">
-
-      <div id="letter-buttons">
-        <a href="#A" class="alphabutton1">A</a>
-        <a href="#B" class="alphabutton1">B</a>
-        <a href="#C" class="alphabutton1">C</a>
-        <a href="#D" class="alphabutton1">D</a>
-        <a href="#E" class="alphabutton1">E</a>
-        <a href="#F" class="alphabutton1">F</a>
-        <a href="#G" class="alphabutton1">G</a>
-        <a href="#L" class="alphabutton1">L</a>
-        <a href="#M" class="alphabutton1">M</a>
-        <a href="#N" class="alphabutton1">N</a>
-        <a href="#R" class="alphabutton1">R</a>
-        <a href="#S" class="alphabutton1">S</a>
-        <a href="#T" class="alphabutton1">T</a>        
-      </div>
-      <div id="munroListScroll">
-        <h2 id="munro">Munros</h2>
-        <ul id="munroList"></ul>
-      </div>     
-    </div>
-    <div id="popUp" class="popUp">
-      <div id="popUp-content">
-          <img src="" id="close">
-          <h2 id="mountName"></h2>
-          <div class="flex-grid">
-            <div class="grid-item">Height:</div>
-            <div class="grid-item" id="txt_height"></div>
-            <div class="grid-item">Grid Ref:</div>
-            <div class="grid-item" id="text_grid"></div>
-            <div class="grid-item">Lat Long:</div>
-            <div class="grid-item" id="txt_latlng"></div>
-            <div class="grid-item">Weather:</div>
-            <div class="grid-item" id="weather"></div>
-            <div class="grid-item">Temp:</div>
-            <div class="grid-item" id="temperature"></div>
-            <div class="grid-item">Wind:</div>
-            <div class="grid-item" id="Wind"></div>
-          </div>
-          <label id="bagged-label">Bagged: <input id="bagged" type="checkbox"></label>
-      </div>
-    </div>
-    <div id="loginPopUp" class="popUp">
-      <div id="loginPopUp-content">
-         <img src="" id="login-close">
-         <h2>Log In</h2>
-         <form action="">
-           <p>Email Address:<br>
-           <input type="text" name="email" id="email" value="user1@codeclan.com"></p>
-           <p>Password:<br>
-           <input type="text" name="password" id="password"></p>
-           <div><input type="submit" id="login-submit" value="Log In"></div>
-         </form>
-       </div>
-     </div>
+    <div id="ui"></div>
+    <div id="map"></div>  
 </body>
 </html>

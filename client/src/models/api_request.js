@@ -6,6 +6,7 @@ var ApiRequest = function() {
 ApiRequest.prototype.makeRequest = function(url, callback) {
  var request = new XMLHttpRequest()
  request.open("GET", url);
+ // request.withCredentials = true;
  request.onload = function() {
    if (this.status !== 200) return;
    var jsonString = this.responseText;

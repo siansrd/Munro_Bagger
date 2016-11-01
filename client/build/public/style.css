@@ -1,5 +1,9 @@
+/*
+Light Blue: #DBEBFF;
+
 /*Blue: #A5CEFD*/
 /*Dark Blue: #456F99*/
+
 
 html, body {
     width: 100%;
@@ -12,25 +16,13 @@ body {
     font-size: 18px;
 }
 
-header {
-    height: 90px;
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-}
-
-#logoWrapper {
-    margin: 10px auto;
-    text-align: center;
-    width: 100%;
-}
-
 a {
     text-decoration: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-weight: normal;
+    margin-top: 0;
 }
 
 ul {
@@ -38,66 +30,20 @@ ul {
     padding: 0;
 }
 
-h2#munro {
-    margin-top: 50px;
+input, textarea, keygen, select, button {
+    color: #456F99;
 }
-
-#rightContainer {
-    margin-top: 73px;
-    width: 43%;
-    height: 100%;
-    position: fixed;
-    right: 0;
+::-webkit-input-placeholder {
+   color: #456F99;
 }
-
-#mapContainer {
-    width: 50%;
-    height: 100%;
-    float: left;
+:-moz-placeholder { /* Firefox 18- */
+   color: #456F99;  
 }
-
-#weather-buttons {
-    position: fixed;
-    left: 0;
-    width: 95px;
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #456F99;  
 }
-#weather-buttons button {
-    display: block;
-    width: 100%;
-    margin: 10px 0 10px 10px;
-}
-
-#letter-buttons {
-    float: right;
-    margin: 15px 10px 0 0 ;
-}
-
-.alphabutton1 {
-    display: block;
-    width: 28px;
-    height: 25px;
-    background: gray;
-    padding: 3px 0 0 0;
-    text-align: center;
-    border-radius: 15px;
-    color: white;
-    margin: 2px 0;
-}
-
-#login {
-    position: fixed;
-    right: 10px;
-    top: 10px;
-}
-
-#munroListScroll {
-    height:100%;
-    overflow: scroll;
-}
-
-
-textarea:focus, input:focus, button:focus {
-    outline: none;
+:-ms-input-placeholder {  
+   color: #456F99;  
 }
 
 input[type="submit" i],
@@ -107,91 +53,117 @@ button {
     color: #436E98;
     background-color: #fff;
     box-sizing: border-box;
-    padding: 2px 6px 3px;
+    padding: 3px 6px 2px;
     border-width: 2px;
     border-style: solid;
     border-color: #436E98;
+}
+
+#map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#weather-buttons {
+    position: fixed;
+    left: 0;
+    width: 95px;
+    z-index: 1;
+    padding: 10px;
+}
+
+#weather-buttons h4 {
+  margin-bottom: 8px;
+  color:#456F99;
+  text-align: center;
+}
+
+
+#weather-buttons button {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
 }
 
 input[type="submit" i]:hover,
 button:hover {
-    background-color: #e6f1fe;
+    background-color: #DBEBFF;
 }
 
-input {
-    padding: 3px;
-    border-width: 2px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #436E98;
-}
-
-#email, 
-#password {
-    width: 180px;
-}
-
-/* PopUp (background) */
-.popUp {
-    display: none; /* Hidden by default */
+#search {
     position: fixed;
+    right: 15%;
+    top: 10px;
+    width: 240px;
+    z-index: 5;
+}
+
+#loginLink {
+  position: fixed;
+  right: 3%;
+  top: 10px;
+  width: 100px;
+  z-index: 1;
+}
+
+.user-link {
+  cursor: pointer;
+}
+
+#logo {
+    position: fixed;
+    right: 5%;
+    top: 50px;
+    width: 386px;
     z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(165,206,253); /* Fallback color */
-    background-color: rgba(165,206,253,0.5);
 }
 
-/* PopUp Content/Box */
-#popUp-content {
-    background-color: #fff;
-    margin: 15% auto;
-    border: 3px solid #456F99;
-    padding: 20px 20px 40px 20px;
-    width: 40%;
+#logo h1 {
+    text-decoration: underline;
+    font-size: 60px;
+    color: #fff;
+    margin: 0;   
 }
 
-/* PopUp Content/Box */
-#loginPopUp-content {
-    background-color: #fff;
-    margin: 15% auto;
-    border: 3px solid #456F99;
+#filter {
+    position: fixed;
+    right: 5%;
+    top: 130px;
+    width: 370px;
+    padding: 10px;
+    z-index: 1;
+}
+
+#filter label {
+    margin: 0 10px 0 5px;
+}
+
+input[type="radio" i] {
+    margin: 0 5px;
+}
+
+#infoBox button {
+    margin-top: 10px;
+}
+
+#infoBox {
+    position: fixed;
+    right: 5%;
+    top: 180px;
+    width: 320px;
     padding: 30px;
-    width: 300px;
-}
-
-/* PopUp Close Button */
-#close {
-    width: 20px;
-    float: right;
-}
-#close:hover,
-#close:focus {
-    cursor: pointer;
-}
-
-/* LogIn Close Button */
-#login-close {
-    width: 20px;
-    float: right;
-}
-#login-close:hover,
-#login-close:focus {
-    cursor: pointer;
-}
-
-label#bagged-label,
-h2#mountName {
-    padding: 0 30px 0 40px;
+    border: 3px solid #fff;
+    background: #A5CEFD;
+    z-index: 1;
 }
 
 .flex-grid {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 10px 20px 40px;
 }
 .grid-item {
   flex: 1 1 calc(100% - 120px);
@@ -201,3 +173,66 @@ h2#mountName {
   flex: 0 0 120px;
   height: 25px;
 }
+
+/*-------- auto suggest -------*/
+
+.react-autosuggest__container {
+  position: relative;
+}
+
+.react-autosuggest__input { 
+  width: 240px;
+  height: 28px;
+  padding: 8px;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 16px;
+  background-color: #A5CEFD;
+  border: 2px solid #fff;
+}
+
+.react-autosuggest__container--open .react-autosuggest__suggestions-container {
+  display: block;
+  position: absolute;
+  top: 35px;
+  width: 300px;
+  border: 2px solid #456F99;
+  background-color: #fff;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 16px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 10px 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 3px 20px;
+}
+
+.react-autosuggest__suggestion--focused {
+  background-color: #DBEBFF;
+}
+
+/*---------*/
+
+
+
+
+
+
+/* Old !!!! */
+
+
+
+textarea:focus, input:focus, button:focus {
+    outline: none;
+}
+
+

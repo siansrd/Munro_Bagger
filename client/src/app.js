@@ -1,7 +1,12 @@
-var UI = require('./views/ui');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const MapObject = require('./models/map_obj.js')
+const UI = require('./components/ui')
 
-var app = function(){
-  var ui = new UI();
+window.onload = function(){
+  const mapObj = new MapObject(document.getElementById('map'));
+  ReactDOM.render(
+    <UI mapObj={mapObj}/>,
+    document.getElementById('ui')
+  );
 }
-
-window.onload = app;
