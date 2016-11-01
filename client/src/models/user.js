@@ -9,7 +9,7 @@ var User = function(userId) {
 };
 
 User.prototype.getInfo = function(onCompleted) {
-  var url = "http://localhost:3000/api/users/" + this._id;
+  var url = "http://localhost:3000/bagged_munros";
   var apiRequest = new ApiRequest();
   apiRequest.makeGetRequest(url, function(receivedData) {
     var mountains = receivedData.user.mountains;
@@ -20,28 +20,29 @@ User.prototype.getInfo = function(onCompleted) {
   }.bind(this))
 };
 
-User.prototype.hasClimbed = function(mountainId) {
-  var mountain = search(this._mountains, mountainId);
-  if (mountain) return mountain.bagged;
-  return false;
-};
+// User.prototype.hasClimbed = function(mountainId) {
+//   var mountain = search(this._mountains, mountainId);
+//   if (mountain) return mountain.bagged;
+//   return false;
+// };
 
-User.prototype.getBaggedIdList = function() {
+User.prototype.getBaggedList = function() {
   var bagged = this._mountains.filter(function(mtn) {
     return mtn.bagged;
   });
   return bagged.map(function(mtn) {
-    return mtn.id ;
+    return { id: mtn.id, climbed_on: mtn.climbed_on };
   })
 }
 
-User.prototype.setHasClimbed = function(mountainId, value) {
+User.prototype.setHasClimbed = function(mountainId, value, date) {
   var mountain = search(this._mountains, mountainId);
   if (!mountain) {
     mountain = new UserMountain({ mtn_id: mountainId });
     this._mountains.push(mountain);
   }
   mountain.bagged = value;
+  mountain.climbed_on = date;
 };
 
 User.prototype.saveChanges = function() {
@@ -51,9 +52,9 @@ User.prototype.saveChanges = function() {
   changed = changed.map(function(mtn){
     return mtn.export();
   })
-  var url = "http://localhost:3000/api/users/" + this._id;
+  var url = "http://localhost:3000/bagged_munros";
   var apiRequest = new ApiRequest();
-  apiRequest.makePostRequest(url, { mountains: changed }, function(receivedStatus) {
+  apiRequest.makePostRequest(url, { bagged_munros: changed }, function(receivedStatus) {
     if (receivedStatus !== 200) console.log("Post returned:", receivedStatus);
   });
 }

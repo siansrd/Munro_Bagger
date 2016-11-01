@@ -5,7 +5,7 @@ var Mountains = function(){
 };
 
 Mountains.prototype.all = function(onCompleted) {
-  var url = "http://www.munrobagger.scot/munros";
+  var url = "http://localhost:3000/munros";
   var apiRequest = new ApiRequest();
   apiRequest.makeRequest(url, function(receivedMtns) {
     var mountains = [];

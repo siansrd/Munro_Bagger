@@ -21,28 +21,25 @@ MountainsView.prototype.all = function(onCompleted) {
 MountainsView.prototype.userLogin = function(user) {
   this.user = user;
   // clear any existing user settings
-  var mtn;
+  let mtn;
   for (mtn of this.mountains) {
     // access private variable _bagged to sidestep callback
-    mtn._bagged = false
+    mtn._bagged = false;
+    mtn._climbed_on = null;
   }
-  var mtnId;
-  var mtnIds = user.getBaggedIdList();
-  for (mtnId of mtnIds) {
-    mtn = search(this.mountains, mtnId);
+  let user_mtn;
+  let user_mtns = user.getBaggedList();
+  for (user_mtn of user_mtns) {
+    mtn = search(this.mountains, user_mtn.id);
     // access private variable _bagged to sidestep callback
     mtn._bagged = true;
+    mtn._climbed_on = user_mtn._climbed_on;
   }
 }
 
 MountainsView.prototype.getPinById = function(mtnId) {
   var mtn = search(this.mountains, mtnId);
   return mtn.pin;
-}
-
-MountainsView.prototype.getListEntryById = function(mtnId) {
-  var mtn = search(this.mountains, mtnId);
-  return mtn.listEntry;
 }
 
 MountainsView.prototype.mountainViewChange = function(changed) {

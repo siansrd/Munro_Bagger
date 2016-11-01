@@ -6,4 +6,4 @@ var upCase = function(string){
    return splitString.join(' ');
 };
 
-module.exports = upCase;
+// module.exports = upCase;
