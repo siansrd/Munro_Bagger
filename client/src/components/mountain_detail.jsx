@@ -1,6 +1,22 @@
 const React = require('react');
+const DatePicker = require('react-datepicker');
+const moment = require('moment');
+
+require('react-datepicker/dist/react-datepicker.css');
 
 const MountDetail = React.createClass({
+
+  getInitialState: function(){
+    return {
+      startDate: moment()
+    }
+  },
+
+  handleDateChange: function(date) {
+    this.setState({
+      startDate: date
+    });
+  },
 
   handleBaggedChange: function(event) {
     let status = event.target.checked;
@@ -8,9 +24,7 @@ const MountDetail = React.createClass({
   },
 
   render: function() {
-
-    // this._forecasts = new Forecasts(options.forecast.data.Location.Period);
-
+    // if (!this.state.startDate) return <div></div>;
     return (
       <div>
         <h3>{this.props.focusMount.mountain.name}</h3>
@@ -33,7 +47,10 @@ const MountDetail = React.createClass({
           <div className="grid-item">Visibility:</div> 
           <div className="grid-item">{this.props.focusMount.mountain.forecasts.visibility}</div>
           <div className="grid-item">Bagged:</div>
-          <div className="grid-item"><input type="checkbox" onClick={this.handleBaggedChange}/></div>
+          <div className="grid-item">
+            <input type="checkbox" onClick={this.handleBaggedChange}/>
+            <DatePicker selected={this.state.startDate} onChange={this.handleDateChange} />
+          </div>
         </div>
       </div>
     )

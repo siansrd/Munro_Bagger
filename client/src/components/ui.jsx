@@ -76,7 +76,7 @@ const UI = React.createClass({
   },
 
   render: function() {
-
+    
     // TODO: Refactor this
     if (!this.state.ready) return <div></div>;
     
