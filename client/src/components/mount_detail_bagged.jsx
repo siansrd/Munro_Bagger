@@ -1,12 +1,10 @@
 const React = require('react');
 const DatePicker = require('react-datepicker');
 const moment = require('moment');
-const MountDetailInfo = require('./mount_detail_info');
-const MountDetailBagged = require('./mount_detail_bagged');
 
 require('react-datepicker/dist/react-datepicker.css');
 
-const MountDetail = React.createClass({
+const MountDetailBagged = React.createClass({
 
   getInitialState: function(){
     return {
@@ -29,21 +27,20 @@ const MountDetail = React.createClass({
   render: function() {
 
     return (
-      <div>
-        <MountDetailInfo 
-          focusMount={this.props.focusMount} />
-
-        <MountDetailBagged
-          focusMount={this.props.focusMount} 
-          bagged={this.props.bagged}
-          date={this.props.date} />
+      <div className="flex-grid">
+        <div className="grid-item">Bagged:</div>
+        <div className="grid-item">
+          <input type="checkbox" onClick={this.handleBaggedChange}/>
+          <DatePicker 
+            selected={this.state.startDate} 
+            onChange={this.handleDateChange} />
+          <button>Update</button>
+        </div>
       </div>
     )
-    
+
   }
-})
 
+});
 
-
-
-module.exports = MountDetail;
+module.exports = MountDetailBagged;
