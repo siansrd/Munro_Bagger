@@ -8,6 +8,7 @@ var MapObject = function(container) {
     zoom: 7,
     minZoom: 7,
     mapTypeId: 'terrain',
+    clickableIcons: false,
     mapTypeControlOptions: {
       position: google.maps.ControlPosition.LEFT_BOTTOM
     },
