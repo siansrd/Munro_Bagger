@@ -1,3 +1,4 @@
+var Pin = require('./pin');
 var search = require('../utility').mountainSearch;
 
 var MapObject = function(container) {
@@ -19,77 +20,34 @@ var MapObject = function(container) {
   this.bounds = new google.maps.LatLngBounds(sw, ne);
   this.map.fitBounds(this.bounds);
 
-  this.prevInfoWindow = null;
-  this.allMarkers = []; 
-};
-
-MapObject.prototype.generateIcon = function(mountain, dayNum){
-  var base = "/public/images/mntn-";
-  var fileName = base;
-  if (mountain.mountain.forecasts.day[dayNum].code <= 3) return fileName += "sunny.png";
-  return fileName += "not-sunny.png";
-};
-
-
-// var base = "/public/images/";
-// var fileName = base + "mntn-";
-// if (this.loggedIn) {
-//   if (!this.mountBagged) fileName += "not-";
-//   fileName += "bagged";
-//   if (this.mountSunny) fileName += "-sunny";
-// }
-// else {
-//   if (!this.mountSunny) fileName += "not-";
-//   fileName += "sunny";
-// }
-// fileName += ".png";
-// return fileName;
-
-
-
-
-
-
-
-MapObject.prototype.openInfoWindow = function(marker, mountain){
-  const infoWindow = new google.maps.InfoWindow({
-      content: mountain.name
-  });
-  console.log("openInfoWindow", mountain.name)
-  if( this.prevInfoWindow ) {
-     this.prevInfoWindow.close();
-  }
-  this.prevInfoWindow = infoWindow;
-  infoWindow.open(this.map, marker);
+  this.prevFocus = null;
+  this.allPins = []; 
 };
 
 MapObject.prototype.openInfoWindowForMountain = function(mountain){
-  const markerIdObj = search(this.allMarkers, mountain.id);
-  console.log("openInfoWindowForMountain", mountain)
-  this.openInfoWindow(markerIdObj.marker, mountain)
-};
-
-MapObject.prototype.clearMarkers = function() {
-  for (let marker of this.allMarkers) {
-     marker.marker.setMap(null);
+  const pin = search(this.allPins, mountain.id);
+  if( this.prevFocus ) {
+     this.prevFocus.clearFocus();
   }
-  this.allMarkers = []
-};
-  
-MapObject.prototype.addMarker = function(mountainView, dayNum, callback) {
-  const marker =  new google.maps.Marker({
-    position: mountainView.mountain.latLng,
-    map: this.map,
-      icon: { url: this.generateIcon(mountainView, dayNum),
-        scaledSize: new google.maps.Size(15, 15) }
-  });
-  this.allMarkers.push({marker: marker, id: mountainView.id, mountain: mountainView.mountain}); 
-  
-  google.maps.event.addListener(marker, 'click', function(){
-    callback(mountainView.id);
-    // this.openInfoWindow(marker, mountainView.mountain)
-  }.bind(this));
+  this.prevFocus = pin.setFocus()
 };
 
+MapObject.prototype.addPin = function(mountainView, callback) {
+  let pin = new Pin(this.map, mountainView);
+  pin.createMarker(callback);
+  this.allPins.push(pin);
+}
+
+MapObject.prototype.changeForecast = function(dayNum) {
+  for (let pin of this.allPins) {
+    pin.changeForecast(dayNum);
+  }
+}
+
+MapObject.prototype.userLoggedIn = function() {
+  for (let pin of this.allPins) {
+    pin.userLoggedIn();
+  }
+}
 
 module.exports = MapObject;

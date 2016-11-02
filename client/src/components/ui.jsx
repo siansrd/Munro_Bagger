@@ -30,10 +30,20 @@ const UI = React.createClass({
     }
   },
 
+  setFocusMountain: function(mtnId) {
+    const mtnView = search(this.state.mountainViews.mountains, mtnId);
+    this.setState({focusMountain: mtnView})
+    this.props.mapObj.openInfoWindowForMountain(mtnView.mountain);
+    this.setState({infoBoxStatus: "mountain"})
+  },
+
   componentDidMount: function() {
     let mtnsView = new MountainsView();
     mtnsView.all(function() {
       this.setState({mountainViews: mtnsView, ready: true});
+      for (let mtnView of mtnsView.mountains) {
+        this.props.mapObj.addPin(mtnView, this.setFocusMountain)
+      }
     }.bind(this))
   },
 
@@ -46,17 +56,9 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  createMarker: function(mountain, dayNum, callback) {
-    this.props.mapObj.addMarker(mountain, dayNum, callback)
-  },
-
-  setFocusMountain: function(mtnId) {
-    const mtnView = search(this.state.mountainViews.mountains, mtnId);
-    this.setState({focusMountain: mtnView})
-    console.log("Set focus Mountain", mtnView)
-    this.props.mapObj.openInfoWindowForMountain(mtnView.mountain);
-    this.setState({infoBoxStatus: "mountain"})
-  },
+  // createMarker: function(mountain, callback) {
+  //   this.props.mapObj.addPin(mountain, callback)
+  // },
 
   baggedStatusChanged: function(status) {
     this.setState({focusMountBagged: status})
@@ -86,6 +88,7 @@ const UI = React.createClass({
 
   setForecastDay: function(dayNum) {
     this.setState({dayNum: dayNum})
+    this.props.mapObj.changeForecast(dayNum);
   },
 
   render: function() {
@@ -93,10 +96,10 @@ const UI = React.createClass({
     // TODO: Refactor this
     if (!this.state.ready) return <div></div>;
     
-    this.props.mapObj.clearMarkers();
-    for (let mountain of this.state.mountainViews.mountains) {
-      this.createMarker(mountain, this.state.dayNum, this.setFocusMountain)
-    }
+    // this.props.mapObj.clearMarkers();
+    // for (let mountain of this.state.mountainViews.mountains) {
+    //   this.createMarker(mountain, this.state.dayNum, this.setFocusMountain)
+    // }
     
     return (
       <div>
