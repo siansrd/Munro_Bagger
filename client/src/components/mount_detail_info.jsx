@@ -4,7 +4,16 @@ const React = require('react');
 const MountDetailInfo = React.createClass({
 
   render: function() {
-   
+
+    const description = this.props.focusMount.mountain.forecasts.day[0].description
+    const tempMax = this.props.focusMount.mountain.forecasts.day[0].temperature.max
+    const tempFL = this.props.focusMount.mountain.forecasts.day[0].temperature.feelsLike
+    const windDirection = this.props.focusMount.mountain.forecasts.day[0].wind.direction
+    const windSpeed = this.props.focusMount.mountain.forecasts.day[0].wind.speed
+    const gusts = this.props.focusMount.mountain.forecasts.day[0].wind.gusting
+
+    console.log(gusts)
+
     return (
       <div>
         <h3>{this.props.focusMount.mountain.name}</h3>
@@ -18,14 +27,13 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">{this.props.focusMount.mountain.gridRef.letters} {this.props.focusMount.mountain.gridRef.eastings} {this.props.focusMount.mountain.gridRef.northings}</div>
           <div className="grid-item">Lat/Lon:</div> 
           <div className="grid-item">{this.props.focusMount.mountain.latLng.lat} {this.props.focusMount.mountain.latLng.lng}</div>
-          <div className="grid-item">Weather:</div> 
-          <div className="grid-item">{this.props.focusMount.mountain.forecasts.description}</div>
+          
+          <div className="grid-item">Weather {this.props.dayNum}:</div> 
+          <div className="grid-item">{description}</div>
           <div className="grid-item">Temp:</div> 
-          <div className="grid-item">{this.props.focusMount.mountain.forecasts.temperature}</div>
+          <div className="grid-item">Max: {tempMax}&deg;C, Feels Like: {tempFL}&deg;C</div>
           <div className="grid-item">Wind:</div> 
-          <div className="grid-item">{this.props.focusMount.mountain.forecasts.wind}</div>
-          <div className="grid-item">Visibility:</div> 
-          <div className="grid-item">{this.props.focusMount.mountain.forecasts.visibility}</div>
+          <div className="grid-item">{windDirection} {windSpeed}mph, Gusts: {gusts}mph</div>
         </div>
       </div>
     )

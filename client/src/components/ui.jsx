@@ -109,6 +109,7 @@ const UI = React.createClass({
         <InfoBox 
           focusMount={this.state.focusMountain} 
           infoBox={this.state.infoBoxStatus} 
+          dayNum={this.state.dayNum}
           bagged={this.baggedStatusChanged} 
           date={this.setDate}
           signUpClicked={this.setSignUpForm} 

@@ -31,7 +31,8 @@ const MountDetail = React.createClass({
     return (
       <div>
         <MountDetailInfo 
-          focusMount={this.props.focusMount} />
+          focusMount={this.props.focusMount}
+          dayNum={this.props.dayNum} />
 
         <MountDetailBagged
           focusMount={this.props.focusMount} 
