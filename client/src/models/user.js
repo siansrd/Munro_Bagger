@@ -11,7 +11,7 @@ var User = function() {
 }
 
 User.prototype.register = function(email, password, confirmation, onCompleted) {
-  let url = baseURL + "users.json";
+  let url = "http://localhost:3000/bagged_munros";
   let apiRequest = new ApiRequest();
   let params = { user: {
     email: email,

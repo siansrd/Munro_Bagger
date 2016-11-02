@@ -19,7 +19,7 @@ const UI = React.createClass({
 
     return {
       dayNum:           0,
-      filter:           "all", 
+      // filter:           "all", 
       ready:            false,
       focusMountain:    null,
       focusMountBagged: null,
@@ -58,9 +58,9 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  // createMarker: function(mountain, callback) {
-  //   this.props.mapObj.addPin(mountain, callback)
-  // },
+  logout: function(){
+    // post logout request
+  },
 
   baggedStatusChanged: function(status) {
     this.setState({focusMountBagged: status})
@@ -83,10 +83,10 @@ const UI = React.createClass({
     this.setState({infoBoxStatus: "password"})
   },
 
-  setFilterOption: function(value) {
-    this.setState({filter: value});
-    console.log("UI: setFilterOption", this.state.filter);
-  },
+  // setFilterOption: function(value) {
+  //   this.setState({filter: value});
+  //   console.log("UI: setFilterOption", this.state.filter);
+  // },
 
   setForecastDay: function(dayNum) {
     this.setState({dayNum: dayNum})
@@ -105,10 +105,10 @@ const UI = React.createClass({
           mountains={this.state.mountainViews.mountains} 
           searchedMount={this.setFocusMountain}/>
         <LoginLink 
-          linkClicked={this.setLoginForm}/>
+          user={this.state.user}
+          loginLinkClicked={this.setLoginForm}
+          logoutLinkClicked={this.logout}/>
         <Logo/>
-        <Filter 
-          filterOption={this.setFilterOption}/>
         <InfoBox 
           focusMount={this.state.focusMountain} 
           infoBox={this.state.infoBoxStatus} 
