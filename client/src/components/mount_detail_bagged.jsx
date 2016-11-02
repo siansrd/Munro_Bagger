@@ -8,13 +8,19 @@ const MountDetailBagged = React.createClass({
 
   getInitialState: function(){
     return {
-      startDate: moment()
+      baggedDate: moment(),
+      bagged: false
     }
+  },
+
+  updateBagged: function() {
+    // handle the update button on bagged stuff
+    // toggle - this.state.bagged 
   },
 
   handleDateChange: function(date) {
     this.setState({
-      startDate: date
+      baggedDate: date
     });
     this.props.date(date)
   },
@@ -32,9 +38,9 @@ const MountDetailBagged = React.createClass({
         <div className="grid-item">
           <input type="checkbox" onClick={this.handleBaggedChange}/>
           <DatePicker 
-            selected={this.state.startDate} 
+            selected={this.state.baggedDate} 
             onChange={this.handleDateChange} />
-          <button>Update</button>
+          <button onClick={this.updateBagged}>Update</button>
         </div>
       </div>
     )
