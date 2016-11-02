@@ -25,7 +25,7 @@ const UI = React.createClass({
       focusMountBagged: null,
       infoBoxStatus:    null,
       user:             null,
-      mountains:        [],
+      mountainViews:    [],
       user:             null
     }
   },
@@ -33,7 +33,7 @@ const UI = React.createClass({
   componentDidMount: function() {
     let mtnsView = new MountainsView();
     mtnsView.all(function() {
-      this.setState({mountains: mtnsView, ready: true});
+      this.setState({mountainViews: mtnsView, ready: true});
     }.bind(this))
   },
 
@@ -41,8 +41,8 @@ const UI = React.createClass({
     let user = new User();
     this.setState({user: user})
     user.getInfo(function() {
-      this.state.mountains.userLogin(user);
-      console.log(this.state.mountains)
+      this.state.mountainViews.userLogin(user);
+      console.log(this.state.mountainViews)
     }.bind(this))
   },
 
@@ -51,9 +51,10 @@ const UI = React.createClass({
   },
 
   setFocusMountain: function(mtnId) {
-    const mtn = search(this.state.mountains.mountains, mtnId);
-    this.setState({focusMountain: mtn})
-    this.props.mapObj.openInfoWindowForMountain(mtn.mountain);
+    const mtnView = search(this.state.mountainViews.mountains, mtnId);
+    this.setState({focusMountain: mtnView})
+    console.log("Set focus Mountain", mtnView)
+    this.props.mapObj.openInfoWindowForMountain(mtnView.mountain);
     this.setState({infoBoxStatus: "mountain"})
   },
 
@@ -93,8 +94,8 @@ const UI = React.createClass({
     if (!this.state.ready) return <div></div>;
     
     this.props.mapObj.clearMarkers();
-    for (let mountain of this.state.mountains.mountains) {
-      this.createMarker(mountain.mountain, this.state.dayNum, this.setFocusMountain)
+    for (let mountain of this.state.mountainViews.mountains) {
+      this.createMarker(mountain, this.state.dayNum, this.setFocusMountain)
     }
     
     return (
@@ -102,7 +103,7 @@ const UI = React.createClass({
         <Forecast 
           selectForecast={this.setForecastDay}/>
         <Search 
-          mountains={this.state.mountains.mountains} 
+          mountains={this.state.mountainViews.mountains} 
           searchedMount={this.setFocusMountain}/>
         <LoginLink 
           linkClicked={this.setLoginForm}/>
