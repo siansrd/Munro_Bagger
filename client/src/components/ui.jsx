@@ -47,13 +47,16 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  setUser: function(email) {
+  setUser: function(email, password) {
     let user = new User();
     this.setState({user: user})
-    user.getInfo(function() {
-      this.state.mountainViews.userLogin(user);
-      console.log(this.state.mountainViews)
-    }.bind(this))
+    user.login(email, password, function(status, responseText){
+      console.log(status, responseText)
+    })
+    // user.getInfo(function() {
+    //   this.state.mountainViews.userLogin(user);
+    //   console.log(this.state.mountainViews)
+    // }.bind(this))
   },
 
   // createMarker: function(mountain, callback) {

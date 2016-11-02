@@ -27,7 +27,7 @@ const UserLogin = React.createClass({
     // }}
     // const request = new ApiRequest();
     // request.makePostRequest(url, content, function(status){console.log(status)})
-    this.props.user("user@email.com")
+    this.props.user(this.state.email, this.state.password)
   },
 
   clickSignUp: function() {
