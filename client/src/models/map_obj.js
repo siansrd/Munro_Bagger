@@ -44,9 +44,11 @@ MapObject.prototype.changeForecast = function(dayNum) {
   }
 }
 
-MapObject.prototype.userLoggedIn = function() {
+MapObject.prototype.userLoggedIn = function(mountainViews) {
+  let mtnView;
   for (let pin of this.allPins) {
-    pin.userLoggedIn();
+    mtnView = search(mountainViews, pin.id);
+    pin.userLoggedIn(mtnView);
   }
 }
 
