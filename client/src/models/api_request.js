@@ -10,7 +10,6 @@ ApiRequest.prototype.makeRequest = function(url, callback) {
  request.onload = function() {
    if (this.status !== 200) return;
    var jsonString = this.responseText;
-   console.log("JSON", jsonString)
    var result = JSON.parse(jsonString);
    callback(result);
  };

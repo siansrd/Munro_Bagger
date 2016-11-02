@@ -1,11 +1,13 @@
 var Mountain = require('./mountain');
 var ApiRequest = require('./api_request');
 
+var baseURL = "http://www.munrobagger.scot/";
+
 var Mountains = function(){
 };
 
 Mountains.prototype.all = function(onCompleted) {
-  var url = "http://localhost:3000/munros";
+  var url = baseURL + "munros";
   var apiRequest = new ApiRequest();
   apiRequest.makeRequest(url, function(receivedMtns) {
     var mountains = [];

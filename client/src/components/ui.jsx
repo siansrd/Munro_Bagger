@@ -24,7 +24,7 @@ const UI = React.createClass({
       focusMountain:    null,
       focusMountBagged: null,
       infoBoxStatus:    null,
-      user:             null,
+      user:             new User(),
       userLoggedIn:     false, 
       mountainViews:    []
     }
@@ -45,19 +45,22 @@ const UI = React.createClass({
         this.props.mapObj.addPin(mtnView, this.setFocusMountain)
       }
     }.bind(this))
-    let user = new User();
-    this.setState({user: user})
   },
 
   setUser: function(email, password) {
-    this.state.user.login(email, password, function(status, responseText){
+    this.state.user.login(email, password, function(success){
       console.log("Login status:", status)
-      if (status !== 201) return
-      user.getInfo(function() {
-        this.state.mountainViews.userLogin(user);
+      if (!success) return
+      this.setState({userLoggedIn: true, infoBoxStatus: null});
+      this.state.user.getInfo(function() {
+        this.state.mountainViews.userLogin(this.state.user);
         this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
       }.bind(this))
     }.bind(this))
+  },
+
+  setUserContent: function() {
+      // Set user content
   },
 
   logout: function(){
@@ -107,7 +110,7 @@ const UI = React.createClass({
           mountains={this.state.mountainViews.mountains} 
           searchedMount={this.setFocusMountain}/>
         <LoginLink 
-          user={this.state.user}
+          user={this.state.userLoggedIn}
           loginLinkClicked={this.setLoginForm}
           logoutLinkClicked={this.logout}/>
         <Logo/>
@@ -120,7 +123,8 @@ const UI = React.createClass({
           signUpClicked={this.setSignUpForm} 
           forgotPassClicked={this.setPasswordForm} 
           loginClicked={this.setLoginForm}
-          user={this.setUser}/>
+          user={this.setUser}
+          userContent={this.setUserContent}/>
       </div>
     )
   }

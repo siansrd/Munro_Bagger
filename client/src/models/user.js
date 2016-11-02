@@ -31,8 +31,7 @@ User.prototype.login = function(email, password, onCompleted) {
     password: password
   } };
   apiRequest.makePostRequest(url, params, function(status, result) {
-    if (status >= 400) result = "";
-    onCompleted(status, result);
+    onCompleted(status === 201);
   });
 }
 
