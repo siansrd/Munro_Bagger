@@ -31,6 +31,13 @@ Pin.prototype.userLoggedIn = function(mtnView) {
   this._resetMarker();
 }
 
+Pin.prototype.userLoggedOut = function() {
+  this.mountBagged = false;
+  this.loggedIn = false;
+  this.marker.setMap(null);
+  this._resetMarker();
+}
+
 Pin.prototype._resetMarker = function() {
   this.marker =  new google.maps.Marker({
     position: this.mtnView.mountain.latLng,

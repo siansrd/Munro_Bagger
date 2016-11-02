@@ -53,4 +53,10 @@ MapObject.prototype.userLoggedIn = function(mountainViews) {
   }
 }
 
+MapObject.prototype.userLoggedOut = function() {
+  for (let pin of this.allPins) {
+    pin.userLoggedOut();
+  }
+}
+
 module.exports = MapObject;
