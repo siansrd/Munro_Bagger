@@ -19,7 +19,7 @@ User.prototype.register = function(email, password, confirmation, onCompleted) {
     password_confirmation: confirmation
   } };
   apiRequest.makePostRequest(url, params, function(status, result) {
-    onCompleted(status, JSON.parse(result));
+    onCompleted(status, result);
   });
 }
 
