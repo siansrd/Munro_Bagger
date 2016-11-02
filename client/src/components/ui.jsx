@@ -25,8 +25,7 @@ const UI = React.createClass({
       focusMountBagged: null,
       infoBoxStatus:    null,
       user:             null,
-      mountainViews:    [],
-      user:             null
+      mountainViews:    []
     }
   },
 
@@ -51,12 +50,12 @@ const UI = React.createClass({
     let user = new User();
     this.setState({user: user})
     user.login(email, password, function(status, responseText){
-      console.log(status, responseText)
-    })
-    // user.getInfo(function() {
-    //   this.state.mountainViews.userLogin(user);
-    //   console.log(this.state.mountainViews)
-    // }.bind(this))
+      if (status !== 201) return
+      user.getInfo(function() {
+        this.state.mountainViews.userLogin(user);
+        this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
+      }.bind(this))
+    }.bind(this))
   },
 
   // createMarker: function(mountain, callback) {
@@ -95,14 +94,8 @@ const UI = React.createClass({
   },
 
   render: function() {
-    
     // TODO: Refactor this
     if (!this.state.ready) return <div></div>;
-    
-    // this.props.mapObj.clearMarkers();
-    // for (let mountain of this.state.mountainViews.mountains) {
-    //   this.createMarker(mountain, this.state.dayNum, this.setFocusMountain)
-    // }
     
     return (
       <div>
@@ -119,6 +112,7 @@ const UI = React.createClass({
         <InfoBox 
           focusMount={this.state.focusMountain} 
           infoBox={this.state.infoBoxStatus} 
+          dayNum={this.state.dayNum}
           bagged={this.baggedStatusChanged} 
           date={this.setDate}
           signUpClicked={this.setSignUpForm} 

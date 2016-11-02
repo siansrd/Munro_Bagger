@@ -8,6 +8,7 @@ var MapObject = function(container) {
     zoom: 7,
     minZoom: 7,
     mapTypeId: 'terrain',
+    clickableIcons: false,
     mapTypeControlOptions: {
       position: google.maps.ControlPosition.LEFT_BOTTOM
     },
@@ -44,9 +45,11 @@ MapObject.prototype.changeForecast = function(dayNum) {
   }
 }
 
-MapObject.prototype.userLoggedIn = function() {
+MapObject.prototype.userLoggedIn = function(mountainViews) {
+  let mtnView;
   for (let pin of this.allPins) {
-    pin.userLoggedIn();
+    mtnView = search(mountainViews, pin.id);
+    pin.userLoggedIn(mtnView);
   }
 }
 

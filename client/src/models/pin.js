@@ -11,6 +11,7 @@ function Pin (map, mtnView) {
   this.markerCallback = null;
   this.hasFocus = false;
   this.infoWindow = null;
+
 };
 
 Pin.prototype.changeForecast = function(dayNum) {
@@ -22,8 +23,10 @@ Pin.prototype.changeForecast = function(dayNum) {
   this.dayNum = dayNum;
 }
 
-Pin.prototype.userLoggedIn = function() {
-  this.mountBagged = this.mtnView.bagged;
+Pin.prototype.userLoggedIn = function(mtnView) {
+  this.mtnView = mtnView;
+  this.mountBagged = mtnView.bagged;
+  this.loggedIn = true;
   this.marker.setMap(null);
   this._resetMarker();
 }
