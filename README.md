@@ -34,7 +34,6 @@ Revisited Project 3 with a view to rewrite the project using frameworks recently
 - CSS
 - HTML
 
-
 ## APIs Used
 
 - Google Maps API
