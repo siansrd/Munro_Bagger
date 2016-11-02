@@ -25,6 +25,7 @@ const UI = React.createClass({
       focusMountBagged: null,
       infoBoxStatus:    null,
       user:             null,
+      userLoggedIn:     false, 
       mountainViews:    []
     }
   },
@@ -44,12 +45,13 @@ const UI = React.createClass({
         this.props.mapObj.addPin(mtnView, this.setFocusMountain)
       }
     }.bind(this))
+    let user = new User();
+    this.setState({user: user})
   },
 
   setUser: function(email, password) {
-    let user = new User();
-    this.setState({user: user})
-    user.login(email, password, function(status, responseText){
+    this.state.user.login(email, password, function(status, responseText){
+      console.log("Login status:", status)
       if (status !== 201) return
       user.getInfo(function() {
         this.state.mountainViews.userLogin(user);

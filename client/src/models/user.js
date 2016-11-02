@@ -31,6 +31,7 @@ User.prototype.login = function(email, password, onCompleted) {
     password: password
   } };
   apiRequest.makePostRequest(url, params, function(status, result) {
+    if (status >= 400) result = "";
     onCompleted(status, result);
   });
 }
@@ -47,7 +48,6 @@ User.prototype.getInfo = function(onCompleted) {
   var url = baseURL + "bagged_munros";
   var apiRequest = new ApiRequest();
   apiRequest.makeGetRequest(url, function(mountains) {
-//    var mountains = receivedData;
     console.log("Mountains:", mountains)
     for (var mountain of mountains) {
       this._mountains.push(new UserMountain(mountain));

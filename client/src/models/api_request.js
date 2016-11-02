@@ -6,11 +6,11 @@ var ApiRequest = function() {
 ApiRequest.prototype.makeRequest = function(url, callback) {
  var request = new XMLHttpRequest()
  request.open("GET", url);
- request.withCredentials = false;
+ request.withCredentials = true;
  request.onload = function() {
    if (this.status !== 200) return;
    var jsonString = this.responseText;
-   console.log(jsonString)
+   console.log("JSON", jsonString)
    var result = JSON.parse(jsonString);
    callback(result);
  };
