@@ -12,7 +12,7 @@ var User = function() {
 }
 
 User.prototype.register = function(email, password, confirmation, onCompleted) {
-  let url = baseURL + "users/sign_up.json";
+  let url = baseURL + "users.json";
   let apiRequest = new ApiRequest();
   let params = { user: {
     email: email,
