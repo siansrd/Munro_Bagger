@@ -43,7 +43,7 @@ Pin.prototype._resetMarker = function() {
   this._marker =  new google.maps.Marker({
     position: this._mtnView.mountain.latLng,
     map: this._map,
-    icon: { url: this.generateIcon(), scaledSize: new google.maps.Size(15, 15) }
+    icon: { url: this._generateIcon(), scaledSize: new google.maps.Size(15, 15) }
   });
   google.maps.event.addListener(this._marker, 'click', function(){
     this.callback(this._id);
@@ -75,7 +75,7 @@ Pin.prototype.clearFocus = function() {
   this._infoWindow.close();
 }
 
-Pin.prototype.generateIcon = function(){
+Pin.prototype._generateIcon = function(){
   var base = "/public/images/";
   var fileName = base + "mntn-";
   if (this._loggedIn) {
