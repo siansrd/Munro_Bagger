@@ -3,7 +3,7 @@ var MountainView = function(mtn) {
   this._mountain = mtn;
   this._bagged = false;
   this._climbed_on = null;
-  this.pin = null;
+  // this.pin = null;
   this._onChange = null;
   Object.defineProperty(this, "id", { get: function(){ return this._id; } });
   Object.defineProperty(this, "mountain", { get: function(){ return this._mountain; } });

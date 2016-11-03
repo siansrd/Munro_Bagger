@@ -24,13 +24,7 @@ const UserSignUp = React.createClass({
 
   signUp: function(event){
     event.preventDefault();
-    // const url = "http://www.munrobagger.scot/users.json"
-    const content = { user: {
-      email: this.state.email, 
-      password: this.state.password,
-      password_confirmation: this.state.passwordConfirmation
-    }}
-    this.props.userContent = content;
+    this.props.userRegistration(this.state.email, this.state.password, this.state.passwordConfirmation);
     // const request = new ApiRequest();
     // request.makePostRequest(url, content, function(status){console.log(status)})
   },

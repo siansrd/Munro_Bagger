@@ -19,8 +19,9 @@ User.prototype.register = function(email, password, confirmation, onCompleted) {
     password: password,
     password_confirmation: confirmation
   } };
+  console.log(params)
   apiRequest.makePostRequest(url, params, function(status, result) {
-    onCompleted(status, result);
+    onCompleted(status === 201);
   });
 }
 
@@ -32,18 +33,18 @@ User.prototype.login = function(email, password, onCompleted) {
     password: password
   } };
   apiRequest.makePostRequest(url, params, function(status, result) {
-    console.log("login status", status, result)
     onCompleted(status === 201);
   });
 }
 
-// User.prototype.logout = function(onCompleted) {
-//   let url = baseURL + "users/sign_out.json";
-//   let apiRequest = new ApiRequest();
-//   apiRequest.makeDeleteRequest(url, params, function(status, result) {
-//     onCompleted(status, result);
-//   }
-// }
+User.prototype.logout = function(onCompleted) {
+  let url = baseURL + "users/sign_out.json";
+  let apiRequest = new ApiRequest();
+  apiRequest.makeDeleteRequest(url, params, function(status, result) {
+    this._mountains = [];
+    onCompleted(status, result);
+  });
+}
 
 User.prototype.getInfo = function(onCompleted) {
   var url = baseURL + bagged_route;

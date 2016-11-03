@@ -38,7 +38,7 @@ const InfoBox = React.createClass({
     <div id="infoBox">
       <UserSignUp 
         loginClicked={this.props.loginClicked}
-        userContent={this.props.userContent}/>
+        userRegistration={this.props.userRegistration}/>
     </div>
   )
 

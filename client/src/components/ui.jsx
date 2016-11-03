@@ -49,7 +49,7 @@ const UI = React.createClass({
 
   setUser: function(email, password) {
     this.state.user.login(email, password, function(success){
-      console.log("Login status:", status)
+      console.log("Login successful:", success)
       if (!success) return
       this.setState({userLoggedIn: true, infoBoxStatus: null});
       this.state.user.getInfo(function() {
@@ -59,12 +59,23 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  setUserContent: function() {
-      // Set user content
+  setUserRegistration: function(email, password, confirmation) {
+    // register with the server
+    this.state.user.register(email, password, confirmation, function(success) {
+      console.log("Resistration successful:", success)
+      if (!success) return;
+      this.state.mountainViews.userLogin(this.state.user);
+      this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
+    }.bind(this))
   },
 
   logout: function(){
     // post logout request
+    this.state.user.logout(function(success) {
+      if (!success) return
+      this.state.mountainViews.userLogout();
+      this.props.mapObj.userLoggedOut();
+    })
   },
 
   baggedStatusChanged: function(status) {
@@ -124,7 +135,7 @@ const UI = React.createClass({
           forgotPassClicked={this.setPasswordForm} 
           loginClicked={this.setLoginForm}
           user={this.setUser}
-          userContent={this.setUserContent}/>
+          userRegistration={this.setUserRegistration}/>
       </div>
     )
   }

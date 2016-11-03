@@ -18,18 +18,23 @@ MountainsView.prototype.all = function(onCompleted) {
   }.bind(this));
 }
 
-MountainsView.prototype.userLogin = function(user) {
-  this.user = user;
-  // clear any existing user settings
+MountainsView.prototype._clearMountains = function() {
   let mtn;
   for (mtn of this.mountains) {
     // access private variable _bagged to sidestep callback
     mtn._bagged = false;
     mtn._climbed_on = null;
   }
-  let user_mtn;
+}
+
+MountainsView.prototype.userLogin = function(user) {
+  this.user = user;
+  // clear any existing user settings
+  this._clearMountains();
+
+  let mtn;
   let user_mtns = user.getBaggedList();
-  for (user_mtn of user_mtns) {
+  for (let user_mtn of user_mtns) {
     mtn = search(this.mountains, user_mtn.id);
     // access private variable _bagged to sidestep callback
     mtn._bagged = true;
@@ -37,10 +42,15 @@ MountainsView.prototype.userLogin = function(user) {
   }
 }
 
-MountainsView.prototype.getPinById = function(mtnId) {
-  var mtn = search(this.mountains, mtnId);
-  return mtn.pin;
+MountainsView.prototype.userLogout = function() {
+  this.user = null;
+  this._clearMountains();
 }
+
+// MountainsView.prototype.getPinById = function(mtnId) {
+//   var mtn = search(this.mountains, mtnId);
+//   return mtn.pin;
+// }
 
 MountainsView.prototype.mountainViewChange = function(changed) {
   this.user.setHasClimbed(changed.id, changed.bagged);
