@@ -31,8 +31,8 @@ ApiRequest.prototype.makePutRequest = function(url, content, callback) {
   this._makeRequest("PUT", url, [200, 201], callback, content)
 }
 
-ApiRequest.prototype.makeDeleteRequest = function(url, callback) {
-  this._makeRequest("DELETE", url, [200, 201, 204], callback);
+ApiRequest.prototype.makeDeleteRequest = function(url, content, callback) {
+  this._makeRequest("DELETE", url, [200, 201, 204], callback, content);
 }
 
 module.exports = ApiRequest;

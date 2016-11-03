@@ -37,7 +37,7 @@ User.prototype.login = function(email, password, onCompleted) {
 
 User.prototype.logout = function(onCompleted) {
   let url = baseURL + "users/sign_out.json";
-  apiRequest.makeDeleteRequest(url, function(status) {
+  apiRequest.makeDeleteRequest(url, null, function(status) {
     this._mountains = [];
     onCompleted(status === 204);
   }.bind(this));
@@ -75,8 +75,7 @@ User.prototype.setHasClimbed = function(mountainId, value, date) {
 
 User.prototype.saveChanges = function() {
   var url = baseURL + baggedRoute;
-  var apiRequest = new ApiRequest();
-  // 
+  
   let created = this._mountains.filter(function(mtn) {
     return (mtn.isDirty() && mtn.bagged && !mtn._origin_id)
   });
@@ -85,7 +84,7 @@ User.prototype.saveChanges = function() {
       return mtn.export();
     });
     apiRequest.makePostRequest(url, { munros: created }, function(receivedStatus) {
-      if (receivedStatus !== 200) console.log("Post returned:", receivedStatus);
+      if (receivedStatus !== 201) console.log("Post returned:", receivedStatus);
     });
   }
 
@@ -97,7 +96,7 @@ User.prototype.saveChanges = function() {
       return mtn.export();
     });
     apiRequest.makePutRequest(url, { munros: changed }, function(receivedStatus) {
-      if (receivedStatus !== 200) console.log("Put returned:", receivedStatus);
+      if (receivedStatus !== 201) console.log("Put returned:", receivedStatus);
     });
   }
 
@@ -109,7 +108,7 @@ User.prototype.saveChanges = function() {
       return mtn._origin_id;
     });
     apiRequest.makeDeleteRequest(url, { munros: deleted }, function(receivedStatus) {
-      if (receivedStatus !== 200) console.log("Delete returned:", receivedStatus);
+      if (receivedStatus !== 204) console.log("Delete returned:", receivedStatus);
     });
   }
 }
