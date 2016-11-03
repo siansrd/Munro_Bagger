@@ -11,7 +11,6 @@ function Pin (map, mtnView) {
   this.markerCallback = null;
   this.hasFocus = false;
   this.infoWindow = null;
-
 };
 
 Pin.prototype.changeForecast = function(dayNum) {

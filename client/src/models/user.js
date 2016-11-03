@@ -54,12 +54,6 @@ User.prototype.getInfo = function(onCompleted) {
   }.bind(this))
 }
 
-// User.prototype.hasClimbed = function(mountainId) {
-//   var mountain = search(this._mountains, mountainId);
-//   if (mountain) return mountain.bagged;
-//   return false;
-// };
-
 User.prototype.getBaggedList = function() {
   var bagged = this._mountains.filter(function(mtn) {
     return mtn.bagged;
