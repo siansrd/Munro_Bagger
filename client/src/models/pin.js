@@ -46,13 +46,13 @@ Pin.prototype._resetMarker = function() {
     icon: { url: this._generateIcon(), scaledSize: new google.maps.Size(15, 15) }
   });
   google.maps.event.addListener(this._marker, 'click', function(){
-    this.callback(this._id);
+    this.markerCallback(this._id);
   }.bind(this));
   if (this._hasFocus) this._openInfoWindow();
 }
 
 Pin.prototype.createMarker = function(callback) {
-  this.callback = callback;
+  this.markerCallback = callback;
   this._resetMarker()
 };
 
