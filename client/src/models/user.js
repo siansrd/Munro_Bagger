@@ -41,10 +41,10 @@ User.prototype.login = function(email, password, onCompleted) {
 User.prototype.logout = function(onCompleted) {
   let url = baseURL + "users/sign_out.json";
   let apiRequest = new ApiRequest();
-  apiRequest.makeDeleteRequest(url, params, function(status, result) {
+  apiRequest.makeDeleteRequest(url, null, function(status, result) {
     this._mountains = [];
     onCompleted(status, result);
-  });
+  }.bind(this));
 }
 
 User.prototype.getInfo = function(onCompleted) {
