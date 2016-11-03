@@ -1,52 +1,54 @@
 function Pin (map, mtnView) {
-  this.id = mtnView.id;
-  this.mtnView = mtnView;
-  this.map = map;
-  this.dayNum = 0;
-  this.loggedIn = false;
-  this.mountBagged = mtnView.bagged;
-  this.forecasts = mtnView.mountain.forecasts;
-  this.mountSunny = (this.forecasts.day[0].code <= 3)
-  this.marker = null;
-  this.markerCallback = null;
-  this.hasFocus = false;
-  this.infoWindow = null;
+  this._id = mtnView.id;
+  this._mtnView = mtnView;
+  this._map = map;
+  this._dayNum = 0;
+  this._loggedIn = false;
+  this._mountBagged = mtnView.bagged;
+  this._forecasts = mtnView.mountain.forecasts;
+  this._mountSunny = (this._forecasts.day[0].code <= 3)
+  this._marker = null;
+  this._markerCallback = null;
+  this._hasFocus = false;
+  this._infoWindow = null;
+
+  Object.defineProperty(this, "id", { get: function(){ return this._id; } });
 };
 
 Pin.prototype.changeForecast = function(dayNum) {
-  if (this.forecasts.day[this.dayNum].code !== this.forecasts.day[dayNum].code) {
-    this.mountSunny = (this.forecasts.day[dayNum].code <= 3);
-    this.marker.setMap(null);
+  if (this._forecasts.day[this._dayNum].code !== this._forecasts.day[dayNum].code) {
+    this._mountSunny = (this._forecasts.day[dayNum].code <= 3);
+    this._marker.setMap(null);
     this._resetMarker();
   }
-  this.dayNum = dayNum;
+  this._dayNum = dayNum;
 }
 
 Pin.prototype.userLoggedIn = function(mtnView) {
-  this.mtnView = mtnView;
-  this.mountBagged = mtnView.bagged;
-  this.loggedIn = true;
-  this.marker.setMap(null);
+  this._mtnView = mtnView;
+  this._mountBagged = mtnView.bagged;
+  this._loggedIn = true;
+  this._marker.setMap(null);
   this._resetMarker();
 }
 
 Pin.prototype.userLoggedOut = function() {
-  this.mountBagged = false;
-  this.loggedIn = false;
-  this.marker.setMap(null);
+  this._mountBagged = false;
+  this._loggedIn = false;
+  this._marker.setMap(null);
   this._resetMarker();
 }
 
 Pin.prototype._resetMarker = function() {
-  this.marker =  new google.maps.Marker({
-    position: this.mtnView.mountain.latLng,
-    map: this.map,
+  this._marker =  new google.maps.Marker({
+    position: this._mtnView.mountain.latLng,
+    map: this._map,
     icon: { url: this.generateIcon(), scaledSize: new google.maps.Size(15, 15) }
   });
-  google.maps.event.addListener(this.marker, 'click', function(){
-    this.callback(this.id);
+  google.maps.event.addListener(this._marker, 'click', function(){
+    this.callback(this._id);
   }.bind(this));
-  if (this.hasFocus) this._openInfoWindow();
+  if (this._hasFocus) this._openInfoWindow();
 }
 
 Pin.prototype.createMarker = function(callback) {
@@ -56,33 +58,33 @@ Pin.prototype.createMarker = function(callback) {
 
 Pin.prototype._openInfoWindow = function(){
   const infoWindow = new google.maps.InfoWindow({
-      content: this.mtnView.mountain.name
+      content: this._mtnView.mountain.name
   });
-  infoWindow.open(this.map, this.marker);
-  this.infoWindow = infoWindow;
+  infoWindow.open(this._map, this._marker);
+  this._infoWindow = infoWindow;
 };
 
 Pin.prototype.setFocus = function() {
-  this.hasFocus = true;
+  this._hasFocus = true;
   this._openInfoWindow();
   return this;
 }
 
 Pin.prototype.clearFocus = function() {
-  this.hasFocus = false;
-  this.infoWindow.close();
+  this._hasFocus = false;
+  this._infoWindow.close();
 }
 
 Pin.prototype.generateIcon = function(){
   var base = "/public/images/";
   var fileName = base + "mntn-";
-  if (this.loggedIn) {
-    if (!this.mountBagged) fileName += "not-";
+  if (this._loggedIn) {
+    if (!this._mountBagged) fileName += "not-";
     fileName += "bagged";
-    if (this.mountSunny) fileName += "-sunny";
+    if (this._mountSunny) fileName += "-sunny";
   }
   else {
-    if (!this.mountSunny) fileName += "not-";
+    if (!this._mountSunny) fileName += "not-";
     fileName += "sunny";
   }
   fileName += ".png";
