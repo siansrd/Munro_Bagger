@@ -5,28 +5,28 @@ const MountDetailInfo = React.createClass({
 
   render: function() {
 
-    const description = this.props.focusMount.mountain.forecasts.day[0].description
-    const tempMax = this.props.focusMount.mountain.forecasts.day[0].temperature.max
-    const tempFL = this.props.focusMount.mountain.forecasts.day[0].temperature.feelsLike
-    const windDirection = this.props.focusMount.mountain.forecasts.day[0].wind.direction
-    const windSpeed = this.props.focusMount.mountain.forecasts.day[0].wind.speed
-    const gusts = this.props.focusMount.mountain.forecasts.day[0].wind.gusting
+    const description = this.props.focusMount.detail.forecasts.day[0].description
+    const tempMax = this.props.focusMount.detail.forecasts.day[0].temperature.max
+    const tempFL = this.props.focusMount.detail.forecasts.day[0].temperature.feelsLike
+    const windDirection = this.props.focusMount.detail.forecasts.day[0].wind.direction
+    const windSpeed = this.props.focusMount.detail.forecasts.day[0].wind.speed
+    const gusts = this.props.focusMount.detail.forecasts.day[0].wind.gusting
 
     console.log(gusts)
 
     return (
       <div>
-        <h3>{this.props.focusMount.mountain.name}</h3>
-        <h4>({this.props.focusMount.mountain.meaning})</h4>
+        <h3>{this.props.focusMount.detail.name}</h3>
+        <h4>({this.props.focusMount.detail.meaning})</h4>
         <div className="flex-grid">
           <div className="grid-item">Region:</div> 
-          <div className="grid-item">{this.props.focusMount.mountain.region}</div>
+          <div className="grid-item">{this.props.focusMount.detail.region}</div>
           <div className="grid-item">Height:</div> 
-          <div className="grid-item">{this.props.focusMount.mountain.height}m</div>
+          <div className="grid-item">{this.props.focusMount.detail.height}m</div>
           <div className="grid-item">OS Grid Ref:</div>
-          <div className="grid-item">{this.props.focusMount.mountain.gridRef.letters} {this.props.focusMount.mountain.gridRef.eastings} {this.props.focusMount.mountain.gridRef.northings}</div>
+          <div className="grid-item">{this.props.focusMount.detail.gridRef.letters} {this.props.focusMount.detail.gridRef.eastings} {this.props.focusMount.detail.gridRef.northings}</div>
           <div className="grid-item">Lat/Lon:</div> 
-          <div className="grid-item">{this.props.focusMount.mountain.latLng.lat} {this.props.focusMount.mountain.latLng.lng}</div>
+          <div className="grid-item">{this.props.focusMount.detail.latLng.lat} {this.props.focusMount.detail.latLng.lng}</div>
           
           <div className="grid-item">Weather {this.props.dayNum}:</div> 
           <div className="grid-item">{description}</div>

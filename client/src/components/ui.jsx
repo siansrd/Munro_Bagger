@@ -33,7 +33,7 @@ const UI = React.createClass({
   setFocusMountain: function(mtnId) {
     const mtnView = search(this.state.mountainViews.mountains, mtnId);
     this.setState({focusMountain: mtnView})
-    this.props.mapObj.openInfoWindowForMountain(mtnView.mountain);
+    this.props.mapObj.openInfoWindowForMountain(mtnView.detail);
     this.setState({infoBoxStatus: "mountain"})
   },
 
@@ -79,7 +79,7 @@ const UI = React.createClass({
 
   baggedStatusChanged: function(status) {
     this.setState({focusMountBagged: status})
-    console.log("UI:", this.state.focusMountain.mountain.name, status)
+    console.log("UI:", this.state.focusMountain.detail.name, status)
     this.state.focusMountain.bagged = status;
   },
 

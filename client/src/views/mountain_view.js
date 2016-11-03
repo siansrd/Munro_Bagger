@@ -1,12 +1,12 @@
 var MountainView = function(mtn) {
   this._id = mtn.id;
-  this._mountain = mtn;
+  this._detail = mtn;
   this._bagged = false;
   this._climbed_on = null;
   // this.pin = null;
   this._onChange = null;
   Object.defineProperty(this, "id", { get: function(){ return this._id; } });
-  Object.defineProperty(this, "mountain", { get: function(){ return this._mountain; } });
+  Object.defineProperty(this, "detail", { get: function(){ return this._detail; } });
   Object.defineProperty(this, "bagged", {
     get: function(){ return this._bagged; },
     set: function(value) {

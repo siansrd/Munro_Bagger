@@ -47,14 +47,9 @@ MountainsView.prototype.userLogout = function() {
   this._clearMountains();
 }
 
-// MountainsView.prototype.getPinById = function(mtnId) {
-//   var mtn = search(this.mountains, mtnId);
-//   return mtn.pin;
-// }
-
 MountainsView.prototype.mountainViewChange = function(changed) {
-  this.user.setHasClimbed(changed.id, changed.bagged);
-  this.user.saveChanges();
+  this.user.setHasClimbed(changed.id, changed.bagged, changed.climbed_on);
+  //this.user.saveChanges();
 }
 
 module.exports = MountainsView;

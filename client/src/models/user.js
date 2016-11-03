@@ -68,6 +68,7 @@ User.prototype.setHasClimbed = function(mountainId, value, date) {
   if (!mountain) {
     mountain = new UserMountain({ id: mountainId });
     this._mountains.push(mountain);
+    // need to re-order/sort the mountains now
   }
   mountain.bagged = value;
   mountain.climbed_on = date;
@@ -83,7 +84,7 @@ User.prototype.saveChanges = function() {
     created = created.map(function(mtn){
       return mtn.export();
     });
-    apiRequest.makePostRequest(url, { munros: created }, function(receivedStatus) {
+    apiRequest.makePostRequest(url, { bagged: created }, function(receivedStatus) {
       if (receivedStatus !== 201) console.log("Post returned:", receivedStatus);
     });
   }
@@ -95,7 +96,7 @@ User.prototype.saveChanges = function() {
     changed = changed.map(function(mtn){
       return mtn.export();
     });
-    apiRequest.makePutRequest(url, { munros: changed }, function(receivedStatus) {
+    apiRequest.makePutRequest(url, { bagged: changed }, function(receivedStatus) {
       if (receivedStatus !== 201) console.log("Put returned:", receivedStatus);
     });
   }
@@ -107,7 +108,7 @@ User.prototype.saveChanges = function() {
     deleted = deleted.map(function(mtn){
       return mtn._origin_id;
     });
-    apiRequest.makeDeleteRequest(url, { munros: deleted }, function(receivedStatus) {
+    apiRequest.makeDeleteRequest(url, { bagged: deleted }, function(receivedStatus) {
       if (receivedStatus !== 204) console.log("Delete returned:", receivedStatus);
     });
   }
