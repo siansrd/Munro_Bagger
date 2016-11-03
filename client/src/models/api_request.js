@@ -54,7 +54,7 @@ ApiRequest.prototype.makeDeleteRequest = function(url, content, callback) {
   var request = new XMLHttpRequest()
   request.open("DELETE", url);
   request.withCredentials = true;
-  request.setRequestHeader('Content-Type', 'application/json');
+  if (content) request.setRequestHeader('Content-Type', 'application/json');
   request.onload = function() {
     var result = "";
     if (this.status === 201) {
@@ -62,7 +62,8 @@ ApiRequest.prototype.makeDeleteRequest = function(url, content, callback) {
     }
     callback(this.status, result);
   };
-  var json = JSON.stringify(content);
+  let json = null;
+  if (content) json = JSON.stringify(content);
   request.send(json);
 }
 

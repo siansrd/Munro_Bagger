@@ -62,7 +62,7 @@ const UI = React.createClass({
   setUserRegistration: function(email, password, confirmation) {
     // register with the server
     this.state.user.register(email, password, confirmation, function(success) {
-      console.log("Resistration successful:", success)
+      console.log("Registration successful:", success)
       if (!success) return;
       this.state.mountainViews.userLogin(this.state.user);
       this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
@@ -75,7 +75,7 @@ const UI = React.createClass({
       if (!success) return
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
-    })
+    }.bind(this))
   },
 
   baggedStatusChanged: function(status) {
