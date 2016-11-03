@@ -23,6 +23,12 @@ var MapObject = function(container) {
 
   this.prevFocus = null;
   this.allPins = []; 
+
+  // google.maps.event.addListening(this.map, 'dragend', function() {
+  //   if (this.bounds.contains(map.getCenter())) return;
+
+
+  // }
 };
 
 MapObject.prototype.openInfoWindowForMountain = function(mountain){
