@@ -2,7 +2,8 @@ var UserMountain = require('./user_mountain');
 var ApiRequest = require('./api_request');
 var search = require('../utility').mountainSearch;
 
-var baseURL = "http://www.munrobagger.scot/";
+const baseURL = "http://www.munrobagger.scot/";
+const baggedRoute = "bagged_munros" 
 
 var User = function() {
   // this._id = userId;
@@ -11,7 +12,7 @@ var User = function() {
 }
 
 User.prototype.register = function(email, password, confirmation, onCompleted) {
-  let url = "http://localhost:3000/bagged_munros";
+  let url = baseURL + "users/sign_up.json";
   let apiRequest = new ApiRequest();
   let params = { user: {
     email: email,
@@ -31,6 +32,7 @@ User.prototype.login = function(email, password, onCompleted) {
     password: password
   } };
   apiRequest.makePostRequest(url, params, function(status, result) {
+    console.log("login status", status, result)
     onCompleted(status === 201);
   });
 }
@@ -44,7 +46,7 @@ User.prototype.login = function(email, password, onCompleted) {
 // }
 
 User.prototype.getInfo = function(onCompleted) {
-  var url = baseURL + "bagged_munros";
+  var url = baseURL + bagged_route;
   var apiRequest = new ApiRequest();
   apiRequest.makeGetRequest(url, function(mountains) {
     console.log("Mountains:", mountains)
@@ -73,7 +75,7 @@ User.prototype.getBaggedList = function() {
 User.prototype.setHasClimbed = function(mountainId, value, date) {
   var mountain = search(this._mountains, mountainId);
   if (!mountain) {
-    mountain = new UserMountain({ mtn_id: mountainId });
+    mountain = new UserMountain({ id: mountainId });
     this._mountains.push(mountain);
   }
   mountain.bagged = value;
@@ -81,17 +83,44 @@ User.prototype.setHasClimbed = function(mountainId, value, date) {
 }
 
 User.prototype.saveChanges = function() {
-  var changed = this._mountains.filter(function(mtn) {
-    return mtn.isDirty();
-  });
-  changed = changed.map(function(mtn){
-    return mtn.export();
-  })
-  var url = "http://localhost:3000/bagged_munros";
+  var url = baseURL + baggedRoute;
   var apiRequest = new ApiRequest();
-  apiRequest.makePostRequest(url, { bagged_munros: changed }, function(receivedStatus) {
-    if (receivedStatus !== 200) console.log("Post returned:", receivedStatus);
+  // 
+  let created = this._mountains.filter(function(mtn) {
+    return (mtn.isDirty() && mtn.bagged && !mtn._origin_id)
   });
+  if (created.length > 0) {
+    created = created.map(function(mtn){
+      return mtn.export();
+    });
+    apiRequest.makePostRequest(url, { munros: created }, function(receivedStatus) {
+      if (receivedStatus !== 200) console.log("Post returned:", receivedStatus);
+    });
+  }
+
+  let changed = this._mountains.filter(function(mtn) {
+    return (mtn.isDirty() && mtn.bagged && mtn._origin_id);
+  });
+  if (changed.length > 0) {
+    changed = changed.map(function(mtn){
+      return mtn.export();
+    });
+    apiRequest.makePutRequest(url, { munros: changed }, function(receivedStatus) {
+      if (receivedStatus !== 200) console.log("Put returned:", receivedStatus);
+    });
+  }
+
+  let deleted = this._mountains.filter(function(mtn) {
+    return (mtn.isDirty() && !mtn.bagged && mtn._origin_id)
+  });
+  if (deleted.length > 0) {
+    deleted = deleted.map(function(mtn){
+      return mtn._origin_id;
+    });
+    apiRequest.makeDeleteRequest(url, { munros: deleted }, function(receivedStatus) {
+      if (receivedStatus !== 200) console.log("Delete returned:", receivedStatus);
+    });
+  }
 }
 
 module.exports = User;

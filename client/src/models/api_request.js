@@ -34,4 +34,36 @@ ApiRequest.prototype.makePostRequest = function(url, content, callback) {
   request.send(json);
 }
 
+ApiRequest.prototype.makePutRequest = function(url, content, callback) {
+  var request = new XMLHttpRequest()
+  request.open("PUT", url);
+  request.withCredentials = true;
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.onload = function() {
+    var result = "";
+    if (this.status === 201) {
+      result = JSON.parse(this.responseText);
+    }
+    callback(this.status, result);
+  };
+  var json = JSON.stringify(content);
+  request.send(json);
+}
+
+ApiRequest.prototype.makeDeleteRequest = function(url, content, callback) {
+  var request = new XMLHttpRequest()
+  request.open("DELETE", url);
+  request.withCredentials = true;
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.onload = function() {
+    var result = "";
+    if (this.status === 201) {
+      result = JSON.parse(this.responseText);
+    }
+    callback(this.status, result);
+  };
+  var json = JSON.stringify(content);
+  request.send(json);
+}
+
 module.exports = ApiRequest;
