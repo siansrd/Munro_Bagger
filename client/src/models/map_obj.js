@@ -24,12 +24,30 @@ var MapObject = function(container) {
   this.prevFocus = null;
   this.allPins = []; 
 
-  // google.maps.event.addListening(this.map, 'dragend', function() {
-  //   if (this.bounds.contains(map.getCenter())) return;
-
-
-  // }
+  this.preventPan(); 
 };
+
+MapObject.prototype.preventPan = function(){
+  google.maps.event.addListener(this.map, 'dragend', function() {
+    if (this.bounds.contains(this.map.getCenter())) return;
+
+    var c = this.map.getCenter(),
+             x = c.lng(),
+             y = c.lat(),
+             maxX = this.bounds.getNorthEast().lng(),
+             maxY = this.bounds.getNorthEast().lat(),
+             minX = this.bounds.getSouthWest().lng(),
+             minY = this.bounds.getSouthWest().lat();
+
+         if (x < minX) x = minX;
+         if (x > maxX) x = maxX;
+         if (y < minY) y = minY;
+         if (y > maxY) y = maxY;
+
+         this.map.setCenter(new google.maps.LatLng(y, x));
+  }.bind(this));
+};
+
 
 MapObject.prototype.openInfoWindowForMountain = function(mountain){
   const pin = search(this.allPins, mountain.id);
