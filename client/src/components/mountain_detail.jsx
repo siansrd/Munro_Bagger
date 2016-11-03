@@ -28,6 +28,14 @@ const MountDetail = React.createClass({
 
   render: function() {
 
+    if (!this.props.userLoggedIn) return (
+      <div>
+        <MountDetailInfo 
+          focusMount={this.props.focusMount}
+          dayNum={this.props.dayNum} />
+      </div>
+    )
+
     return (
       <div>
         <MountDetailInfo 

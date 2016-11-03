@@ -32,6 +32,7 @@ User.prototype.login = function(email, password, onCompleted) {
     email: email,
     password: password
   } };
+  console.log(params)
   apiRequest.makePostRequest(url, params, function(status, result) {
     onCompleted(status === 201);
   });

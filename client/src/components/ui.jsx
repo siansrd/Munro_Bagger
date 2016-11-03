@@ -135,7 +135,8 @@ const UI = React.createClass({
           forgotPassClicked={this.setPasswordForm} 
           loginClicked={this.setLoginForm}
           user={this.setUser}
-          userRegistration={this.setUserRegistration}/>
+          userRegistration={this.setUserRegistration}
+          userLoggedIn={this.state.userLoggedIn} />
       </div>
     )
   }
