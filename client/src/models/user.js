@@ -47,7 +47,7 @@ User.prototype.logout = function(onCompleted) {
 }
 
 User.prototype.getInfo = function(onCompleted) {
-  var url = baseURL + bagged_route;
+  var url = baseURL + baggedRoute;
   var apiRequest = new ApiRequest();
   apiRequest.makeGetRequest(url, function(mountains) {
     console.log("Mountains:", mountains)
