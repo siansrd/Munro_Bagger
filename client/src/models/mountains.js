@@ -9,7 +9,7 @@ var Mountains = function(){
 Mountains.prototype.all = function(onCompleted) {
   var url = baseURL + "munros";
   var apiRequest = new ApiRequest();
-  apiRequest.makeRequest(url, function(receivedMtns) {
+  apiRequest.makeGetRequest(url, function(status, receivedMtns) {
     var mountains = [];
     for (var receivedMtn of receivedMtns) {
       var mtn = new Mountain(receivedMtn);

@@ -3,7 +3,8 @@ var ApiRequest = require('./api_request');
 var search = require('../utility').mountainSearch;
 
 const baseURL = "http://www.munrobagger.scot/";
-const baggedRoute = "bagged_munros" 
+const baggedRoute = "bagged_munros";
+const apiRequest = new ApiRequest();
 
 var User = function() {
   // this._id = userId;
@@ -13,13 +14,11 @@ var User = function() {
 
 User.prototype.register = function(email, password, confirmation, onCompleted) {
   let url = baseURL + "users.json";
-  let apiRequest = new ApiRequest();
   let params = { user: {
     email: email,
     password: password,
     password_confirmation: confirmation
   } };
-  console.log(params)
   apiRequest.makePostRequest(url, params, function(status, result) {
     onCompleted(status === 201);
   });
@@ -27,12 +26,10 @@ User.prototype.register = function(email, password, confirmation, onCompleted) {
 
 User.prototype.login = function(email, password, onCompleted) {
   let url = baseURL + "users/sign_in.json";
-  let apiRequest = new ApiRequest();
   let params = { user: {
     email: email,
     password: password
   } };
-  console.log(params)
   apiRequest.makePostRequest(url, params, function(status, result) {
     onCompleted(status === 201);
   });
@@ -40,18 +37,16 @@ User.prototype.login = function(email, password, onCompleted) {
 
 User.prototype.logout = function(onCompleted) {
   let url = baseURL + "users/sign_out.json";
-  let apiRequest = new ApiRequest();
-  apiRequest.makeDeleteRequest(url, null, function(status, result) {
+  apiRequest.makeDeleteRequest(url, function(status) {
     this._mountains = [];
-    onCompleted(status, result);
+    onCompleted(status === 204);
   }.bind(this));
 }
 
 User.prototype.getInfo = function(onCompleted) {
   var url = baseURL + baggedRoute;
   var apiRequest = new ApiRequest();
-  apiRequest.makeGetRequest(url, function(mountains) {
-    console.log("Mountains:", mountains)
+  apiRequest.makeGetRequest(url, function(status, mountains) {
     for (var mountain of mountains) {
       this._mountains.push(new UserMountain(mountain));
     }

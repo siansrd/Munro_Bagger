@@ -49,7 +49,6 @@ const UI = React.createClass({
 
   setUser: function(email, password) {
     this.state.user.login(email, password, function(success){
-      console.log("Login successful:", success)
       if (!success) return
       this.setState({userLoggedIn: true, infoBoxStatus: null});
       this.state.user.getInfo(function() {
@@ -72,6 +71,7 @@ const UI = React.createClass({
   logout: function(){
     // post logout request
     this.state.user.logout(function(success) {
+      console.log("logout request returned", success)
       if (!success) return
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();

@@ -1,70 +1,38 @@
-// var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-
-var ApiRequest = function() {
+let ApiRequest = function() {
 };
 
-ApiRequest.prototype.makeRequest = function(url, callback) {
- var request = new XMLHttpRequest()
- request.open("GET", url);
- request.withCredentials = true;
- request.onload = function() {
-   if (this.status !== 200) return;
-   var jsonString = this.responseText;
-   var result = JSON.parse(jsonString);
-   callback(result);
- };
- request.send();
-};
-
-ApiRequest.prototype.makeGetRequest = ApiRequest.prototype.makeRequest;
-
-ApiRequest.prototype.makePostRequest = function(url, content, callback) {
-  var request = new XMLHttpRequest()
-  request.open("POST", url);
-  request.withCredentials = true;
-  request.setRequestHeader('Content-Type', 'application/json');
-  request.onload = function() {
-    var result = "";
-    if (this.status === 201) {
-      result = JSON.parse(this.responseText);
-    }
-    callback(this.status, result);
-  };
-  var json = JSON.stringify(content);
-  request.send(json);
-}
-
-ApiRequest.prototype.makePutRequest = function(url, content, callback) {
-  var request = new XMLHttpRequest()
-  request.open("PUT", url);
-  request.withCredentials = true;
-  request.setRequestHeader('Content-Type', 'application/json');
-  request.onload = function() {
-    var result = "";
-    if (this.status === 201) {
-      result = JSON.parse(this.responseText);
-    }
-    callback(this.status, result);
-  };
-  var json = JSON.stringify(content);
-  request.send(json);
-}
-
-ApiRequest.prototype.makeDeleteRequest = function(url, content, callback) {
-  var request = new XMLHttpRequest()
-  request.open("DELETE", url);
+ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, content) {
+  let request = new XMLHttpRequest()
+  request.open(httpVerb, url);
   request.withCredentials = true;
   if (content) request.setRequestHeader('Content-Type', 'application/json');
   request.onload = function() {
-    var result = "";
-    if (this.status === 201) {
-      result = JSON.parse(this.responseText);
-    }
-    callback(this.status, result);
+    console.log(httpVerb, "request to", url, "returned status", this.status);
+    let status = expected.find(function(code) {
+      return(code === this.status)
+    }.bind(this))
+    if (!status) return;
+    let reply = (status === 204) ? null : JSON.parse(this.responseText);
+    callback(status, reply);
   };
-  let json = null;
-  if (content) json = JSON.stringify(content);
+  let json = (content) ? JSON.stringify(content) : null;
   request.send(json);
+}
+
+ApiRequest.prototype.makeGetRequest = function(url, callback) {
+  this._makeRequest("GET", url, [200], callback)
+};
+
+ApiRequest.prototype.makePostRequest = function(url, content, callback) {
+  this._makeRequest("POST", url, [200, 201], callback, content)
+}
+
+ApiRequest.prototype.makePutRequest = function(url, content, callback) {
+  this._makeRequest("PUT", url, [200, 201], callback, content)
+}
+
+ApiRequest.prototype.makeDeleteRequest = function(url, callback) {
+  this._makeRequest("DELETE", url, [200, 201, 204], callback);
 }
 
 module.exports = ApiRequest;
