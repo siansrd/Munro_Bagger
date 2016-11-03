@@ -71,7 +71,6 @@ const UI = React.createClass({
   logout: function(){
     // post logout request
     this.state.user.logout(function(success) {
-      console.log("logout request returned", success)
       if (!success) return
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
