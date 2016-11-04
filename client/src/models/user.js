@@ -7,9 +7,8 @@ const baggedRoute = "bagged_munros";
 const apiRequest = new ApiRequest();
 
 var User = function() {
-  // this._id = userId;
   this._mountains = [];
-  // Object.defineProperty(this, "id", { get: function(){ return this._id; } });
+  Object.defineProperty(this, "baggedList", { get: function(){ return this._mountains; } });
 }
 
 User.prototype.register = function(email, password, confirmation, onCompleted) {
@@ -54,62 +53,48 @@ User.prototype.getInfo = function(onCompleted) {
   }.bind(this))
 }
 
-User.prototype.getBaggedList = function() {
-  var bagged = this._mountains.filter(function(mtn) {
-    return mtn.bagged;
-  });
-  return bagged.map(function(mtn) {
-    return { id: mtn.id, climbed_on: mtn.climbed_on };
-  })
+User.prototype.createUserMountain = function(mountainId) {
+  let mountain = new UserMountain({ munro_id: mountainId });
+  this._mountains.push(mountain);
+  return mountain;
 }
 
-User.prototype.setHasClimbed = function(mountainId, value, date) {
-  var mountain = search(this._mountains, mountainId);
-  if (!mountain) {
-    mountain = new UserMountain({ id: mountainId });
-    this._mountains.push(mountain);
-    // need to re-order/sort the mountains now
-  }
-  mountain.bagged = value;
-  mountain.climbed_on = date;
-}
+User.prototype.saveUserMountain = function(mountain) {
+  if (!mountain.isDirty()) return;
+  let url = baseURL + baggedRoute;
+  let forExport = mountain.export();
 
-User.prototype.saveChanges = function() {
-  var url = baseURL + baggedRoute;
-  
-  let created = this._mountains.filter(function(mtn) {
-    return (mtn.isDirty() && mtn.bagged && !mtn._origin_id)
-  });
-  if (created.length > 0) {
-    created = created.map(function(mtn){
-      return mtn.export();
+  // decide if a create, update or delete request is needed
+
+  if (!mountain._origin_id && mountain.bagged) {
+    // Mountain has not been in the database before so should be a create request
+    apiRequest.makePostRequest(url, { bagged: forExport }, function(status, savedMtn) {
+      if (status !== 201) return;
+      mountain._dirty = false;
+      // retrieve the id for the new entry
+      mountain._origin_id = savedMtn.id;
     });
-    apiRequest.makePostRequest(url, { bagged: created }, function(receivedStatus) {
-      if (receivedStatus !== 201) console.log("Post returned:", receivedStatus);
-    });
+    return;
   }
 
-  let changed = this._mountains.filter(function(mtn) {
-    return (mtn.isDirty() && mtn.bagged && mtn._origin_id);
-  });
-  if (changed.length > 0) {
-    changed = changed.map(function(mtn){
-      return mtn.export();
+  // If not a create request, will have to identify the resource that is being changed.
+  url += "/" + mountain._origin_id;
+
+  if (mountain._origin_id && !mountain.bagged) {
+    // This mountain has been in the database so was bagged once but not now
+    // This is a delete request
+    apiRequest.makeDeleteRequest(url, { bagged: deleted }, function(status) {
+      if (receivedStatus !== 204) return;
+      mountain._dirty = false;
+      mountain._origin_id = undefined;
     });
-    apiRequest.makePutRequest(url, { bagged: changed }, function(receivedStatus) {
-      if (receivedStatus !== 201) console.log("Put returned:", receivedStatus);
-    });
+    return
   }
 
-  let deleted = this._mountains.filter(function(mtn) {
-    return (mtn.isDirty() && !mtn.bagged && mtn._origin_id)
-  });
-  if (deleted.length > 0) {
-    deleted = deleted.map(function(mtn){
-      return mtn._origin_id;
-    });
-    apiRequest.makeDeleteRequest(url, { bagged: deleted }, function(receivedStatus) {
-      if (receivedStatus !== 204) console.log("Delete returned:", receivedStatus);
+  if (mountain._origin_id && mountain.bagged) {
+    apiRequest.makePutRequest(url, { bagged: forExport }, function(status) {
+      if (receivedStatus !== 201) return;
+      mountain._dirty = false;
     });
   }
 }

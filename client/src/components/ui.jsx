@@ -81,6 +81,7 @@ const UI = React.createClass({
     this.setState({focusMountBagged: status})
     console.log("UI:", this.state.focusMountain.detail.name, status)
     this.state.focusMountain.bagged = status;
+    this.state.focusMountain.save();
   },
 
   setDate: function() {

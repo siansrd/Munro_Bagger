@@ -1,5 +1,5 @@
 function Pin (map, mtnView) {
-  this._id = mtnView.id;
+  // this._id = mtnView.id;
   this._mtnView = mtnView;
   this._map = map;
   this._dayNum = 0;
@@ -12,7 +12,7 @@ function Pin (map, mtnView) {
   this._hasFocus = false;
   this._infoWindow = null;
 
-  Object.defineProperty(this, "id", { get: function(){ return this._id; } });
+  Object.defineProperty(this, "id", { get: function(){ return this._mtnView.id; } });
 };
 
 Pin.prototype.changeForecast = function(dayNum) {
@@ -46,7 +46,7 @@ Pin.prototype._resetMarker = function() {
     icon: { url: this._generateIcon(), scaledSize: new google.maps.Size(15, 15) }
   });
   google.maps.event.addListener(this._marker, 'click', function(){
-    this._markerCallback(this._id);
+    this._markerCallback(this.id);
   }.bind(this));
   if (this._hasFocus) this._openInfoWindow();
 }
