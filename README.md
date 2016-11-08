@@ -1,9 +1,8 @@
-#Munro Bagger - React
-Revisited Project 3 with a view to rewrite the project using frameworks recently taught at CodeClan (Ruby on Rails and React.js)
+#Munro Bagger - React/Rails
 
-[Existing Codebase](https://github.com/johneas10/project3_Munro_Bagger)
+The Munro Bagger project was derived from an [existing codebase](https://github.com/johneas10/project3_Munro_Bagger) but has been almost completely rewritten to use React JS and a [Rails API](https://github.com/johneas10/MunroBagger_on_Rails) which uses a Postgresql database, Devise (for user authentication) and additional, server-side, API calls to gather weather forecasts and furnish the client with the necessary data. There are numerous points on this relatively simple project where the asynchronous nature of user behaviour and network traffic require the use of JS callbacks and Ruby threads but the code has been developed with this in mind and is well structured.
 
-[Link to Ruby on Rails Codebase](https://github.com/johneas10/MunroBagger_on_Rails)
+This is a work in progress.
 
 ## Team
 - John Easton
@@ -34,7 +33,7 @@ Revisited Project 3 with a view to rewrite the project using frameworks recently
 - CSS
 - HTML
 
-## APIs Used
+## External APIs Used
 
 - Google Maps API
 - MetOffice API

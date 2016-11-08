@@ -25,13 +25,16 @@ User.prototype.register = function(email, password, confirmation, onCompleted) {
 
 User.prototype.login = function(email, password, onCompleted) {
   let url = baseURL + "users/sign_in.json";
-  let params = { user: {
-    email: email,
-    password: password
-  } };
-  apiRequest.makePostRequest(url, params, function(status, result) {
-    onCompleted(status === 201);
-  });
+  // apiRequest.makeGetRequest(url, function(status) {
+  //   if (status !== 200) onCompleted(false);
+    let params = { user: {
+      email: email,
+      password: password
+    } };
+    apiRequest.makePostRequest(url, params, function(status, result) {
+      onCompleted(status === 201);
+    });
+  // });
 }
 
 User.prototype.logout = function(onCompleted) {
