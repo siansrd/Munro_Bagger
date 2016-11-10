@@ -5,7 +5,7 @@ ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, 
   let request = new XMLHttpRequest()
   request.open(httpVerb, url);
   // request.withCredentials = true;
-  if (jwtoken) xmlHttpRequest.setRequestHeader('Authorization', 'Bearer ' + jwtoken);
+  if (jwtoken) request.setRequestHeader('Authorization', 'Bearer ' + jwtoken);
   if (content) request.setRequestHeader('Content-Type', 'application/json');
   request.onload = function() {
     console.log(httpVerb, "request to", url, "returned status", this.status);

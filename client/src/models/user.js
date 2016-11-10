@@ -2,7 +2,8 @@ var UserMountain = require('./user_mountain');
 var ApiRequest = require('./api_request');
 var search = require('../utility').mountainSearch;
 
-const baseURL = "http://www.munrobagger.scot/";
+// const baseURL = "http://www.munrobagger.scot/";
+const baseURL = "http://localhost:3000/"
 const baggedRoute = "bagged_munros";
 const apiRequest = new ApiRequest();
 
@@ -23,7 +24,7 @@ User.prototype.register = function(email, password, confirmation, onCompleted) {
     let success = (status === 201);
     if(success) this._jwtoken = result.auth_token;
     onCompleted(success);
-  });
+  }.bind(this));
 }
 
 User.prototype.login = function(email, password, onCompleted) {
@@ -36,7 +37,7 @@ User.prototype.login = function(email, password, onCompleted) {
     let success = (status === 201);
     if(success) this._jwtoken = result.auth_token;
     onCompleted(success);
-  });
+  }.bind(this));
 }
 
 User.prototype.logout = function(onCompleted) {
