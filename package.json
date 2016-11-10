@@ -5,7 +5,8 @@
   "main": "seeds.js",
   "scripts": {
     "test": "mocha ./client/src/specs/",
-    "start": "node server.js"
+    "start": "node server.js",
+    "bundle": "cd client && webpack -w"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.25.0",
     "mocha": "^3.1.0",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3"
   }
 }
