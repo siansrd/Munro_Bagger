@@ -37,7 +37,7 @@ MountainsView.prototype.userLogin = function(user) {
   let user_mtns = user.baggedList;
   for (let user_mtn of user_mtns) {
     mtn = search(this.mountains, user_mtn.id);
-    mtn.status = usr_mtn;
+    mtn.status = user_mtn;
   }
 }
 
