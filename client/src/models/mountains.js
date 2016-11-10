@@ -1,8 +1,8 @@
 var Mountain = require('./mountain');
 var ApiRequest = require('./api_request');
 
-var baseURL = "http://www.munrobagger.scot/";
-// var baseURL = "http://localhost:3000/";
+// var baseURL = "http://www.munrobagger.scot/";
+var baseURL = "http://localhost:3000/";
 
 
 var Mountains = function(){
