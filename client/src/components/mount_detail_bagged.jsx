@@ -8,7 +8,7 @@ const MountDetailBagged = React.createClass({
 
   getInitialState: function(){
     return {
-      bagged: false
+      bagged: this.props.focusMount.bagged
       // baggedDate: moment(),
     }
   },
@@ -22,16 +22,17 @@ const MountDetailBagged = React.createClass({
 
   handleBaggedChange: function(event) {
     let status = event.target.checked;
+    this.setState({bagged: status})
     this.props.bagged(status)
   },
 
   render: function() {
-
+    console.log("Bagged State", this.state.bagged)
     return (
       <div className="flex-grid">
         <div className="grid-item">Bagged:</div>
         <div className="grid-item">
-          <input type="checkbox" onClick={this.handleBaggedChange}/>
+          <input type="checkbox" checked={this.props.focusMount.bagged} onChange={this.handleBaggedChange}/>
         </div>
       </div>
     )
