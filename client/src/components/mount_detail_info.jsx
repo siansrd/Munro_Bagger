@@ -3,14 +3,18 @@ const React = require('react');
 
 const MountDetailInfo = React.createClass({
 
-  render: function() {
+  formatDay: function() {
 
-    const description = this.props.focusMount.detail.forecasts.day[0].description
-    const tempMax = this.props.focusMount.detail.forecasts.day[0].temperature.max
-    const tempFL = this.props.focusMount.detail.forecasts.day[0].temperature.feelsLike
-    const windDirection = this.props.focusMount.detail.forecasts.day[0].wind.direction
-    const windSpeed = this.props.focusMount.detail.forecasts.day[0].wind.speed
-    const gusts = this.props.focusMount.detail.forecasts.day[0].wind.gusting
+  },
+
+  render: function() {
+    let dayNum = this.props.dayNum
+    const description = this.props.focusMount.detail.forecasts.day[dayNum].description
+    const tempMax = this.props.focusMount.detail.forecasts.day[dayNum].temperature.max
+    const tempFL = this.props.focusMount.detail.forecasts.day[dayNum].temperature.feelsLike
+    const windDirection = this.props.focusMount.detail.forecasts.day[dayNum].wind.direction
+    const windSpeed = this.props.focusMount.detail.forecasts.day[dayNum].wind.speed
+    const gusts = this.props.focusMount.detail.forecasts.day[dayNum].wind.gusting
 
     console.log(gusts)
 
