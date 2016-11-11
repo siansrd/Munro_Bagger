@@ -3,8 +3,10 @@ const React = require('react');
 
 const MountDetailInfo = React.createClass({
 
-  formatDay: function() {
-
+  formatDay: function(dayNum) {
+    if (dayNum == 0) return "Today"
+    if (dayNum == 1) return "Tomorrow"
+    if (dayNum == 2) return "Day After"
   },
 
   render: function() {
@@ -31,8 +33,10 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">{this.props.focusMount.detail.gridRef.letters} {this.props.focusMount.detail.gridRef.eastings} {this.props.focusMount.detail.gridRef.northings}</div>
           <div className="grid-item">Lat/Lon:</div>
           <div className="grid-item">{this.props.focusMount.detail.latLng.lat} {this.props.focusMount.detail.latLng.lng}</div>
-
-          <div className="grid-item">Weather {this.props.dayNum}:</div>
+        </div>
+        <div className="grid-item"><h4>Weather {this.formatDay(this.props.dayNum)}</h4></div>
+        <div className="flex-grid">
+          <div className="grid-item">Weather:</div>
           <div className="grid-item">{description}</div>
           <div className="grid-item">Temp:</div>
           <div className="grid-item">Max: {tempMax}&deg;C, Feels Like: {tempFL}&deg;C</div>
