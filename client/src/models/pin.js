@@ -10,6 +10,7 @@ function Pin (map, mtnView) {
   this._marker = null;
   this._markerCallback = null;
   this._hasFocus = false;
+  this._userClosedInfoWin = false;
   this._infoWindow = null;
 
   Object.defineProperty(this, "id", { get: function(){ return this._mtnView.id; } });
@@ -57,22 +58,29 @@ Pin.prototype.createMarker = function(callback) {
 };
 
 Pin.prototype._openInfoWindow = function(){
+  if (this._userClosedInfoWin) return;
   const infoWindow = new google.maps.InfoWindow({
       content: this._mtnView.detail.name
   });
   infoWindow.open(this._map, this._marker);
+  google.maps.event.addListener(infoWindow,'closeclick',function(){
+    this._userClosedInfoWin = true;
+    this._infoWindow = null;
+  }.bind(this));
   this._infoWindow = infoWindow;
 };
 
 Pin.prototype.setFocus = function() {
   this._hasFocus = true;
+  this._userClosedInfoWin = false;
   this._openInfoWindow();
   return this;
 }
 
 Pin.prototype.clearFocus = function() {
   this._hasFocus = false;
-  this._infoWindow.close();
+  if (this._infoWindow !== null) this._infoWindow.close();
+  this._infoWindow = null;
 }
 
 Pin.prototype._generateIcon = function(){

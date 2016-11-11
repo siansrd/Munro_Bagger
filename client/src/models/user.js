@@ -2,8 +2,8 @@ var UserMountain = require('./user_mountain');
 var ApiRequest = require('./api_request');
 var search = require('../utility').mountainSearch;
 
-// const baseURL = "http://www.munrobagger.scot/";
-const baseURL = "http://localhost:3000/"
+const baseURL = "http://www.munrobagger.scot/";
+// const baseURL = "http://localhost:3000/"
 const baggedRoute = "bagged_munros";
 const apiRequest = new ApiRequest();
 
