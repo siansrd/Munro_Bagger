@@ -45,11 +45,11 @@ const UserLogin = React.createClass({
         <h3>Log in</h3>
 
         <form action="/users/sign_in" >
-          <div>
+          <div className="formElement">
             <label>Email</label><br />
             <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
           </div>
-          <div>
+          <div className="formElement">
             <label>Password</label><br />
             <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword}/>
           </div>

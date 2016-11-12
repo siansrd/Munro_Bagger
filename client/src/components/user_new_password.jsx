@@ -17,7 +17,7 @@ const UserNewPassword = React.createClass({
         <h2>Forgot your password?</h2>
 
         <form>
-            <div>
+            <div className="formElement">
                 <label>Email</label><br />
                 <input type="email" name="user[email]" id="user_email" />
             </div>
