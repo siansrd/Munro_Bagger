@@ -11,7 +11,7 @@ const InfoBox = React.createClass({
 
   if (!this.props.infoBox) return (
     <div id="infoBox">
-      <Welcome/>
+      <Welcome signUpClicked={this.props.signUpClicked}/>
     </div>
   )
 

@@ -1,20 +1,34 @@
 var React = require('react');
 
-const Welcome = function(props) {
+const Welcome = React.createClass ({
 
-  return (
-    <div>   
-      <h3>Coming Soon</h3>
-      <p>This site is under development but will be up and running soon</p>
-    </div>
-  )
+  clickSignUp: function() {
+    this.props.signUpClicked()
+  },
 
-};
+  render: function() {
+    return (
+      <div>   
+        <p>Munro Bagger maps all of the Munros in Scotland, displays their weather and allows you to keep track of the ones you've bagged. The weather is a daily forecast taken from the Met Office.</p>
+
+        <div className="flex-grid">
+          <div className="grid-item">Sunny:</div>
+          <div className="grid-item"><img className="icon" src="/public/images/mntn-sunny.png"/></div>
+          <div className="grid-item">Not Sunny:</div>
+          <div className="grid-item"><img className="icon" src="/public/images/mntn-not-sunny.png"/></div>
+        </div>
+        <p><span className="user-link" onClick={this.clickSignUp}>Register</span> to to track your bagged Munros.</p>
+        <div className="flex-grid">
+          <div className="grid-item">Bagged:</div>
+          <div className="grid-item"><img className="icon" src="/public/images/mntn-bagged.png"/></div>
+          <div className="grid-item">Not Bagged:</div>
+          <div className="grid-item"><img className="icon" src="/public/images/mntn-not-bagged.png"/></div>
+        </div>
+      </div>
+    )
+  }
+
+});
 
 module.exports = Welcome;
-
-// <p>Munro Bagger maps all of the Munros in Scotland, displays their weather and allows you to keep track of the ones you've bagged.</p>
-// <p>The weather displayed is a daily forecast taken from the Met Office.</p>
-// <p>Register to be able to track your bagged Munros</p>
-
 

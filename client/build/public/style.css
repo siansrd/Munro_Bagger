@@ -186,6 +186,10 @@ input[type="radio" i] {
   /*height: 25px;*/
 }
 
+.icon {
+  height: 18px;
+}
+
 /*-------- auto suggest -------*/
 
 .react-autosuggest__container {
