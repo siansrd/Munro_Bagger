@@ -17,8 +17,9 @@ function Pin (map, mtnView) {
 };
 
 Pin.prototype.changeForecast = function(dayNum) {
-  if (this._forecasts.day[this._dayNum].code !== this._forecasts.day[dayNum].code) {
-    this._mountSunny = (this._forecasts.day[dayNum].code <= 3);
+  let sunnyForecast = (this._forecasts.day[dayNum].code <= 3)
+  if (this._mountSunny !== sunnyForecast) {
+    this._mountSunny = sunnyForecast
     this._marker.setMap(null);
     this._resetMarker();
   }
