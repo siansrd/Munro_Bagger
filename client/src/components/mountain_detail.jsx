@@ -30,7 +30,7 @@ const MountDetail = React.createClass({
 
     if (!this.props.userLoggedIn) return (
       <div>
-        <MountDetailInfo 
+        <MountDetailInfo
           focusMount={this.props.focusMount}
           dayNum={this.props.dayNum} />
       </div>
@@ -38,16 +38,16 @@ const MountDetail = React.createClass({
 
     return (
       <div>
-        <MountDetailInfo 
+        <MountDetailInfo
           focusMount={this.props.focusMount}
           dayNum={this.props.dayNum} />
 
         <MountDetailBagged
-          focusMount={this.props.focusMount} 
+          focusMount={this.props.focusMount}
           bagged={this.props.bagged} />
       </div>
     )
-    
+
   }
 })
 

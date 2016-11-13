@@ -17,8 +17,8 @@ const InfoBox = React.createClass({
 
   if (this.props.infoBox === "mountain") return (
     <div id="infoBox">
-      <MountainDetail 
-        focusMount={this.props.focusMount} 
+      <MountainDetail
+        focusMount={this.props.focusMount}
         dayNum={this.props.dayNum}
         bagged={this.props.bagged}
         date={this.props.date}
@@ -28,8 +28,8 @@ const InfoBox = React.createClass({
 
   if (this.props.infoBox === "login") return (
     <div id="infoBox">
-      <UserLogin 
-        signUpClicked={this.props.signUpClicked} 
+      <UserLogin
+        signUpClicked={this.props.signUpClicked}
         forgotPassClicked={this.props.forgotPassClicked}
         user={this.props.user}/>
     </div>
@@ -37,7 +37,7 @@ const InfoBox = React.createClass({
 
   if (this.props.infoBox === "signUp" ) return (
     <div id="infoBox">
-      <UserSignUp 
+      <UserSignUp
         loginClicked={this.props.loginClicked}
         userRegistration={this.props.userRegistration}/>
     </div>
@@ -45,8 +45,8 @@ const InfoBox = React.createClass({
 
   if (this.props.infoBox === "password" ) return (
     <div id="infoBox">
-      <UserNewPassword 
-        loginClicked={this.props.loginClicked} 
+      <UserNewPassword
+        loginClicked={this.props.loginClicked}
         signUpClicked={this.props.signUpClicked}/>
     </div>
   )
