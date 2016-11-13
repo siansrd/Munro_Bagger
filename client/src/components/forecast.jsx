@@ -21,7 +21,7 @@ const Forecast = React.createClass ({
   render: function() {
     return (
       <div id="weather-buttons">
-        <h4>Weather</h4>
+        <h3>Weather</h3>
         <button 
           className={this.isFocus("0")} 
           value="0"

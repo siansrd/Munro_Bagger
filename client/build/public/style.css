@@ -26,6 +26,10 @@ h1, h2, h3, h4 {
     margin-bottom: 10px;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 #infoBox h3 {
     margin-bottom: 3px;
 }
@@ -98,7 +102,7 @@ button {
     padding: 10px;
 }
 
-#weather-buttons h4 {
+#weather-buttons h3 {
   margin-bottom: 8px;
   color:#456F99;
   text-align: center;
@@ -148,7 +152,7 @@ textarea:focus, input:focus, button:focus {
 #logo {
     position: fixed;
     right: 40px;
-    top: 20px;
+    top: 15px;
     width: 380px;
     z-index: 1;
 }
@@ -156,7 +160,7 @@ textarea:focus, input:focus, button:focus {
 #search {
     position: fixed;
     right: 140px;
-    top: 90px;
+    top: 85px;
     width: 280px;
     height: 28px;
     z-index: 5;
@@ -165,7 +169,7 @@ textarea:focus, input:focus, button:focus {
 #loginLink {
   position: fixed;
   right: 40px;
-  top: 90px;
+  top: 85px;
   width: 100px;
   z-index: 1;
 }
@@ -272,7 +276,7 @@ textarea:focus, input:focus, button:focus {
   }
 
   #logo h1 {
-      font-size: 5vw;
+      font-size: 5.5vw;
   }
 
   #logo {
