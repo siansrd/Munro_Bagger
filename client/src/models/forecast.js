@@ -1,6 +1,7 @@
 var visibility = require('./forecast_info').visibility;
 var weatherText = require('./forecast_info').significantWeather;
 var UVIndexText = require('./forecast_info').UVIndex;
+var winddir = require('./forecast_info').winddir;
 
 // D: "SSW",  Wind direction 16-point compass direction e.g. S, SSW, SW, etc.
 // Gn: "13",  Wind gust noon in miles per hour (mph)
@@ -23,7 +24,7 @@ var Forecast = function(options){
   this._temperature = { max: options.Rep[0].Dm, feelsLike: options.Rep[0].FDm };
   this._code = (options.Rep[0].W === "NA") ? -1 : Number(options.Rep[0].W);
   this._description = (this._code === -1) ? "Not available" : weatherText[this._code];
-  this._visibility = visibility[Number(options.Rep[0].V)];
+  this._visibility = visibility[(options.Rep[0].V)];
   this._UVIndex = { index: Number(options.Rep[0].U), text: UVIndexText[Number(options.Rep[0].U)] };
 
   Object.defineProperty(this, "date", { get: function() { return this._date; } });
@@ -35,7 +36,7 @@ var Forecast = function(options){
   Object.defineProperty(this, "code", { get: function() { return this._code; } });
   Object.defineProperty(this, "visibility", { get: function(){ return this._visibility; } });
   Object.defineProperty(this, "UVIndex", { get: function(){ return this._UVIndex; } });
- 
+
 };
 
 module.exports = Forecast;

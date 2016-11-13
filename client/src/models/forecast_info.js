@@ -1,12 +1,41 @@
+// const visibility = {
+//   'UN': 'Unknown',
+//   'VP': 'Very poor - less than 1 km',
+//   'PO': 'Poor - between 1-4 km',
+//   'MO': 'Moderate - between 4-10 km',
+//   'GO': 'Good - between 10-20 km',
+//   'VG': 'Very good - between 20-40 km',
+//   'EX': 'Excellent - more than 40 km'
+// };
+
 const visibility = {
   'UN': 'Unknown',
-  'VP': 'Very poor - less than 1 km',
-  'PO': 'Poor - between 1-4 km',
-  'MO': 'Moderate - between 4-10 km',
-  'GO': 'Good - between 10-20 km',
-  'VG': 'Very good - between 20-40 km',
-  'EX': 'Excellent - more than 40 km'
+  'VP': '< 1km',
+  'PO': '1-4km',
+  'MO': '4-10km',
+  'GO': '10-20km',
+  'VG': '20-40km',
+  'EX': '> 40km'
 };
+
+// const winddir = {
+//   'N': 'North',
+//   'NNE': 'North-northeast',
+//   'NE': 'Northeast',
+//   'ENE': 'East-northeast',
+//   'E': 'East',
+//   'ESE': 'East-southeast',
+//   'SE': 'Southeast',
+//   'SSE': 'South-southeast',
+//   'S': 'South',
+//   'SSW': 'South-southwest',
+//   'SW': 'Southwest',
+//   'WSW': 'West-southwest',
+//   'W': 'West',
+//   'WNW': 'West-northwest',
+//   'NW': 'Northwest',
+//   'NNW': 'North-northwest'
+// };
 
 const significantWeather = [
   'Clear night',  // 0
@@ -74,4 +103,5 @@ module.exports = {
   visibility: visibility,
   significantWeather: significantWeather,
   UVIndex: UVIndex
+  // winddir: winddir
 };

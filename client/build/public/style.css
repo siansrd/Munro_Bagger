@@ -46,13 +46,13 @@ input, textarea, keygen, select, button {
    color: #456F99;
 }
 :-moz-placeholder { /* Firefox 18- */
-   color: #456F99;  
+   color: #456F99;
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #456F99;  
+   color: #456F99;
 }
-:-ms-input-placeholder {  
-   color: #456F99;  
+:-ms-input-placeholder {
+   color: #456F99;
 }
 
 input[type="submit" i],
@@ -137,7 +137,7 @@ button:hover,
     text-decoration: underline;
     font-size: 60px;
     color: #fff;
-    margin: 0;   
+    margin: 0;
 }
 
 #filter {
@@ -196,7 +196,7 @@ input[type="radio" i] {
   position: relative;
 }
 
-.react-autosuggest__input { 
+.react-autosuggest__input {
   width: 240px;
   height: 28px;
   padding: 8px;
@@ -250,5 +250,3 @@ input[type="radio" i] {
 textarea:focus, input:focus, button:focus {
     outline: none;
 }
-
-

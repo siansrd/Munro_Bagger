@@ -17,8 +17,10 @@ const MountDetailInfo = React.createClass({
     const windDirection = this.props.focusMount.detail.forecasts.day[dayNum].wind.direction
     const windSpeed = this.props.focusMount.detail.forecasts.day[dayNum].wind.speed
     const gusts = this.props.focusMount.detail.forecasts.day[dayNum].wind.gusting
+    const visibility = this.props.focusMount.detail.forecasts.day[dayNum].visibility
 
-    console.log(gusts)
+    // console.log(gusts)
+    // console.log(visibility)
 
     return (
       <div>
@@ -35,18 +37,23 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">{this.props.focusMount.detail.latLng.lat}°, {this.props.focusMount.detail.latLng.lng}°</div>
         </div>
 
-        <div className="grid-item"><h3>Conditions {this.formatDay(this.props.dayNum)}:</h3></div>
+        <div className="cond-title"><h3>Conditions {this.formatDay(this.props.dayNum)}:</h3></div>
         <div className="flex-grid">
           <div className="grid-item">Weather:</div>
           <div className="grid-item">{description}</div>
+          <div className="grid-item">Visibility:</div>
+          <div className="grid-item">{visibility}</div>
           <div className="grid-item">Temp(max):</div>
           <div className="grid-item">{tempMax}&deg;C</div>
           <div className="grid-item">Feels Like:</div>
           <div className="grid-item">{tempFL}&deg;C</div>
           <div className="grid-item">Wind:</div>
-          <div className="grid-item">{windDirection} {windSpeed}mph</div>
-          <div className="grid-item">Gusts:</div>
-          <div className="grid-item">{gusts}mph</div>
+          <div className="grid-item">{windSpeed}mph {windDirection}</div>
+          {/* <div className="grid-item"></div> */}
+          {/* <div className="grid-item">({windDirection})</div> */}
+          <div className="grid-item"></div>
+          <div className="grid-item">Gusts of up to {gusts}mph</div>
+
         </div>
       </div>
     )
