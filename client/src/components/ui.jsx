@@ -79,6 +79,7 @@ const UI = React.createClass({
     this.setState({focusMountBagged: status})
     this.state.focusMountain.bagged = status;
     this.state.focusMountain.save();
+    this.state.focusMountain.pin.changeBaggedState(status);
   },
 
   setDate: function() {
