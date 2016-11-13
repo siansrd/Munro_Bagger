@@ -40,7 +40,7 @@ const UI = React.createClass({
     mtnsView.all(function() {
       this.setState({mountainViews: mtnsView});
       for (let mtnView of mtnsView.mountains) {
-        mtnView.pin = this.props.mapObj.addPin(mtnView, this.setFocusMountain);
+        this.props.mapObj.addPin(mtnView, this.setFocusMountain);
       }
     }.bind(this))
   },

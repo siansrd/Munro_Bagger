@@ -26,19 +26,20 @@ Pin.prototype.changeForecast = function(dayNum) {
   this._dayNum = dayNum;
 }
 
-Pin.prototype.userLoggedIn = function(mtnView) {
-  this._mtnView = mtnView;
-  this._mountBagged = mtnView.bagged;
-  this._loggedIn = true;
+Pin.prototype.changeBaggedState = function(bagged) {
+  this._mountBagged = bagged;
   this._marker.setMap(null);
   this._resetMarker();
 }
 
+Pin.prototype.userLoggedIn = function(bagged) {
+  this._loggedIn = true;
+  this.changeBaggedState(bagged);
+}
+
 Pin.prototype.userLoggedOut = function() {
-  this._mountBagged = false;
   this._loggedIn = false;
-  this._marker.setMap(null);
-  this._resetMarker();
+  this.changeBaggedState(false);
 }
 
 Pin.prototype._resetMarker = function() {
