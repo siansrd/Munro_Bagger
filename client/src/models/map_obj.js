@@ -47,18 +47,18 @@ MapObject.prototype._preventPan = function(){
   }.bind(this));
 };
 
-MapObject.prototype.openInfoWindowForMountain = function(mountain){
-  const pin = search(this._allPins, mountain.id);
+MapObject.prototype.openInfoWindowForMountain = function(mtnPin){
   if( this._prevFocus ) {
      this._prevFocus.clearFocus();
   }
-  this._prevFocus = pin.setFocus()
+  this._prevFocus = mtnPin.setFocus()
 };
 
 MapObject.prototype.addPin = function(mountainView, onMarkerClicked) {
   let pin = new Pin(this._map, mountainView);
   pin.createMarker(onMarkerClicked);
   this._allPins.push(pin);
+  return(pin);
 }
 
 MapObject.prototype.changeForecast = function(dayNum) {

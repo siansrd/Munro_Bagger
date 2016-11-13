@@ -2,9 +2,9 @@ var MountainView = function(mtn) {
   // this._id = mtn.id;
   this._detail = mtn;
   this._status = null;
-  // this.pin = null;
   this._createStatus = null;
   this._saveStatus = null;
+  this.pin = null;
   Object.defineProperty(this, "id", { get: function(){ return this._detail.id; } });
   Object.defineProperty(this, "detail", { get: function(){ return this._detail; } });
   Object.defineProperty(this, "status", { set: function(status){ this._status = status; } });
