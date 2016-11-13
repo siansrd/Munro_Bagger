@@ -7,7 +7,6 @@ const Logo = require('./logo');
 const Filter = require('./filter');
 const InfoBox = require('./info_box');
 
-const Mountains = require('../models/mountains');
 const MountainsView = require('../views/mountains_view');
 const search = require('../utility').mountainSearch;
 const User = require('../models/user');
