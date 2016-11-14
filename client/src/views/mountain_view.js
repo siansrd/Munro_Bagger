@@ -36,11 +36,12 @@ MountainView.prototype.save = function(callback) {
 }
 
 MountainView.prototype.backup = function() {
-  if (this._status) this._backup = this._status.backup();
+  if (!this._status) this._status = this._createStatus(this.id);
+  this._backup = this._status.backup();
 }
 
 MountainView.prototype.restore = function() {
-  if (this._status) this._status.restore(this._backup);
+  this._status.restore(this._backup);
 }
 
 module.exports = MountainView;
