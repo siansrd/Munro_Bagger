@@ -21,9 +21,6 @@ MountainsView.prototype.all = function(onCompleted) {
 
 MountainsView.prototype._clearMountains = function() {
   for (let mtn of this.mountains) {
-    // // access private variable _bagged to sidestep callback
-    // mtn._bagged = false;
-    // mtn._climbed_on = null;
     mtn.status = null;
   }
 }

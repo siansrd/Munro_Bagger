@@ -68,42 +68,51 @@ User.prototype.createUserMountain = function(mountainId) {
   return mountain;
 }
 
-User.prototype.saveUserMountain = function(mountain) {
-  if (!mountain.isDirty()) return;
+User.prototype.saveUserMountain = function(mountain, callback) {
+  if (!mountain.isDirty()) callback(false);
   let url = baseURL + baggedRoute;
   let forExport = mountain.export();
 
   // decide if a create, update or delete request is needed
 
-  if (!mountain._origin_id && mountain.bagged) {
+  if (!mountain._originId && mountain.bagged) {
     // Mountain has not been in the database before so should be a create request
     apiRequest.makePostRequest(url, { bagged: forExport }, this._jwtoken, function(status, savedMtn) {
-      if (status !== 201) return;
-      mountain._dirty = false;
-      // retrieve the id for the new entry
-      mountain._origin_id = savedMtn.id;
+      let success = (status === 201);
+      if (success) {
+        mountain._dirty = false;
+        // retrieve the id for the new entry
+        mountain._originId = savedMtn.id;
+      }
+      callback(success);
     });
     return;
   }
 
   // If not a create request, will have to identify the resource that is being changed.
-  url += "/" + mountain._origin_id;
+  url += "/" + mountain._originId;
 
-  if (mountain._origin_id && !mountain.bagged) {
+  if (mountain._originId && !mountain.bagged) {
     // This mountain has been in the database so was bagged once but not now
     // This is a delete request
     apiRequest.makeDeleteRequest(url, null, this._jwtoken, function(status) {
-      if (receivedStatus !== 204) return;
-      mountain._dirty = false;
-      mountain._origin_id = undefined;
+      let success = (status === 204);
+      if (success) {
+        mountain._dirty = false;
+        mountain._originId = undefined;
+      }
+      callback(success);
     });
     return
   }
 
-  if (mountain._origin_id && mountain.bagged) {
+  if (mountain._originId && mountain.bagged) {
     apiRequest.makePutRequest(url, { bagged: forExport }, this._jwtoken, function(status) {
-      if (receivedStatus !== 201) return;
-      mountain._dirty = false;
+      let success = (status === 201);
+      if (success) {
+        mountain._dirty = false;
+      }
+      callback(success);
     });
   }
 }

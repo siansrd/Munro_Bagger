@@ -17,7 +17,13 @@ ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, 
     callback(status, reply);
   };
   let json = (content) ? JSON.stringify(content) : null;
-  request.send(json);
+  try {
+    request.send(json);  
+  }
+  catch(InvalidStateError) {
+    callback(0, err.description);
+  }
+
 }
 
 ApiRequest.prototype.makeGetRequest = function(url, jwtoken, callback) {
