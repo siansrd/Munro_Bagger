@@ -23,4 +23,15 @@ UserMountain.prototype.export = function() {
   return { munro_id: this._id, climbed_on: this._climbedOn };
 }
 
+UserMountain.prototype.backup = function() {
+  return { climbedOn: this._climbedOn, bagged: this._bagged, dirty: this._dirty }
+}
+
+UserMountain.prototype.restore = function(backup) {
+  this._climbedOn = backup.climbedOn;
+  this._bagged = backup.bagged;
+  this._dirty = backup.dirty;
+}
+
+
 module.exports = UserMountain;

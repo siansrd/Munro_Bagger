@@ -75,14 +75,14 @@ User.prototype.saveUserMountain = function(mountain, callback) {
 
   // decide if a create, update or delete request is needed
 
-  if (!mountain._origin_id && mountain.bagged) {
+  if (!mountain._originId && mountain.bagged) {
     // Mountain has not been in the database before so should be a create request
-    apiRequest.makePostRequest(url, { bagged: forExport }, this._jwtoken, function(status, savedMtn)
+    apiRequest.makePostRequest(url, { bagged: forExport }, this._jwtoken, function(status, savedMtn) {
       let success = (status === 201);
       if (success) {
         mountain._dirty = false;
         // retrieve the id for the new entry
-        mountain._origin_id = savedMtn.id;
+        mountain._originId = savedMtn.id;
       }
       callback(success);
     });
@@ -90,23 +90,23 @@ User.prototype.saveUserMountain = function(mountain, callback) {
   }
 
   // If not a create request, will have to identify the resource that is being changed.
-  url += "/" + mountain._origin_id;
+  url += "/" + mountain._originId;
 
-  if (mountain._origin_id && !mountain.bagged) {
+  if (mountain._originId && !mountain.bagged) {
     // This mountain has been in the database so was bagged once but not now
     // This is a delete request
     apiRequest.makeDeleteRequest(url, null, this._jwtoken, function(status) {
       let success = (status === 204);
       if (success) {
         mountain._dirty = false;
-        mountain._origin_id = undefined;
+        mountain._originId = undefined;
       }
       callback(success);
     });
     return
   }
 
-  if (mountain._origin_id && mountain.bagged) {
+  if (mountain._originId && mountain.bagged) {
     apiRequest.makePutRequest(url, { bagged: forExport }, this._jwtoken, function(status) {
       let success = (status === 201);
       if (success) {
