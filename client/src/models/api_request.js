@@ -17,13 +17,12 @@ ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, 
     callback(status, reply);
   };
   let json = (content) ? JSON.stringify(content) : null;
-  try {
+  if (navigator.onLine) {
     request.send(json);  
   }
-  catch(InvalidStateError) {
-    callback(0, err.description);
+  else {
+    callback(0, null);
   }
-
 }
 
 ApiRequest.prototype.makeGetRequest = function(url, jwtoken, callback) {

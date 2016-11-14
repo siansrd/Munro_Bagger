@@ -78,20 +78,18 @@ const UI = React.createClass({
   baggedStatusChanged: function(status) {
     this.setState({focusMountBagged: status})
     // disable the checkbox
-    // this.state.focusMountain.backup();
+    this.state.focusMountain.backup();
     this.state.focusMountain.bagged = status;
-    this.state.focusMountain.pin.changeBaggedState(status);  
+    this.state.focusMountain.pin.changeBaggedState(status); 
     this.state.focusMountain.save(function(success) {
       // we have a reply re-enable the checkbox
-      if (success) {
-       // this.state.focusMountain.pin.changeBaggedState(status);       
-      }
-      else {
+      if (!success) {
         // There was an error saving the data
-        // this.state.focusMountain.restore();
+        this.state.focusMountain.pin.changeBaggedState(!status); 
+        this.state.focusMountain.restore();
         // revert the checkbox to the restored state
       }
-    });
+    }.bind(this));
   },
 
   setDate: function() {
