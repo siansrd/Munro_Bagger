@@ -10,12 +10,12 @@
 
 const visibility = {
   'UN': 'Unknown',
-  'VP': '< 1km',
-  'PO': '1-4km',
-  'MO': '4-10km',
-  'GO': '10-20km',
-  'VG': '20-40km',
-  'EX': '> 40km'
+  'VP': 'Under 1km',
+  'PO': '1 - 4km',
+  'MO': '4 - 10km',
+  'GO': '10 - 20km',
+  'VG': '20 - 40km',
+  'EX': 'Over 40km'
 };
 
 // const winddir = {
