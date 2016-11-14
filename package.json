@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha ./client/src/specs/",
     "start": "node server.js",
-    "bundle": "cd client && webpack -w"
+    "bundle": "cd client && webpack -w",
+    "bundle-p": "cd client && webpack -p"
   },
   "author": "",
   "license": "ISC",
