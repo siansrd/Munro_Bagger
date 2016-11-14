@@ -32,9 +32,7 @@ var MountainView = function(mtn) {
 }
 
 MountainView.prototype.save = function(callback) {
-  if (this._saveStatus) this._saveStatus(this._status, function(success) {
-    callback(success);
-  });
+  if (this._saveStatus) this._saveStatus(this._status, callback);
 }
 
 MountainView.prototype.backup = function() {

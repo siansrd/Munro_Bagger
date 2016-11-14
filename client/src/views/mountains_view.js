@@ -48,8 +48,8 @@ MountainsView.prototype.newBaggedRecord = function(id) {
   return this._user.createUserMountain(id)
 }
 
-MountainsView.prototype.saveBaggedRecord = function(bagged) {
-  if (this._user) this._user.saveUserMountain(bagged)
+MountainsView.prototype.saveBaggedRecord = function(bagged, callback) {
+  if (this._user) this._user.saveUserMountain(bagged, callback)
 }
 
 module.exports = MountainsView;
