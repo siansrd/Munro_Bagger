@@ -4,11 +4,11 @@ Light Blue: #DBEBFF;
 /*Blue: #A5CEFD*/
 /*Dark Blue: #456F99*/
 
-
 html, body {
     width: 100%;
     height: 100%;
     margin: 0;
+    background: #A5CEFD;
 }
 
 body {
@@ -26,6 +26,10 @@ h1, h2, h3, h4 {
     margin-bottom: 10px;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 #infoBox h3 {
     margin-bottom: 3px;
 }
@@ -38,6 +42,19 @@ ul {
     list-style: none;
     padding: 0;
 }
+
+.formElement {
+  margin-top: 12px;
+}
+
+#infoBox input {
+  height: 24px;
+  width: 200px;
+  border-style: solid;
+  border-color: initial;
+  border-image: initial;
+}
+
 
 input, textarea, keygen, select, button {
     color: #456F99;
@@ -85,7 +102,7 @@ button {
     padding: 10px;
 }
 
-#weather-buttons h4 {
+#weather-buttons h3 {
   margin-bottom: 8px;
   color:#456F99;
   text-align: center;
@@ -104,68 +121,62 @@ button:hover,
     background-color: #DBEBFF;
 }
 
+textarea:focus, input:focus, button:focus {
+    outline: none;
+}
+
+.menu-link {
+  cursor: pointer;
+  text-align: right;
+}
+
+.user-link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.menu-link:hover,
+.user-link:hover {
+  color: #fff;
+}
+
+#logo h1 {
+    text-decoration: underline;
+    font-size: 59px;
+    color: #fff;
+    margin: 0;
+}
+
+#logo {
+    position: fixed;
+    right: 40px;
+    top: 15px;
+    width: 380px;
+    z-index: 1;
+}
 
 #search {
     position: fixed;
-    right: 15%;
-    top: 10px;
-    width: 240px;
+    right: 140px;
+    top: 85px;
+    width: 280px;
+    height: 28px;
     z-index: 5;
 }
 
 #loginLink {
   position: fixed;
-  right: 3%;
-  top: 10px;
+  right: 40px;
+  top: 85px;
   width: 100px;
   z-index: 1;
 }
 
-.user-link {
-  cursor: pointer;
-}
-
-#logo {
-    position: fixed;
-    right: 5%;
-    top: 50px;
-    width: 386px;
-    z-index: 1;
-}
-
-#logo h1 {
-    text-decoration: underline;
-    font-size: 60px;
-    color: #fff;
-    margin: 0;
-}
-
-#filter {
-    position: fixed;
-    right: 5%;
-    top: 130px;
-    width: 370px;
-    padding: 10px;
-    z-index: 1;
-}
-
-#filter label {
-    margin: 0 10px 0 5px;
-}
-
-input[type="radio" i] {
-    margin: 0 5px;
-}
-
-#infoBox button {
-    margin-top: 10px;
-}
-
 #infoBox {
     position: fixed;
-    right: 5%;
-    top: 180px;
-    width: 320px;
+    right: 40px;
+    top: 150px;
+    width: 314px;
     padding: 30px 30px 20px 30px;
     border: 3px solid #fff;
     background: #A5CEFD;
@@ -179,16 +190,19 @@ input[type="radio" i] {
 }
 .grid-item {
   flex: 1 1 calc(100% - 120px);
-  /*height: 25px;*/
 }
 .grid-item:nth-child(odd) {
   flex: 0 0 120px;
-  /*height: 25px;*/
 }
 
 .icon {
   height: 18px;
 }
+
+#infoBox button {
+    margin-top: 10px;
+}
+
 
 /*-------- auto suggest -------*/
 
@@ -196,8 +210,13 @@ input[type="radio" i] {
   position: relative;
 }
 
+
 .react-autosuggest__input {
   width: 240px;
+
+.react-autosuggest__input {
+  width: 100%;
+
   height: 28px;
   padding: 8px;
   font-family: 'Hammersmith One', sans-serif;
@@ -210,7 +229,7 @@ input[type="radio" i] {
   display: block;
   position: absolute;
   top: 35px;
-  width: 300px;
+  width: 376px;
   border: 2px solid #456F99;
   background-color: #fff;
   font-family: 'Hammersmith One', sans-serif;
@@ -238,15 +257,139 @@ input[type="radio" i] {
 
 /*---------*/
 
+@media screen and (max-width: 850px) {
 
+  #logo h1 {
+      font-size: 50px;
+  }
 
+  #logo {
+      right: 20px;
+      width: 330px;
+  }
 
+  #search {
+      position: fixed;
+      right: 100px;
+      top: 85px;
+      width: 250px;
+      height: 28px;
+      z-index: 5;
+  }
 
+  #loginLink {
+    position: fixed;
+    right: 20px;
+    top: 85px;
+    width: 80px;
+    z-index: 1;
+  }
 
-/* Old !!!! */
+  #infoBox {
+      position: fixed;
+      right: 20px;
+      top: 150px;
+      width: 294px;
+      padding: 15px 15px 15px 15px;
+      border: 3px solid #fff;
+      background: #A5CEFD;
+      z-index: 1;
+  }
 
+}
+
+@media screen and (max-width: 650px) {
 
 
 textarea:focus, input:focus, button:focus {
     outline: none;
+
+  body {
+      font-size: 14px;
+  }
+
+  #loginLink {
+    position: fixed;
+    left: 10px;
+    width: 40%;
+    top: 10px;
+    /* right: 40px;
+    top: 90px;
+    width: 100px;
+    z-index: 1;*/
+  }
+
+  .menu-link {
+    text-align: left;
+  }
+
+  #logo h1 {
+      font-size: 5.5vw;
+  }
+
+  #logo {
+      position: fixed;
+      width: 40%;
+      left: 10px;
+      right: auto;
+      top: 30px;
+      /*right: 40px;
+      top: 20px;
+      width: 380px;
+      z-index: 1; */
+  }
+
+  #search {
+      position: fixed;
+      left: 10px;
+      right: auto;
+      top: 80px;
+      width: 36%;
+      /*right: 140px;
+      top: 90px;
+      width: 280px;
+      height: 28px;
+      z-index: 5; */
+  }
+
+  .react-autosuggest__input {
+    width: 90%;
+  }
+
+  .react-autosuggest__container--open .react-autosuggest__suggestions-container {
+    width: 88%;
+  }
+
+  #weather-buttons h4 {
+    margin-bottom: 5px;
+  }
+
+  #weather-buttons {
+      position: fixed;
+      top: 120px;
+      left: 10px;
+      padding: 0;
+      /*left: 0;
+      width: 95px;
+      z-index: 1;
+      padding: 10px; */
+  }
+
+  #infoBox {
+      position: static;
+      width: 50%;
+      padding: 15px 15px 5px 15px;
+      float: right;
+      margin: 10px;
+      border: 2px solid #fff;
+      /*right: 40px;
+      top: 180px;
+      width: 314px;
+      padding: 30px 30px 20px 30px;
+      border: 3px solid #fff;
+      background: #A5CEFD;
+      z-index: 1;*/
+  }
+
+
 }

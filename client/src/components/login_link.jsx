@@ -13,14 +13,14 @@ const LoginLink = React.createClass({
   render: function(){
 
     if (!this.props.user) return (
-      <div id="loginLink" className="user-link" onClick={this.onClickLogin}>
-        <h4>Login</h4>
+      <div id="loginLink" className="menu-link" onClick={this.onClickLogin}>
+        <h3>Login</h3>
       </div>
     )
 
     return (
-      <div id="loginLink" className="user-link" onClick={this.onClickLogout}>
-        <h4>Logout</h4>
+      <div id="loginLink" className="menu-link" onClick={this.onClickLogout}>
+        <h3>Logout</h3>
       </div>
     )
   }

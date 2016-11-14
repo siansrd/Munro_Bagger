@@ -14,10 +14,10 @@ const UserNewPassword = React.createClass({
 
     return (
       <div>
-        <h2>Forgot your password?</h2>
+        <h3>Forgot your password?</h3>
 
         <form>
-            <div>
+            <div className="formElement">
                 <label>Email</label><br />
                 <input type="email" name="user[email]" id="user_email" />
             </div>

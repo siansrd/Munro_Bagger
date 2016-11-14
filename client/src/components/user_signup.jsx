@@ -40,18 +40,18 @@ const UserSignUp = React.createClass({
         <h3>Sign Up</h3>
 
         <form>
-          <div>
+          <div className="formElement">
             <label>Email</label><br />
             <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail} />
           </div>
 
-          <div>
+          <div className="formElement">
             <label>Password</label>
             <em>(6 characters minimum)</em><br />
             <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
           </div>
 
-          <div>
+          <div className="formElement">
             <label>Password confirmation</label><br />
             <input type="password" name="user[password_confirmation]" id="user_password_confirmation" onChange={this.updatePasswordConfirmation}/>
           </div>

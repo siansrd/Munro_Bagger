@@ -115,8 +115,7 @@ const UI = React.createClass({
     
     return (
       <div>
-        <Forecast 
-          selectForecast={this.setForecastDay}/>
+        <Logo/>
         <Search 
           mountains={this.state.mountainViews.mountains} 
           searchedMount={this.setFocusMountain}/>
@@ -124,7 +123,6 @@ const UI = React.createClass({
           user={this.state.userLoggedIn}
           loginLinkClicked={this.setLoginForm}
           logoutLinkClicked={this.logout}/>
-        <Logo/>
         <InfoBox 
           focusMount={this.state.focusMountain} 
           infoBox={this.state.infoBoxStatus} 
@@ -137,6 +135,8 @@ const UI = React.createClass({
           user={this.setUser}
           userRegistration={this.setUserRegistration}
           userLoggedIn={this.state.userLoggedIn} />
+        <Forecast 
+          selectForecast={this.setForecastDay}/>
       </div>
     )
   }

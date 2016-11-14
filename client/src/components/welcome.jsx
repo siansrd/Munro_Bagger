@@ -17,7 +17,7 @@ const Welcome = React.createClass ({
           <div className="grid-item">Not Sunny:</div>
           <div className="grid-item"><img className="icon" src="/public/images/mntn-not-sunny.png"/></div>
         </div>
-        <p><span className="user-link" onClick={this.clickSignUp}>Register</span> to to track your bagged Munros.</p>
+        <p><span className="user-link" onClick={this.clickSignUp}>Register</span> to track your bagged Munros.</p>
         <div className="flex-grid">
           <div className="grid-item">Bagged:</div>
           <div className="grid-item"><img className="icon" src="/public/images/mntn-bagged.png"/></div>
