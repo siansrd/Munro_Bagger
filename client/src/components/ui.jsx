@@ -7,7 +7,6 @@ const Logo = require('./logo');
 const Filter = require('./filter');
 const InfoBox = require('./info_box');
 
-const Mountains = require('../models/mountains');
 const MountainsView = require('../views/mountains_view');
 const search = require('../utility').mountainSearch;
 const User = require('../models/user');
@@ -20,29 +19,28 @@ const UI = React.createClass({
     return {
       dayNum:           0,
       // filter:           "all", 
-      ready:            false,
       focusMountain:    null,
       focusMountBagged: null,
       infoBoxStatus:    null,
       user:             new User(),
       userLoggedIn:     false, 
-      mountainViews:    []
+      mountainViews:    null
     }
   },
 
   setFocusMountain: function(mtnId) {
     const mtnView = search(this.state.mountainViews.mountains, mtnId);
     this.setState({focusMountain: mtnView})
-    this.props.mapObj.openInfoWindowForMountain(mtnView.detail);
+    this.props.mapObj.openInfoWindowForMountain(mtnView.pin);
     this.setState({infoBoxStatus: "mountain"})
   },
 
   componentDidMount: function() {
     let mtnsView = new MountainsView();
     mtnsView.all(function() {
-      this.setState({mountainViews: mtnsView, ready: true});
+      this.setState({mountainViews: mtnsView});
       for (let mtnView of mtnsView.mountains) {
-        this.props.mapObj.addPin(mtnView, this.setFocusMountain)
+        this.props.mapObj.addPin(mtnView, this.setFocusMountain);
       }
     }.bind(this))
   },
@@ -81,6 +79,7 @@ const UI = React.createClass({
     this.setState({focusMountBagged: status})
     this.state.focusMountain.bagged = status;
     this.state.focusMountain.save();
+    this.state.focusMountain.pin.changeBaggedState(status);
   },
 
   setDate: function() {
@@ -111,7 +110,7 @@ const UI = React.createClass({
 
   render: function() {
     // TODO: Refactor this
-    if (!this.state.ready) return <div></div>;
+    if (!this.state.mountainViews) return <div></div>;
     
     return (
       <div>

@@ -47,18 +47,18 @@ MapObject.prototype._preventPan = function(){
   }.bind(this));
 };
 
-MapObject.prototype.openInfoWindowForMountain = function(mountain){
-  const pin = search(this._allPins, mountain.id);
+MapObject.prototype.openInfoWindowForMountain = function(mtnPin){
   if( this._prevFocus ) {
      this._prevFocus.clearFocus();
   }
-  this._prevFocus = pin.setFocus()
+  this._prevFocus = mtnPin.setFocus()
 };
 
-MapObject.prototype.addPin = function(mountainView, callback) {
+MapObject.prototype.addPin = function(mountainView, onMarkerClicked) {
   let pin = new Pin(this._map, mountainView);
-  pin.createMarker(callback);
+  pin.createMarker(onMarkerClicked);
   this._allPins.push(pin);
+  mountainView.pin = pin;
 }
 
 MapObject.prototype.changeForecast = function(dayNum) {
@@ -68,10 +68,8 @@ MapObject.prototype.changeForecast = function(dayNum) {
 }
 
 MapObject.prototype.userLoggedIn = function(mountainViews) {
-  let mtnView;
-  for (let pin of this._allPins) {
-    mtnView = search(mountainViews, pin.id);
-    pin.userLoggedIn(mtnView);
+  for (let mtnView of mountainViews) {
+    mtnView.pin.userLoggedIn(mtnView.bagged);
   }
 }
 

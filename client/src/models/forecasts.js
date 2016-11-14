@@ -1,5 +1,4 @@
 var Forecast = require("./forecast");
-var ApiRequest = require("./api_request");
 
 var Forecasts = function(forecasts){
 
