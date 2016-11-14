@@ -80,13 +80,12 @@ const UI = React.createClass({
     // disable the checkbox
     this.state.focusMountain.backup();
     this.state.focusMountain.bagged = status;
+    this.state.focusMountain.pin.changeBaggedState(status); 
     this.state.focusMountain.save(function(success) {
       // we have a reply re-enable the checkbox
-      if (success) {
-        this.state.focusMountain.pin.changeBaggedState(status);       
-      }
-      else {
+      if (!success) {
         // There was an error saving the data
+        this.state.focusMountain.pin.changeBaggedState(!status); 
         this.state.focusMountain.restore();
         // revert the checkbox to the restored state
       }
