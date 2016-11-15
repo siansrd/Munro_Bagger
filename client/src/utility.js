@@ -26,7 +26,7 @@ var upCase = function(string){
 };
 
 var passwordOK = function(password) {
-  return true;
+  password < 6
 };
 
 module.exports = {

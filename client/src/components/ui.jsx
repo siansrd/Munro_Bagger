@@ -57,9 +57,9 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  setUserRegistration: function(email, password, confirmation) {
+  setUserRegistration: function(email, password) {
     // register with the server
-    this.state.user.register(email, password, confirmation, function(success) {
+    this.state.user.register(email, password, function(success) {
       console.log("Registration successful:", success)
       if (!success) return;
       this.state.mountainViews.userLogin(this.state.user);
