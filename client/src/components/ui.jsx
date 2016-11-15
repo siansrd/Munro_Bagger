@@ -18,12 +18,12 @@ const UI = React.createClass({
 
     return {
       dayNum:           0,
-      // filter:           "all", 
+      // filter:           "all",
       focusMountain:    null,
       focusMountBagged: null,
       infoBoxStatus:    null,
       user:             new User(),
-      userLoggedIn:     false, 
+      userLoggedIn:     false,
       mountainViews:    null
     }
   },
@@ -80,12 +80,12 @@ const UI = React.createClass({
     // disable the checkbox
     this.state.focusMountain.backup();
     this.state.focusMountain.bagged = status;
-    this.state.focusMountain.pin.changeBaggedState(status); 
+    this.state.focusMountain.pin.changeBaggedState(status);
     this.state.focusMountain.save(function(success) {
       // we have a reply re-enable the checkbox
       if (!success) {
         // There was an error saving the data
-        this.state.focusMountain.pin.changeBaggedState(!status); 
+        this.state.focusMountain.pin.changeBaggedState(!status);
         this.state.focusMountain.restore();
         // revert the checkbox to the restored state
       }
@@ -108,6 +108,10 @@ const UI = React.createClass({
     this.setState({infoBoxStatus: "password"})
   },
 
+  setContactForm: function() {
+    this.setState({infoBoxStatus: "contactUs"})
+  },
+
   // setFilterOption: function(value) {
   //   this.setState({filter: value});
   //   console.log("UI: setFilterOption", this.state.filter);
@@ -121,31 +125,30 @@ const UI = React.createClass({
   render: function() {
     // TODO: Refactor this
     if (!this.state.mountainViews) return <div></div>;
-    
+
     return (
       <div>
         <Logo/>
-        <Search 
-          mountains={this.state.mountainViews.mountains} 
-          searchedMount={this.setFocusMountain}
-          />
-        <LoginLink 
+        <Search
+          mountains={this.state.mountainViews.mountains}
+          searchedMount={this.setFocusMountain}/>
+        <LoginLink
           user={this.state.userLoggedIn}
           loginLinkClicked={this.setLoginForm}
           logoutLinkClicked={this.logout}/>
-        <InfoBox 
-          focusMount={this.state.focusMountain} 
-          infoBox={this.state.infoBoxStatus} 
+        <InfoBox
+          focusMount={this.state.focusMountain}
+          infoBox={this.state.infoBoxStatus}
           dayNum={this.state.dayNum}
-          bagged={this.baggedStatusChanged} 
+          bagged={this.baggedStatusChanged}
           date={this.setDate}
-          signUpClicked={this.setSignUpForm} 
-          forgotPassClicked={this.setPasswordForm} 
+          signUpClicked={this.setSignUpForm}
+          forgotPassClicked={this.setPasswordForm}
           loginClicked={this.setLoginForm}
           user={this.setUser}
           userRegistration={this.setUserRegistration}
           userLoggedIn={this.state.userLoggedIn} />
-        <Forecast 
+        <Forecast
           selectForecast={this.setForecastDay}/>
       </div>
     )

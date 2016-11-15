@@ -132,6 +132,7 @@ textarea:focus, input:focus, button:focus {
 .user-link {
   cursor: pointer;
   text-decoration: underline;
+  color: #000000
 }
 
 .menu-link:hover,
