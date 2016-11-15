@@ -12,12 +12,11 @@ var User = function() {
   Object.defineProperty(this, "baggedList", { get: function(){ return this._mountains; } });
 }
 
-User.prototype.register = function(email, password, confirmation, onCompleted) {
+User.prototype.register = function(email, password, onCompleted) {
   let url = baseURL + "users";
   let params = { user: {
     email: email,
-    password: password,
-    password_confirmation: confirmation
+    password: password
   } };
   apiRequest.makePostRequest(url, params, null, function(status, result) {
     let success = (status === 201);
@@ -51,6 +50,17 @@ User.prototype.logout = function(onCompleted) {
   }.bind(this));
 }
 
+User.prototype.resetPassword = function(email, onCompleted) {
+  let url = baseURL + "users/reset_password";
+    let params = { user: {
+      email: email
+    } };
+  apiRequest.makePutRequest(url, params, null, function(status, result) {
+    let success = (status === 201);
+    onCompleted(success);
+  }.bind(this));
+}
+
 User.prototype.getInfo = function(onCompleted) {
   var url = baseURL + baggedRoute;
   var apiRequest = new ApiRequest();
@@ -68,7 +78,7 @@ User.prototype.createUserMountain = function(mountainId) {
   return mountain;
 }
 
-User.prototype.saveUserMountain = function(mountain, callback) {
+User.prototype.saveUserMountain = function(mountain, onCompleted) {
   if (!mountain.isDirty()) callback(false);
   let url = baseURL + baggedRoute;
   let forExport = mountain.export();
@@ -84,7 +94,7 @@ User.prototype.saveUserMountain = function(mountain, callback) {
         // retrieve the id for the new entry
         mountain._originId = savedMtn.id;
       }
-      callback(success);
+      onCompleted(success);
     });
     return;
   }
@@ -101,7 +111,7 @@ User.prototype.saveUserMountain = function(mountain, callback) {
         mountain._dirty = false;
         mountain._originId = undefined;
       }
-      callback(success);
+      onCompleted(success);
     });
     return
   }
@@ -112,7 +122,7 @@ User.prototype.saveUserMountain = function(mountain, callback) {
       if (success) {
         mountain._dirty = false;
       }
-      callback(success);
+      onCompleted(success);
     });
   }
 }
