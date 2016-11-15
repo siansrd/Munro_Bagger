@@ -26,7 +26,9 @@ var upCase = function(string){
 };
 
 var passwordOK = function(password) {
-  return true;
+  password > 5 
+  // password should contain 1 number
+  // password should contain 1 special character
 };
 
 module.exports = {

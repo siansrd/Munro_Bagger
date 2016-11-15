@@ -54,6 +54,11 @@ ul {
   border-image: initial;
 }
 
+p.small {
+  margin: 0;
+  font-size: 12px;
+}
+
 
 input, textarea, keygen, select, button {
     color: #456F99;

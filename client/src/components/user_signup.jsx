@@ -55,9 +55,9 @@ const UserSignUp = React.createClass({
             </div>
 
             <div className="formElement">
-              <label>Password</label>
-              <em>(6 characters minimum)</em><br />
-              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
+              <label>Password</label><br />
+              <p className="small">At least 6 charaters, 1 number & 1 special character</p>
+              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} /><br />
             </div>
 
             <div className="formElement">
@@ -87,8 +87,9 @@ const UserSignUp = React.createClass({
             </div>
 
             <div className="formElement">
-              <label><em>Passwords must match and be 6 characters minimum</em></label><br/>
+              <p>Passwords must match and fulfill the strength requirements</p>
               <label>Password</label><br/>
+              <p className="small">At least 6 charaters, 1 number & 1 special character</p>
               <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
             </div>
 
