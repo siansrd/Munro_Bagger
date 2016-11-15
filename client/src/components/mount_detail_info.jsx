@@ -1,4 +1,5 @@
 const React = require('react');
+const GridRef = require('../models/grid_ref');
 
 
 const MountDetailInfo = React.createClass({
@@ -21,6 +22,7 @@ const MountDetailInfo = React.createClass({
 
     console.log(gusts)
     console.log(visibility)
+    console.log(this.props.focusMount.detail.gridRef.toString())
 
     return (
       <div>
@@ -32,7 +34,7 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">Region:</div>
           <div className="grid-item">{this.props.focusMount.detail.region}</div>
           <div className="grid-item">OS Grid Ref:</div>
-          <div className="grid-item">{this.props.focusMount.detail.gridRef.letters} {this.props.focusMount.detail.gridRef.eastings} {this.props.focusMount.detail.gridRef.northings}</div>
+          <div className="grid-item">{this.props.focusMount.detail.gridRef.toString()}</div>
           <div className="grid-item">Lat/Lon:</div>
           <div className="grid-item">{this.props.focusMount.detail.latLng.lat}°, {this.props.focusMount.detail.latLng.lng}°</div>
         </div>
