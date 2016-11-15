@@ -44,7 +44,8 @@ const MountDetail = React.createClass({
 
         <MountDetailBagged
           focusMount={this.props.focusMount}
-          bagged={this.props.bagged} />
+          bagged={this.props.bagged}
+          disabled={this.props.disabled} />
       </div>
     )
 

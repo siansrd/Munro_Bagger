@@ -22,6 +22,7 @@ const InfoBox = React.createClass({
         focusMount={this.props.focusMount}
         dayNum={this.props.dayNum}
         bagged={this.props.bagged}
+        disabled={this.props.disabled}
         date={this.props.date}
         userLoggedIn={this.props.userLoggedIn} />
     </div>

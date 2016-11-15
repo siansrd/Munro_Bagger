@@ -21,6 +21,7 @@ const UI = React.createClass({
       // filter:           "all",
       focusMountain:    null,
       focusMountBagged: null,
+      checkboxDisabled: false,
       infoBoxStatus:    null,
       user:             new User(),
       userLoggedIn:     false,
@@ -72,22 +73,33 @@ const UI = React.createClass({
       if (!success) return
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
+      this.setState({userLoggedIn: false})
     }.bind(this))
   },
 
   baggedStatusChanged: function(status) {
-    this.setState({focusMountBagged: status})
-    // disable the checkbox
+    this.setState({focusMountBagged: status}, function(){ 
+      let backup = this.state.focusMountBagged 
+    })
+
+    this.setState({checkboxDisabled: true}, function() { 
+      console.log("Change state disable:", this.state.checkboxDisabled)
+    })
+
     this.state.focusMountain.backup();
     this.state.focusMountain.bagged = status;
     this.state.focusMountain.pin.changeBaggedState(status);
     this.state.focusMountain.save(function(success) {
-      // we have a reply re-enable the checkbox
+    
+    this.setState({checkboxDisabled: false}, function() { 
+      console.log("Change state enable:", this.state.checkboxDisabled)
+    })
+      
       if (!success) {
         // There was an error saving the data
         this.state.focusMountain.pin.changeBaggedState(!status);
         this.state.focusMountain.restore();
-        // revert the checkbox to the restored state
+        this.setState({focusMountBagged: backup})
       }
     }.bind(this));
   },
@@ -141,6 +153,7 @@ const UI = React.createClass({
           infoBox={this.state.infoBoxStatus}
           dayNum={this.state.dayNum}
           bagged={this.baggedStatusChanged}
+          disabled={this.state.checkboxDisabled}
           date={this.setDate}
           signUpClicked={this.setSignUpForm}
           forgotPassClicked={this.setPasswordForm}

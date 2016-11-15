@@ -27,16 +27,28 @@ const MountDetailBagged = React.createClass({
   },
 
   render: function() {
-    console.log("Bagged State", this.state.bagged)
-    return (
-      <div className="flex-grid">
-        <div className="grid-item">Bagged:</div>
-        <div className="grid-item">
-          <input type="checkbox" checked={this.props.focusMount.bagged} onChange={this.handleBaggedChange}/>
+    
+    if (!this.props.disabled) {
+      return (
+        <div className="flex-grid">
+          <div className="grid-item">Bagged:</div>
+          <div className="grid-item">
+            <input type="checkbox" checked={this.props.focusMount.bagged} onChange={this.handleBaggedChange}/>
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
 
+    if (this.props.disabled) {
+      return (
+        <div className="flex-grid">
+          <div className="grid-item">Bagged:</div>
+          <div className="grid-item">
+            <input type="checkbox" disabled="disabled" checked={this.props.focusMount.bagged} onChange={this.handleBaggedChange}/>
+          </div>
+        </div>
+      )
+    }
   }
 
 });
