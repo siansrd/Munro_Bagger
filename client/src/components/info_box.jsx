@@ -4,6 +4,7 @@ const MountainDetail = require('./mountain_detail');
 const UserLogin = require('./user_login');
 const UserSignUp = require('./user_signup');
 const UserNewPassword = require('./user_new_password');
+const ContactUs = require('./contact_us');
 
 const InfoBox = React.createClass({
 
@@ -48,6 +49,12 @@ const InfoBox = React.createClass({
       <UserNewPassword
         loginClicked={this.props.loginClicked}
         signUpClicked={this.props.signUpClicked}/>
+    </div>
+  )
+
+  if (this.props.infoBox === "contactUs" ) return (
+    <div id="infoBox">
+      <ContactUs/>
     </div>
   )
 
