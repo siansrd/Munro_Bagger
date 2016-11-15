@@ -25,7 +25,7 @@ const UserChangePassword = React.createClass ({
     if (this.state.password === this.state.passwordConfirmation && Utility.passwordOK(this.state.password)) {
       this.props.changePassword(this.state.password);
     } else {
-      this.setState({ passwordConfirmation: "", mismatch: true})
+      this.setState({ mismatch: true})
     } 
     // const request = new ApiRequest();
     // request.makePostRequest(url, content, function(status){console.log(status)})
