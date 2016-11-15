@@ -3,8 +3,8 @@ const React = require('react');
 const UserPasswordResetSuccess = function(props) {
   return (
     <div>
-      <h3>Password has been reset</h3>
-      <p>Check your email for instruction</p>
+      <h3>Your password has been reset</h3>
+      <p>Check your email for instructions</p>
     </div>
   )
 }
