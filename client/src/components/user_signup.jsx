@@ -68,6 +68,7 @@ const UserSignUp = React.createClass({
             <div>
               <button onClick={this.signUp}>Sign up</button>
             </div>
+            <p>Once submitted, check your email for verification.</p>
           </form>
           <p className="user-link" onClick={this.clickLogin}>Log in</p>
         </div>

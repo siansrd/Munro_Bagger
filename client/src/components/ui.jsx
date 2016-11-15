@@ -62,8 +62,9 @@ const UI = React.createClass({
     this.state.user.register(email, password, function(success) {
       console.log("Registration successful:", success)
       if (!success) return;
-      this.state.mountainViews.userLogin(this.state.user);
-      this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
+      // this.state.mountainViews.userLogin(this.state.user);
+      // this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
+      this.setLoginForm();
     }.bind(this))
   },
 
