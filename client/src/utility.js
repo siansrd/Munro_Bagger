@@ -25,9 +25,9 @@ var upCase = function(string){
    return splitString.join(' ');
 };
 
-var passwordOK(password) {
+var passwordOK = function(password) {
   return true;
-}
+};
 
 module.exports = {
   mountainSearch: mountainSearch,

@@ -2,8 +2,11 @@ const React = require('react');
 const Welcome = require('./welcome');
 const MountainDetail = require('./mountain_detail');
 const UserLogin = require('./user_login');
+const UserLoginSuccess = require('./user_login_success');
 const UserSignUp = require('./user_signup');
 const UserNewPassword = require('./user_new_password');
+const UserChangePassword = require('./user_change_password');
+const UserPasswordResetSuccess = require('./user_pass_reset_success')
 const ContactUs = require('./contact_us');
 
 const InfoBox = React.createClass({
@@ -37,6 +40,13 @@ const InfoBox = React.createClass({
     </div>
   )
 
+  if (this.props.infoBox === "loginSuccess") return (
+    <div id="infoBox">
+      <UserLoginSuccess
+        changePassClicked={this.props.changePassClicked}/>
+    </div>
+  )
+
   if (this.props.infoBox === "signUp" ) return (
     <div id="infoBox">
       <UserSignUp
@@ -49,7 +59,21 @@ const InfoBox = React.createClass({
     <div id="infoBox">
       <UserNewPassword
         loginClicked={this.props.loginClicked}
-        signUpClicked={this.props.signUpClicked}/>
+        signUpClicked={this.props.signUpClicked}
+        passwordReset={this.props.passwordReset}/>
+    </div>
+  )
+
+  if (this.props.infoBox === "passwordReset" ) return (
+    <div id="infoBox">
+      <UserPasswordResetSuccess/>
+    </div>
+  )
+
+
+  if (this.props.infoBox === "changePassword" ) return (
+    <div id="infoBox">
+      <UserChangePassword/>
     </div>
   )
 

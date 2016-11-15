@@ -48,8 +48,8 @@ const UI = React.createClass({
 
   setUser: function(email, password) {
     this.state.user.login(email, password, function(success){
-      if (!success) return
-      this.setState({userLoggedIn: true, infoBoxStatus: null});
+      if (!success) return;
+      this.setState({userLoggedIn: true, infoBoxStatus: null, infoBoxStatus: "loginSuccess"});
       this.state.user.getInfo(function() {
         this.state.mountainViews.userLogin(this.state.user);
         this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
@@ -73,8 +73,18 @@ const UI = React.createClass({
       if (!success) return
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
-      this.setState({userLoggedIn: false})
+      this.setState({userLoggedIn: false}, {infoBoxStatus: welcome})
     }.bind(this))
+  },
+
+  passwordReset: function(email){
+    this.state.user.resetPassword(email, function(success){
+      if (success) this.setState({infoBoxStatus: passwordReset})
+    })
+  },
+
+  changePassword: function(){
+    this.setState({infoBoxStatus: "changePassword"})
   },
 
   baggedStatusChanged: function(status) {
@@ -160,7 +170,9 @@ const UI = React.createClass({
           loginClicked={this.setLoginForm}
           user={this.setUser}
           userRegistration={this.setUserRegistration}
-          userLoggedIn={this.state.userLoggedIn} />
+          userLoggedIn={this.state.userLoggedIn} 
+          passwordReset={this.passwordReset}
+          changePassClicked={this.changePassword} />
         <Forecast
           selectForecast={this.setForecastDay}/>
       </div>

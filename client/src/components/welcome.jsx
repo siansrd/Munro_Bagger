@@ -9,7 +9,7 @@ const Welcome = React.createClass ({
   render: function() {
     return (
       <div>   
-        <p>Munro Bagger maps all of the Munros in Scotland, displays their weather and allows you to keep track of the ones you've bagged. The weather is a daily forecast taken from the Met Office.</p>
+        <p>Munro Bagger maps all of the Munros in Scotland, displays their weather and allows you to keep track of the ones you've bagged. The weather is a daily forecast taken from the Met Office. Click the icons on the map to see more detail.</p>
 
         <div className="flex-grid">
           <div className="grid-item">Sunny:</div>
