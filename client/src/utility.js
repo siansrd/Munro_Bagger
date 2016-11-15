@@ -26,9 +26,9 @@ var upCase = function(string){
 };
 
 var passwordOK = function(password) {
-  password > 5 
-  // password should contain 1 number
-  // password should contain 1 special character
+  const uppercase = password.match(/[A-Z]/) ? true: false;
+  const number = password.match(/\d+/) ? true: false;
+  password > 7 && uppercase && number
 };
 
 module.exports = {
