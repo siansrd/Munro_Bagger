@@ -6,7 +6,7 @@ const Search = React.createClass({
   getInitialState: function() {
     return {
       value: "",
-      suggestions: []
+      suggestions: [],
     }
   },
 
@@ -21,6 +21,9 @@ const Search = React.createClass({
 
   getSuggestionValue: function(suggestion) {
     let mountId = suggestion.id;
+    this.setState({searchedMountId: mountId}, function(){
+      this.setState({value: ""})
+    });
     this.props.searchedMount(mountId);
     return suggestion.detail.name;
   },
@@ -60,9 +63,7 @@ const Search = React.createClass({
       onChange: this.onChange
     };
     
-
     return (
-
       <div id="search">
         <Autosuggest
           suggestions={this.state.suggestions}

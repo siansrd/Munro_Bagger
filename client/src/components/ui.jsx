@@ -127,7 +127,8 @@ const UI = React.createClass({
         <Logo/>
         <Search 
           mountains={this.state.mountainViews.mountains} 
-          searchedMount={this.setFocusMountain}/>
+          searchedMount={this.setFocusMountain}
+          />
         <LoginLink 
           user={this.state.userLoggedIn}
           loginLinkClicked={this.setLoginForm}
