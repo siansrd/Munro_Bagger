@@ -31,7 +31,7 @@ const UserSignUp = React.createClass({
     if (this.state.password === this.state.passwordConfirmation && Utility.passwordOK(this.state.password)) {
       this.props.userRegistration(this.state.email, this.state.password);
     } else {
-      this.setState({passwordConfirmation: ""})
+      this.setState({mismatch: true})
     } 
     // const request = new ApiRequest();
     // request.makePostRequest(url, content, function(status){console.log(status)})
