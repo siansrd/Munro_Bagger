@@ -40,7 +40,7 @@ const UserChangePassword = React.createClass ({
               <h4>Change Password</h4>
               <div className="formElement">
                   <label>Password</label>
-                  <p className="small">At least 8 charaters, 1 number & 1 special character</p>
+                  <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
                   <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
               </div>
 
@@ -62,7 +62,7 @@ const UserChangePassword = React.createClass ({
               <div className="formElement">
                   <p>Passwords must match and fulfill the strength requirements</p>
                   <label>Password</label>
-                  <p className="small">At least 8 charaters, 1 number & 1 special character</p>
+                  <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
                   <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
               </div>
 
