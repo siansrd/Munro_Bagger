@@ -68,12 +68,11 @@ const UI = React.createClass({
   },
 
   logout: function(){
-    // post logout request
     this.state.user.logout(function(success) {
       if (!success) return
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
-      this.setState({userLoggedIn: false}, {infoBoxStatus: null})
+      this.setState({userLoggedIn: false, infoBoxStatus: null})
     }.bind(this))
   },
 
@@ -81,6 +80,13 @@ const UI = React.createClass({
     this.state.user.resetPassword(email, function(success){
       if (success) this.setState({infoBoxStatus: passwordReset})
     })
+    //TODO: submit email address to server so email is send out
+  },
+
+  subitChangePassword: function(password){
+    this.setState({infoBoxStatus: "changePasswordSuccess"})
+    console.log("new password", password)
+    // TODO: submit new password to server
   },
 
   changePassword: function(){
@@ -172,7 +178,8 @@ const UI = React.createClass({
           userRegistration={this.setUserRegistration}
           userLoggedIn={this.state.userLoggedIn} 
           passwordReset={this.passwordReset}
-          changePassClicked={this.changePassword} />
+          changePassClicked={this.changePassword}
+          subitChangePassword={this.subitChangePassword} />
         <Forecast
           selectForecast={this.setForecastDay}/>
       </div>

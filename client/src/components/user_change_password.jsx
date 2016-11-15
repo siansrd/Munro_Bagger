@@ -1,4 +1,5 @@
 var React = require('react');
+const Utility = require('../utility.js')
 
 const UserChangePassword = React.createClass ({
 
@@ -23,7 +24,7 @@ const UserChangePassword = React.createClass ({
   passwordChange: function(event){
     event.preventDefault();
     if (this.state.password === this.state.passwordConfirmation && Utility.passwordOK(this.state.password)) {
-      this.props.changePassword(this.state.password);
+      this.props.subitChangePassword(this.state.password);
     } else {
       this.setState({ mismatch: true})
     } 

@@ -73,7 +73,14 @@ const InfoBox = React.createClass({
 
   if (this.props.infoBox === "changePassword" ) return (
     <div id="infoBox">
-      <UserChangePassword/>
+      <UserChangePassword
+        subitChangePassword={this.props.subitChangePassword}/>
+    </div>
+  )
+
+  if (this.props.infoBox === "changePasswordSuccess" ) return (
+    <div id="infoBox">
+      <h4>Your password was changed successfully</h4>
     </div>
   )
 
