@@ -36,7 +36,7 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">Lat/Lon:</div>
           <div className="grid-item">{this.props.focusMount.detail.latLng.lat}°, {this.props.focusMount.detail.latLng.lng}°</div>
         </div>
-        
+
         <div className="cond-title"><h3>Conditions {this.formatDay(this.props.dayNum)}:</h3></div>
         <div className="flex-grid">
           <div className="grid-item">Weather:</div>
@@ -50,7 +50,7 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">Wind:</div>
           <div className="grid-item">{windSpeed}mph {windDirection}</div>
           <div className="grid-item"></div>
-          <div className="grid-item">Gusts of up to {gusts}mph</div>
+          <div className="grid-item">Gusts of {gusts}mph</div>
 
         </div>
       </div>
