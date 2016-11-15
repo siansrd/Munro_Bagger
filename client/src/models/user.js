@@ -51,7 +51,7 @@ User.prototype.logout = function(onCompleted) {
 }
 
 User.prototype.resetPassword = function(email, onCompleted) {
-  let url = baseURL + "users/reset_password";
+  let url = baseURL + "users/reset";
     let params = { user: {
       email: email
     } };
