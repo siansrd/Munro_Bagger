@@ -1,9 +1,9 @@
 let UserMountain = require('./user_mountain');
 let ApiRequest = require('./api_request');
 
-// const baseURL = "http://www.munrobagger.scot/";
+const baseURL = "http://www.munrobagger.scot/";
 // const baseURL = "http://localhost:3000/"
-const baseURL = "http://192.168.1.124:3000/";
+// const baseURL = "http://192.168.1.124:3000/";
 const baggedRoute = "bagged_munros";
 const apiRequest = new ApiRequest();
 
