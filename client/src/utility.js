@@ -26,9 +26,10 @@ var upCase = function(string){
 };
 
 var passwordOK = function(password) {
-  const uppercase = password.match(/[A-Z]/) ? true: false;
-  const number = password.match(/\d+/) ? true: false;
-  password > 7 && uppercase && number
+  if (password.length < 8) return false;
+  if (!password.match(/[A-Z]/)) return false;
+  if (!password.match(/\d+/)) return false;
+  return true;
 };
 
 module.exports = {

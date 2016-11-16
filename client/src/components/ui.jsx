@@ -59,6 +59,7 @@ const UI = React.createClass({
 
   setUserRegistration: function(email, password) {
     // register with the server
+    console.log("Attempting registration")
     this.state.user.register(email, password, function(success) {
       console.log("Registration successful:", success)
       if (!success) return;
