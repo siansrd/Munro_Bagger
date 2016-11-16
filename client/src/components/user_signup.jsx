@@ -1,5 +1,5 @@
 const React = require('react');
-const Utility = require('../utility.js')
+const passwordOK = require('../utility.js').passwordOK;
 
 const UserSignUp = React.createClass({
 
@@ -28,7 +28,7 @@ const UserSignUp = React.createClass({
 
   signUp: function(event){
     event.preventDefault();
-    if (this.state.password === this.state.passwordConfirmation && Utility.passwordOK(this.state.password)) {
+    if (this.state.password === this.state.passwordConfirmation && passwordOK(this.state.password)) {
       this.props.userRegistration(this.state.email, this.state.password);
     } else {
       this.setState({mismatch: true})
