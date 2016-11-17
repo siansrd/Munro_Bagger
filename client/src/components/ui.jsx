@@ -95,28 +95,20 @@ const UI = React.createClass({
   },
 
   baggedStatusChanged: function(status) {
-    this.setState({focusMountBagged: status}, function(){ 
-      let backup = this.state.focusMountBagged 
-    })
-
-    this.setState({checkboxDisabled: true}, function() { 
-      console.log("Change state disable:", this.state.checkboxDisabled)
-    })
-
+    this.setState({focusMountBagged: status, checkboxDisabled: true})
     this.state.focusMountain.backup();
     this.state.focusMountain.bagged = status;
     this.state.focusMountain.pin.changeBaggedState(status);
     this.state.focusMountain.save(function(success) {
-    
-    this.setState({checkboxDisabled: false}, function() { 
-      console.log("Change state enable:", this.state.checkboxDisabled)
-    })
+      if (!success) status = !status;
+      this.setState({checkboxDisabled: false, focusMountBagged: status}, function() { 
+        console.log("Change state enable:", this.state.checkboxDisabled)
+      })
       
       if (!success) {
         // There was an error saving the data
         this.state.focusMountain.pin.changeBaggedState(!status);
         this.state.focusMountain.restore();
-        this.setState({focusMountBagged: backup})
       }
     }.bind(this));
   },
