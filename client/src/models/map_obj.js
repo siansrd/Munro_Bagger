@@ -12,6 +12,7 @@ var MapObject = function(container) {
     mapTypeId: 'terrain',
     clickableIcons: false,
     streetViewControl: false,
+    mapTypeControl: false,
     mapTypeControlOptions: {
       position: google.maps.ControlPosition.LEFT_BOTTOM
     },

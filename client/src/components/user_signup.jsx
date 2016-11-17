@@ -1,5 +1,5 @@
 const React = require('react');
-const Utility = require('../utility.js')
+const passwordOK = require('../utility.js').passwordOK;
 
 const UserSignUp = React.createClass({
 
@@ -28,7 +28,7 @@ const UserSignUp = React.createClass({
 
   signUp: function(event){
     event.preventDefault();
-    if (this.state.password === this.state.passwordConfirmation && Utility.passwordOK(this.state.password)) {
+    if (this.state.password === this.state.passwordConfirmation && passwordOK(this.state.password)) {
       this.props.userRegistration(this.state.email, this.state.password);
     } else {
       this.setState({mismatch: true})
@@ -55,9 +55,9 @@ const UserSignUp = React.createClass({
             </div>
 
             <div className="formElement">
-              <label>Password</label>
-              <em>(6 characters minimum)</em><br />
-              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
+              <label>Password</label><br />
+              <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
+              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} /><br />
             </div>
 
             <div className="formElement">
@@ -87,8 +87,9 @@ const UserSignUp = React.createClass({
             </div>
 
             <div className="formElement">
-              <label><em>Passwords must match and be 6 characters minimum</em></label><br/>
+              <p>Passwords must match and fulfill the strength requirements</p>
               <label>Password</label><br/>
+              <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
               <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
             </div>
 

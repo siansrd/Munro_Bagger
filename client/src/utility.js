@@ -26,6 +26,9 @@ var upCase = function(string){
 };
 
 var passwordOK = function(password) {
+  if (password.length < 8) return false;
+  if (!password.match(/[A-Z]/)) return false;
+  if (!password.match(/\d+/)) return false;
   return true;
 };
 

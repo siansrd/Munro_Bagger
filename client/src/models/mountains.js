@@ -1,20 +1,20 @@
-var Mountain = require('./mountain');
-var ApiRequest = require('./api_request');
+let Mountain = require('./mountain');
+let ApiRequest = require('./api_request');
 
-var baseURL = "http://www.munrobagger.scot/";
-// var baseURL = "http://localhost:3000/";
-
+const baseURL = "http://www.munrobagger.scot/";
+// const baseURL = "http://localhost:3000/";
+// const baseURL = "http://192.168.1.124:3000/";
 
 var Mountains = function(){
 };
 
 Mountains.prototype.all = function(onCompleted) {
-  var url = baseURL + "munros";
-  var apiRequest = new ApiRequest();
+  const url = baseURL + "munros";
+  const apiRequest = new ApiRequest();
   apiRequest.makeGetRequest(url, null, function(status, receivedMtns) {
-    var mountains = [];
-    for (var receivedMtn of receivedMtns) {
-      var mtn = new Mountain(receivedMtn);
+    const mountains = [];
+    for (let receivedMtn of receivedMtns) {
+      let mtn = new Mountain(receivedMtn);
       mountains.push(mtn);
     }
     onCompleted(mountains);

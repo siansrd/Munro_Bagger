@@ -16,10 +16,10 @@ const ContactUs = React.createClass ({
           <a className="user-link" href="https://twitter.com/sayssian">@sayssian</a>
           <br/>
           <a className="user-link" href="https://twitter.com/phil_crooks">@phil_crooks</a>
-          </p>
-        {/* <p>
-          Alternatively, drop us an email <a className="user-link" href="INSERT EMAIL ADDRESS HERE">here.</a>
-        </p> */}
+        </p>
+        <p>
+          Alternatively, drop us an email at <a className="user-link" href="munrobagger.scot@gmail.com">munrobagger.scot@gmail.com.</a>
+        </p>
       </div>
     )
   }
