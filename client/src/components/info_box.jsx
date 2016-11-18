@@ -7,7 +7,7 @@ const UserSignUp = require('./user_signup');
 const UserNewPassword = require('./user_new_password');
 const UserChangePassword = require('./user_change_password');
 const UserPasswordResetSuccess = require('./user_pass_reset_success')
-const ContactUs = require('./contact_us');
+const About = require('./about');
 
 const InfoBox = React.createClass({
 
@@ -86,7 +86,7 @@ const InfoBox = React.createClass({
 
   if (this.props.infoBox === "contactUs" ) return (
     <div id="infoBox">
-      <ContactUs/>
+      <About/>
     </div>
   )
 

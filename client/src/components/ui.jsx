@@ -2,7 +2,7 @@ const React = require('react');
 
 const Forecast = require('./forecast');
 const Search = require('./search');
-const LoginLink = require('./login_link');
+const Menu = require('./menu');
 const Logo = require('./logo');
 const Filter = require('./filter');
 const InfoBox = require('./info_box');
@@ -131,6 +131,10 @@ const UI = React.createClass({
   },
 
   setContactForm: function() {
+    this.setState({infoBoxStatus: "about"})
+  },
+
+  setAboutInfo: function() {
     this.setState({infoBoxStatus: "contactUs"})
   },
 
@@ -150,14 +154,15 @@ const UI = React.createClass({
 
     return (
       <div>
+        <Menu
+          user={this.state.userLoggedIn}
+          loginLinkClicked={this.setLoginForm}
+          logoutLinkClicked={this.logout}
+          aboutLinkClicked={this.setAboutInfo}/>
         <Logo/>
         <Search
           mountains={this.state.mountainViews.mountains}
           searchedMount={this.setFocusMountain}/>
-        <LoginLink
-          user={this.state.userLoggedIn}
-          loginLinkClicked={this.setLoginForm}
-          logoutLinkClicked={this.logout}/>
         <InfoBox
           focusMount={this.state.focusMountain}
           infoBox={this.state.infoBoxStatus}
