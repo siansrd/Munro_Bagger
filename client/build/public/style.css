@@ -298,7 +298,7 @@ textarea:focus, input:focus, button:focus {
 
 }
 
-@media screen and (max-width: 750px) and (orientation:portrait) {
+@media screen and (orientation:portrait) {
 
   body {
       font-size: 14px;
