@@ -82,10 +82,10 @@ const UI = React.createClass({
     this.state.user.resetPassword(email, function(success){
       if (success) this.setState({infoBoxStatus: passwordReset})
     })
-    //TODO: submit email address to server so email is send out
+    //TODO: submit email address to server so email is sent out
   },
 
-  subitChangePassword: function(password){
+  submitChangePassword: function(password){
     this.setState({infoBoxStatus: "changePasswordSuccess"})
     console.log("new password", password)
     // TODO: submit new password to server
