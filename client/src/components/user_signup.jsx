@@ -37,10 +37,6 @@ const UserSignUp = React.createClass({
     // request.makePostRequest(url, content, function(status){console.log(status)})
   },
 
-  clickLogin: function(){  
-      this.props.loginClicked();
-  },
-
   render: function(){
 
     if (!this.state.mismatch) {
@@ -68,9 +64,8 @@ const UserSignUp = React.createClass({
             <div>
               <button onClick={this.signUp}>Sign up</button>
             </div>
-            <p>Once submitted, check your email for verification.</p>
           </form>
-          <p className="user-link" onClick={this.clickLogin}>Log in</p>
+          <p>Once submitted, check your email for verification.</p>
         </div>
       )
     }
@@ -102,7 +97,6 @@ const UserSignUp = React.createClass({
               <button onClick={this.signUp}>Sign up</button>
             </div>
           </form>
-          <p className="user-link" onClick={this.clickLogin}>Log in</p>
         </div>
       )
     }
