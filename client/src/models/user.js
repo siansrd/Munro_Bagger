@@ -62,6 +62,18 @@ User.prototype.resetPassword = function(email, onCompleted) {
   }.bind(this));
 }
 
+User.prototype.changePassword = function(password, onCompleted) {
+  let url = baseURL + "users/update";
+    let params = { user: {
+      password: password
+    } };
+  apiRequest.makePutRequest(url, params, null, function(status, result) {
+    console.log('status', status)
+    let success = (status === 200);
+    onCompleted(success);
+  }.bind(this));
+}
+
 User.prototype.getInfo = function(onCompleted) {
   var url = baseURL + baggedRoute;
   var apiRequest = new ApiRequest();

@@ -63,7 +63,7 @@ const InfoBox = React.createClass({
     </div>
   )
 
-  if (this.props.infoBox === "passwordReset" ) return (
+  if (this.props.infoBox === "passwordResetSuccess" ) return (
     <div id="infoBox">
       <UserPasswordResetSuccess/>
     </div>
@@ -73,7 +73,7 @@ const InfoBox = React.createClass({
   if (this.props.infoBox === "changePassword" ) return (
     <div id="infoBox">
       <UserChangePassword
-        subitChangePassword={this.props.subitChangePassword}/>
+        submitChangePassword={this.props.submitChangePassword}/>
     </div>
   )
 
