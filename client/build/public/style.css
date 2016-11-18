@@ -132,6 +132,8 @@ textarea:focus, input:focus, button:focus {
 .menu-link {
   cursor: pointer;
   text-align: right;
+  float: left;
+  margin-left: 10px;
 }
 
 .user-link {
@@ -155,25 +157,25 @@ textarea:focus, input:focus, button:focus {
 #logo {
     position: fixed;
     right: 40px;
-    top: 15px;
+    top: 30px;
     width: 380px;
     z-index: 1;
 }
 
 #search {
     position: fixed;
-    right: 140px;
-    top: 85px;
-    width: 280px;
+    right: 40px;
+    top: 110px;
+    width: 380px;
     height: 28px;
     z-index: 5;
 }
 
-#loginLink {
+#menu {
   position: fixed;
   right: 40px;
-  top: 85px;
-  width: 100px;
+  top: 15px;
+  width: 150px;
   z-index: 1;
 }
 

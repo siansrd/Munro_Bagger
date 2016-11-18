@@ -7,7 +7,7 @@ const UserSignUp = require('./user_signup');
 const UserNewPassword = require('./user_new_password');
 const UserChangePassword = require('./user_change_password');
 const UserPasswordResetSuccess = require('./user_pass_reset_success')
-const ContactUs = require('./contact_us');
+const About = require('./about');
 
 const InfoBox = React.createClass({
 
@@ -50,7 +50,6 @@ const InfoBox = React.createClass({
   if (this.props.infoBox === "signUp" ) return (
     <div id="infoBox">
       <UserSignUp
-        loginClicked={this.props.loginClicked}
         userRegistration={this.props.userRegistration}/>
     </div>
   )
@@ -64,7 +63,7 @@ const InfoBox = React.createClass({
     </div>
   )
 
-  if (this.props.infoBox === "passwordReset" ) return (
+  if (this.props.infoBox === "passwordResetSuccess" ) return (
     <div id="infoBox">
       <UserPasswordResetSuccess/>
     </div>
@@ -74,7 +73,7 @@ const InfoBox = React.createClass({
   if (this.props.infoBox === "changePassword" ) return (
     <div id="infoBox">
       <UserChangePassword
-        subitChangePassword={this.props.subitChangePassword}/>
+        submitChangePassword={this.props.submitChangePassword}/>
     </div>
   )
 
@@ -86,7 +85,7 @@ const InfoBox = React.createClass({
 
   if (this.props.infoBox === "contactUs" ) return (
     <div id="infoBox">
-      <ContactUs/>
+      <About/>
     </div>
   )
 

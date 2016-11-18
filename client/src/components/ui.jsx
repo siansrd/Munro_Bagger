@@ -2,7 +2,7 @@ const React = require('react');
 
 const Forecast = require('./forecast');
 const Search = require('./search');
-const LoginLink = require('./login_link');
+const Menu = require('./menu');
 const Logo = require('./logo');
 const Filter = require('./filter');
 const InfoBox = require('./info_box');
@@ -80,15 +80,15 @@ const UI = React.createClass({
 
   passwordReset: function(email){
     this.state.user.resetPassword(email, function(success){
-      if (success) this.setState({infoBoxStatus: passwordReset})
+      if (success) this.setState({infoBoxStatus: "passwordResetSuccess"})
     })
-    //TODO: submit email address to server so email is send out
+    // TODO add if not success
   },
 
-  subitChangePassword: function(password){
-    this.setState({infoBoxStatus: "changePasswordSuccess"})
-    console.log("new password", password)
-    // TODO: submit new password to server
+  submitChangePassword: function(password){
+    this.state.user.changePassword(password, function(success){
+      if (success) this.setState({infoBoxStatus: "changePasswordSuccess"})
+    })  
   },
 
   changePassword: function(){
@@ -131,6 +131,10 @@ const UI = React.createClass({
   },
 
   setContactForm: function() {
+    this.setState({infoBoxStatus: "about"})
+  },
+
+  setAboutInfo: function() {
     this.setState({infoBoxStatus: "contactUs"})
   },
 
@@ -150,14 +154,15 @@ const UI = React.createClass({
 
     return (
       <div>
+        <Menu
+          user={this.state.userLoggedIn}
+          loginLinkClicked={this.setLoginForm}
+          logoutLinkClicked={this.logout}
+          aboutLinkClicked={this.setAboutInfo}/>
         <Logo/>
         <Search
           mountains={this.state.mountainViews.mountains}
           searchedMount={this.setFocusMountain}/>
-        <LoginLink
-          user={this.state.userLoggedIn}
-          loginLinkClicked={this.setLoginForm}
-          logoutLinkClicked={this.logout}/>
         <InfoBox
           focusMount={this.state.focusMountain}
           infoBox={this.state.infoBoxStatus}
@@ -173,7 +178,7 @@ const UI = React.createClass({
           userLoggedIn={this.state.userLoggedIn} 
           passwordReset={this.passwordReset}
           changePassClicked={this.changePassword}
-          subitChangePassword={this.subitChangePassword} />
+          submitChangePassword={this.submitChangePassword} />
         <Forecast
           selectForecast={this.setForecastDay}/>
       </div>
