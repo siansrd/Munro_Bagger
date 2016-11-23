@@ -88,9 +88,11 @@ const UI = React.createClass({
   passwordReset: function(email){
     this.state.user.resetPassword(email, function(success){
       if (!success) {
+        console.log("not successful")
         this.setState({resetEmailExists: false});
       }
       else {
+        console.log("not successful")
         this.setState({infoBoxStatus: "passwordResetSuccess"})
       }
     }.bind(this))
@@ -100,7 +102,7 @@ const UI = React.createClass({
   submitChangePassword: function(password){
     this.state.user.changePassword(password, function(success){
       if (success) this.setState({infoBoxStatus: "changePasswordSuccess"})
-    })  
+    }.bind(this))  
   },
 
   changePassword: function(){

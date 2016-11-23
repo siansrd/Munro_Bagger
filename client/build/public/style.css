@@ -61,7 +61,7 @@ p.small {
 
 
 input, textarea, keygen, select, button {
-    color: #456F99;
+  color: #456F99;
 }
 ::-webkit-input-placeholder {
    color: #456F99;
@@ -74,6 +74,10 @@ input, textarea, keygen, select, button {
 }
 :-ms-input-placeholder {
    color: #456F99;
+}
+
+input {
+  box-sizing: border-box;
 }
 
 input[type="submit" i],
