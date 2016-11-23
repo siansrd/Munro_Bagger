@@ -30,7 +30,7 @@ var MapObject = function(container) {
   this._prevFocus = null;
   this._allPins = [];
   this._preventPan();
-  this._width = this._getBrowserwidth();
+  this._width = this._getBrowserWidth();
 };
 
 MapObject.prototype._scaleZoom = function(){
