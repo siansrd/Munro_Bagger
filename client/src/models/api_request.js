@@ -9,11 +9,10 @@ ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, 
   if (content) request.setRequestHeader('Content-Type', 'application/json');
   request.onload = function() {
     console.log(httpVerb, "request to", url, "returned status", this.status);
-    let status = expected.find(function(code) {
+    let goodStatus = expected.find(function(code) {
       return(code === this.status)
     }.bind(this))
-    if (!status) return;
-    let reply = (status === 204) ? null : JSON.parse(this.responseText);
+    let reply = ((status === 204) || !goodStatus) ? null : JSON.parse(this.responseText);
     callback(status, reply);
   };
   let json = (content) ? JSON.stringify(content) : null;
