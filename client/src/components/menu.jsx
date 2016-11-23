@@ -9,7 +9,7 @@ const Menu = React.createClass({
     return (
       <div id="menu">
         <LoginLink 
-          user={this.props.userLoggedIn}
+          user={this.props.user}
           loginLinkClicked={this.props.loginLinkClicked}
           logoutLinkClicked={this.props.logoutLinkClicked}/>
         <AboutLink
