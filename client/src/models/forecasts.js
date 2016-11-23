@@ -4,7 +4,7 @@ var Forecasts = function(forecasts){
 
   this._forecasts = [];
 
-  for (var forecast of forecasts) {
+  for (var forecast of forecasts.days) {
     this._forecasts.push(new Forecast(forecast));
   }
 

@@ -18,14 +18,14 @@ var Forecast = function(options){
   // this._timeStamp = options.dt;
   // this._dateTime = options.dt_txt;
   this._date = options.value;
-  this._wind = { direction: options.Rep[0].D, speed: options.Rep[0].S, gusting: options.Rep[0].Gn };
-  this._humidity = options.Rep[0].Hn;
-  this._pofp = options.Rep[0].PPd;
-  this._temperature = { max: options.Rep[0].Dm, feelsLike: options.Rep[0].FDm };
-  this._code = (options.Rep[0].W === "NA") ? -1 : Number(options.Rep[0].W);
+  this._wind = { direction: options.D, speed: options.S, gusting: options.Gn };
+  this._humidity = options.Hn;
+  this._pofp = options.PPd;
+  this._temperature = { max: options.Dm, feelsLike: options.FDm };
+  this._code = (options.W === "NA") ? -1 : Number(options.W);
   this._description = (this._code === -1) ? "Not available" : weatherText[this._code];
-  this._visibility = visibility[(options.Rep[0].V)];
-  this._UVIndex = { index: Number(options.Rep[0].U), text: UVIndexText[Number(options.Rep[0].U)] };
+  this._visibility = visibility[(options.V)];
+  this._UVIndex = { index: Number(options.U), text: UVIndexText[Number(options.U)] };
 
   Object.defineProperty(this, "date", { get: function() { return this._date; } });
   Object.defineProperty(this, "wind", { get: function() { return this._wind; } });

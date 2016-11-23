@@ -15,7 +15,7 @@ const Search = React.createClass({
     const inputLength = inputValue.length;
 
     return inputLength === 0 ? [] : this.props.mountains.filter(mount =>
-      mount.detail.name.toLowerCase().slice(0, inputLength) === inputValue
+      mount.detail.name.toLowerCase().includes(inputValue)
     );
   },
 
@@ -62,7 +62,7 @@ const Search = React.createClass({
       value,
       onChange: this.onChange
     };
-    
+
     return (
       <div id="search">
         <Autosuggest
@@ -79,4 +79,3 @@ const Search = React.createClass({
 })
 
 module.exports = Search;
-

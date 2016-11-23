@@ -11,8 +11,8 @@ var Mountain = function(options){
   this._meaning = options.meaning;
   this._region = options.region;
   this._weatherId = options.weatherId;
-  this._forecasts = new Forecasts(options.forecast.data.Location.Period);
-  
+  this._forecasts = new Forecasts(options.forecast.data);
+
   Object.defineProperty(this, "id", { get: function(){ return this._id; } });
   Object.defineProperty(this, "name", { get: function(){ return this._name; } });
   Object.defineProperty(this, "height", { get: function(){ return this._height; } });
