@@ -20,18 +20,18 @@ var MapObject = function(container) {
     },
     zoomControlOptions: {
       position: google.maps.ControlPosition.LEFT_CENTER
-    },
+    }
   });
   this._keepCenter = google.maps.event.addDomListener(window, "resize", function() {
     var center = this._map.getCenter();
     google.maps.event.trigger(this._map, "resize");
-    this._map.setCenter(center); 
+    this._map.setCenter(center);
   }.bind(this));
   this._bounds = new google.maps.LatLngBounds(sw, ne);
   this._map.fitBounds(this._bounds);
   this._prevFocus = null;
-  this._allPins = []; 
-  this._preventPan(); 
+  this._allPins = [];
+  this._preventPan();
   this._width = this._getBrowserwidth();
 
   this._scaleZoom = function(){
