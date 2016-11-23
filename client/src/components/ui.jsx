@@ -25,7 +25,9 @@ const UI = React.createClass({
       infoBoxStatus:    null,
       user:             new User(),
       userLoggedIn:     false,
-      mountainViews:    null
+      mountainViews:    null,
+      loginUnsuccessful: false,
+      resetEmailExists: true
     }
   },
 
@@ -48,12 +50,17 @@ const UI = React.createClass({
 
   setUser: function(email, password) {
     this.state.user.login(email, password, function(success){
-      if (!success) return;
-      this.setState({userLoggedIn: true, infoBoxStatus: null, infoBoxStatus: "loginSuccess"});
-      this.state.user.getInfo(function() {
-        this.state.mountainViews.userLogin(this.state.user);
-        this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
-      }.bind(this))
+      if (!success) {
+        console.log("not success")
+        this.setState({loginUnsuccessful: true})
+      }
+      else {
+        this.setState({userLoggedIn: true, infoBoxStatus: null, infoBoxStatus: "loginSuccess"});
+        this.state.user.getInfo(function() {
+          this.state.mountainViews.userLogin(this.state.user);
+          this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
+        }.bind(this)) 
+      }
     }.bind(this))
   },
 
@@ -80,8 +87,13 @@ const UI = React.createClass({
 
   passwordReset: function(email){
     this.state.user.resetPassword(email, function(success){
-      if (success) this.setState({infoBoxStatus: "passwordResetSuccess"})
-    })
+      if (!success) {
+        this.setState({resetEmailExists: false});
+      }
+      else {
+        this.setState({infoBoxStatus: "passwordResetSuccess"})
+      }
+    }.bind(this))
     // TODO add if not success
   },
 
@@ -173,10 +185,12 @@ const UI = React.createClass({
           signUpClicked={this.setSignUpForm}
           forgotPassClicked={this.setPasswordForm}
           loginClicked={this.setLoginForm}
+          loginUnsuccessful={this.state.loginUnsuccessful}
           user={this.setUser}
           userRegistration={this.setUserRegistration}
           userLoggedIn={this.state.userLoggedIn} 
           passwordReset={this.passwordReset}
+          resetEmailExists={this.state.resetEmailExists}
           changePassClicked={this.changePassword}
           submitChangePassword={this.submitChangePassword} />
         <Forecast

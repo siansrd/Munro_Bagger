@@ -36,6 +36,7 @@ const InfoBox = React.createClass({
       <UserLogin
         signUpClicked={this.props.signUpClicked}
         forgotPassClicked={this.props.forgotPassClicked}
+        loginUnsuccessful={this.props.loginUnsuccessful}
         user={this.props.user}/>
     </div>
   )
@@ -59,7 +60,8 @@ const InfoBox = React.createClass({
       <UserNewPassword
         loginClicked={this.props.loginClicked}
         signUpClicked={this.props.signUpClicked}
-        passwordReset={this.props.passwordReset}/>
+        passwordReset={this.props.passwordReset}
+        resetEmailExists={this.props.resetEmailExists}/>
     </div>
   )
 

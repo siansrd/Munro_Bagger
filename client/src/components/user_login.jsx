@@ -40,28 +40,57 @@ const UserLogin = React.createClass({
 
   render: function(){
 
-    return (
-      <div>
-        <h3>Log in</h3>
+    if (!this.props.loginUnsuccessful) {
+      return (
+        <div>
+          <h3>Log in</h3>
 
-        <form action="/users/sign_in" >
-          <div className="formElement">
-            <label>Email</label><br />
-            <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
-          </div>
-          <div className="formElement">
-            <label>Password</label><br />
-            <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword}/>
-          </div>
-          <div>
-            <button onClick={this.signIn}>Log in</button>
-          </div>
-        </form>
+          <form action="/users/sign_in" >
+            <div className="formElement">
+              <label>Email</label><br />
+              <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
+            </div>
+            <div className="formElement">
+              <label>Password</label><br />
+              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword}/>
+            </div>
+            <div>
+              <button onClick={this.signIn}>Log in</button>
+            </div>
+          </form>
 
-        <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
-        <p className="user-link" onClick={this.clickForgotPass}>Forgot your password?</p>
-      </div>
-    )
+          <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
+          <p className="user-link" onClick={this.clickForgotPass}>Forgot your password?</p>
+        </div>
+      )
+    }
+
+
+    if (this.props.loginUnsuccessful) {
+      return (
+        <div>
+          <h3>Log in</h3>
+          <p>Those details don't match our records, please try again</p>
+          <form action="/users/sign_in" >
+            <div className="formElement">
+              <label>Email</label><br />
+              <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
+            </div>
+            <div className="formElement">
+              <label>Password</label><br />
+              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword}/>
+            </div>
+            <div>
+              <button onClick={this.signIn}>Log in</button>
+            </div>
+          </form>
+
+          <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
+          <p className="user-link" onClick={this.clickForgotPass}>Forgot your password?</p>
+        </div>
+      )
+    }
+
 
   }
 

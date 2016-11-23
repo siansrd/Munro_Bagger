@@ -27,23 +27,47 @@ const UserNewPassword = React.createClass({
 
   render: function(){
 
-    return (
-      <div>
-        <h3>Forgot your password?</h3>
+    console.log()
 
-        <form>
-            <div className="formElement">
-                <label>Email</label><br />
-                <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
-            </div>
-            <div>
-              <button onClick={this.passwordReset}>Send me reset password instructions</button>
-            </div>
-        </form>
-        <p className="user-link" onClick={this.clickLogin}>Log in</p>
-        <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
-      </div>
-    )
+    if (this.props.resetEmailExists) { 
+      return (
+        <div>
+          <h3>Forgot your password?</h3>
+
+          <form>
+              <div className="formElement">
+                  <label>Email</label><br />
+                  <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
+              </div>
+              <div>
+                <button onClick={this.passwordReset}>Send me reset password instructions</button>
+              </div>
+          </form>
+          <p className="user-link" onClick={this.clickLogin}>Log in</p>
+          <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
+        </div>
+      )
+    }
+
+    if (!this.props.resetEmailExists) { 
+      return (
+        <div>
+          <h3>Forgot your password?</h3>
+          <p>That email doesn't match our records.</p>
+          <form>
+              <div className="formElement">
+                  <label>Email</label><br />
+                  <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
+              </div>
+              <div>
+                <button onClick={this.passwordReset}>Send me reset password instructions</button>
+              </div>
+          </form>
+          <p className="user-link" onClick={this.clickLogin}>Log in</p>
+          <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
+        </div>
+      )
+    }
 
   }
 
