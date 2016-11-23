@@ -24,7 +24,7 @@ const UserChangePassword = React.createClass ({
   passwordChange: function(event){
     event.preventDefault();
     if (this.state.password === this.state.passwordConfirmation && Utility.passwordOK(this.state.password)) {
-      this.props.subitChangePassword(this.state.password);
+      this.props.submitChangePassword(this.state.password);
     } else {
       this.setState({ mismatch: true})
     } 

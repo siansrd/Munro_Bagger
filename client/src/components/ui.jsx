@@ -80,15 +80,15 @@ const UI = React.createClass({
 
   passwordReset: function(email){
     this.state.user.resetPassword(email, function(success){
-      if (success) this.setState({infoBoxStatus: passwordReset})
+      if (success) this.setState({infoBoxStatus: "passwordResetSuccess"})
     })
-    //TODO: submit email address to server so email is send out
+    // TODO add if not success
   },
 
-  subitChangePassword: function(password){
-    this.setState({infoBoxStatus: "changePasswordSuccess"})
-    console.log("new password", password)
-    // TODO: submit new password to server
+  submitChangePassword: function(password){
+    this.state.user.changePassword(password, function(success){
+      if (success) this.setState({infoBoxStatus: "changePasswordSuccess"})
+    })  
   },
 
   changePassword: function(){
@@ -178,7 +178,7 @@ const UI = React.createClass({
           userLoggedIn={this.state.userLoggedIn} 
           passwordReset={this.passwordReset}
           changePassClicked={this.changePassword}
-          subitChangePassword={this.subitChangePassword} />
+          submitChangePassword={this.submitChangePassword} />
         <Forecast
           selectForecast={this.setForecastDay}/>
       </div>
