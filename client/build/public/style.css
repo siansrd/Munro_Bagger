@@ -54,6 +54,11 @@ ul {
   border-image: initial;
 }
 
+#infoBox input[type="checkbox"] {
+  width: 20px;
+  margin: 0;
+}
+
 p.small {
   margin: 0;
   font-size: 12px;
@@ -276,19 +281,11 @@ textarea:focus, input:focus, button:focus {
 
   #search {
       position: fixed;
-      right: 100px;
-      top: 85px;
-      width: 250px;
+      right: 20px;
+      top: 110px;
+      width: 330px;
       height: 28px;
       z-index: 5;
-  }
-
-  #loginLink {
-    position: fixed;
-    right: 20px;
-    top: 85px;
-    width: 80px;
-    z-index: 1;
   }
 
   #infoBox {
@@ -310,7 +307,7 @@ textarea:focus, input:focus, button:focus {
       font-size: 14px;
   }
 
-  #loginLink {
+  #menu {
     position: fixed;
     left: 10px;
     width: 40%;
