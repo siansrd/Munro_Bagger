@@ -8,12 +8,14 @@ ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, 
   if (jwtoken) request.setRequestHeader('Authorization', 'Bearer ' + jwtoken);
   if (content) request.setRequestHeader('Content-Type', 'application/json');
   request.onload = function() {
-    console.log(httpVerb, "request to", url, "returned status", this.status);
-    let goodStatus = expected.find(function(code) {
+    let index = expected.findIndex(function(code) {
       return(code === this.status)
     }.bind(this))
-    let reply = ((status === 204) || !goodStatus) ? null : JSON.parse(this.responseText);
-    callback(status, reply);
+    let badStatus = (index === -1)
+    let content = ((status === 204) || badStatus ) ? null : JSON.parse(this.responseText);
+    console.log(httpVerb, "request to", url, "returned status", this.status)
+    // if (content) console.log("Content: " + this.responseText);
+    callback(this.status, content);
   };
   let json = (content) ? JSON.stringify(content) : null;
   if (navigator.onLine) {
