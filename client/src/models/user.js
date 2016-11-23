@@ -1,8 +1,8 @@
 let UserMountain = require('./user_mountain');
 let ApiRequest = require('./api_request');
 
-const baseURL = "http://www.munrobagger.scot/";
-// const baseURL = "http://localhost:3000/"
+// const baseURL = "http://www.munrobagger.scot/";
+const baseURL = "http://localhost:3000/"
 // const baseURL = "http://192.168.1.124:3000/";
 const baggedRoute = "bagged_munros";
 const apiRequest = new ApiRequest();
@@ -68,7 +68,7 @@ User.prototype.changePassword = function(password, onCompleted) {
     let params = { user: {
       password: password
     } };
-  apiRequest.makePutRequest(url, params, null, function(status, result) {
+  apiRequest.makePutRequest(url, params, this._jwtoken, function(status, result) {
     console.log('status', status)
     let success = (status === 200);
     onCompleted(success);
