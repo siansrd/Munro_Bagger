@@ -11,8 +11,8 @@ ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, 
     let index = expected.findIndex(function(code) {
       return(code === this.status)
     }.bind(this))
-    let badStatus = (index === -1)
-    let content = ((status === 204) || badStatus ) ? null : JSON.parse(this.responseText);
+    let errorStatus = (index === -1)
+    let content = ((this.status === 204) || errorStatus ) ? null : JSON.parse(this.responseText);
     console.log(httpVerb, "request to", url, "returned status", this.status)
     // if (content) console.log("Content: " + this.responseText);
     callback(this.status, content);
