@@ -33,7 +33,6 @@ User.prototype.login = function(email, password, onCompleted) {
     password: password
   } };
   apiRequest.makePostRequest(url, params, null, function(status, result) {
-    console.log(status)
     let success = (status === 201);
     if(success) this._jwtoken = result.auth_token;
     onCompleted(success);
