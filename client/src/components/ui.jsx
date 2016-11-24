@@ -6,11 +6,19 @@ const Menu = require('./menu');
 const Logo = require('./logo');
 const Filter = require('./filter');
 const InfoBox = require('./info_box');
+const Welcome = require('./welcome');
+const MountainDetail = require('./mountain_detail');
+const UserLogin = require('./user_login');
+const UserLoginSuccess = require('./user_login_success');
+const UserSignUp = require('./user_signup');
+const UserNewPassword = require('./user_new_password');
+const UserChangePassword = require('./user_change_password');
+const UserPasswordResetSuccess = require('./user_pass_reset_success')
+const About = require('./about');
 
 const MountainsView = require('../views/mountains_view');
 const search = require('../utility').mountainSearch;
 const User = require('../models/user');
-
 
 const UI = React.createClass({
 
@@ -22,7 +30,7 @@ const UI = React.createClass({
       focusMountain:    null,
       focusMountBagged: null,
       checkboxDisabled: false,
-      infoBoxStatus:    null,
+      infoBoxStatus:    "welcome",
       user:             new User(),
       userLoggedIn:     false,
       mountainViews:    null,
@@ -162,6 +170,46 @@ const UI = React.createClass({
     this.props.mapObj.changeForecast(dayNum);
   },
 
+  infoBoxComponent: function(infoBoxState) {
+    let components = {
+      mountain: 
+        <MountainDetail
+          focusMount={this.state.focusMountain}
+          dayNum={this.state.dayNum}
+          bagged={this.baggedStatusChanged}
+          disabled={this.state.checkboxDisabled}
+          date={this.setDate}
+          userLoggedIn={this.state.userLoggedIn} />,
+      login: 
+        <UserLogin
+          signUpClicked={this.setSignUpForm}
+          forgotPassClicked={this.setPasswordForm}
+          loginUnsuccessful={this.state.loginUnsuccessful}
+          user={this.setUser}/>,
+      loginSuccess:
+        <UserLoginSuccess changePassClicked={this.changePassword}/>,
+      signUp:
+        <UserSignUp userRegistration={this.setUserRegistration}/>,  
+      password:
+        <UserNewPassword
+          loginClicked={this.setLoginForm}
+          signUpClicked={this.setSignUpForm}
+          passwordReset={this.passwordReset}
+          resetEmailExists={this.state.resetEmailExists}/>,
+      passwordResetSuccess:
+        <UserPasswordResetSuccess/>,
+      changePassword:
+        <UserChangePassword submitChangePassword={this.props.submitChangePassword}/>,
+      changePasswordSuccess:
+        <h4>Your password was changed successfully</h4>,
+      contactUs:
+        <About/>,
+      welcome:
+        <Welcome signUpClicked={this.setSignUpForm}/>,
+    }
+    return components[infoBoxState];
+  },
+
   render: function() {
     // TODO: Refactor this
     if (!this.state.mountainViews) return <div></div>;
@@ -177,24 +225,7 @@ const UI = React.createClass({
         <Search
           mountains={this.state.mountainViews.mountains}
           searchedMount={this.setFocusMountain}/>
-        <InfoBox
-          focusMount={this.state.focusMountain}
-          infoBox={this.state.infoBoxStatus}
-          dayNum={this.state.dayNum}
-          bagged={this.baggedStatusChanged}
-          disabled={this.state.checkboxDisabled}
-          date={this.setDate}
-          signUpClicked={this.setSignUpForm}
-          forgotPassClicked={this.setPasswordForm}
-          loginClicked={this.setLoginForm}
-          loginUnsuccessful={this.state.loginUnsuccessful}
-          user={this.setUser}
-          userRegistration={this.setUserRegistration}
-          userLoggedIn={this.state.userLoggedIn} 
-          passwordReset={this.passwordReset}
-          resetEmailExists={this.state.resetEmailExists}
-          changePassClicked={this.changePassword}
-          submitChangePassword={this.submitChangePassword} />
+        <InfoBox>{this.infoBoxComponent(this.state.infoBoxStatus)}</InfoBox>
         <Forecast
           selectForecast={this.setForecastDay}/>
       </div>
