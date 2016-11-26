@@ -39,31 +39,29 @@ const UI = React.createClass({
     }
   },
 
-  setFocusMountain: function(mtnId) {
-    const mtnView = search(this.state.mountainViews.mountains, mtnId);
-    this.setState({focusMountain: mtnView})
-    this.props.mapObj.openInfoWindowForMountain(mtnView.pin);
-    this.setState({infoBoxStatus: "mountain"})
-  },
-
   componentDidMount: function() {
     let mtnsView = new MountainsView();
     mtnsView.all(function() {
       this.setState({mountainViews: mtnsView});
       for (let mtnView of mtnsView.mountains) {
-        this.props.mapObj.addPin(mtnView, this.setFocusMountain);
+        this.props.mapObj.addPin(mtnView, this.onMountainSelected);
       }
     }.bind(this))
   },
 
-  setUser: function(email, password) {
+  //
+  // START OF SERVER REQUEST SECTION
+  // All callback functions that start with the word 'request' interact with the server
+  //
+
+  requestLogin: function(email, password) {
     this.state.user.login(email, password, function(success){
       if (!success) {
         console.log("not success")
         this.setState({loginUnsuccessful: true})
       }
       else {
-        this.setState({userLoggedIn: true, infoBoxStatus: null, infoBoxStatus: "loginSuccess"});
+        this.setState({userLoggedIn: true, infoBoxStatus: "loginSuccess"});
         this.state.user.getInfo(function() {
           this.state.mountainViews.userLogin(this.state.user);
           this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
@@ -72,7 +70,7 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  setUserRegistration: function(email, password) {
+  requestRegistration: function(email, password) {
     // register with the server
     console.log("Attempting registration")
     this.state.user.register(email, password, function(success) {
@@ -84,7 +82,7 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  logout: function(){
+  requestLogout: function(){
     this.state.user.logout(function(success) {
       if (!success) return
       this.state.mountainViews.userLogout();
@@ -93,7 +91,7 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  passwordReset: function(email){
+  requestPasswordReset: function(email){
     this.state.user.resetPassword(email, function(success){
       if (!success) {
         console.log("not successful")
@@ -107,17 +105,13 @@ const UI = React.createClass({
     // TODO add if not success
   },
 
-  submitChangePassword: function(password){
+  requestChangePassword: function(password){
     this.state.user.changePassword(password, function(success){
       if (success) this.setState({infoBoxStatus: "changePasswordSuccess"})
     }.bind(this))  
   },
 
-  changePassword: function(){
-    this.setState({infoBoxStatus: "changePassword"})
-  },
-
-  baggedStatusChanged: function(status) {
+  requestBaggedStatusChange: function(status) {
     this.setState({focusMountBagged: status, checkboxDisabled: true})
     this.state.focusMountain.backup();
     this.state.focusMountain.bagged = status;
@@ -140,12 +134,22 @@ const UI = React.createClass({
     // Do something here with date
   },
 
+  //
+  // START OF THE FORM DISPLAY SECTION 
+  // Functions that start 'set' and end 'Form' change the form displayed in the Infobox
+  // The effect of these event-handlers is local to InfoBox
+  //
+
   setLoginForm: function() {
     this.setState({infoBoxStatus: "login"})
   },
 
   setSignUpForm: function() {
     this.setState({infoBoxStatus: "signUp"})
+  },
+
+  setChangePasswordForm: function() {
+    this.setState({infoBoxStatus: "changePassword"})
   },
 
   setPasswordForm: function() {
@@ -165,10 +169,28 @@ const UI = React.createClass({
   //   console.log("UI: setFilterOption", this.state.filter);
   // },
 
-  setForecastDay: function(dayNum) {
+  //
+  // START OF THE GLOBAL EVENT HANDLERS SECTION
+  // Functions starting with the word 'on' handle a user event that has impact across the UI
+  // 
+
+  onForecastDaySelected: function(dayNum) {
     this.setState({dayNum: dayNum})
     this.props.mapObj.changeForecast(dayNum);
   },
+
+  onMountainSelected: function(mtnId) {
+    const mtnView = search(this.state.mountainViews.mountains, mtnId);
+    this.setState({focusMountain: mtnView})
+    this.props.mapObj.openInfoWindowForMountain(mtnView.pin);
+    this.setState({infoBoxStatus: "mountain"})
+  },
+
+  //
+  // START OF THE INFOBOX COMPONENT SECTION
+  // The InfoBox is a container that will hold the componenet returned by infoBoxComponents()
+  // this.state.infoBoxStatus is used to determine which component should be displayed
+  //
 
   infoBoxComponent: function(infoBoxState) {
     let components = {
@@ -176,7 +198,7 @@ const UI = React.createClass({
         <MountainDetail
           focusMount={this.state.focusMountain}
           dayNum={this.state.dayNum}
-          bagged={this.baggedStatusChanged}
+          bagged={this.requestBaggedStatusChange}
           disabled={this.state.checkboxDisabled}
           date={this.setDate}
           userLoggedIn={this.state.userLoggedIn} />,
@@ -185,21 +207,21 @@ const UI = React.createClass({
           signUpClicked={this.setSignUpForm}
           forgotPassClicked={this.setPasswordForm}
           loginUnsuccessful={this.state.loginUnsuccessful}
-          user={this.setUser}/>,
+          user={this.requestLogin}/>,
       loginSuccess:
-        <UserLoginSuccess changePassClicked={this.changePassword}/>,
+        <UserLoginSuccess changePassClicked={this.setChangePasswordForm}/>,
       signUp:
-        <UserSignUp userRegistration={this.setUserRegistration}/>,  
+        <UserSignUp userRegistration={this.requestRegistration}/>,  
       password:
         <UserNewPassword
           loginClicked={this.setLoginForm}
           signUpClicked={this.setSignUpForm}
-          passwordReset={this.passwordReset}
+          passwordReset={this.requestPasswordReset}
           resetEmailExists={this.state.resetEmailExists}/>,
       passwordResetSuccess:
         <UserPasswordResetSuccess/>,
       changePassword:
-        <UserChangePassword submitChangePassword={this.props.submitChangePassword}/>,
+        <UserChangePassword submitChangePassword={this.requestChangePassword}/>,
       changePasswordSuccess:
         <h4>Your password was changed successfully</h4>,
       contactUs:
@@ -219,15 +241,15 @@ const UI = React.createClass({
         <Menu
           user={this.state.userLoggedIn}
           loginLinkClicked={this.setLoginForm}
-          logoutLinkClicked={this.logout}
+          logoutLinkClicked={this.requestLogout}
           aboutLinkClicked={this.setAboutInfo}/>
         <Logo/>
         <Search
           mountains={this.state.mountainViews.mountains}
-          searchedMount={this.setFocusMountain}/>
+          searchedMount={this.onMountainSelected}/>
         <InfoBox>{this.infoBoxComponent(this.state.infoBoxStatus)}</InfoBox>
         <Forecast
-          selectForecast={this.setForecastDay}/>
+          selectForecast={this.onForecastDaySelected}/>
       </div>
     )
   }
