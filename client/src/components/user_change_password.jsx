@@ -13,12 +13,12 @@ const UserChangePassword = React.createClass ({
 
   updatePassword: function(event) {
     this.setState({password: event.target.value})
-    console.log(this.state.password)
+    // console.log(this.state.password)
   },
 
   updatePasswordConfirmation: function(event) {
     this.setState({passwordConfirmation: event.target.value})
-    console.log(this.state.passwordConfirmation)
+    // console.log(this.state.passwordConfirmation)
   },
 
   passwordChange: function(event){
@@ -27,7 +27,7 @@ const UserChangePassword = React.createClass ({
       this.props.submitChangePassword(this.state.password);
     } else {
       this.setState({ mismatch: true})
-    } 
+    }
     // const request = new ApiRequest();
     // request.makePostRequest(url, content, function(status){console.log(status)})
   },

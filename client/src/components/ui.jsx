@@ -57,7 +57,7 @@ const UI = React.createClass({
   requestLogin: function(email, password) {
     this.state.user.login(email, password, function(success){
       if (!success) {
-        console.log("not success")
+        // console.log("not success")
         this.setState({loginUnsuccessful: true})
       }
       else {
@@ -65,16 +65,16 @@ const UI = React.createClass({
         this.state.user.getInfo(function() {
           this.state.mountainViews.userLogin(this.state.user);
           this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
-        }.bind(this)) 
+        }.bind(this))
       }
     }.bind(this))
   },
 
   requestRegistration: function(email, password) {
     // register with the server
-    console.log("Attempting registration")
+    // console.log("Attempting registration")
     this.state.user.register(email, password, function(success) {
-      console.log("Registration successful:", success)
+      // console.log("Registration successful:", success)
       if (!success) return;
       // this.state.mountainViews.userLogin(this.state.user);
       // this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
@@ -94,11 +94,11 @@ const UI = React.createClass({
   requestPasswordReset: function(email){
     this.state.user.resetPassword(email, function(success){
       if (!success) {
-        console.log("not successful")
+        // console.log("not successful")
         this.setState({resetEmailExists: false});
       }
       else {
-        console.log("not successful")
+        // console.log("not successful")
         this.setState({infoBoxStatus: "passwordResetSuccess"})
       }
     }.bind(this))
@@ -108,7 +108,7 @@ const UI = React.createClass({
   requestChangePassword: function(password){
     this.state.user.changePassword(password, function(success){
       if (success) this.setState({infoBoxStatus: "changePasswordSuccess"})
-    }.bind(this))  
+    }.bind(this))
   },
 
   requestBaggedStatusChange: function(status) {
@@ -118,10 +118,10 @@ const UI = React.createClass({
     this.state.focusMountain.pin.changeBaggedState(status);
     this.state.focusMountain.save(function(success) {
       if (!success) status = !status;
-      this.setState({checkboxDisabled: false, focusMountBagged: status}, function() { 
+      this.setState({checkboxDisabled: false, focusMountBagged: status}, function() {
         console.log("Change state enable:", this.state.checkboxDisabled)
       })
-      
+
       if (!success) {
         // There was an error saving the data
         this.state.focusMountain.pin.changeBaggedState(!status);
@@ -135,7 +135,7 @@ const UI = React.createClass({
   },
 
   //
-  // START OF THE FORM DISPLAY SECTION 
+  // START OF THE FORM DISPLAY SECTION
   // Functions that start 'set' and end 'Form' change the form displayed in the Infobox
   // The effect of these event-handlers is local to InfoBox
   //
@@ -172,7 +172,7 @@ const UI = React.createClass({
   //
   // START OF THE GLOBAL EVENT HANDLERS SECTION
   // Functions starting with the word 'on' handle a user event that has impact across the UI
-  // 
+  //
 
   onForecastDaySelected: function(dayNum) {
     this.setState({dayNum: dayNum})
@@ -194,7 +194,7 @@ const UI = React.createClass({
 
   infoBoxComponent: function(infoBoxState) {
     let components = {
-      mountain: 
+      mountain:
         <MountainDetail
           focusMount={this.state.focusMountain}
           dayNum={this.state.dayNum}
@@ -202,7 +202,7 @@ const UI = React.createClass({
           disabled={this.state.checkboxDisabled}
           date={this.setDate}
           userLoggedIn={this.state.userLoggedIn} />,
-      login: 
+      login:
         <UserLogin
           signUpClicked={this.setSignUpForm}
           forgotPassClicked={this.setPasswordForm}
@@ -211,7 +211,7 @@ const UI = React.createClass({
       loginSuccess:
         <UserLoginSuccess changePassClicked={this.setChangePasswordForm}/>,
       signUp:
-        <UserSignUp userRegistration={this.requestRegistration}/>,  
+        <UserSignUp userRegistration={this.requestRegistration}/>,
       password:
         <UserNewPassword
           loginClicked={this.setLoginForm}
