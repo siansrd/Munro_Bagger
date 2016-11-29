@@ -8,10 +8,7 @@ ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, 
   if (jwtoken) request.setRequestHeader('Authorization', 'Bearer ' + jwtoken);
   if (content) request.setRequestHeader('Content-Type', 'application/json');
   request.onload = function() {
-    let index = expected.findIndex(function(code) {
-      return(code === this.status)
-    }.bind(this))
-    let errorStatus = (index === -1)
+    let errorStatus = (expected.indexOf(this.status) === -1);
     let content = ((this.status === 204) || errorStatus ) ? null : JSON.parse(this.responseText);
     console.log(httpVerb, "request to", url, "returned status", this.status)
     // if (content) console.log("Content: " + this.responseText);
@@ -41,5 +38,6 @@ ApiRequest.prototype.makePutRequest = function(url, content, jwtoken, callback) 
 ApiRequest.prototype.makeDeleteRequest = function(url, content, jwtoken, callback) {
   this._makeRequest("DELETE", url, [200, 201, 204], callback, jwtoken, content);
 }
+
 
 module.exports = ApiRequest;
