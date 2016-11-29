@@ -27,9 +27,9 @@ const MountDetailInfo = React.createClass({
     const gusts = forecast.wind.gusting
     const visibility = forecast.visibility
 
-    console.log(gusts)
-    console.log(visibility)
-    console.log(this.props.focusMount.detail.gridRef.toString())
+    // console.log(gusts)
+    // console.log(visibility)
+    // console.log(this.props.focusMount.detail.gridRef.toString())
 
     return (
       <div>

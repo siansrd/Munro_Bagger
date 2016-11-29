@@ -27,9 +27,9 @@ const UserNewPassword = React.createClass({
 
   render: function(){
 
-    console.log()
+    // console.log()
 
-    if (this.props.resetEmailExists) { 
+    if (this.props.resetEmailExists) {
       return (
         <div>
           <h3>Forgot your password?</h3>
@@ -49,7 +49,7 @@ const UserNewPassword = React.createClass({
       )
     }
 
-    if (!this.props.resetEmailExists) { 
+    if (!this.props.resetEmailExists) {
       return (
         <div>
           <h3>Forgot your password?</h3>

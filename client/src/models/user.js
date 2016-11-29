@@ -52,7 +52,7 @@ User.prototype.logout = function(onCompleted) {
 }
 
 User.prototype.resetPassword = function(email, onCompleted) {
-  console.log(email)
+  // console.log(email)
   let url = baseURL + "users/reset";
     let params = { user: {
       email: email
@@ -69,7 +69,7 @@ User.prototype.changePassword = function(password, onCompleted) {
       password: password
     } };
   apiRequest.makePutRequest(url, params, this._jwtoken, function(status, result) {
-    console.log('status', status)
+    // console.log('status', status)
     let success = (status === 200);
     onCompleted(success);
   }.bind(this));

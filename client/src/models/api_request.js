@@ -10,13 +10,13 @@ ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, 
   request.onload = function() {
     let errorStatus = (expected.indexOf(this.status) === -1);
     let content = ((this.status === 204) || errorStatus ) ? null : JSON.parse(this.responseText);
-    console.log(httpVerb, "request to", url, "returned status", this.status)
+    // console.log(httpVerb, "request to", url, "returned status", this.status)
     // if (content) console.log("Content: " + this.responseText);
     callback(this.status, content);
   };
   let json = (content) ? JSON.stringify(content) : null;
   if (navigator.onLine) {
-    request.send(json);  
+    request.send(json);
   }
   else {
     callback(0, null);
@@ -38,6 +38,5 @@ ApiRequest.prototype.makePutRequest = function(url, content, jwtoken, callback) 
 ApiRequest.prototype.makeDeleteRequest = function(url, content, jwtoken, callback) {
   this._makeRequest("DELETE", url, [200, 201, 204], callback, jwtoken, content);
 }
-
 
 module.exports = ApiRequest;
