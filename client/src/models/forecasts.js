@@ -1,11 +1,11 @@
-var Forecast = require("./forecast");
+const Forecast = require("./forecast");
 
-var Forecasts = function(forecasts){
+const Forecasts = function(forecasts){
 
   this._forecasts = [];
-
-  for (let i = 0; i < forecasts.days.length; i++) {
-  	this._forecasts.push(new Forecast(forecasts.days[i]));
+  let days = forecasts.days;
+  for (let i = 0; i < days.length; i++) {
+  	this._forecasts.push(new Forecast(days[i]));
   }
   // for (var forecast of forecasts.days) {
   //   this._forecasts.push(new Forecast(forecast));

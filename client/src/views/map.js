@@ -89,21 +89,30 @@ MapObject.prototype.addPin = function(mountainView, onMarkerClicked) {
 }
 
 MapObject.prototype.changeForecast = function(dayNum) {
-  for (let pin of this._allPins) {
-    pin.changeForecast(dayNum);
+  for (let i = 0; i < this._allPins.length; i++) {
+    this._allPins[i].changeForecast(dayNum);
   }
+  // for (let pin of this._allPins) {
+  //   pin.changeForecast(dayNum);
+  // }
 }
 
 MapObject.prototype.userLoggedIn = function(mountainViews) {
-  for (let mtnView of mountainViews) {
-    mtnView.pin.userLoggedIn(mtnView.bagged);
+  for (let i = 0; i < mountainViews.length; i++) {
+    mountainViews[i].pin.userLoggedIn(mountainViews[i].bagged);
   }
+  // for (let mtnView of mountainViews) {
+  //   mtnView.pin.userLoggedIn(mtnView.bagged);
+  // }
 }
 
 MapObject.prototype.userLoggedOut = function() {
-  for (let pin of this._allPins) {
-    pin.userLoggedOut();
+  for (let i = 0; i < this._allPins.length; i++) {
+    this._allPins[i].userLoggedOut();
   }
+  // for (let pin of this._allPins) {
+  //   pin.userLoggedOut();
+  // }
 }
 
 module.exports = MapObject;

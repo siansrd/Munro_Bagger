@@ -20,9 +20,12 @@ MountainsView.prototype.all = function(onCompleted) {
 }
 
 MountainsView.prototype._clearMountains = function() {
-  for (let mtn of this.mountains) {
-    mtn.status = null;
+  for (let i = 0; i < this.mountains; i++) {
+    this.mountains[i].status = null;
   }
+  // for (let mtn of this.mountains) {
+  //   mtn.status = null;
+  // }
 }
 
 MountainsView.prototype.userLogin = function(user) {
@@ -32,10 +35,14 @@ MountainsView.prototype.userLogin = function(user) {
 
   let mtn;
   let user_mtns = user.baggedList;
-  for (let user_mtn of user_mtns) {
-    mtn = search(this.mountains, user_mtn.id);
-    mtn.status = user_mtn;
+  for (let i = 0; i < user_mtns.length; i++) {
+    mtn = search(this.mountains, user_mtns[i].id);
+    mtn.status = user_mtns[i];
   }
+//   for (let user_mtn of user_mtns) {
+//     mtn = search(this.mountains, user_mtn.id);
+//     mtn.status = user_mtn;
+//   }
 }
 
 MountainsView.prototype.userLogout = function() {
