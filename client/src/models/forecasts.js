@@ -7,9 +7,6 @@ const Forecasts = function(forecasts){
   for (let i = 0; i < days.length; i++) {
   	this._forecasts.push(new Forecast(days[i]));
   }
-  // for (var forecast of forecasts.days) {
-  //   this._forecasts.push(new Forecast(forecast));
-  // }
 
   Object.defineProperty(this, "day", {
     get: function(){

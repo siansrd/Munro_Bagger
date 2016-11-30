@@ -23,13 +23,6 @@ GridRef.prototype.toCoords = function() {
       return ({ eastings: eastings, northings: northings });
     }
   }
-  // for(var baseGrid of baseGrids) {
-  //   if (this._letters === baseGrid.letters) {
-  //     var eastings = baseGrid.eastings + this._eastings;
-  //     var northings = baseGrid.northings + this._northings;
-  //     return ({ eastings: eastings, northings: northings });
-  //   }
-  // }
   return( undefined );
 }
 

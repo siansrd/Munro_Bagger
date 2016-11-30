@@ -17,10 +17,6 @@ Mountains.prototype.all = function(onCompleted) {
       let mtn = new Mountain(receivedMtns[i]);
       mountains.push(mtn);
     }
-    // for (let receivedMtn of receivedMtns) {
-    //   let mtn = new Mountain(receivedMtn);
-    //   mountains.push(mtn);
-    // }
     onCompleted(mountains);
   })
 };

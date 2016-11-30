@@ -17,15 +17,17 @@ const MountDetailInfo = React.createClass({
   },
 
   render: function() {
-    let dayNum = this.props.dayNum;
-    let forecast = this.props.focusMount.detail.forecasts.day[dayNum];
-    const description = forecast.description
-    const tempMax = forecast.temperature.max
-    const tempFL = forecast.temperature.feelsLike
-    const windDirection = forecast.wind.direction
-    const windSpeed = forecast.wind.speed
-    const gusts = forecast.wind.gusting
-    const visibility = forecast.visibility
+    const dayNum = this.props.dayNum;
+    const detail = this.props.focusMount.detail;
+    const forecast = detail.forecasts.day[dayNum];
+    
+    const description = forecast.description;
+    const tempMax = forecast.temperature.max;
+    const tempFL = forecast.temperature.feelsLike;
+    const windDirection = forecast.wind.direction;
+    const windSpeed = forecast.wind.speed;
+    const gusts = forecast.wind.gusting;
+    const visibility = forecast.visibility;
 
     // console.log(gusts)
     // console.log(visibility)
@@ -33,17 +35,17 @@ const MountDetailInfo = React.createClass({
 
     return (
       <div>
-        <h3>{this.props.focusMount.detail.name}</h3>
-        <h4>({this.props.focusMount.detail.meaning})</h4>
+        <h3>{detail.name}</h3>
+        <h4>({detail.meaning})</h4>
         <div className="flex-grid">
           <div className="grid-item">Height:</div>
-          <div className="grid-item">{this.props.focusMount.detail.height}m</div>
+          <div className="grid-item">{detail.height}m</div>
           <div className="grid-item">OS Grid Ref:</div>
-          <div className="grid-item">{this.props.focusMount.detail.gridRef.toString()}</div>
+          <div className="grid-item">{detail.gridRef.toString()}</div>
           <div className="grid-item">Lat/Long:</div>
-          <div className="grid-item">{this.props.focusMount.detail.latLng.lat}°, {this.props.focusMount.detail.latLng.lng}°</div>
+          <div className="grid-item">{detail.latLng.lat}°, {detail.latLng.lng}°</div>
           <div className="grid-item">Region:</div>
-          <div className="grid-item">{this.props.focusMount.detail.region}</div>
+          <div className="grid-item">{detail.region}</div>
         </div>
 
         <div className="cond-title"><h3>Conditions {this.formatDay(this.props.dayNum)}:</h3></div>

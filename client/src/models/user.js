@@ -82,9 +82,6 @@ User.prototype.getInfo = function(onCompleted) {
     for (let i = 0; i < mountains.length; i++) {
       this._mountains.push(new UserMountain(mountains[i]));
     }
-    // for (var mountain of mountains) {
-    //   this._mountains.push(new UserMountain(mountain));
-    // }
     onCompleted();
   }.bind(this))
 }

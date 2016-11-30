@@ -47,9 +47,6 @@ const UI = React.createClass({
       for (let i = 0; i < mtns.length; i++) {
         this.props.mapObj.addPin(mtns[i], this.onMountainSelected);
       }
-      // for (let mtnView of mtnsView.mountains) {
-      //   this.props.mapObj.addPin(mtnView, this.onMountainSelected);
-      // }
     }.bind(this))
   },
 
