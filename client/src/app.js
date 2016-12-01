@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const MapObject = require('./models/map_obj.js')
+const MapObject = require('./views/map.js')
 const UI = require('./components/ui')
 
 window.onload = function(){

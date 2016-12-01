@@ -18,12 +18,12 @@ const UserSignUp = React.createClass({
 
   updatePassword: function(event) {
     this.setState({password: event.target.value})
-    console.log(this.state.password)
+    // console.log(this.state.password)
   },
 
   updatePasswordConfirmation: function(event) {
     this.setState({passwordConfirmation: event.target.value})
-    console.log(this.state.passwordConfirmation)
+    // console.log(this.state.passwordConfirmation)
   },
 
   signUp: function(event){

@@ -7,15 +7,15 @@ const baseURL = "http://www.munrobagger.scot/";
 const baggedRoute = "bagged_munros";
 const apiRequest = new ApiRequest();
 
-var User = function() {
+const User = function() {
   this._mountains = [];
   this._jwtoken = null;
   Object.defineProperty(this, "baggedList", { get: function(){ return this._mountains; } });
 }
 
 User.prototype.register = function(email, password, onCompleted) {
-  let url = baseURL + "users";
-  let params = { user: {
+  const url = baseURL + "users";
+  const params = { user: {
     email: email,
     password: password
   } };
@@ -27,13 +27,12 @@ User.prototype.register = function(email, password, onCompleted) {
 }
 
 User.prototype.login = function(email, password, onCompleted) {
-  let url = baseURL + "sessions";
-  let params = { session: {
+  const url = baseURL + "sessions";
+  const params = { session: {
     email: email,
     password: password
   } };
   apiRequest.makePostRequest(url, params, null, function(status, result) {
-    console.log(status)
     let success = (status === 201);
     if(success) this._jwtoken = result.auth_token;
     onCompleted(success);
@@ -41,7 +40,7 @@ User.prototype.login = function(email, password, onCompleted) {
 }
 
 User.prototype.logout = function(onCompleted) {
-  let url = baseURL + "sessions";
+  const url = baseURL + "sessions";
   apiRequest.makeDeleteRequest(url, null, this._jwtoken, function(status) {
     let success = (status === 204);
     if (success) {
@@ -53,11 +52,11 @@ User.prototype.logout = function(onCompleted) {
 }
 
 User.prototype.resetPassword = function(email, onCompleted) {
-  console.log(email)
-  let url = baseURL + "users/reset";
-    let params = { user: {
-      email: email
-    } };
+  // console.log(email)
+  const url = baseURL + "users/reset";
+  const params = { user: {
+    email: email
+  } };
   apiRequest.makePutRequest(url, params, null, function(status, result) {
     let success = (status === 204);
     onCompleted(success);
@@ -65,23 +64,23 @@ User.prototype.resetPassword = function(email, onCompleted) {
 }
 
 User.prototype.changePassword = function(password, onCompleted) {
-  let url = baseURL + "users/update";
-    let params = { user: {
-      password: password
-    } };
+  const url = baseURL + "users/update";
+  const params = { user: {
+    password: password
+  } };
   apiRequest.makePutRequest(url, params, this._jwtoken, function(status, result) {
-    console.log('status', status)
+    // console.log('status', status)
     let success = (status === 200);
     onCompleted(success);
   }.bind(this));
 }
 
 User.prototype.getInfo = function(onCompleted) {
-  var url = baseURL + baggedRoute;
-  var apiRequest = new ApiRequest();
+  const url = baseURL + baggedRoute;
+  const apiRequest = new ApiRequest();
   apiRequest.makeGetRequest(url, this._jwtoken, function(status, mountains) {
-    for (var mountain of mountains) {
-      this._mountains.push(new UserMountain(mountain));
+    for (let i = 0; i < mountains.length; i++) {
+      this._mountains.push(new UserMountain(mountains[i]));
     }
     onCompleted();
   }.bind(this))

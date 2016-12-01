@@ -13,8 +13,8 @@ Mountains.prototype.all = function(onCompleted) {
   const apiRequest = new ApiRequest();
   apiRequest.makeGetRequest(url, null, function(status, receivedMtns) {
     const mountains = [];
-    for (let receivedMtn of receivedMtns) {
-      let mtn = new Mountain(receivedMtn);
+    for (let i = 0; i < receivedMtns.length; i++) {
+      let mtn = new Mountain(receivedMtns[i]);
       mountains.push(mtn);
     }
     onCompleted(mountains);

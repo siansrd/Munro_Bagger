@@ -6,11 +6,19 @@ const Menu = require('./menu');
 const Logo = require('./logo');
 const Filter = require('./filter');
 const InfoBox = require('./info_box');
+const Welcome = require('./welcome');
+const MountainDetail = require('./mountain_detail');
+const UserLogin = require('./user_login');
+const UserLoginSuccess = require('./user_login_success');
+const UserSignUp = require('./user_signup');
+const UserNewPassword = require('./user_new_password');
+const UserChangePassword = require('./user_change_password');
+const UserPasswordResetSuccess = require('./user_pass_reset_success')
+const About = require('./about');
 
 const MountainsView = require('../views/mountains_view');
 const search = require('../utility').mountainSearch;
 const User = require('../models/user');
-
 
 const UI = React.createClass({
 
@@ -19,57 +27,56 @@ const UI = React.createClass({
     return {
       dayNum:           0,
       // filter:           "all",
-      focusMountain:     null,
-      focusMountBagged:  null,
-      checkboxDisabled:  false,
-      infoBoxStatus:     "welcome",
-      user:              new User(),
-      userLoggedIn:      false,
-      mountainViews:     null,
+      focusMountain:    null,
+      focusMountBagged: null,
+      checkboxDisabled: false,
+      infoBoxStatus:    "welcome",
+      user:             new User(),
+      userLoggedIn:     false,
+      mountainViews:    null,
       loginUnsuccessful: false,
       resetEmailExists:  true,
       signupEmailExists: false
     }
   },
 
-  setFocusMountain: function(mtnId) {
-    const mtnView = search(this.state.mountainViews.mountains, mtnId);
-    this.setState({focusMountain: mtnView})
-    this.props.mapObj.openInfoWindowForMountain(mtnView.pin);
-    this.setState({infoBoxStatus: "mountain"})
-  },
-
   componentDidMount: function() {
     let mtnsView = new MountainsView();
     mtnsView.all(function() {
       this.setState({mountainViews: mtnsView});
-      for (let mtnView of mtnsView.mountains) {
-        this.props.mapObj.addPin(mtnView, this.setFocusMountain);
+      let mtns = mtnsView.mountains;
+      for (let i = 0; i < mtns.length; i++) {
+        this.props.mapObj.addPin(mtns[i], this.onMountainSelected);
       }
     }.bind(this))
   },
 
-  setUser: function(email, password) {
+  //
+  // START OF SERVER REQUEST SECTION
+  // All callback functions that start with the word 'request' interact with the server
+  //
+
+  requestLogin: function(email, password) {
     this.state.user.login(email, password, function(success){
       if (!success) {
-        console.log("not success")
+        // console.log("not success")
         this.setState({loginUnsuccessful: true})
       }
       else {
-        this.setState({userLoggedIn: true, infoBoxStatus: null, infoBoxStatus: "loginSuccess"});
+        this.setState({userLoggedIn: true, infoBoxStatus: "loginSuccess"});
         this.state.user.getInfo(function() {
           this.state.mountainViews.userLogin(this.state.user);
           this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
-        }.bind(this)) 
+        }.bind(this))
       }
     }.bind(this))
   },
 
-  setUserRegistration: function(email, password) {
-    console.log("Attempting registration")
+  requestRegistration: function(email, password) {
+    // console.log("Attempting registration")
     this.state.user.register(email, password, function(success, status) {
-      console.log("Status", status);
-      console.log("Registration successful:", success);
+      // console.log("Status", status);
+      // console.log("Registration successful:", success);
       if (!success && status === 422) {
         this.setState({signupEmailExists: true});
       }
@@ -79,7 +86,7 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  logout: function(){
+  requestLogout: function(){
     this.state.user.logout(function(success) {
       if (!success) return;
       this.state.mountainViews.userLogout();
@@ -89,41 +96,37 @@ const UI = React.createClass({
     }.bind(this))
   },
 
-  passwordReset: function(email){
+  requestPasswordReset: function(email){
     this.state.user.resetPassword(email, function(success){
       if (!success) {
-        console.log("not successful")
+        // console.log("not successful")
         this.setState({resetEmailExists: false});
       }
       else {
-        console.log("not successful")
+        // console.log("not successful")
         this.setState({infoBoxStatus: "passwordResetSuccess"})
       }
     }.bind(this))
     // TODO add if not success
   },
 
-  submitChangePassword: function(password){
+  requestChangePassword: function(password){
     this.state.user.changePassword(password, function(success){
       if (success) this.setState({infoBoxStatus: "changePasswordSuccess"})
-    }.bind(this))  
+    }.bind(this))
   },
 
-  changePassword: function(){
-    this.setState({infoBoxStatus: "changePassword"})
-  },
-
-  baggedStatusChanged: function(status) {
+  requestBaggedStatusChange: function(status) {
     this.setState({focusMountBagged: status, checkboxDisabled: true})
     this.state.focusMountain.backup();
     this.state.focusMountain.bagged = status;
     this.state.focusMountain.pin.changeBaggedState(status);
     this.state.focusMountain.save(function(success) {
       if (!success) status = !status;
-      this.setState({checkboxDisabled: false, focusMountBagged: status}, function() { 
+      this.setState({checkboxDisabled: false, focusMountBagged: status}, function() {
         console.log("Change state enable:", this.state.checkboxDisabled)
       })
-      
+
       if (!success) {
         // There was an error saving the data
         this.state.focusMountain.pin.changeBaggedState(!status);
@@ -136,12 +139,22 @@ const UI = React.createClass({
     // Do something here with date
   },
 
+  //
+  // START OF THE FORM DISPLAY SECTION
+  // Functions that start 'set' and end 'Form' change the form displayed in the Infobox
+  // The effect of these event-handlers is local to InfoBox
+  //
+
   setLoginForm: function() {
     this.setState({infoBoxStatus: "login"})
   },
 
   setSignUpForm: function() {
     this.setState({infoBoxStatus: "signUp"})
+  },
+
+  setChangePasswordForm: function() {
+    this.setState({infoBoxStatus: "changePassword"})
   },
 
   setPasswordForm: function() {
@@ -161,9 +174,69 @@ const UI = React.createClass({
   //   console.log("UI: setFilterOption", this.state.filter);
   // },
 
-  setForecastDay: function(dayNum) {
+  //
+  // START OF THE GLOBAL EVENT HANDLERS SECTION
+  // Functions starting with the word 'on' handle a user event that has impact across the UI
+  //
+
+  onForecastDaySelected: function(dayNum) {
     this.setState({dayNum: dayNum})
     this.props.mapObj.changeForecast(dayNum);
+  },
+
+  onMountainSelected: function(mtnId) {
+    const mtnView = search(this.state.mountainViews.mountains, mtnId);
+    this.setState({focusMountain: mtnView})
+    this.props.mapObj.openInfoWindowForMountain(mtnView.pin);
+    this.setState({infoBoxStatus: "mountain"})
+  },
+
+  //
+  // START OF THE INFOBOX COMPONENT SECTION
+  // The InfoBox is a container that will hold the componenet returned by infoBoxComponents()
+  // this.state.infoBoxStatus is used to determine which component should be displayed
+  //
+
+  infoBoxComponent: function(infoBoxState) {
+    let components = {
+      mountain:
+        <MountainDetail
+          focusMount={this.state.focusMountain}
+          dayNum={this.state.dayNum}
+          bagged={this.requestBaggedStatusChange}
+          disabled={this.state.checkboxDisabled}
+          date={this.setDate}
+          userLoggedIn={this.state.userLoggedIn} />,
+      login:
+        <UserLogin
+          signUpClicked={this.setSignUpForm}
+          forgotPassClicked={this.setPasswordForm}
+          loginUnsuccessful={this.state.loginUnsuccessful}
+          user={this.requestLogin}/>,
+      loginSuccess:
+        <UserLoginSuccess changePassClicked={this.setChangePasswordForm}/>,
+      signUp:
+        <UserSignUp 
+          userRegistration={this.requestRegistration}
+          signupEmailExists={this.state.signupEmailExists}/>,
+      password:
+        <UserNewPassword
+          loginClicked={this.setLoginForm}
+          signUpClicked={this.setSignUpForm}
+          passwordReset={this.requestPasswordReset}
+          resetEmailExists={this.state.resetEmailExists}/>,
+      passwordResetSuccess:
+        <UserPasswordResetSuccess/>,
+      changePassword:
+        <UserChangePassword submitChangePassword={this.requestChangePassword}/>,
+      changePasswordSuccess:
+        <h4>Your password was changed successfully</h4>,
+      contactUs:
+        <About/>,
+      welcome:
+        <Welcome signUpClicked={this.setSignUpForm}/>,
+    }
+    return components[infoBoxState];
   },
 
   render: function() {
@@ -175,33 +248,15 @@ const UI = React.createClass({
         <Menu
           user={this.state.userLoggedIn}
           loginLinkClicked={this.setLoginForm}
-          logoutLinkClicked={this.logout}
+          logoutLinkClicked={this.requestLogout}
           aboutLinkClicked={this.setAboutInfo}/>
         <Logo/>
         <Search
           mountains={this.state.mountainViews.mountains}
-          searchedMount={this.setFocusMountain}/>
-        <InfoBox
-          focusMount={this.state.focusMountain}
-          infoBox={this.state.infoBoxStatus}
-          dayNum={this.state.dayNum}
-          bagged={this.baggedStatusChanged}
-          disabled={this.state.checkboxDisabled}
-          date={this.setDate}
-          signUpClicked={this.setSignUpForm}
-          signupEmailExists={this.state.signupEmailExists}
-          forgotPassClicked={this.setPasswordForm}
-          loginClicked={this.setLoginForm}
-          loginUnsuccessful={this.state.loginUnsuccessful}
-          user={this.setUser}
-          userRegistration={this.setUserRegistration}
-          userLoggedIn={this.state.userLoggedIn} 
-          passwordReset={this.passwordReset}
-          resetEmailExists={this.state.resetEmailExists}
-          changePassClicked={this.changePassword}
-          submitChangePassword={this.submitChangePassword} />
+          searchedMount={this.onMountainSelected}/>
+        <InfoBox>{this.infoBoxComponent(this.state.infoBoxStatus)}</InfoBox>
         <Forecast
-          selectForecast={this.setForecastDay}/>
+          selectForecast={this.onForecastDaySelected}/>
       </div>
     )
   }

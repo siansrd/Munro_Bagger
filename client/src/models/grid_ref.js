@@ -1,6 +1,6 @@
-var baseGrids = require('./grid_base');
+const baseGrids = require('./grid_base');
 
-var GridRef = function(options){
+const GridRef = function(options){
   this._letters = options.letters;
   this._eastings = options.eastings;
   this._northings = options.northings;
@@ -16,10 +16,10 @@ GridRef.prototype.toString = function(){
 };
 
 GridRef.prototype.toCoords = function() {
-  for(var baseGrid of baseGrids) {
-    if (this._letters === baseGrid.letters) {
-      var eastings = baseGrid.eastings + this._eastings;
-      var northings = baseGrid.northings + this._northings;
+  for (let i = 0;  i < baseGrids.length; i++) {
+    if (this._letters === baseGrids[i].letters) {
+      var eastings = baseGrids[i].eastings + this._eastings;
+      var northings = baseGrids[i].northings + this._northings;
       return ({ eastings: eastings, northings: northings });
     }
   }
