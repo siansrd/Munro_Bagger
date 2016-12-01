@@ -212,6 +212,13 @@ textarea:focus, input:focus, button:focus {
   flex: 0 0 120px;
 }
 
+.grid-item-wide {
+  flex: 1 1 calc(100% - 250px);
+}
+.grid-item-wide:nth-child(odd) {
+  flex: 0 0 250px;
+}
+
 .icon {
   height: 18px;
 }
