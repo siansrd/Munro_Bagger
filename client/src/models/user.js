@@ -59,7 +59,7 @@ User.prototype.resetPassword = function(email, onCompleted) {
       email: email
     } };
   apiRequest.makePutRequest(url, params, null, function(status, result) {
-    let success = (status === 201);
+    let success = (status === 204);
     onCompleted(success);
   }.bind(this));
 }
