@@ -9,6 +9,7 @@ const InfoBox = React.createClass({
       {this.props.children}
     </div>
   )
+
  }
 })
 

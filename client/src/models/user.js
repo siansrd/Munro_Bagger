@@ -22,7 +22,7 @@ User.prototype.register = function(email, password, onCompleted) {
   apiRequest.makePostRequest(url, params, null, function(status, result) {
     let success = (status === 201);
     if(success) this._jwtoken = result.auth_token;
-    onCompleted(success);
+    onCompleted(success, status);
   }.bind(this));
 }
 
@@ -58,7 +58,7 @@ User.prototype.resetPassword = function(email, onCompleted) {
     email: email
   } };
   apiRequest.makePutRequest(url, params, null, function(status, result) {
-    let success = (status === 201);
+    let success = (status === 204);
     onCompleted(success);
   }.bind(this));
 }

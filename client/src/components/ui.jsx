@@ -35,7 +35,8 @@ const UI = React.createClass({
       userLoggedIn:     false,
       mountainViews:    null,
       loginUnsuccessful: false,
-      resetEmailExists: true
+      resetEmailExists:  true,
+      signupEmailExists: false
     }
   },
 
@@ -72,23 +73,26 @@ const UI = React.createClass({
   },
 
   requestRegistration: function(email, password) {
-    // register with the server
     // console.log("Attempting registration")
-    this.state.user.register(email, password, function(success) {
-      // console.log("Registration successful:", success)
-      if (!success) return;
-      // this.state.mountainViews.userLogin(this.state.user);
-      // this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
-      this.setLoginForm();
+    this.state.user.register(email, password, function(success, status) {
+      // console.log("Status", status);
+      // console.log("Registration successful:", success);
+      if (!success && status === 422) {
+        this.setState({signupEmailExists: true});
+      }
+      else if (success) {
+        this.setLoginForm();
+      }
     }.bind(this))
   },
 
   requestLogout: function(){
     this.state.user.logout(function(success) {
-      if (!success) return
+      if (!success) return;
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
-      this.setState({userLoggedIn: false, infoBoxStatus: null})
+      this.setState({userLoggedIn: false});
+      this.setState({infoBoxStatus: "welcome"});
     }.bind(this))
   },
 
@@ -212,7 +216,9 @@ const UI = React.createClass({
       loginSuccess:
         <UserLoginSuccess changePassClicked={this.setChangePasswordForm}/>,
       signUp:
-        <UserSignUp userRegistration={this.requestRegistration}/>,
+        <UserSignUp 
+          userRegistration={this.requestRegistration}
+          signupEmailExists={this.state.signupEmailExists}/>,
       password:
         <UserNewPassword
           loginClicked={this.setLoginForm}
