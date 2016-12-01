@@ -1,7 +1,7 @@
 {
   "name": "munro_bagger",
   "version": "1.0.0",
-  "description": "Project 3: Munro Bagger.",
+  "description": "A JS/ReactJS/Rails website that allows the user to see all the sunny Munros in Scotland at one glance.",
   "main": "seeds.js",
   "scripts": {
     "test": "mocha ./client/src/specs/",
@@ -9,7 +9,29 @@
     "bundle": "cd client && webpack -w",
     "bundle-p": "cd client && webpack -p"
   },
-  "author": "",
+  "author": {
+    "name": "Munro Bagger Team",
+    "url": "https://github.com/siansrd/Munro_Bagger"
+  },
+  "contributors": [
+    {
+      "name": "Phil Crooks",
+      "email": "pacman@crooks.me.uk"
+    },
+    {
+      "name": "John Easton",
+      "email": "easton3003@gmail.com"
+    },
+    {
+      "name": "Siân Robinson Davies",
+      "email": "sianrobinsondavies@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:siansrd/Munro_Bagger.git"
+  },
+  "homepage": "http://www.munrobagger.scot",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
