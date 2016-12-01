@@ -22,7 +22,7 @@ const UI = React.createClass({
       focusMountain:     null,
       focusMountBagged:  null,
       checkboxDisabled:  false,
-      infoBoxStatus:     null,
+      infoBoxStatus:     "welcome",
       user:              new User(),
       userLoggedIn:      false,
       mountainViews:     null,
@@ -84,7 +84,8 @@ const UI = React.createClass({
       if (!success) return;
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
-      this.setState({userLoggedIn: false, infoBoxStatus: null})
+      this.setState({userLoggedIn: false});
+      this.setState({infoBoxStatus: "welcome"});
     }.bind(this))
   },
 

@@ -13,7 +13,7 @@ const InfoBox = React.createClass({
 
  render: function() {
 
-  if (!this.props.infoBox) return (
+  if (this.props.infoBox === "welcome") return (
     <div id="infoBox">
       <Welcome signUpClicked={this.props.signUpClicked}/>
     </div>
