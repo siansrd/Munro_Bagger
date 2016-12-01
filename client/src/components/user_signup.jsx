@@ -39,7 +39,9 @@ const UserSignUp = React.createClass({
 
   render: function(){
 
-    if (!this.state.mismatch) {
+    this.props.signupEmailExists
+
+    if (!this.state.mismatch && !this.props.signupEmailExists) {
       return (
         <div>
           <h3>Sign Up</h3>
@@ -66,6 +68,38 @@ const UserSignUp = React.createClass({
             </div>
           </form>
           <p>Once submitted, check your email for verification.</p>
+        </div>
+      )
+    }
+
+
+    if (this.props.signupEmailExists) {
+      return (
+        <div>
+          <h3>Sign Up</h3>
+
+          <form>
+            <div className="formElement">
+              <p>Email address is already registered.</p>
+              <label>Email</label><br />
+              <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail} />
+            </div>
+
+            <div className="formElement">
+              <label>Password</label><br/>
+              <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
+              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
+            </div>
+
+            <div className="formElement">
+              <label>Password confirmation</label><br />
+              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" onChange={this.updatePasswordConfirmation}/>
+            </div>
+
+            <div>
+              <button onClick={this.signUp}>Sign up</button>
+            </div>
+          </form>
         </div>
       )
     }

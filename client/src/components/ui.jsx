@@ -19,15 +19,16 @@ const UI = React.createClass({
     return {
       dayNum:           0,
       // filter:           "all",
-      focusMountain:    null,
-      focusMountBagged: null,
-      checkboxDisabled: false,
-      infoBoxStatus:    null,
-      user:             new User(),
-      userLoggedIn:     false,
-      mountainViews:    null,
+      focusMountain:     null,
+      focusMountBagged:  null,
+      checkboxDisabled:  false,
+      infoBoxStatus:     null,
+      user:              new User(),
+      userLoggedIn:      false,
+      mountainViews:     null,
       loginUnsuccessful: false,
-      resetEmailExists: true
+      resetEmailExists:  true,
+      signupEmailExists: false
     }
   },
 
@@ -65,20 +66,22 @@ const UI = React.createClass({
   },
 
   setUserRegistration: function(email, password) {
-    // register with the server
     console.log("Attempting registration")
-    this.state.user.register(email, password, function(success) {
-      console.log("Registration successful:", success)
-      if (!success) return;
-      // this.state.mountainViews.userLogin(this.state.user);
-      // this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
-      this.setLoginForm();
+    this.state.user.register(email, password, function(success, status) {
+      console.log("Status", status);
+      console.log("Registration successful:", success);
+      if (!success && status === 422) {
+        this.setState({signupEmailExists: true});
+      }
+      else if (success) {
+        this.setLoginForm();
+      }
     }.bind(this))
   },
 
   logout: function(){
     this.state.user.logout(function(success) {
-      if (!success) return
+      if (!success) return;
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
       this.setState({userLoggedIn: false, infoBoxStatus: null})
@@ -185,6 +188,7 @@ const UI = React.createClass({
           disabled={this.state.checkboxDisabled}
           date={this.setDate}
           signUpClicked={this.setSignUpForm}
+          signupEmailExists={this.state.signupEmailExists}
           forgotPassClicked={this.setPasswordForm}
           loginClicked={this.setLoginForm}
           loginUnsuccessful={this.state.loginUnsuccessful}

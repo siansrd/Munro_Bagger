@@ -51,7 +51,8 @@ const InfoBox = React.createClass({
   if (this.props.infoBox === "signUp" ) return (
     <div id="infoBox">
       <UserSignUp
-        userRegistration={this.props.userRegistration}/>
+        userRegistration={this.props.userRegistration}
+        signupEmailExists={this.props.signupEmailExists}/>
     </div>
   )
 
