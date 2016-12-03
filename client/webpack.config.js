@@ -26,7 +26,7 @@ config = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('public/style.css', { allChunks: true })
+    new ExtractTextPlugin('public/bundle.css', { allChunks: true })
   ],
   devtool: 'source-map'
 }
