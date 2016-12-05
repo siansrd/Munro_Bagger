@@ -1,5 +1,6 @@
 const React = require('react');
 import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
+const Scotland = require('./map')
 
 const Forecast = require('./forecast');
 const Search = require('./search');
@@ -28,6 +29,7 @@ const UI = React.createClass({
     return {
       dayNum:           0,
       // filter:           "all",
+      mapObj:           null,
       focusMountain:    null,
       focusMountBagged: null,
       checkboxDisabled: false,
@@ -47,7 +49,7 @@ const UI = React.createClass({
       this.setState({mountainViews: mtnsView});
       let mtns = mtnsView.mountains;
       for (let i = 0; i < mtns.length; i++) {
-        this.props.mapObj.addPin(mtns[i], this.onMountainSelected);
+        this.state.mapObj.addPin(mtns[i], this.onMountainSelected);
       }
     }.bind(this))
   },
@@ -67,7 +69,7 @@ const UI = React.createClass({
         this.setState({userLoggedIn: true, infoBoxStatus: "loginSuccess"});
         this.state.user.getInfo(function() {
           this.state.mountainViews.userLogin(this.state.user);
-          this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
+          this.state.mapObj.userLoggedIn(this.state.mountainViews.mountains)
         }.bind(this))
       }
     }.bind(this))
@@ -91,7 +93,7 @@ const UI = React.createClass({
     this.state.user.logout(function(success) {
       if (!success) return;
       this.state.mountainViews.userLogout();
-      this.props.mapObj.userLoggedOut();
+      this.this.state.mapObj.userLoggedOut();
       this.setState({userLoggedIn: false});
       this.setState({infoBoxStatus: "welcome"});
     }.bind(this))
@@ -180,15 +182,19 @@ const UI = React.createClass({
   // Functions starting with the word 'on' handle a user event that has impact across the UI
   //
 
+  onMapLoaded: function(mapObj) {
+    this.setState({mapObj: mapObj})
+  },
+
   onForecastDaySelected: function(dayNum) {
     this.setState({dayNum: dayNum})
-    this.props.mapObj.changeForecast(dayNum);
+    this.state.mapObj.changeForecast(dayNum);
   },
 
   onMountainSelected: function(mtnId) {
     const mtnView = search(this.state.mountainViews.mountains, mtnId);
     this.setState({focusMountain: mtnView})
-    this.props.mapObj.openInfoWindowForMountain(mtnView.pin);
+    this.state.mapObj.openInfoWindowForMountain(mtnView.pin);
     this.setState({infoBoxStatus: "mountain"})
   },
 
@@ -246,27 +252,27 @@ const UI = React.createClass({
 
     return (
       <div>
-          <Layout>
-              <Header title="Munro Bagger" scroll>
-                  <Navigation>
-                      <a href="">Link</a>
-                      <a href="">Link</a>
-                      <a href="">Link</a>
-                      <a href="">Link</a>
-                  </Navigation>
-              </Header>
-              <Drawer title="Munro Bagger">
-                  <Navigation>
-                      <a href="">Link</a>
-                      <a href="">Link</a>
-                      <a href="">Link</a>
-                      <a href="">Link</a>
-                  </Navigation>
-              </Drawer>
-              <Content>
-                  <div className="page-content" />
-              </Content>
-          </Layout>
+        <Layout>
+          <Header title="Munro Bagger" scroll>
+            <Navigation>
+              <a href="">Link</a>
+              <a href="">Link</a>
+              <a href="">Link</a>
+              <a href="">Link</a>
+            </Navigation>
+          </Header>
+          <Drawer title="Munro Bagger">
+            <Navigation>
+              <a href="">Link</a>
+              <a href="">Link</a>
+              <a href="">Link</a>
+              <a href="">Link</a>
+            </Navigation>
+          </Drawer>
+          <Content>
+              <Scotland mapLoaded={this.onMapLoaded}/>
+          </Content>
+        </Layout>
       </div>
     )
   }

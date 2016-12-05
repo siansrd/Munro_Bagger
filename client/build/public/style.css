@@ -99,19 +99,18 @@ button {
     border-color: #436E98;
 }
 
-.page-content {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
+/*.page-content {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}*/
 
-#map {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
+.map {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 #weather-buttons {
@@ -211,9 +210,11 @@ textarea:focus, input:focus, button:focus {
   display: flex;
   flex-wrap: wrap;
 }
+
 .grid-item {
   flex: 1 1 calc(100% - 120px);
 }
+
 .grid-item:nth-child(odd) {
   flex: 0 0 120px;
 }
@@ -225,7 +226,6 @@ textarea:focus, input:focus, button:focus {
 #infoBox button {
     margin-top: 10px;
 }
-
 
 /*-------- auto suggest -------*/
 
