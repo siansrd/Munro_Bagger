@@ -1,4 +1,5 @@
 const React = require('react');
+import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 
 const Forecast = require('./forecast');
 const Search = require('./search');
@@ -245,18 +246,27 @@ const UI = React.createClass({
 
     return (
       <div>
-        <Menu
-          user={this.state.userLoggedIn}
-          loginLinkClicked={this.setLoginForm}
-          logoutLinkClicked={this.requestLogout}
-          aboutLinkClicked={this.setAboutInfo}/>
-        <Logo/>
-        <Search
-          mountains={this.state.mountainViews.mountains}
-          searchedMount={this.onMountainSelected}/>
-        <InfoBox>{this.infoBoxComponent(this.state.infoBoxStatus)}</InfoBox>
-        <Forecast
-          selectForecast={this.onForecastDaySelected}/>
+          <Layout>
+              <Header title="Munro Bagger" scroll>
+                  <Navigation>
+                      <a href="">Link</a>
+                      <a href="">Link</a>
+                      <a href="">Link</a>
+                      <a href="">Link</a>
+                  </Navigation>
+              </Header>
+              <Drawer title="Munro Bagger">
+                  <Navigation>
+                      <a href="">Link</a>
+                      <a href="">Link</a>
+                      <a href="">Link</a>
+                      <a href="">Link</a>
+                  </Navigation>
+              </Drawer>
+              <Content>
+                  <div className="page-content" />
+              </Content>
+          </Layout>
       </div>
     )
   }
