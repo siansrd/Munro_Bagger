@@ -191,8 +191,8 @@ const UI = React.createClass({
     this.state.mapObj.changeForecast(dayNum);
   },
 
-  onMountainSelected: function(mtnId) {
-    const mtnView = search(this.state.mountainViews.mountains, mtnId);
+  onMountainSelected: function(mtnView) {
+    // const mtnView = search(this.state.mountainViews.mountains, mtnId);
     this.setState({focusMountain: mtnView})
     this.state.mapObj.openInfoWindowForMountain(mtnView.pin);
     this.setState({infoBoxStatus: "mountain"})

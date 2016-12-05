@@ -14,44 +14,35 @@ const Search = React.createClass({
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : this.props.mountains.filter(function(mount) {
-      mount.name.toLowerCase().includes(inputValue)
+    let suggestions = inputLength === 0 ? [] : this.props.mountains.filter(function(mount) {
+      return mount.name.toLowerCase().includes(inputValue);
     });
+    return suggestions;
   },
 
   getSuggestionValue: function(suggestion) {
-    let mountId = suggestion.id;
-    this.setState({searchedMountId: mountId}, function(){
-      this.setState({value: ""})
-    });
-    this.props.searchedMount(mountId);
-    return suggestion.detail.name;
+    // let mountId = suggestion.id;
+    // this.setState({searchedMountId: mountId}, function(){
+    //   this.setState({value: ""})
+    // });
+    this.props.searchedMount(suggestion);
+    return suggestion.name;
   },
 
   renderSuggestion: function(suggestion){
-    return (
-    <div>
-      {suggestion.detail.name}
-    </div>
-    )
+    return (<div>{suggestion.name}</div>);
   },
 
   onChange: function(event, { newValue }) {
-    this.setState({
-      value: newValue
-    });
+    this.setState({ value: newValue });
   },
 
   onSuggestionsFetchRequested: function({ value }) {
-    this.setState({
-      suggestions: this.getSuggestions(value)
-    });
+    this.setState({ suggestions: this.getSuggestions(value) });
   },
 
   onSuggestionsClearRequested: function() {
-    this.setState({
-      suggestions: []
-    });
+    this.setState({ suggestions: [] });
   },
 
   render: function() {

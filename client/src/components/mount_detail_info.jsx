@@ -5,9 +5,8 @@ const GridRef = require('../models/grid_ref');
 const MountDetailInfo = React.createClass({
 
   formatDay: function(dayNum) {
-    if (dayNum == 0) return "Today"
-    if (dayNum == 1) return "Tomorrow"
-    if (dayNum == 2) return "Day After"
+    const days = ["Today", "Tomorrow", "Day After"];
+    return days[dayNum];
   },
 
   formatDirection: function(direction) {

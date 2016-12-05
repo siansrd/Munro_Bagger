@@ -178,12 +178,12 @@ textarea:focus, input:focus, button:focus {
 }
 
 #search {
-    position: fixed;
+/*    position: fixed;
     right: 40px;
     top: 110px;
     width: 380px;
     height: 28px;
-    z-index: 5;
+    z-index: 5;*/
 }
 
 #menu {
