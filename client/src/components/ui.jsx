@@ -255,7 +255,9 @@ const UI = React.createClass({
         <Layout>
           <Header title="Munro Bagger" scroll>
             <Navigation>
-              <a href="">Link</a>
+              <Search
+                mountains={this.state.mountainViews.mountains}
+                searchedMount={this.onMountainSelected} />
               <a href="">Link</a>
               <a href="">Link</a>
               <a href="">Link</a>

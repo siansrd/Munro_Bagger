@@ -14,9 +14,9 @@ const Search = React.createClass({
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : this.props.mountains.filter(mount =>
-      mount.detail.name.toLowerCase().includes(inputValue)
-    );
+    return inputLength === 0 ? [] : this.props.mountains.filter(function(mount) {
+      mount.name.toLowerCase().includes(inputValue)
+    });
   },
 
   getSuggestionValue: function(suggestion) {

@@ -7,6 +7,7 @@ var MountainView = function(mtn) {
   this.pin = null;
   this._backup = null;
   Object.defineProperty(this, "id", { get: function(){ return this._detail.id; } });
+  Object.defineProperty(this, "name", { get: function(){ return this._detail.name; } });
   Object.defineProperty(this, "detail", { get: function(){ return this._detail; } });
   Object.defineProperty(this, "status", { set: function(status){ this._status = status; } });
   Object.defineProperty(this, "bagged", {
