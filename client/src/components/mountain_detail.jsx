@@ -1,10 +1,10 @@
 const React = require('react');
-const DatePicker = require('react-datepicker');
+// const DatePicker = require('react-datepicker');
 const moment = require('moment');
 const MountDetailInfo = require('./mount_detail_info');
 const MountDetailBagged = require('./mount_detail_bagged');
 
-require('react-datepicker/dist/react-datepicker.css');
+// require('react-datepicker/dist/react-datepicker.css');
 
 const MountDetail = React.createClass({
 
