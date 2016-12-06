@@ -19,18 +19,6 @@ const MountDetailInfo = React.createClass({
     const dayNum = this.props.dayNum;
     const detail = this.props.focusMount.detail;
     const forecast = detail.forecasts.day[dayNum];
-    
-    const description = forecast.description;
-    const tempMax = forecast.temperature.max;
-    const tempFL = forecast.temperature.feelsLike;
-    const windDirection = forecast.wind.direction;
-    const windSpeed = forecast.wind.speed;
-    const gusts = forecast.wind.gusting;
-    const visibility = forecast.visibility;
-
-    // console.log(gusts)
-    // console.log(visibility)
-    // console.log(this.props.focusMount.detail.gridRef.toString())
 
     return (
       <div>
@@ -50,17 +38,17 @@ const MountDetailInfo = React.createClass({
         <div className="cond-title"><h3>Conditions {this.formatDay(this.props.dayNum)}:</h3></div>
         <div className="flex-grid">
           <div className="grid-item">Weather:</div>
-          <div className="grid-item">{description}</div>
+          <div className="grid-item">{forecast.description}</div>
           <div className="grid-item">Visibility:</div>
-          <div className="grid-item">{visibility}</div>
+          <div className="grid-item">{forecast.visibility}</div>
           <div className="grid-item">Temperature:</div>
-          <div className="grid-item">High of {tempMax}&deg;C</div>
+          <div className="grid-item">High of {forecast.temperature.max}&deg;C</div>
           <div className="grid-item"></div>
-          <div className="grid-item">Feels like {tempFL}&deg;C</div>
+          <div className="grid-item">Feels like {forecast.temperature.feelsLike}&deg;C</div>
           <div className="grid-item">Wind:</div>
-          <div className="grid-item">{windSpeed}mph {this.formatDirection(windDirection)}</div>
+          <div className="grid-item">{forecast.wind.speed}mph {this.formatDirection(forecast.wind.direction)}</div>
           <div className="grid-item"></div>
-          <div className="grid-item">Gusts of {gusts}mph</div>
+          <div className="grid-item">Gusts of {forecast.wind.gusting}mph</div>
 
         </div>
       </div>
