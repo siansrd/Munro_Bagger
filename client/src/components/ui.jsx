@@ -202,14 +202,6 @@ const UI = React.createClass({
 
   infoBoxComponent: function(infoBoxState) {
     let components = {
-      mountain:
-        <MountainDetail
-          focusMount={this.state.focusMountain}
-          dayNum={this.state.dayNum}
-          bagged={this.requestBaggedStatusChange}
-          disabled={this.state.checkboxDisabled}
-          date={this.setDate}
-          userLoggedIn={this.state.userLoggedIn} />,
       login:
         <UserLogin
           signUpClicked={this.setSignUpForm}
@@ -246,6 +238,19 @@ const UI = React.createClass({
     // TODO: Refactor this
     if (!this.state.mountainViews) return <div></div>;
 
+    let mountain = null;
+    if (this.state.focusMountain) {
+      mountain = (
+        <MountainDetail
+          focusMount={this.state.focusMountain}
+          dayNum={this.state.dayNum}
+          bagged={this.requestBaggedStatusChange}
+          disabled={this.state.checkboxDisabled}
+          date={this.setDate}
+          userLoggedIn={this.state.userLoggedIn} />
+      )
+    }
+
     let enabledIn = (this.state.userLoggedIn) ? {} : {'disabled': 'disabled'};
     let enabledOut = (!this.state.userLoggedIn) ? {} : {'disabled': 'disabled'};
 
@@ -281,6 +286,7 @@ const UI = React.createClass({
           </Header>
           <Content>
               <Scotland mapLoaded={this.onMapLoaded}/>
+              {mountain}
           </Content>
         </Layout>
       </div>
