@@ -165,7 +165,7 @@ User.prototype.saveUserMountain = function(mountain, onCompleted) {
         mountain._originId = savedMtn.id;
       }
       onCompleted(success,this._getMessage(status, 'saveBagged'));
-    });
+    }.bind(this));
     return;
   }
 
@@ -182,7 +182,7 @@ User.prototype.saveUserMountain = function(mountain, onCompleted) {
         mountain._originId = undefined;
       }
       onCompleted(success, this._getMessage(status, 'deleteBagged'));
-    });
+    }.bind(this));
     return
   }
 
@@ -193,7 +193,7 @@ User.prototype.saveUserMountain = function(mountain, onCompleted) {
         mountain._dirty = false;
       }
       onCompleted(success, this._getMessage(status, 'updateBagged'));
-    });
+    }.bind(this));
   }
 }
 
