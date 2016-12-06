@@ -1,5 +1,5 @@
 const React = require('react');
-import { Layout, Header, HeaderRow, HeaderTabs, Textfield, Menu, MenuItem, Tab, Content } from 'react-mdl';
+import { Layout, Header, HeaderRow, HeaderTabs, Textfield, Menu, MenuItem, IconButton, Tab, Content } from 'react-mdl';
 const Scotland = require('./map')
 
 const Forecast = require('./forecast');
@@ -31,7 +31,7 @@ const UI = React.createClass({
       focusMountain:    null,
       focusMountBagged: null,
       checkboxDisabled: false,
-      infoBoxStatus:    "welcome",
+      menuChoice:       null,
       user:             new User(),
       userLoggedIn:     false,
       mountainViews:    null,
@@ -64,7 +64,7 @@ const UI = React.createClass({
         this.setState({loginUnsuccessful: true})
       }
       else {
-        this.setState({userLoggedIn: true, infoBoxStatus: "loginSuccess"});
+        this.setState({userLoggedIn: true, menuChoice: null});
         this.state.user.getInfo(function() {
           this.state.mountainViews.userLogin(this.state.user);
           this.state.mapObj.userLoggedIn(this.state.mountainViews.mountains)
@@ -91,9 +91,9 @@ const UI = React.createClass({
     this.state.user.logout(function(success) {
       if (!success) return;
       this.state.mountainViews.userLogout();
-      this.this.state.mapObj.userLoggedOut();
+      this.state.mapObj.userLoggedOut();
       this.setState({userLoggedIn: false});
-      this.setState({infoBoxStatus: "welcome"});
+      this.setState({menuChoice: null});
     }.bind(this))
   },
 
@@ -105,7 +105,7 @@ const UI = React.createClass({
       }
       else {
         // console.log("not successful")
-        this.setState({infoBoxStatus: "passwordResetSuccess"})
+        this.setState({menuChoice: null})
       }
     }.bind(this))
     // TODO add if not success
@@ -113,7 +113,7 @@ const UI = React.createClass({
 
   requestChangePassword: function(password){
     this.state.user.changePassword(password, function(success){
-      if (success) this.setState({infoBoxStatus: "changePasswordSuccess"})
+      if (success) this.setState({menuChoice: null})
     }.bind(this))
   },
 
@@ -147,23 +147,23 @@ const UI = React.createClass({
   //
 
   setLoginForm: function() {
-    this.setState({infoBoxStatus: "login"})
+    this.setState({menuChoice: "login"})
   },
 
   setSignUpForm: function() {
-    this.setState({infoBoxStatus: "signUp"})
+    this.setState({menuChoice: "signUp"})
   },
 
   setChangePasswordForm: function() {
-    this.setState({infoBoxStatus: "changePassword"})
+    this.setState({menuChoice: "changePassword"})
   },
 
   setPasswordForm: function() {
-    this.setState({infoBoxStatus: "password"})
+    this.setState({menuChoice: "password"})
   },
 
   setAboutForm: function() {
-    this.setState({infoBoxStatus: "contactUs"})
+    this.setState({menuChoice: "contactUs"})
   },
 
   // setFilterOption: function(value) {
@@ -196,16 +196,14 @@ const UI = React.createClass({
   // this.state.infoBoxStatus is used to determine which component should be displayed
   //
 
-  infoBoxComponent: function(infoBoxState) {
-    let components = {
+  dialogs: function(menuChoice) {
+    let choices = {
       login:
         <UserLogin
           signUpClicked={this.setSignUpForm}
           forgotPassClicked={this.setPasswordForm}
           loginUnsuccessful={this.state.loginUnsuccessful}
           user={this.requestLogin}/>,
-      loginSuccess:
-        <UserLoginSuccess changePassClicked={this.setChangePasswordForm}/>,
       signUp:
         <UserSignUp 
           userRegistration={this.requestRegistration}
@@ -216,8 +214,6 @@ const UI = React.createClass({
           signUpClicked={this.setSignUpForm}
           passwordReset={this.requestPasswordReset}
           resetEmailExists={this.state.resetEmailExists}/>,
-      passwordResetSuccess:
-        <UserPasswordResetSuccess/>,
       changePassword:
         <UserChangePassword submitChangePassword={this.requestChangePassword}/>,
       changePasswordSuccess:
@@ -227,12 +223,17 @@ const UI = React.createClass({
       welcome:
         <Welcome signUpClicked={this.setSignUpForm}/>,
     }
-    return components[infoBoxState];
+    return choices[menuChoice];
   },
 
   render: function() {
     // TODO: Refactor this
     if (!this.state.mountainViews) return <div></div>;
+
+    let dialog = null;
+    if (this.state.menuChoice) {
+      dialog = this.dialogs(this.state.menuChoice);
+    }
 
     let mountain = null;
     if (this.state.focusMountain) {
@@ -251,7 +252,7 @@ const UI = React.createClass({
     if (this.state.userLoggedIn) {
       enabledIn = {}
       enabledOut = {'disabled': 'disabled'}
-      login = <MenuItem onClick={this.setLoginForm}>Logout</MenuItem>
+      login = <MenuItem onClick={this.requestLogout}>Logout</MenuItem>
     }
     else {
       enabledOut = {}
@@ -292,6 +293,7 @@ const UI = React.createClass({
           <Content>
               <Scotland mapLoaded={this.onMapLoaded}/>
               {mountain}
+              {dialog}
           </Content>
         </Layout>
       </div>

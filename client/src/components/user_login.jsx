@@ -1,13 +1,24 @@
 const React = require('react');
+import { Dialog, DialogTitle, DialogContent, DialogActions, Textfield, Button } from 'react-mdl';
+
 const ApiRequest = require('../models/api_request')
 
 const UserLogin = React.createClass({
 
   getInitialState: function() {
     return {
+      openDialog: true,
       email: "",
       password: ""
     }
+  },
+
+  handleOpenDialog() {
+    this.setState({openDialog: true});
+  },
+
+  handleCloseDialog() {
+    this.setState({openDialog: false});
   },
 
   updateEmail: function(event) {
@@ -27,14 +38,17 @@ const UserLogin = React.createClass({
     // }}
     // const request = new ApiRequest();
     // request.makePostRequest(url, content, function(status){console.log(status)})
+    this.handleCloseDialog();
     this.props.user(this.state.email, this.state.password)
   },
 
   clickSignUp: function() {
+    this.handleCloseDialog();
     this.props.signUpClicked()
   },
 
   clickForgotPass: function() {
+    this.handleCloseDialog();
     this.props.forgotPassClicked()
   },
 
@@ -44,28 +58,30 @@ const UserLogin = React.createClass({
 
 
       return (
-        <div>
-          <h3>Log in</h3>
-          <p>{errorMessage}</p>
-          <form action="/users/sign_in" >
-            <div className="formElement">
-              <label>Email</label><br />
-              <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
-            </div>
-            <div className="formElement">
-              <label>Password</label><br />
-              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword}/>
-            </div>
-            <div>
-              <button onClick={this.signIn}>Log in</button>
-            </div>
-          </form>
-
-          <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
-          <p className="user-link" onClick={this.clickForgotPass}>Forgot your password?</p>
-        </div>
+        <Dialog open={this.state.openDialog}>
+          <DialogTitle>Login</DialogTitle>
+          <DialogContent>
+            <Textfield
+              required={true}
+              onChange={this.updateEmail}
+              label="Email..."
+              style={{width: '200px'}}
+            />
+            <Textfield
+              required={true}
+              type="password"
+              onChange={this.updatePassword}
+              label="Password..."
+              style={{width: '200px'}}
+            />
+          </DialogContent>
+          <DialogActions fullWidth>
+            <Button type='button' onClick={this.signIn}>Login</Button>
+            <Button type='button' onClick={this.clickSignUp}>Register</Button>
+            <p className="user-link" onClick={this.clickForgotPass}>Forgot your password?</p>
+          </DialogActions>
+        </Dialog>
       )
-
   }
 })
 
