@@ -49,7 +49,7 @@ Pin.prototype._resetMarker = function() {
     icon: { url: this._generateIcon(), scaledSize: new google.maps.Size(19, 19) }
   });
   google.maps.event.addListener(this._marker, 'click', function(){
-    this._markerCallback(this.id);
+    this._markerCallback(this._mtnView);
   }.bind(this));
   if (this._hasFocus) this._openInfoWindow();
 }

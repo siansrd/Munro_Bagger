@@ -1,10 +1,10 @@
 const React = require('react');
-import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
+import { Layout, Header, HeaderRow, HeaderTabs, Textfield, IconButton, Menu, MenuItem, Tab, Content } from 'react-mdl';
 const Scotland = require('./map')
 
 const Forecast = require('./forecast');
 const Search = require('./search');
-const Menu = require('./menu');
+// const Menu = require('./menu');
 const Logo = require('./logo');
 const Filter = require('./filter');
 const InfoBox = require('./info_box');
@@ -164,11 +164,7 @@ const UI = React.createClass({
     this.setState({infoBoxStatus: "password"})
   },
 
-  setContactForm: function() {
-    this.setState({infoBoxStatus: "about"})
-  },
-
-  setAboutInfo: function() {
+  setAboutForm: function() {
     this.setState({infoBoxStatus: "contactUs"})
   },
 
@@ -250,27 +246,39 @@ const UI = React.createClass({
     // TODO: Refactor this
     if (!this.state.mountainViews) return <div></div>;
 
+    let enabledIn = (this.state.userLoggedIn) ? {} : {'disabled': 'disabled'};
+    let enabledOut = (!this.state.userLoggedIn) ? {} : {'disabled': 'disabled'};
+
     return (
       <div>
-        <Layout>
-          <Header title="Munro Bagger" scroll>
-            <Navigation>
+        <Layout fixedHeader>
+          <Header scroll>
+            <HeaderRow title="Munro Bagger">
+              <Textfield
+                value=""
+                onChange={() => {}}
+                label="Search"
+                expandable
+                expandableIcon="search"
+              />
               <Search
                 mountains={this.state.mountainViews.mountains}
                 searchedMount={this.onMountainSelected} />
-              <a href="">Link</a>
-              <a href="">Link</a>
-              <a href="">Link</a>
-            </Navigation>
+              <IconButton name="more_vert" id="menu-top-right" />
+              <Menu target="menu-top-right" align="right" ripple>
+                  <MenuItem onClick={this.setLoginForm} {...enabledOut}>Login</MenuItem>
+                  <MenuItem onClick={this.setSignUpForm} {...enabledOut}>Register</MenuItem>
+                  <MenuItem onClick={this.setChangePasswordForm} {...enabledIn}>Change Password</MenuItem>
+                  <MenuItem onClick={this.setPasswordForm} {...enabledOut}>Reset Password</MenuItem>
+                  <MenuItem onClick={this.setAboutForm}>About</MenuItem>
+              </Menu>
+            </HeaderRow>
+            <HeaderTabs ripple activeTab={this.state.dayNum} onChange={this.onForecastDaySelected}>
+              <Tab>Today</Tab>
+              <Tab>Tomorrow</Tab>
+              <Tab>Day After</Tab>
+            </HeaderTabs>
           </Header>
-          <Drawer title="Munro Bagger">
-            <Navigation>
-              <a href="">Link</a>
-              <a href="">Link</a>
-              <a href="">Link</a>
-              <a href="">Link</a>
-            </Navigation>
-          </Drawer>
           <Content>
               <Scotland mapLoaded={this.onMapLoaded}/>
           </Content>
