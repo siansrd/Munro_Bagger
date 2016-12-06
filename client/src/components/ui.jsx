@@ -77,10 +77,10 @@ const UI = React.createClass({
 
   requestRegistration: function(email, password) {
     // console.log("Attempting registration")
-    this.state.user.register(email, password, function(success, status) {
+    this.state.user.register(email, password, function(success, returned) {
       // console.log("Status", status);
       // console.log("Registration successful:", success);
-      if (!success && status === 422) {
+      if (!success && returned.status === 422) {
         this.setState({signupEmailExists: true});
       }
       else if (success) {
