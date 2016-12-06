@@ -1,13 +1,11 @@
 const React = require('react');
-import { Layout, Header, HeaderRow, HeaderTabs, Textfield, IconButton, Menu, MenuItem, Tab, Content } from 'react-mdl';
+import { Layout, Header, HeaderRow, HeaderTabs, Textfield, Menu, MenuItem, Tab, Content } from 'react-mdl';
 const Scotland = require('./map')
 
 const Forecast = require('./forecast');
 const Search = require('./search');
-// const Menu = require('./menu');
 const Logo = require('./logo');
 const Filter = require('./filter');
-const InfoBox = require('./info_box');
 const Welcome = require('./welcome');
 const MountainDetail = require('./mountain_detail');
 const UserLogin = require('./user_login');
@@ -188,10 +186,8 @@ const UI = React.createClass({
   },
 
   onMountainSelected: function(mtnView) {
-    // const mtnView = search(this.state.mountainViews.mountains, mtnId);
     this.setState({focusMountain: mtnView})
     this.state.mapObj.openInfoWindowForMountain(mtnView.pin);
-    this.setState({infoBoxStatus: "mountain"})
   },
 
   //
@@ -251,8 +247,17 @@ const UI = React.createClass({
       )
     }
 
-    let enabledIn = (this.state.userLoggedIn) ? {} : {'disabled': 'disabled'};
-    let enabledOut = (!this.state.userLoggedIn) ? {} : {'disabled': 'disabled'};
+    var enabledIn, enabledOut, login;
+    if (this.state.userLoggedIn) {
+      enabledIn = {}
+      enabledOut = {'disabled': 'disabled'}
+      login = <MenuItem onClick={this.setLoginForm}>Logout</MenuItem>
+    }
+    else {
+      enabledOut = {}
+      enabledIn = {'disabled': 'disabled'}
+      login = <MenuItem onClick={this.setLoginForm}>Login</MenuItem>
+    }
 
     return (
       <div>
@@ -271,7 +276,7 @@ const UI = React.createClass({
                 searchedMount={this.onMountainSelected} />
               <IconButton name="more_vert" id="menu-top-right" />
               <Menu target="menu-top-right" align="right" ripple>
-                  <MenuItem onClick={this.setLoginForm} {...enabledOut}>Login</MenuItem>
+                  {login}
                   <MenuItem onClick={this.setSignUpForm} {...enabledOut}>Register</MenuItem>
                   <MenuItem onClick={this.setChangePasswordForm} {...enabledIn}>Change Password</MenuItem>
                   <MenuItem onClick={this.setPasswordForm} {...enabledOut}>Reset Password</MenuItem>
