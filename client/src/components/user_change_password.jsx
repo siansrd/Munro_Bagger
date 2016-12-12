@@ -33,12 +33,15 @@ const UserChangePassword = React.createClass ({
   },
 
   render: function(){
-    if (!this.state.mismatch) {
+
+    const errorMessage = (this.state.mismatch) ? "Passwords must match and fulfill the strength requirements" : "" ;
+
       return (
         <div>
           <form>
               <h4>Change Password</h4>
               <div className="formElement">
+                  <p>{errorMessage}</p>
                   <label>Password</label>
                   <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
                   <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
@@ -54,29 +57,7 @@ const UserChangePassword = React.createClass ({
       )
     }
 
-    if (this.state.mismatch) {
-      return (
-        <div>
-          <form>
-              <h4>Change Password</h4>
-              <div className="formElement">
-                  <p>Passwords must match and fulfill the strength requirements</p>
-                  <label>Password</label>
-                  <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
-                  <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
-              </div>
-
-              <div className="formElement">
-                  <label>Password confirmation</label><br />
-                  <input type="password" name="user[password_confirmation]" id="user_password_confirmation" onChange={this.updatePasswordConfirmation}/>
-              </div>
-                <button onClick={this.passwordChange}>Change Password</button>
-          </form>
-        </div>
-      )
-    }
-
-  }
+  
 
 })
 
