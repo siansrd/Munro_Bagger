@@ -1,8 +1,8 @@
 const React = require('react');
-const DatePicker = require('react-datepicker');
+// const DatePicker = require('react-datepicker');
 const moment = require('moment');
 
-require('react-datepicker/dist/react-datepicker.css');
+// require('react-datepicker/dist/react-datepicker.css');
 
 const MountDetailBagged = React.createClass({
 
@@ -27,30 +27,18 @@ const MountDetailBagged = React.createClass({
   },
 
   render: function() {
+    let checked = this.props.focusMount.bagged;
+    let opts = (this.props.disabled) ? {'disabled': 'disabled', 'checked': checked } : { 'checked': checked };
     
-    if (!this.props.disabled) {
-      return (
-        <div className="flex-grid">
-          <div className="grid-item">Bagged:</div>
-          <div className="grid-item">
-            <input type="checkbox" checked={this.props.focusMount.bagged} onChange={this.handleBaggedChange}/>
-          </div>
+    return (
+      <div className="flex-grid">
+        <div className="grid-item">Bagged:</div>
+        <div className="grid-item">
+          <input type="checkbox" {...opts} onChange={this.handleBaggedChange}/>
         </div>
-      )
-    }
-
-    if (this.props.disabled) {
-      return (
-        <div className="flex-grid">
-          <div className="grid-item">Bagged:</div>
-          <div className="grid-item">
-            <input type="checkbox" disabled="disabled" checked={this.props.focusMount.bagged} onChange={this.handleBaggedChange}/>
-          </div>
-        </div>
-      )
-    }
+      </div>
+    )
   }
-
 });
 
 module.exports = MountDetailBagged;

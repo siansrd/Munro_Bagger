@@ -31,8 +31,7 @@ const UserSignUp = React.createClass({
     if (this.state.password === this.state.passwordConfirmation && passwordOK(this.state.password)) {
       this.props.userRegistration(this.state.email, this.state.password);
     } else {
-      this.setState({passwordConfirmation: ""});
-      this.setState({mismatch: true});
+      this.setState({mismatch: true, email: "", password: "", passwordConfirmation: ""});
     } 
     // const request = new ApiRequest();
     // request.makePostRequest(url, content, function(status){console.log(status)})
@@ -50,18 +49,18 @@ const UserSignUp = React.createClass({
           <form>
             <div className="formElement">
               <label>Email</label><br />
-              <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail} />
+              <input type="email" name="user[email]" id="user_email" value={this.state.email} onChange={this.updateEmail} />
             </div>
 
             <div className="formElement">
               <label>Password</label><br />
               <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
-              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} /><br />
+              <input type="password" name="user[password]" id="user_password" value={this.state.password} onChange={this.updatePassword} /><br />
             </div>
 
             <div className="formElement">
               <label>Password confirmation</label><br />
-              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" onChange={this.updatePasswordConfirmation}/>
+              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" value={this.state.passwordConfirmation} onChange={this.updatePasswordConfirmation}/>
             </div>
 
             <div>
@@ -83,18 +82,18 @@ const UserSignUp = React.createClass({
             <div className="formElement">
               <p>Email address is already registered.</p>
               <label>Email</label><br />
-              <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail} />
+              <input type="email" name="user[email]" id="user_email" value={this.state.email} onChange={this.updateEmail} />
             </div>
 
             <div className="formElement">
               <label>Password</label><br/>
               <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
-              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
+              <input type="password" name="user[password]" id="user_password" value={this.state.password} onChange={this.updatePassword} />
             </div>
 
             <div className="formElement">
               <label>Password confirmation</label><br />
-              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" onChange={this.updatePasswordConfirmation}/>
+              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" value={this.state.passwordConfirmation} onChange={this.updatePasswordConfirmation}/>
             </div>
 
             <div>
@@ -113,19 +112,19 @@ const UserSignUp = React.createClass({
           <form>
             <div className="formElement">
               <label>Email</label><br />
-              <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail} />
+              <input type="email" name="user[email]" id="user_email" value={this.state.email} onChange={this.updateEmail} />
             </div>
 
             <div className="formElement">
               <p>Passwords must match and fulfill the strength requirements</p>
               <label>Password</label><br/>
               <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
-              <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
+              <input type="password" name="user[password]" id="user_password" value={this.state.password} onChange={this.updatePassword} />
             </div>
 
             <div className="formElement">
               <label>Password confirmation</label><br />
-              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" onChange={this.updatePasswordConfirmation}/>
+              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" value={this.state.passwordConfirmation} onChange={this.updatePasswordConfirmation}/>
             </div>
 
             <div>
