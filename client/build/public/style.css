@@ -350,6 +350,15 @@ textarea:focus, input:focus, button:focus {
       z-index: 0;
   }
 
+  .flex-grid-weather {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flex-item-weather {
+    width: 30%;
+  }
+
   #weather-buttons {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -358,14 +367,13 @@ textarea:focus, input:focus, button:focus {
       display: block;
       width: auto;
       padding: 0;
-      margin: auto;
+      margin: 0 10px;
       left: auto;
   }
 
   #weather-buttons button {
-      display: inline;
-      width: 30%;
-     margin: 0 1%;   
+    width: 98px;
+    margin: 0;  
   }
 
   #search {

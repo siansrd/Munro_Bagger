@@ -22,18 +22,28 @@ const Forecast = React.createClass ({
     return (
       <div id="weather-buttons">
         <h3>Weather</h3>
-        <button 
-          className={this.isFocus("0")} 
-          value="0"
-          onClick={this.changeForecast}>Today</button>
-        <button 
-          className={this.isFocus("1")} 
-          value="1" 
-          onClick={this.changeForecast}>Tomorrow</button>
-        <button 
-          className={this.isFocus("2")} 
-          value="2" 
-          onClick={this.changeForecast}>Day After</button>
+
+        <div className="flex-grid-weather">
+          <div className="grid-item-weather">
+            <button 
+              className={this.isFocus("0")} 
+              value="0"
+              onClick={this.changeForecast}>Today</button>
+          </div>
+          <div className="grid-item-weather">
+            <button 
+              className={this.isFocus("1")} 
+              value="1" 
+              onClick={this.changeForecast}>Tomorrow</button>
+          </div>
+          <div className="grid-item-weather">
+            <button 
+              className={this.isFocus("2")} 
+              value="2" 
+              onClick={this.changeForecast}>Day After</button>
+          </div> 
+        </div>
+
       </div>
     )
   }
