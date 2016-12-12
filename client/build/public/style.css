@@ -185,7 +185,7 @@ textarea:focus, input:focus, button:focus {
   position: fixed;
   right: 40px;
   top: 15px;
-  width: 150px;
+  width: 175px;
   z-index: 1;
 }
 
@@ -311,6 +311,11 @@ textarea:focus, input:focus, button:focus {
 
 @media screen and (max-width: 668px) {
 
+  /*html, body {
+    width: 70%;
+    margin: 0;
+  }*/
+
   body {
       font-size: 12px;
   }
@@ -320,16 +325,46 @@ textarea:focus, input:focus, button:focus {
       font-size: 5.5vw;
   }*/
 
+  #map {
+      position: static;
+      display: block;
+      width: auto;
+      height: 100%;
+      z-index: 0;
+  }
+
+  #weather-buttons {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+      position: static;
+      display: block;
+      width: auto;
+      padding: 0;
+      left: auto;
+  }
+
+  #weather-buttons button {
+      display: inline;
+      width: 30%;
+  }
+
+  #search {
+      width: auto;
+      position: static;
+      display: block;
+      height: 28px;
+      z-index: 5;
+      right: auto;
+      top: auto;
+  }
+
   .react-autosuggest__input {
-    width: 90%;
+    width: auto;
   }
 
   .react-autosuggest__container--open .react-autosuggest__suggestions-container {
-    width: 88%;
-  }
-
-  #weather-buttons h4 {
-    margin-bottom: 5px;
+    width: auto;
   }
 
   #logo h1 {
@@ -337,32 +372,44 @@ textarea:focus, input:focus, button:focus {
   }
 
   #logo {
+      top: auto;
+      right: auto;
       position: static;
-      width: 90%;
+      width: auto;
       z-index: 1;
-  }
-
-  #search {
-      position: static;
-      width: 90%;
-      height: 28px;
-      z-index: 5;
   }
 
   #menu {
     position: static;
-    width: 150px;
-    z-index: 1;
+    width: auto;
+    display: block;
+    float: none;
+    right: auto;
+    top: auto;
   }
 
 
   #infoBox {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
       position: static;
-      width: 90%;
-      padding: 15px 15px 5px 15px;
+      /*width: 100%;*/
+      display: block;
+      padding: 0;
       float: none;
-      margin: 10px;
+      margin: 0;
       border: 2px solid #fff;
+      right: auto;
+      top: auto;
+      width: auto;
   }
+
+  /*#info-content {
+      width: auto;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }*/
 
 }

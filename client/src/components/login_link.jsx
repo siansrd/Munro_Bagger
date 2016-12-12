@@ -14,7 +14,7 @@ const LoginLink = React.createClass({
 
     if (!this.props.user) return (
       <div id="loginLink" className="menu-link" onClick={this.onClickLogin}>
-        <h4>Login</h4>
+        <h4>Login/Register</h4>
       </div>
     )
 
