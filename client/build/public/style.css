@@ -311,17 +311,21 @@ textarea:focus, input:focus, button:focus {
 
 @media screen and (max-width: 668px) {
 
-  /*html, body {
-    width: 70%;
-    margin: 0;
-  }*/
-
   body {
       font-size: 12px;
   }
 
+  p {
+      -webkit-margin-before: 0.7em;
+      -webkit-margin-after: 0.7em;
+  }
+
   h4, h3 {
     font-size: 13px;
+  }
+
+  h1, h2, h3, h4 {
+      margin-bottom: 5px;
   }
 
   input[type="submit"],
@@ -336,11 +340,6 @@ textarea:focus, input:focus, button:focus {
   .react-autosuggest__container--open .react-autosuggest__suggestions-container {
     font-size: 12px;
   }
-
-
-  /*#logo h1 {
-      font-size: 5.5vw;
-  }*/
 
   #map {
       position: static;
@@ -363,12 +362,12 @@ textarea:focus, input:focus, button:focus {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-      position: static;
-      display: block;
-      width: auto;
-      padding: 0;
-      margin: 0 10px;
-      left: auto;
+    position: static;
+    display: block;
+    width: auto;
+    padding: 0;
+    margin: 0 10px;
+    left: auto;
   }
 
   #weather-buttons button {
@@ -377,66 +376,76 @@ textarea:focus, input:focus, button:focus {
   }
 
   #search {
-      width: auto;
-      position: static;
-      display: block;
-      height: 28px;
-      z-index: 5;
-      right: auto;
-      top: auto;
+    float:left;
+    display: inline;
+    width: 45%;
+    position: static;
+    height: 28px;
+    z-index: 5;
+    right: auto;
+    top: auto;
+    margin-left: 10px;
   }
 
   .react-autosuggest__input {
-    width: auto;
+    width: 100%;
   }
 
   .react-autosuggest__container--open .react-autosuggest__suggestions-container {
-    width: auto;
+    width: 100%;
   }
 
+
   #logo h1 {
-      font-size: 20px;
+      font-size: 7vw;
   }
 
   #logo {
-      top: auto;
-      right: auto;
-      position: static;
-      width: auto;
-      z-index: 1;
+    top: auto;
+    right: auto;
+    position: static;
+    width: 46%;
+    display: inline-block;
+    z-index: 1;
+    margin-left: 10px;
   }
 
   #menu {
     position: static;
-    width: auto;
+    width: 700px;
     display: block;
     float: none;
     right: auto;
     top: auto;
+    margin: 10px 10px 0 10px;
+  }
+
+  .menu-link {
+    text-align: left;
+    float: none;
+    margin-left: 0;
+  }
+
+  .log {
+    float: left;
+    margin-right: 10px;
   }
 
 
   #infoBox {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      position: static;
-      /*width: 100%;*/
-      display: block;
-      padding: 10px;
-      float: none;
-      margin: 10px;
-      border: 2px solid #fff;
-      right: auto;
-      top: auto;
-      width: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: static;
+    /*width: 100%;*/
+    display: block;
+    padding: 10px;
+    float: none;
+    margin: 5px 10px;
+    border: 2px solid #fff;
+    right: auto;
+    top: auto;
+    width: auto;
   }
-
-  /*#info-content {
-      width: auto;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-  }*/
 
 }
