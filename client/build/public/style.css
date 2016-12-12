@@ -195,7 +195,7 @@ textarea:focus, input:focus, button:focus {
     top: 165px;
     width: 314px;
     padding: 30px 30px 20px 30px;
-    border: 3px solid #fff;
+    border: 2px solid #fff;
     background: #A5CEFD;
     z-index: 1;
 }
@@ -210,6 +210,13 @@ textarea:focus, input:focus, button:focus {
 }
 .grid-item:nth-child(odd) {
   flex: 0 0 120px;
+}
+
+.grid-item-key {
+  flex: 1 1 calc(100% - 35px);
+}
+.grid-item-key:nth-child(odd) {
+  flex: 0 0 35px;
 }
 
 .icon {
@@ -302,55 +309,16 @@ textarea:focus, input:focus, button:focus {
 
 }
 
-@media screen and (orientation:portrait) {
+@media screen and (max-width: 668px) {
 
   body {
-      font-size: 14px;
+      font-size: 12px;
   }
 
-  #menu {
-    position: fixed;
-    left: 10px;
-    width: 40%;
-    top: 10px;
-    /* right: 40px;
-    top: 90px;
-    width: 100px;
-    z-index: 1;*/
-  }
 
-  .menu-link {
-    text-align: left;
-  }
-
-  #logo h1 {
+  /*#logo h1 {
       font-size: 5.5vw;
-  }
-
-  #logo {
-      position: fixed;
-      width: 40%;
-      left: 10px;
-      right: auto;
-      top: 30px;
-      /*right: 40px;
-      top: 20px;
-      width: 380px;
-      z-index: 1; */
-  }
-
-  #search {
-      position: fixed;
-      left: 10px;
-      right: auto;
-      top: 80px;
-      width: 36%;
-      /*right: 140px;
-      top: 90px;
-      width: 280px;
-      height: 28px;
-      z-index: 5; */
-  }
+  }*/
 
   .react-autosuggest__input {
     width: 90%;
@@ -364,31 +332,37 @@ textarea:focus, input:focus, button:focus {
     margin-bottom: 5px;
   }
 
-  #weather-buttons {
-      position: fixed;
-      top: 120px;
-      left: 10px;
-      padding: 0;
-      /*left: 0;
-      width: 95px;
-      z-index: 1;
-      padding: 10px; */
+  #logo h1 {
+      font-size: 20px;
   }
+
+  #logo {
+      position: static;
+      width: 90%;
+      z-index: 1;
+  }
+
+  #search {
+      position: static;
+      width: 90%;
+      height: 28px;
+      z-index: 5;
+  }
+
+  #menu {
+    position: static;
+    width: 150px;
+    z-index: 1;
+  }
+
 
   #infoBox {
       position: static;
-      width: 50%;
+      width: 90%;
       padding: 15px 15px 5px 15px;
-      float: right;
+      float: none;
       margin: 10px;
       border: 2px solid #fff;
-      /*right: 40px;
-      top: 180px;
-      width: 314px;
-      padding: 30px 30px 20px 30px;
-      border: 3px solid #fff;
-      background: #A5CEFD;
-      z-index: 1;*/
   }
 
 }
