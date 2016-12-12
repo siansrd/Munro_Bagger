@@ -27,13 +27,12 @@ const UserNewPassword = React.createClass({
 
   render: function(){
 
-    // console.log()
+    const errorMessage = (!this.props.resetEmailExists) ? "That email doesn't match our records." : "" ;
 
-    if (this.props.resetEmailExists) {
       return (
         <div>
           <h3>Forgot your password?</h3>
-
+          <p>{errorMessage}</p>
           <form>
               <div className="formElement">
                   <label>Email</label><br />
@@ -48,28 +47,6 @@ const UserNewPassword = React.createClass({
         </div>
       )
     }
-
-    if (!this.props.resetEmailExists) {
-      return (
-        <div>
-          <h3>Forgot your password?</h3>
-          <p>That email doesn't match our records.</p>
-          <form>
-              <div className="formElement">
-                  <label>Email</label><br />
-                  <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
-              </div>
-              <div>
-                <button onClick={this.passwordReset}>Send me reset password instructions</button>
-              </div>
-          </form>
-          <p className="user-link" onClick={this.clickLogin}>Log in</p>
-          <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
-        </div>
-      )
-    }
-
-  }
 
 })
 
