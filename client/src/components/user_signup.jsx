@@ -39,102 +39,44 @@ const UserSignUp = React.createClass({
 
   render: function(){
 
-    this.props.signupEmailExists
+    let errorMessage = "";
 
-    if (!this.state.mismatch && !this.props.signupEmailExists) {
-      return (
-        <div>
-          <h3>Sign Up</h3>
+    if (this.props.signupEmailExists ) {
+      errorMessage = "Email address is already registered."
+    };
 
-          <form>
-            <div className="formElement">
-              <label>Email</label><br />
-              <input type="email" name="user[email]" id="user_email" value={this.state.email} onChange={this.updateEmail} />
-            </div>
+    if (this.state.mismatch ) {
+      errorMessage = "Passwords must match and fulfill the strength requirements"
+    };
+  
+    return (
+      <div>
+        <h3>Sign Up</h3>
 
-            <div className="formElement">
-              <label>Password</label><br />
-              <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
-              <input type="password" name="user[password]" id="user_password" value={this.state.password} onChange={this.updatePassword} /><br />
-            </div>
+        <form>
+          <div className="formElement">
+            <p>{errorMessage}</p>
+            <label>Email</label><br />
+            <input type="email" name="user[email]" id="user_email" value={this.state.email} onChange={this.updateEmail} />
+          </div>
 
-            <div className="formElement">
-              <label>Password confirmation</label><br />
-              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" value={this.state.passwordConfirmation} onChange={this.updatePasswordConfirmation}/>
-            </div>
+          <div className="formElement">
+            <label>Password</label><br/>
+            <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
+            <input type="password" name="user[password]" id="user_password" value={this.state.password} onChange={this.updatePassword} />
+          </div>
 
-            <div>
-              <button onClick={this.signUp}>Sign up</button>
-            </div>
-          </form>
-          <p>Once submitted, check your email for verification.</p>
-        </div>
-      )
-    }
+          <div className="formElement">
+            <label>Password confirmation</label><br />
+            <input type="password" name="user[password_confirmation]" id="user_password_confirmation" value={this.state.passwordConfirmation} onChange={this.updatePasswordConfirmation}/>
+          </div>
 
-
-    if (this.props.signupEmailExists) {
-      return (
-        <div>
-          <h3>Sign Up</h3>
-
-          <form>
-            <div className="formElement">
-              <p>Email address is already registered.</p>
-              <label>Email</label><br />
-              <input type="email" name="user[email]" id="user_email" value={this.state.email} onChange={this.updateEmail} />
-            </div>
-
-            <div className="formElement">
-              <label>Password</label><br/>
-              <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
-              <input type="password" name="user[password]" id="user_password" value={this.state.password} onChange={this.updatePassword} />
-            </div>
-
-            <div className="formElement">
-              <label>Password confirmation</label><br />
-              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" value={this.state.passwordConfirmation} onChange={this.updatePasswordConfirmation}/>
-            </div>
-
-            <div>
-              <button onClick={this.signUp}>Sign up</button>
-            </div>
-          </form>
-        </div>
-      )
-    }
-
-    if (this.state.mismatch) {
-      return (
-        <div>
-          <h3>Sign Up</h3>
-
-          <form>
-            <div className="formElement">
-              <label>Email</label><br />
-              <input type="email" name="user[email]" id="user_email" value={this.state.email} onChange={this.updateEmail} />
-            </div>
-
-            <div className="formElement">
-              <p>Passwords must match and fulfill the strength requirements</p>
-              <label>Password</label><br/>
-              <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
-              <input type="password" name="user[password]" id="user_password" value={this.state.password} onChange={this.updatePassword} />
-            </div>
-
-            <div className="formElement">
-              <label>Password confirmation</label><br />
-              <input type="password" name="user[password_confirmation]" id="user_password_confirmation" value={this.state.passwordConfirmation} onChange={this.updatePasswordConfirmation}/>
-            </div>
-
-            <div>
-              <button onClick={this.signUp}>Sign up</button>
-            </div>
-          </form>
-        </div>
-      )
-    }
-
+          <div>
+            <button onClick={this.signUp}>Sign up</button>
+          </div>
+        </form>
+      </div>
+    )
   }
 
 })
