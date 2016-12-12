@@ -35,7 +35,8 @@ var MapObject = function(container) {
 
 MapObject.prototype._scaleZoom = function(){
     const width = this._getBrowserWidth();
-    if (width < 1500) return 7;
+    if (width < 700) return 6;
+    if (width > 700 && width < 1500) return 7;
     if (width > 1501) return 8;
   }
 
