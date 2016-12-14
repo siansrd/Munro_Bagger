@@ -27,7 +27,7 @@ const UserNewPassword = React.createClass({
 
   render: function(){
 
-    const errorMessage = (!this.props.resetEmailExists) ? "That email doesn't match our records." : "" ;
+    const errorMessage = (this.props.error) ? this.props.error.message : "" ;
 
       return (
         <div>

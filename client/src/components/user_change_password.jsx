@@ -34,7 +34,7 @@ const UserChangePassword = React.createClass ({
 
   render: function(){
 
-    const errorMessage = (this.state.mismatch) ? "Passwords must match and fulfill the strength requirements" : "" ;
+    const errorMessage = (this.props.error) ? this.props.error.message : "" ;
 
       return (
         <div>

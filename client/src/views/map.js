@@ -2,11 +2,16 @@ var Pin = require('./pin');
 var search = require('../utility').mountainSearch;
 
 var MapObject = function(container) {
-  const ne = new google.maps.LatLng(59.073548704841784, 2.1691826171875164);
-  const sw = new google.maps.LatLng(55.59337026438907, -7.853101562500001);
+  let bounds = this._responsiveBounds();
+  // const ne = new google.maps.LatLng(bounds[0], bounds[1]);
+  // const sw = new google.maps.LatLng(bounds[2], bounds[3]);
+  let ne = {lat: bounds[0], lng: bounds[1]};
+  let sw = {lat: bounds[2], lng: bounds[3]};
+  let responsiveCenter = this._responsiveCenter();
+
 
   this._map = new google.maps.Map(container, {
-    center: new google.maps.LatLng(57.450861,-1.604004),
+    center: new google.maps.LatLng(responsiveCenter[0], responsiveCenter[1]),
     zoom: this._scaleZoom(),
     minZoom: this._scaleZoom(),
     mapTypeId: 'terrain',
@@ -33,12 +38,23 @@ var MapObject = function(container) {
   this._width = this._getBrowserWidth();
 };
 
+MapObject.prototype._responsiveCenter = function(){
+  const width = this._getBrowserWidth();
+  let center = width < 700 ? [56.976809, -4.359508] : [57.450861, -1.604004];
+  return center;
+};
+
+MapObject.prototype._responsiveBounds = function(){
+  const width = this._getBrowserWidth();
+  let bounds = width < 700 ? [58.781817, -1.709904, 55.865392, -7.598576] : [59.073548, 2.169182, 55.593370, -7.853101];
+  return bounds;
+};
+
 MapObject.prototype._scaleZoom = function(){
     const width = this._getBrowserWidth();
-    if (width < 700) return 6;
-    if (width > 700 && width < 1500) return 7;
+    if (width < 1500) return 7;
     if (width > 1501) return 8;
-  }
+};
 
 MapObject.prototype._getBrowserWidth = function(){
   if (self.innerWidth) {
