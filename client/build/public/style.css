@@ -159,7 +159,7 @@ textarea:focus, input:focus, button:focus {
 
 #logo h1 {
     text-decoration: underline;
-    font-size: 59px;
+    font-size: 62px;
     color: #fff;
     margin: 0;
 }
@@ -168,7 +168,7 @@ textarea:focus, input:focus, button:focus {
     position: fixed;
     right: 40px;
     top: 30px;
-    width: 380px;
+    width: 400px;
     z-index: 1;
     cursor: pointer;
 }
@@ -176,8 +176,8 @@ textarea:focus, input:focus, button:focus {
 #search {
     position: fixed;
     right: 40px;
-    top: 110px;
-    width: 380px;
+    top: 115px;
+    width: 400px;
     height: 28px;
     z-index: 5;
 }
@@ -191,10 +191,13 @@ textarea:focus, input:focus, button:focus {
 }
 
 #infoBox {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     position: fixed;
     right: 40px;
     top: 165px;
-    width: 314px;
+    width: 400px;
     padding: 30px 30px 20px 30px;
     border: 2px solid #fff;
     background: #A5CEFD;
@@ -249,7 +252,7 @@ textarea:focus, input:focus, button:focus {
   display: block;
   position: absolute;
   top: 35px;
-  width: 376px;
+  width: 396px;
   border: 2px solid #456F99;
   background-color: #fff;
   font-family: 'Hammersmith One', sans-serif;
@@ -279,6 +282,37 @@ textarea:focus, input:focus, button:focus {
 
 @media screen and (max-width: 1000px) {
 
+  body {
+      font-size: 14px;
+  }
+
+  p {
+      -webkit-margin-before: 0.8em;
+      -webkit-margin-after: 0.8em;
+  }
+
+  h4, h3 {
+    font-size: 15px;
+  }
+
+  h1, h2, h3, h4 {
+      margin-bottom: 7px;
+  }
+
+  input[type="submit"],
+  button {
+      font-size: 14px;
+  }
+
+  .react-autosuggest__input {
+    font-size: 14px;
+  }
+
+  .react-autosuggest__container--open .react-autosuggest__suggestions-container {
+    font-size: 14px;
+    width: 326px;
+  }
+
   #logo h1 {
       font-size: 50px;
   }
@@ -291,21 +325,17 @@ textarea:focus, input:focus, button:focus {
   #search {
       position: fixed;
       right: 20px;
-      top: 110px;
+      top: 100px;
       width: 330px;
       height: 28px;
       z-index: 5;
   }
 
   #infoBox {
-      position: fixed;
-      right: 20px;
       top: 150px;
-      width: 294px;
+      right: 20px;
+      width: 330px;
       padding: 15px 15px 15px 15px;
-      border: 3px solid #fff;
-      background: #A5CEFD;
-      z-index: 1;
   }
 
 }
@@ -340,6 +370,7 @@ textarea:focus, input:focus, button:focus {
 
   .react-autosuggest__container--open .react-autosuggest__suggestions-container {
     font-size: 12px;
+    z-index: 5;
   }
 
   #map {
@@ -348,6 +379,7 @@ textarea:focus, input:focus, button:focus {
       width: auto;
       height: 450px;
       z-index: 0;
+      border-top: 2px solid #fff;
   }
 
   .flex-grid-weather {
@@ -367,8 +399,9 @@ textarea:focus, input:focus, button:focus {
     display: block;
     width: auto;
     padding: 0;
-    margin: 0 10px;
+    margin: 0 10px 5px 10px;
     left: auto;
+
   }
 
   #weather-buttons button {
@@ -439,15 +472,18 @@ textarea:focus, input:focus, button:focus {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     position: static;
-    /*width: 100%;*/
     display: block;
-    padding: 10px;
+    padding: 5px 10px;
     float: none;
     margin: 5px 10px;
     border: 2px solid #fff;
     right: auto;
     top: auto;
     width: auto;
+  }
+
+  .flex-grid {
+    margin: 3px 0 6px;
   }
 
 }

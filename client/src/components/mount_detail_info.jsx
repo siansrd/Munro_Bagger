@@ -55,13 +55,9 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">Visibility:</div>
           <div className="grid-item">{visibility}</div>
           <div className="grid-item">Temperature:</div>
-          <div className="grid-item">High of {tempMax}&deg;C</div>
-          <div className="grid-item"></div>
-          <div className="grid-item">Feels like {tempFL}&deg;C</div>
+          <div className="grid-item">High of {tempMax}&deg;C (Feels like {tempFL}&deg;C)</div>
           <div className="grid-item">Wind:</div>
-          <div className="grid-item">{windSpeed}mph {this.formatDirection(windDirection)}</div>
-          <div className="grid-item"></div>
-          <div className="grid-item">Gusts of {gusts}mph</div>
+          <div className="grid-item">{windSpeed}mph {this.formatDirection(windDirection)} ({gusts}mph Gusts)</div>
 
         </div>
       </div>
