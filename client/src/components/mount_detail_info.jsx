@@ -29,9 +29,8 @@ const MountDetailInfo = React.createClass({
     const gusts = forecast.wind.gusting;
     const visibility = forecast.visibility;
 
-    // console.log(gusts)
-    // console.log(visibility)
-    // console.log(this.props.focusMount.detail.gridRef.toString())
+    // <div className="grid-item">Region:</div>
+    // <div className="grid-item">{detail.region}</div>
 
     return (
       <div>
@@ -44,8 +43,6 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">{detail.gridRef.toString()}</div>
           <div className="grid-item">Lat/Long:</div>
           <div className="grid-item">{detail.latLng.lat}°, {detail.latLng.lng}°</div>
-          <div className="grid-item">Region:</div>
-          <div className="grid-item">{detail.region}</div>
         </div>
 
         <div className="cond-title"><h3>Conditions {this.formatDay(this.props.dayNum)}:</h3></div>
@@ -55,13 +52,9 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">Visibility:</div>
           <div className="grid-item">{visibility}</div>
           <div className="grid-item">Temperature:</div>
-          <div className="grid-item">High of {tempMax}&deg;C</div>
-          <div className="grid-item"></div>
-          <div className="grid-item">Feels like {tempFL}&deg;C</div>
+          <div className="grid-item">High of {tempMax}&deg;C (Feels like {tempFL}&deg;C)</div>
           <div className="grid-item">Wind:</div>
-          <div className="grid-item">{windSpeed}mph {this.formatDirection(windDirection)}</div>
-          <div className="grid-item"></div>
-          <div className="grid-item">Gusts of {gusts}mph</div>
+          <div className="grid-item">{windSpeed}mph {this.formatDirection(windDirection)} ({gusts}mph Gusts)</div>
 
         </div>
       </div>

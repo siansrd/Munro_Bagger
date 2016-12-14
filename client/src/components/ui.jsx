@@ -133,9 +133,14 @@ const UI = React.createClass({
     }.bind(this));
   },
 
+  setHome: function() {
+    this.setState({infoBoxStatus: "welcome"})
+  },
+
   setDate: function() {
     // Do something here with date
   },
+
 
   //
   // START OF THE FORM DISPLAY SECTION
@@ -252,7 +257,8 @@ const UI = React.createClass({
           loginLinkClicked={this.setLoginForm}
           logoutLinkClicked={this.requestLogout}
           aboutLinkClicked={this.setAboutInfo}/>
-        <Logo/>
+        <Logo
+          logoLinkClicked={this.setHome}/>
         <Search
           mountains={this.state.mountainViews.mountains}
           searchedMount={this.onMountainSelected}/>
