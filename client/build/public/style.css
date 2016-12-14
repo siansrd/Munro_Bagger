@@ -345,7 +345,7 @@ textarea:focus, input:focus, button:focus {
       position: static;
       display: block;
       width: auto;
-      height: 400px;
+      height: 450px;
       z-index: 0;
   }
 

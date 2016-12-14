@@ -12,6 +12,12 @@ const UserSignUp = React.createClass({
     }
   },
 
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({
+      mismatch: false
+    });
+  },
+
   updateEmail: function(event) {
     this.setState({email: event.target.value})
   },
@@ -27,6 +33,7 @@ const UserSignUp = React.createClass({
   },
 
   signUp: function(event){
+    this.setState({mismatch: false})
     event.preventDefault();
     if (this.state.password === this.state.passwordConfirmation && passwordOK(this.state.password)) {
       this.props.userRegistration(this.state.email, this.state.password);
@@ -39,11 +46,7 @@ const UserSignUp = React.createClass({
 
   render: function(){
 
-    let errorMessage = "";
-
-    if (this.props.signupEmailExists ) {
-      errorMessage = "Email address is already registered."
-    };
+    let errorMessage = (this.props.error) ? this.props.error.message : "" ;
 
     if (this.state.mismatch ) {
       errorMessage = "Passwords must match and fulfill the strength requirements"

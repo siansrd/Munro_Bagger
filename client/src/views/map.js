@@ -9,11 +9,6 @@ var MapObject = function(container) {
   let sw = {lat: bounds[2], lng: bounds[3]};
   let responsiveCenter = this._responsiveCenter();
 
-  console.log("bounds", bounds)
-  console.log("ne", ne)
-  console.log("ne", sw)
-  console.log("center", responsiveCenter[0])
-
 
   this._map = new google.maps.Map(container, {
     center: new google.maps.LatLng(responsiveCenter[0], responsiveCenter[1]),
@@ -41,8 +36,6 @@ var MapObject = function(container) {
   this._allPins = [];
   this._preventPan();
   this._width = this._getBrowserWidth();
-
-  console.log("this map's center", this._map.center.lat)
 };
 
 MapObject.prototype._responsiveCenter = function(){

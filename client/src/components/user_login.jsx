@@ -40,8 +40,7 @@ const UserLogin = React.createClass({
 
   render: function(){
 
-    const errorMessage = (this.props.loginUnsuccessful) ? "Those details don't match our records, please try again" : "" ;
-
+      const errorMessage = (this.props.error) ? this.props.error.message : "" ;
 
       return (
         <div>

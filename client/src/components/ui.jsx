@@ -35,8 +35,7 @@ const UI = React.createClass({
       userLoggedIn:     false,
       mountainViews:    null,
       loginUnsuccessful: false,
-      resetEmailExists:  true,
-      signupEmailExists: false
+      errorMsg:         null
     }
   },
 
@@ -57,13 +56,12 @@ const UI = React.createClass({
   //
 
   requestLogin: function(email, password) {
-    this.state.user.login(email, password, function(success){
+    this.state.user.login(email, password, function(success, returned){
       if (!success) {
-        // console.log("not success")
-        this.setState({loginUnsuccessful: true})
+        this.setState({errorMsg: returned, infoBoxStatus: 'login' });
       }
       else {
-        this.setState({userLoggedIn: true, infoBoxStatus: "loginSuccess"});
+        this.setState({userLoggedIn: true, infoBoxStatus: "loginSuccess", errorMsg: null});
         this.state.user.getInfo(function() {
           this.state.mountainViews.userLogin(this.state.user);
           this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
@@ -73,14 +71,12 @@ const UI = React.createClass({
   },
 
   requestRegistration: function(email, password) {
-    // console.log("Attempting registration")
     this.state.user.register(email, password, function(success, returned) {
-      // console.log("Status", status);
-      // console.log("Registration successful:", success);
-      if (!success && returned.status === 422) {
-        this.setState({signupEmailExists: true});
+      if (!success) {
+        this.setState({errorMsg: returned, infoBoxStatus: 'signUp' });
       }
       else if (success) {
+        this.setStatus({errorMsg: null});
         this.setLoginForm();
       }
     }.bind(this))
@@ -97,22 +93,24 @@ const UI = React.createClass({
   },
 
   requestPasswordReset: function(email){
-    this.state.user.resetPassword(email, function(success){
+    this.state.user.resetPassword(email, function(success, returned){
       if (!success) {
-        // console.log("not successful")
-        this.setState({resetEmailExists: false});
+        this.setState({errorMsg: returned, infoBoxStatus: 'password' });
       }
       else {
-        // console.log("not successful")
         this.setState({infoBoxStatus: "passwordResetSuccess"})
       }
     }.bind(this))
-    // TODO add if not success
   },
 
   requestChangePassword: function(password){
-    this.state.user.changePassword(password, function(success){
-      if (success) this.setState({infoBoxStatus: "changePasswordSuccess"})
+    this.state.user.changePassword(password, function(success, returned){
+      if (!success) {
+        this.setState({errorMsg: returned, infoBoxStatus: 'changePassword' });
+      }
+      else {
+        this.setState({infoBoxStatus: "changePasswordSuccess"})
+      }
     }.bind(this))
   },
 
@@ -212,23 +210,27 @@ const UI = React.createClass({
           signUpClicked={this.setSignUpForm}
           forgotPassClicked={this.setPasswordForm}
           loginUnsuccessful={this.state.loginUnsuccessful}
-          user={this.requestLogin}/>,
+          user={this.requestLogin}
+          error={this.state.errorMsg}/>,
       loginSuccess:
         <UserLoginSuccess changePassClicked={this.setChangePasswordForm}/>,
       signUp:
         <UserSignUp 
           userRegistration={this.requestRegistration}
-          signupEmailExists={this.state.signupEmailExists}/>,
+          signupEmailExists={this.state.signupEmailExists}
+          error={this.state.errorMsg}/>,
       password:
         <UserNewPassword
           loginClicked={this.setLoginForm}
           signUpClicked={this.setSignUpForm}
           passwordReset={this.requestPasswordReset}
-          resetEmailExists={this.state.resetEmailExists}/>,
+          error={this.state.errorMsg}/>,
       passwordResetSuccess:
         <UserPasswordResetSuccess/>,
       changePassword:
-        <UserChangePassword submitChangePassword={this.requestChangePassword}/>,
+        <UserChangePassword 
+        submitChangePassword={this.requestChangePassword}
+        error={this.state.errorMsg}/>,
       changePasswordSuccess:
         <h4>Your password was changed successfully</h4>,
       contactUs:

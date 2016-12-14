@@ -46,7 +46,7 @@ User.prototype._getMessage = function(status, request) {
     register: { 422: "Email address already registered" },
     login: { 401: "Unrecognised username or password" },
     logout: {},
-    resetPassword: { 404: "User not recognised" },
+    resetPassword: { 404: "Email not recognised" },
     changePassword: {  401: "Not logged in", 422: "Update of password failed" },
     getBagged: { 401: "Not logged in" },
     saveBagged: { 401: "Not logged in" },
