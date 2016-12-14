@@ -170,6 +170,7 @@ textarea:focus, input:focus, button:focus {
     top: 30px;
     width: 380px;
     z-index: 1;
+    cursor: pointer;
 }
 
 #search {
