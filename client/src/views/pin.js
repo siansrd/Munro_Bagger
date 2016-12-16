@@ -1,4 +1,4 @@
-function Pin (map, mtnView) {
+function Pin (map, mtnView, hidden) {
   // this._id = mtnView.id;
   this._mtnView = mtnView;
   this._map = map;
@@ -12,8 +12,21 @@ function Pin (map, mtnView) {
   this._hasFocus = false;
   this._userClosedInfoWin = false;
   this._infoWindow = null;
+  this._hidden = (hidden) ? true : false;
 
   Object.defineProperty(this, "id", { get: function(){ return this._mtnView.id; } });
+  Object.defineProperty(this, "hidden", {
+    get: function(){ return this._hidden; },
+    set: function(hide){
+      if (hide !== this._hidden) {
+        this._hidden = hide;
+        if (hide)
+          this._marker.setMap(null);
+        else
+          this._resetMarker();
+      }
+    }
+  });
 };
 
 Pin.prototype.changeForecast = function(dayNum) {
@@ -43,6 +56,7 @@ Pin.prototype.userLoggedOut = function() {
 }
 
 Pin.prototype._resetMarker = function() {
+  if (this._hidden) return;
   this._marker =  new google.maps.Marker({
     position: this._mtnView.detail.latLng,
     map: this._map,
