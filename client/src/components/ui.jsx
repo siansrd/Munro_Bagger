@@ -39,10 +39,15 @@ const UI = React.createClass({
     }
   },
 
+  logAndSetState(state) {
+    console.log("Changing state: ", state);
+    this.setState(state);
+  },
+
   componentDidMount: function() {
     let mtnsView = new MountainsView();
     mtnsView.all(function() {
-      this.setState({mountainViews: mtnsView});
+      this.logAndSetState({mountainViews: mtnsView});
       let mtns = mtnsView.mountains;
       for (let i = 0; i < mtns.length; i++) {
         this.props.mapObj.addPin(mtns[i], this.onMountainSelected);
@@ -58,10 +63,10 @@ const UI = React.createClass({
   requestLogin: function(email, password) {
     this.state.user.login(email, password, function(success, returned){
       if (!success) {
-        this.setState({errorMsg: returned, infoBoxStatus: 'login' });
+        this.logAndSetState({errorMsg: returned, infoBoxStatus: 'login' });
       }
       else {
-        this.setState({userLoggedIn: true, infoBoxStatus: "loginSuccess", errorMsg: null});
+        this.logAndSetState({userLoggedIn: true, infoBoxStatus: "loginSuccess", errorMsg: null});
         this.state.user.getInfo(function() {
           this.state.mountainViews.userLogin(this.state.user);
           this.props.mapObj.userLoggedIn(this.state.mountainViews.mountains)
@@ -73,7 +78,7 @@ const UI = React.createClass({
   requestRegistration: function(email, password) {
     this.state.user.register(email, password, function(success, returned) {
       if (!success) {
-        this.setState({errorMsg: returned, infoBoxStatus: 'signUp' });
+        this.logAndSetState({errorMsg: returned, infoBoxStatus: 'signUp' });
       }
       else if (success) {
         this.setStatus({errorMsg: null});
@@ -87,18 +92,18 @@ const UI = React.createClass({
       if (!success) return;
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
-      this.setState({userLoggedIn: false});
-      this.setState({infoBoxStatus: "welcome"});
+      this.logAndSetState({userLoggedIn: false});
+      this.logAndSetState({infoBoxStatus: "welcome"});
     }.bind(this))
   },
 
   requestPasswordReset: function(email){
     this.state.user.resetPassword(email, function(success, returned){
       if (!success) {
-        this.setState({errorMsg: returned, infoBoxStatus: 'password' });
+        this.logAndSetState({errorMsg: returned, infoBoxStatus: 'password' });
       }
       else {
-        this.setState({infoBoxStatus: "passwordResetSuccess"})
+        this.logAndSetState({infoBoxStatus: "passwordResetSuccess"})
       }
     }.bind(this))
   },
@@ -106,16 +111,16 @@ const UI = React.createClass({
   requestChangePassword: function(password){
     this.state.user.changePassword(password, function(success, returned){
       if (!success) {
-        this.setState({errorMsg: returned, infoBoxStatus: 'changePassword' });
+        this.logAndSetState({errorMsg: returned, infoBoxStatus: 'changePassword' });
       }
       else {
-        this.setState({infoBoxStatus: "changePasswordSuccess"})
+        this.logAndSetState({infoBoxStatus: "changePasswordSuccess"})
       }
     }.bind(this))
   },
 
   requestBaggedStatusChange: function(status) {
-    this.setState({focusMountBagged: status, checkboxDisabled: true})
+    this.logAndSetState({focusMountBagged: status, checkboxDisabled: true})
     this.state.focusMountain.backup();
     this.state.focusMountain.bagged = status;
     this.state.focusMountain.pin.changeBaggedState(status);
@@ -125,16 +130,16 @@ const UI = React.createClass({
         status = !status;
         this.state.focusMountain.pin.changeBaggedState(status);
         this.state.focusMountain.restore();
-        this.setState({errorMsg: returned, infoBoxStatus: 'mountain' });
+        this.logAndSetState({errorMsg: returned, infoBoxStatus: 'mountain' });
       }
-      this.setState({checkboxDisabled: false, focusMountBagged: status}, function() {
+      this.logAndSetState({checkboxDisabled: false, focusMountBagged: status}, function() {
         console.log("Change state enable:", this.state.checkboxDisabled)
       })
     }.bind(this));
   },
 
   setHome: function() {
-    this.setState({infoBoxStatus: "welcome"})
+    this.logAndSetState({infoBoxStatus: "welcome"})
   },
 
   setDate: function() {
@@ -149,31 +154,31 @@ const UI = React.createClass({
   //
 
   setLoginForm: function() {
-    this.setState({infoBoxStatus: "login"})
+    this.logAndSetState({infoBoxStatus: "login", errorMsg: null});
   },
 
   setSignUpForm: function() {
-    this.setState({infoBoxStatus: "signUp"})
+    this.logAndSetState({infoBoxStatus: "signUp", errorMsg: null})
   },
 
   setChangePasswordForm: function() {
-    this.setState({infoBoxStatus: "changePassword"})
+    this.logAndSetState({infoBoxStatus: "changePassword", errorMsg: null})
   },
 
   setPasswordForm: function() {
-    this.setState({infoBoxStatus: "password"})
+    this.logAndSetState({infoBoxStatus: "password", errorMsg: null})
   },
 
   setContactForm: function() {
-    this.setState({infoBoxStatus: "about"})
+    this.logAndSetState({infoBoxStatus: "about", errorMsg: null})
   },
 
   setAboutInfo: function() {
-    this.setState({infoBoxStatus: "contactUs"})
+    this.logAndSetState({infoBoxStatus: "contactUs", errorMsg: null})
   },
 
   // setFilterOption: function(value) {
-  //   this.setState({filter: value});
+  //   this.logAndSetState({filter: value});
   //   console.log("UI: setFilterOption", this.state.filter);
   // },
 
@@ -183,15 +188,15 @@ const UI = React.createClass({
   //
 
   onForecastDaySelected: function(dayNum) {
-    this.setState({dayNum: dayNum})
+    this.logAndSetState({dayNum: dayNum})
     this.props.mapObj.changeForecast(dayNum);
   },
 
   onMountainSelected: function(mtnId) {
     const mtnView = search(this.state.mountainViews.mountains, mtnId);
-    this.setState({focusMountain: mtnView})
+    this.logAndSetState({focusMountain: mtnView})
     this.props.mapObj.openInfoWindowForMountain(mtnView.pin);
-    this.setState({infoBoxStatus: "mountain"})
+    this.logAndSetState({infoBoxStatus: "mountain"})
   },
 
   //
@@ -209,7 +214,7 @@ const UI = React.createClass({
           bagged={this.requestBaggedStatusChange}
           disabled={this.state.checkboxDisabled}
           date={this.setDate}
-          userLoggedIn={this.state.userLoggedIn},
+          userLoggedIn={this.state.userLoggedIn}
           error={this.state.errorMsg}/>,
       login:
         <UserLogin
@@ -248,6 +253,8 @@ const UI = React.createClass({
   },
 
   render: function() {
+
+    console.log("Rendering UI")
     // TODO: Refactor this
     if (!this.state.mountainViews) return <div></div>;
 
