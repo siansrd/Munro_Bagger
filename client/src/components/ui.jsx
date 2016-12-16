@@ -81,7 +81,6 @@ const UI = React.createClass({
         this.logAndSetState({errorMsg: returned, infoBoxStatus: 'signUp' });
       }
       else if (success) {
-        this.setStatus({errorMsg: null});
         this.setLoginForm();
       }
     }.bind(this))
@@ -92,8 +91,7 @@ const UI = React.createClass({
       if (!success) return;
       this.state.mountainViews.userLogout();
       this.props.mapObj.userLoggedOut();
-      this.logAndSetState({userLoggedIn: false});
-      this.logAndSetState({infoBoxStatus: "welcome"});
+      this.logAndSetState({userLoggedIn: false, infoBoxStatus: "welcome"});
     }.bind(this))
   },
 
@@ -103,7 +101,7 @@ const UI = React.createClass({
         this.logAndSetState({errorMsg: returned, infoBoxStatus: 'password' });
       }
       else {
-        this.logAndSetState({infoBoxStatus: "passwordResetSuccess"})
+        this.logAndSetState({errorMsg: null, infoBoxStatus: "passwordResetSuccess"})
       }
     }.bind(this))
   },
@@ -114,7 +112,7 @@ const UI = React.createClass({
         this.logAndSetState({errorMsg: returned, infoBoxStatus: 'changePassword' });
       }
       else {
-        this.logAndSetState({infoBoxStatus: "changePasswordSuccess"})
+        this.logAndSetState({errorMsg: null, infoBoxStatus: "changePasswordSuccess"})
       }
     }.bind(this))
   },
@@ -194,9 +192,8 @@ const UI = React.createClass({
 
   onMountainSelected: function(mtnId) {
     const mtnView = search(this.state.mountainViews.mountains, mtnId);
-    this.logAndSetState({focusMountain: mtnView})
     this.props.mapObj.openInfoWindowForMountain(mtnView.pin);
-    this.logAndSetState({infoBoxStatus: "mountain"})
+    this.logAndSetState({focusMountain: mtnView, infoBoxStatus: "mountain"})
   },
 
   //
