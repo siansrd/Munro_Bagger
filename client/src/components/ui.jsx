@@ -119,17 +119,17 @@ const UI = React.createClass({
     this.state.focusMountain.backup();
     this.state.focusMountain.bagged = status;
     this.state.focusMountain.pin.changeBaggedState(status);
-    this.state.focusMountain.save(function(success) {
-      if (!success) status = !status;
+    this.state.focusMountain.save(function(success, returned) {
+      if (!success) {
+        // There was an error saving the data
+        status = !status;
+        this.state.focusMountain.pin.changeBaggedState(status);
+        this.state.focusMountain.restore();
+        this.setState({errorMsg: returned, infoBoxStatus: 'mountain' });
+      }
       this.setState({checkboxDisabled: false, focusMountBagged: status}, function() {
         console.log("Change state enable:", this.state.checkboxDisabled)
       })
-
-      if (!success) {
-        // There was an error saving the data
-        this.state.focusMountain.pin.changeBaggedState(!status);
-        this.state.focusMountain.restore();
-      }
     }.bind(this));
   },
 
@@ -209,7 +209,8 @@ const UI = React.createClass({
           bagged={this.requestBaggedStatusChange}
           disabled={this.state.checkboxDisabled}
           date={this.setDate}
-          userLoggedIn={this.state.userLoggedIn} />,
+          userLoggedIn={this.state.userLoggedIn},
+          error={this.state.errorMsg}/>,
       login:
         <UserLogin
           signUpClicked={this.setSignUpForm}
