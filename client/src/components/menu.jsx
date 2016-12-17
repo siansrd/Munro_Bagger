@@ -2,21 +2,19 @@ const React = require('react');
 const LoginLink = require('./login_link');
 const AboutLink = require('./about_link');
 
-const Menu = React.createClass({
-
-  render: function(){
+const Menu = function(props){
 
     return (
       <div id="menu">
         <AboutLink
-          aboutLinkClicked={this.props.aboutLinkClicked}/>
+          aboutLinkClicked={props.aboutLinkClicked}/>
         <LoginLink 
-          user={this.props.user}
-          loginLinkClicked={this.props.loginLinkClicked}
-          logoutLinkClicked={this.props.logoutLinkClicked}/>
+          user={props.user}
+          loginLinkClicked={props.loginLinkClicked}
+          logoutLinkClicked={props.logoutLinkClicked}/>
       </div>
     )
-  }
-});
+}
+
 
 module.exports = Menu;
