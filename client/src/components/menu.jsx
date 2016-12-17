@@ -8,12 +8,12 @@ const Menu = React.createClass({
 
     return (
       <div id="menu">
+        <AboutLink
+          aboutLinkClicked={this.props.aboutLinkClicked}/>
         <LoginLink 
           user={this.props.user}
           loginLinkClicked={this.props.loginLinkClicked}
           logoutLinkClicked={this.props.logoutLinkClicked}/>
-        <AboutLink
-          aboutLinkClicked={this.props.aboutLinkClicked}/>
       </div>
     )
   }
