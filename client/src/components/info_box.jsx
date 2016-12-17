@@ -1,16 +1,13 @@
 const React = require('react');
 
-const InfoBox = React.createClass({
-
- render: function() {
+const InfoBox = function(props){
 
   return (
     <div id="infoBox">
-      {this.props.children}
+      {props.children}
     </div>
   )
 
- }
-})
+}
 
 module.exports = InfoBox;
