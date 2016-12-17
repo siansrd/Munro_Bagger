@@ -159,7 +159,7 @@ textarea:focus, input:focus, button:focus {
 
 #logo h1 {
     text-decoration: underline;
-    font-size: 62px;
+    font-size: 65px;
     color: #fff;
     margin: 0;
 }
@@ -168,7 +168,7 @@ textarea:focus, input:focus, button:focus {
     position: fixed;
     right: 40px;
     top: 30px;
-    width: 400px;
+    width: 420px;
     z-index: 1;
     cursor: pointer;
 }
@@ -176,8 +176,8 @@ textarea:focus, input:focus, button:focus {
 #search {
     position: fixed;
     right: 40px;
-    top: 115px;
-    width: 400px;
+    top: 120px;
+    width: 420px;
     height: 28px;
     z-index: 5;
 }
@@ -196,8 +196,8 @@ textarea:focus, input:focus, button:focus {
     -webkit-box-sizing: border-box;
     position: fixed;
     right: 40px;
-    top: 165px;
-    width: 400px;
+    top: 170px;
+    width: 420px;
     padding: 30px 30px 20px 30px;
     border: 2px solid #fff;
     background: #A5CEFD;
