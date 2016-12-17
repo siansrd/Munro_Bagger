@@ -12,10 +12,7 @@ const About = React.createClass ({
         <p>
           If you have any queries or suggestions, please get in touch on twitter!
           <br/>
-          <a className="user-link" target="_blank" href="https://twitter.com/@MunroBaggerScot">@MunroBaggerScot</a>
-        </p>
-        <p>
-          Alternatively, drop us an email at <a className="user-link" href="mailto:munrobagger.scot@gmail.com">munrobagger.scot@gmail.com</a>
+          <a className="user-link" target="_blank" href="https://twitter.com/@MunroBaggerScot">@MunroBaggerScot</a>. Or drop us an email at <a className="user-link" href="mailto:munrobagger.scot@gmail.com">munrobagger.scot@gmail.com</a>
         </p>
       </div>
     )
