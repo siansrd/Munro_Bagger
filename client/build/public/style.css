@@ -206,7 +206,6 @@ textarea:focus, input:focus, button:focus {
 
 .flex-grid {
   margin: 4px 0 10px;
-  -js-display: flex;
   display: flex;
   flex-wrap: wrap;
 }
@@ -384,7 +383,6 @@ textarea:focus, input:focus, button:focus {
   }
 
   .flex-grid-weather {
-    -js-display: flex;
     display: flex;
     justify-content: space-between;
   }
