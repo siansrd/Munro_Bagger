@@ -40,13 +40,13 @@ var MapObject = function(container) {
 
 MapObject.prototype._responsiveCenter = function(){
   const width = this._getBrowserWidth();
-  let center = width < 700 ? [56.976809, -4.359508] : [57.450861, -1.604004];
+  let center = width < 750 ? [56.976809, -4.359508] : [57.450861, -1.604004];
   return center;
 };
 
 MapObject.prototype._responsiveBounds = function(){
   const width = this._getBrowserWidth();
-  let bounds = width < 700 ? [58.781817, -1.709904, 55.865392, -7.598576] : [59.073548, 2.169182, 55.593370, -7.853101];
+  let bounds = width < 750 ? [58.781817, -1.709904, 55.865392, -7.598576] : [59.073548, 2.169182, 55.593370, -7.853101];
   return bounds;
 };
 

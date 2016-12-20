@@ -340,7 +340,7 @@ textarea:focus, input:focus, button:focus {
 
 }
 
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 750px) {
 
   body {
       font-size: 12px;
