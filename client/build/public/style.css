@@ -278,6 +278,34 @@ textarea:focus, input:focus, button:focus {
   background-color: #DBEBFF;
 }
 
+
+/*---- Email template -----*/
+
+.center_email {
+  margin: 50px 20px;
+}
+
+.center_email p {
+  text-align: center;
+}
+
+#logo_email {
+    margin: 0 auto;
+    right: 40px;
+    top: 30px;
+    width: 208px;
+}
+
+#logo_email h1 {
+  color: #fff;
+}
+
+#icon_email {
+  width: 50px;
+  margin: 0 auto;
+}
+
+
 /*---------*/
 
 @media screen and (max-width: 1000px) {
