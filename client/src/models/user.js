@@ -1,9 +1,9 @@
 let UserMountain = require('./user_mountain');
 let ApiRequest = require('./api_request');
 
-const baseURL = "http://www.munrobagger.scot/";
-// const baseURL = "http://localhost:3000/"
-// const baseURL = "http://192.168.1.124:3000/";
+const baseURL = "www.munrobagger.scot/";
+// const baseURL = "localhost:3000/"
+// const baseURL = "192.168.1.124:3000/";
 const baggedRoute = "bagged_munros";
 const apiRequest = new ApiRequest();
 
@@ -67,7 +67,7 @@ User.prototype._getMessage = function(status, request) {
 }
 
 User.prototype.register = function(email, password, onCompleted) {
-  const url = baseURL + "users";
+  const url = location.protocol + "//" + baseURL + "users";
   const params = { user: {
     email: email,
     password: password
@@ -80,7 +80,7 @@ User.prototype.register = function(email, password, onCompleted) {
 }
 
 User.prototype.login = function(email, password, onCompleted) {
-  const url = baseURL + "sessions";
+  const url = location.protocol + "//" + baseURL + "sessions";
   const params = { session: {
     email: email,
     password: password
@@ -93,7 +93,7 @@ User.prototype.login = function(email, password, onCompleted) {
 }
 
 User.prototype.logout = function(onCompleted) {
-  const url = baseURL + "sessions";
+  const url = location.protocol + "//" + baseURL + "sessions";
   apiRequest.makeDeleteRequest(url, null, this._jwtoken, function(status) {
     let success = (status === 204);
     if (success) {
@@ -106,7 +106,7 @@ User.prototype.logout = function(onCompleted) {
 
 User.prototype.resetPassword = function(email, onCompleted) {
   // console.log(email)
-  const url = baseURL + "users/reset";
+  const url = location.protocol + "//" + baseURL + "users/reset";
   const params = { user: {
     email: email
   } };
@@ -117,7 +117,7 @@ User.prototype.resetPassword = function(email, onCompleted) {
 }
 
 User.prototype.changePassword = function(password, onCompleted) {
-  const url = baseURL + "users/update";
+  const url = location.protocol + "//" + baseURL + "users/update";
   const params = { user: {
     password: password
   } };
@@ -129,7 +129,7 @@ User.prototype.changePassword = function(password, onCompleted) {
 }
 
 User.prototype.getInfo = function(onCompleted) {
-  const url = baseURL + baggedRoute;
+  const url = location.protocol + "//" + baseURL + baggedRoute;
   const apiRequest = new ApiRequest();
   apiRequest.makeGetRequest(url, this._jwtoken, function(status, mountains) {
     let success = (status === 200);
@@ -150,7 +150,7 @@ User.prototype.createUserMountain = function(mountainId) {
 
 User.prototype.saveUserMountain = function(mountain, onCompleted) {
   if (!mountain.isDirty()) callback(false);
-  let url = baseURL + baggedRoute;
+  let url = location.protocol + "//" + baseURL + baggedRoute;
   let forExport = mountain.export();
 
   // decide if a create, update or delete request is needed
