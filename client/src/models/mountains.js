@@ -9,9 +9,9 @@ var Mountains = function(){
 };
 
 Mountains.prototype.all = function(onCompleted) {
-  const url = document.location.protocol + "//" + baseURL + "/munros";
+  
   const apiRequest = new ApiRequest();
-  apiRequest.makeGetRequest(url, null, function(status, receivedMtns) {
+  this._fetchFromNetwork(function(receivedMtns) {
     const mountains = [];
     for (let i = 0; i < receivedMtns.length; i++) {
       let mtn = new Mountain(receivedMtns[i]);
@@ -20,5 +20,13 @@ Mountains.prototype.all = function(onCompleted) {
     onCompleted(mountains);
   })
 };
+
+Mountains.prototype._fetchFromNetwork = function(onCompleted) {
+  const url = document.location.protocol + "//" + baseURL + "/munros";
+  const apiRequest = new ApiRequest();
+  apiRequest.makeGetRequest(url, null, function(status, received) {
+    onCompleted(received);
+  });
+}
 
 module.exports = Mountains;
