@@ -5,7 +5,6 @@ const baseURL = "www.munrobagger.scot";
 // const baseURL = "localhost:3000"
 // const baseURL = "192.168.1.124:3000";
 const baggedRoute = "bagged_munros";
-const apiRequest = new ApiRequest();
 
 const User = function() {
   this._mountains = [];
@@ -17,41 +16,41 @@ User.prototype._getMessage = function(status, request) {
   // Global messages.
   // The wording comes from the official definition of the error codes.
   let messages = {
-    400: "Bad Request",
-    401: "Unauthorized",
-    403: "Forbidden",
-    404: "Not Found",
-    405: "Method Not Allowed",
-    406: "Not Acceptable",
-    407: "Proxy Authentication Required",
-    408: "Request Timeout",
-    409: "Conflict",
-    422: "Unprocessable Entity",
-    429: "Too Many Requests",
-    431: "Request Header Fields Too Large",
-    500: "Internal Server Error",
-    501: "Not Implemented",
-    502: "Bad Gateway",
-    503: "Service Unavailable",
-    504: "Gateway Timeout",
-    505: "HTTP Version Not Supported",
-    511: "Network Authentication Required",
-    598: "Network read timeout error",
-    599: "Network connect timeout error"
+    400: "Bad request.",
+    401: "Unauthorized.",
+    403: "Forbidden.",
+    404: "Not found.",
+    405: "Method not allowed.",
+    406: "Not acceptable.",
+    407: "Proxy authentication required.",
+    408: "Request timeout.",
+    409: "Conflict.",
+    422: "Unprocessable entity.",
+    429: "Too many requests.",
+    431: "Request header fields too large.",
+    500: "Unexpected server error.",
+    501: "Not implemented.",
+    502: "Bad gateway.",
+    503: "Service unavailable.",
+    504: "Gateway timeout.",
+    505: "HTTP version not supported.",
+    511: "Network authentication required.",
+    598: "Network read timeout error.",
+    599: "Network connect timeout error.",
   };
 
   // This object contains messages for specific requests.
   // This contains all the explicit error responses made by the server
   let requests = {
-    register: { 422: "Email address already registered" },
-    login: { 401: "Unrecognised username or password" },
+    register: { 422: "That email address is already registered." },
+    login: { 401: "Unrecognised email address or password." },
     logout: {},
-    resetPassword: { 404: "Email not recognised" },
-    changePassword: {  401: "Not logged in", 422: "Update of password failed" },
-    getBagged: { 401: "Not logged in" },
-    saveBagged: { 401: "Not logged in" },
-    deleteBagged: { 401: "Not logged in", 422: "Update failed" },
-    updateBagged: { 401: "Not logged in" , 422: "Update failed" }
+    resetPassword: { 404: "That email address is not registered." },
+    changePassword: {  401: "Not logged in.", 422: "Update of password failed." },
+    getBagged: { 401: "Not logged in." },
+    saveBagged: { 401: "Not logged in." },
+    deleteBagged: { 401: "Not logged in.", 422: "Update failed." },
+    updateBagged: { 401: "Not logged in." , 422: "Update failed." }
   }
 
   // Merge the list for the request with the global list
@@ -71,12 +70,11 @@ User.prototype._makeURL = function(route) {
 }
 
 User.prototype.register = function(email, password, onCompleted) {
-  const url = this._makeURL("users");
   const params = { user: {
     email: email,
     password: password
   } };
-  apiRequest.makePostRequest(url, params, null, function(status, result) {
+  this._requestRegister("users", params, function(status, result) {
     let success = (status === 201);
     // Tokens are not returned in response to register requests
     // if(success) this._jwtoken = result.auth_token;
@@ -85,12 +83,11 @@ User.prototype.register = function(email, password, onCompleted) {
 }
 
 User.prototype.login = function(email, password, onCompleted) {
-  const url = this._makeURL("sessions");
   const params = { session: {
     email: email,
     password: password
   } };
-  apiRequest.makePostRequest(url, params, null, function(status, result) {
+  this._requestLogin("sessions", params, function(status, result) {
     let success = (status === 201);
     if(success) this._jwtoken = result.auth_token;
     onCompleted(success, this._getMessage(status, 'login'));
@@ -98,8 +95,7 @@ User.prototype.login = function(email, password, onCompleted) {
 }
 
 User.prototype.logout = function(onCompleted) {
-  const url = this._makeURL("sessions");
-  apiRequest.makeDeleteRequest(url, null, this._jwtoken, function(status) {
+  this._requestLogout("sessions", function(status) {
     let success = (status === 204);
     if (success) {
       this._mountains = [];
@@ -110,33 +106,27 @@ User.prototype.logout = function(onCompleted) {
 }
 
 User.prototype.resetPassword = function(email, onCompleted) {
-  // console.log(email)
-  const url = this._makeURL("users/reset");
   const params = { user: {
     email: email
   } };
-  apiRequest.makePutRequest(url, params, null, function(status, result) {
+  this._requestResetPassword("users/reset", params, function(status, result) {
     let success = (status === 204);
     onCompleted(success, this._getMessage(status, 'resetPassword'));
   }.bind(this));
 }
 
 User.prototype.changePassword = function(password, onCompleted) {
-  const url = this._makeURL("users/update");
   const params = { user: {
     password: password
   } };
-  apiRequest.makePutRequest(url, params, this._jwtoken, function(status, result) {
-    // console.log('status', status)
+  this._requestChangePassword("users/update", params, function(status, result) {
     let success = (status === 200);
     onCompleted(success, this._getMessage(status, 'changePassword'));
   }.bind(this));
 }
 
 User.prototype.getInfo = function(onCompleted) {
-  const url = this._makeURL(baggedRoute);
-  const apiRequest = new ApiRequest();
-  apiRequest.makeGetRequest(url, this._jwtoken, function(status, mountains) {
+  this._requestGetInfo(baggedRoute, function(status, mountains) {
     let success = (status === 200);
     if (success) {
       for (let i = 0; i < mountains.length; i++) {
@@ -154,15 +144,14 @@ User.prototype.createUserMountain = function(mountainId) {
 }
 
 User.prototype.saveUserMountain = function(mountain, onCompleted) {
-  if (!mountain.isDirty()) callback(false);
-  let url = this._makeURL(baggedRoute);
-  let forExport = mountain.export();
+  if (!mountain.isDirty()) return null;
+  let forExport = { bagged: mountain.export() };
 
   // decide if a create, update or delete request is needed
 
   if (!mountain._originId && mountain.bagged) {
     // Mountain has not been in the database before so should be a create request
-    apiRequest.makePostRequest(url, { bagged: forExport }, this._jwtoken, function(status, savedMtn) {
+    this._requestSaveBagged(baggedRoute, forExport, function(status, savedMtn) {
       let success = (status === 201);
       if (success) {
         mountain._dirty = false;
@@ -175,12 +164,12 @@ User.prototype.saveUserMountain = function(mountain, onCompleted) {
   }
 
   // If not a create request, will have to identify the resource that is being changed.
-  url += "/" + mountain._originId;
+  let idRoute = baggedRoute + "/" + mountain._originId;
 
   if (mountain._originId && !mountain.bagged) {
     // This mountain has been in the database so was bagged once but not now
     // This is a delete request
-    apiRequest.makeDeleteRequest(url, null, this._jwtoken, function(status) {
+    this._requestDeleteBagged(idRoute, function(status) {
       let success = (status === 204);
       if (success) {
         mountain._dirty = false;
@@ -192,7 +181,7 @@ User.prototype.saveUserMountain = function(mountain, onCompleted) {
   }
 
   if (mountain._originId && mountain.bagged) {
-    apiRequest.makePutRequest(url, { bagged: forExport }, this._jwtoken, function(status) {
+    this._requestUpdateBagged(idRoute, forExport, function(status) {
       let success = (status === 201);
       if (success) {
         mountain._dirty = false;
@@ -200,6 +189,64 @@ User.prototype.saveUserMountain = function(mountain, onCompleted) {
       onCompleted(success, this._getMessage(status, 'updateBagged'));
     }.bind(this));
   }
+}
+
+// All methods beginning _request contain only an API request
+// The API request has been separated from the logic that surrounds it to allow the
+// API call itself to be stubbed out during testing
+
+User.prototype._requestRegister = function(route, params, onCompleted) {
+  const url = this._makeURL(route);
+  const apiRequest = new ApiRequest();
+  apiRequest.makePostRequest(url, params, null, onCompleted);
+}
+
+User.prototype._requestLogin = function(route, params, onCompleted) {
+  const url = this._makeURL(route);
+  const apiRequest = new ApiRequest();
+  apiRequest.makePostRequest(url, params, null, onCompleted);
+}
+
+User.prototype._requestLogout = function(route, onCompleted) {
+  const url = this._makeURL(route);
+  const apiRequest = new ApiRequest();
+  apiRequest.makeDeleteRequest(url, null, this._jwtoken, onCompleted);
+}
+
+User.prototype._requestResetPassword = function(route, params, onCompleted) {
+  const url = this._makeURL(route);
+  const apiRequest = new ApiRequest();
+  apiRequest.makePutRequest(url, params, null, onCompleted);
+}
+
+User.prototype._requestChangePassword = function(route, params, onCompleted) {
+  const url = this._makeURL(route);
+  const apiRequest = new ApiRequest();
+  apiRequest.makePutRequest(url, params, this._jwtoken, onCompleted);  
+}
+
+User.prototype._requestGetInfo = function(route, onCompleted) {
+  const url = this._makeURL(route);
+  const apiRequest = new ApiRequest();
+  apiRequest.makeGetRequest(url, this._jwtoken, onCompleted);
+}
+
+User.prototype._requestSaveBagged = function(route, params, onCompleted) {
+  let url = this._makeURL(route);
+  const apiRequest = new ApiRequest();
+  apiRequest.makePostRequest(url, params, this._jwtoken, onCompleted);
+}
+
+User.prototype._requestDeleteBagged = function(route, onCompleted) {
+  let url = this._makeURL(route);
+  const apiRequest = new ApiRequest();
+  apiRequest.makeDeleteRequest(url, null, this._jwtoken, onCompleted);
+}
+
+User.prototype._requestUpdateBagged = function(route, params, onCompleted) {
+  let url = this._makeURL(route);
+  const apiRequest = new ApiRequest();
+  apiRequest.makePutRequest(url, params, this._jwtoken, onCompleted);
 }
 
 module.exports = User;
