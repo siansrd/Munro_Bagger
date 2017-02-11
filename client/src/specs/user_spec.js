@@ -94,6 +94,222 @@ describe("User", function(){
 
 	})
 
+
+  describe( "Change Password", function(){
+
+	  it ( 'Creates correct parameters', function() {
+	  	const stub = sinon.stub(user, "_requestChangePassword");
+	  	user.changePassword(password, function() {});
+  		stub.restore();
+  		const call = stub.getCall(0);
+			assert.strictEqual(call.args[0], "users/update")
+			assert.deepStrictEqual(call.args[1], { user: { password: password } });
+			assert.strictEqual(call.args[2], token);
+	  })
+
+	  it ( 'Reports errors', function() {
+	  	const stub = sinon.stub(user, "_requestChangePassword");
+	  	stub.yields(401, {});
+	  	user.changePassword(password, function(success, message) {
+	  		stub.restore();
+	  		assert.strictEqual(success, false);
+				assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
+	  	});
+	  })
+
+	  it ( 'Reports success', function() {
+	  	const stub = sinon.stub(user, "_requestChangePassword");
+	  	stub.yields(200, {});
+	  	user.changePassword(password, function(success, message) {
+	  		stub.restore();
+	  		assert.strictEqual(success, true);
+				assert.deepStrictEqual(message, null);
+	  	});
+	  })
+
+	})
+
+	describe( "Get Info", function(){
+
+	  it ( 'Creates correct parameters', function() {
+	  	const stub = sinon.stub(user, "_requestGetInfo");
+	  	user.getInfo(function() {});
+  		stub.restore();
+  		const call = stub.getCall(0);
+			assert.strictEqual(call.args[0], "bagged_munros");
+			assert.strictEqual(call.args[1], token);
+	  })
+
+	  it ( 'Reports errors', function() {
+	  	const stub = sinon.stub(user, "_requestGetInfo");
+	  	stub.yields(401, {});
+	  	user.getInfo(function(success, message) {
+	  		stub.restore();
+	  		assert.strictEqual(success, false);
+				assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
+	  	});
+	  })
+
+	  it ( 'Reports success', function() {
+		  const stub = sinon.stub(user, "_requestGetInfo");
+	  	stub.yields(200, [
+	  		{id:  4, munro_id: 1, climbed_on: null},
+	  		{id:  9, munro_id: 3, climbed_on: null},
+	  		{id: 16, munro_id: 5, climbed_on: null}
+	  	]);
+	  	user.getInfo(function(success, message) {
+	  		stub.restore();
+	  		assert.strictEqual(success, true);
+				assert.deepStrictEqual(message, null);
+	  	});
+	  })
+
+	  it ( 'Creates bagged mountain list', function() {
+	  	assert.strictEqual(user.baggedList.length, 3);
+	  })
+
+	  it ( 'Puts the right entries on the bagged list', function() {
+	  	assert.strictEqual(user.baggedList[0].id, 1);
+	  	assert.strictEqual(user.baggedList[1].id, 3);
+	  	assert.strictEqual(user.baggedList[2].id, 5);
+	  })
+	})
+
+	describe( "Create UserMountain", function() {
+
+		it ( 'Adds a UserMountain to the bagged mountain list', function() {
+			let mtn = user.createUserMountain(4);
+			assert.strictEqual(user.baggedList.length, 4);
+			assert.strictEqual(user.baggedList[3], mtn);
+			assert.strictEqual(user.baggedList[3].id, 4);	
+		})
+	});
+
+	describe( "Save UserMountain", function(){
+
+	 	describe( "Save Newly Bagged Mountain", function() {
+
+	 		var userMountain;
+
+	 		before(function() {
+	  		userMountain = new UserMountain({ munro_id: 3, climbed_on: null});
+	  		userMountain.bagged = true;
+	  	})
+
+		  it ( 'Creates correct parameters', function() {
+		  	const stub = sinon.stub(user, "_requestSaveBagged");
+		  	user.saveUserMountain(userMountain, function() {});
+	  		stub.restore();
+	  		const call = stub.getCall(0);
+				assert.strictEqual(call.args[0], "bagged_munros");
+  			assert.deepStrictEqual(call.args[1], { bagged: { munro_id: 3, climbed_on: null } });
+				assert.strictEqual(call.args[2], token)
+		  })
+
+		  it ( 'Reports errors', function() {
+		  	const stub = sinon.stub(user, "_requestSaveBagged");
+		  	stub.yields(401, {});
+		  	user.saveUserMountain(userMountain, function(success, message) {
+		  		stub.restore();
+		  		assert.strictEqual(success, false);
+					assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
+		  	});
+		  })
+
+		  it ( 'Reports success', function() {
+		  	const stub = sinon.stub(user, "_requestSaveBagged");
+		  	stub.yields(201, {id: 23, munro_id: 3, climbed_on: null});
+		  	user.saveUserMountain(userMountain, function(success, message) {
+		  		stub.restore();
+		  		assert.strictEqual(success, true);
+					assert.deepStrictEqual(message, null);
+		  	});
+		  })
+
+	 	})
+
+	 	describe( "Save Changed Mountain", function() {
+
+	 		var userMountain;
+
+	 		before(function() {
+	  		userMountain = new UserMountain({ id: 34, munro_id: 5, climbed_on: null });
+	  		userMountain.bagged = true;
+	  	})
+
+		  it ( 'Creates correct parameters', function() {
+		  	const stub = sinon.stub(user, "_requestUpdateBagged");
+		  	user.saveUserMountain(userMountain, function() {});
+	  		stub.restore();
+	  		const call = stub.getCall(0);
+				assert.strictEqual(call.args[0], "bagged_munros/34");
+  			assert.deepStrictEqual(call.args[1], { bagged: { munro_id: 5, climbed_on: null } });
+  			assert.strictEqual(call.args[2], token);
+		  })
+
+		  it ( 'Reports errors', function() {
+		  	const stub = sinon.stub(user, "_requestUpdateBagged");
+		  	stub.yields(401, {});
+		  	user.saveUserMountain(userMountain, function(success, message) {
+		  		stub.restore();
+		  		assert.strictEqual(success, false);
+					assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
+		  	});
+		  })
+
+		  it ( 'Reports success', function() {
+		  	const stub = sinon.stub(user, "_requestUpdateBagged");
+		  	stub.yields(201, {id: 34, munro_id: 5, climbed_on: null});
+		  	user.saveUserMountain(userMountain, function(success, message) {
+		  		stub.restore();
+		  		assert.strictEqual(success, true);
+					assert.deepStrictEqual(message, null);
+		  	});
+		  })
+
+	 	})
+
+	 	describe( "Save UnBagged Mountain", function() {
+
+	 		var userMountain;
+
+	 		before(function() {
+	  		userMountain = new UserMountain({ id: 34, munro_id: 5, climbed_on: null });
+	  		userMountain.bagged = false;
+	  	})
+
+		  it ( 'Creates correct parameters', function() {
+		  	const stub = sinon.stub(user, "_requestDeleteBagged");
+		  	user.saveUserMountain(userMountain, function() {});
+	  		stub.restore();
+	  		const call = stub.getCall(0);
+				assert.strictEqual(call.args[0], "bagged_munros/34");
+				assert.strictEqual(call.args[1], token);
+		  })
+
+		  it ( 'Reports errors', function() {
+		  	const stub = sinon.stub(user, "_requestDeleteBagged");
+		  	stub.yields(401, {});
+		  	user.saveUserMountain(userMountain, function(success, message) {
+		  		stub.restore();
+		  		assert.strictEqual(success, false);
+					assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
+		  	});
+		  })
+
+		  it ( 'Reports success', function() {
+		  	const stub = sinon.stub(user, "_requestDeleteBagged");
+		  	stub.yields(204, {});
+		  	user.saveUserMountain(userMountain, function(success, message) {
+		  		stub.restore();
+		  		assert.strictEqual(success, true);
+					assert.deepStrictEqual(message, null);
+		  	});
+		  })
+
+	 	})
+	})
+
 	describe( "Logout", function(){
 
 	  it ( 'Creates correct parameters', function() {
@@ -101,7 +317,8 @@ describe("User", function(){
 	  	user.logout(function() {});
   		stub.restore();
   		const call = stub.getCall(0);
-			assert.strictEqual(call.args[0], "sessions")
+			assert.strictEqual(call.args[0], "sessions");
+			assert.strictEqual(call.args[1], token);
 	  })
 
 	  it ( 'Reports success', function() {
@@ -154,204 +371,4 @@ describe("User", function(){
 
 	})
 
-  describe( "Change Password", function(){
-
-	  it ( 'Creates correct parameters', function() {
-	  	const stub = sinon.stub(user, "_requestChangePassword");
-	  	user.changePassword(password, function() {});
-  		stub.restore();
-  		const call = stub.getCall(0);
-			assert.strictEqual(call.args[0], "users/update")
-			assert.deepStrictEqual(call.args[1], { user: { password: password } });
-	  })
-
-	  it ( 'Reports errors', function() {
-	  	const stub = sinon.stub(user, "_requestChangePassword");
-	  	stub.yields(401, {});
-	  	user.changePassword(password, function(success, message) {
-	  		stub.restore();
-	  		assert.strictEqual(success, false);
-				assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
-	  	});
-	  })
-
-	  it ( 'Reports success', function() {
-	  	const stub = sinon.stub(user, "_requestChangePassword");
-	  	stub.yields(200, {});
-	  	user.changePassword(password, function(success, message) {
-	  		stub.restore();
-	  		assert.strictEqual(success, true);
-				assert.deepStrictEqual(message, null);
-	  	});
-	  })
-
-	})
-
-	describe( "Get Info", function(){
-
-	  it ( 'Creates correct parameters', function() {
-	  	const stub = sinon.stub(user, "_requestGetInfo");
-	  	user.getInfo(function() {});
-  		stub.restore();
-  		const call = stub.getCall(0);
-			assert.strictEqual(call.args[0], "bagged_munros")
-	  })
-
-	  it ( 'Reports errors', function() {
-	  	const stub = sinon.stub(user, "_requestGetInfo");
-	  	stub.yields(401, {});
-	  	user.getInfo(function(success, message) {
-	  		stub.restore();
-	  		assert.strictEqual(success, false);
-				assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
-	  	});
-	  })
-
-	  it ( 'Reports success', function() {
-		  const stub = sinon.stub(user, "_requestGetInfo");
-	  	stub.yields(200, [
-	  		{id:  4, munro_id: 1, climbed_on: null},
-	  		{id:  9, munro_id: 3, climbed_on: null},
-	  		{id: 16, munro_id: 5, climbed_on: null}
-	  	]);
-	  	user.getInfo(function(success, message) {
-	  		stub.restore();
-	  		assert.strictEqual(success, true);
-				assert.deepStrictEqual(message, null);
-	  	});
-	  })
-
-	  it ( 'Creates bagged mountain list', function() {
-	  	assert.strictEqual(user.baggedList.length, 3);
-	  })
-
-	  it ( 'Puts the right entries on the bagged list', function() {
-	  	assert.strictEqual(user.baggedList[0].id, 1);
-	  	assert.strictEqual(user.baggedList[1].id, 3);
-	  	assert.strictEqual(user.baggedList[2].id, 5);
-	  })
-
-	})
-
-	describe( "Save UserMountain", function(){
-
-	 	describe( "Save Newly Bagged Mountain", function() {
-
-	 		var userMountain;
-
-	 		before(function() {
-	  		userMountain = new UserMountain({ munro_id: 3, climbed_on: null});
-	  		userMountain.bagged = true;
-	  	})
-
-		  it ( 'Creates correct parameters', function() {
-		  	const stub = sinon.stub(user, "_requestSaveBagged");
-		  	user.saveUserMountain(userMountain, function() {});
-	  		stub.restore();
-	  		const call = stub.getCall(0);
-				assert.strictEqual(call.args[0], "bagged_munros")
-  			assert.deepStrictEqual(call.args[1], { bagged: { munro_id: 3, climbed_on: null } })
-		  })
-
-		  it ( 'Reports errors', function() {
-		  	const stub = sinon.stub(user, "_requestSaveBagged");
-		  	stub.yields(401, {});
-		  	user.saveUserMountain(userMountain, function(success, message) {
-		  		stub.restore();
-		  		assert.strictEqual(success, false);
-					assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
-		  	});
-		  })
-
-		  it ( 'Reports success', function() {
-		  	const stub = sinon.stub(user, "_requestSaveBagged");
-		  	stub.yields(201, {id: 23, munro_id: 3, climbed_on: null});
-		  	user.saveUserMountain(userMountain, function(success, message) {
-		  		stub.restore();
-		  		assert.strictEqual(success, true);
-					assert.deepStrictEqual(message, null);
-		  	});
-		  })
-
-	 	})
-
-	 	describe( "Save Changed Mountain", function() {
-
-	 		var userMountain;
-
-	 		before(function() {
-	  		userMountain = new UserMountain({ id: 34, munro_id: 5, climbed_on: null });
-	  		userMountain.bagged = true;
-	  	})
-
-		  it ( 'Creates correct parameters', function() {
-		  	const stub = sinon.stub(user, "_requestUpdateBagged");
-		  	user.saveUserMountain(userMountain, function() {});
-	  		stub.restore();
-	  		const call = stub.getCall(0);
-				assert.strictEqual(call.args[0], "bagged_munros/34")
-  			assert.deepStrictEqual(call.args[1], { bagged: { munro_id: 5, climbed_on: null } })
-		  })
-
-		  it ( 'Reports errors', function() {
-		  	const stub = sinon.stub(user, "_requestUpdateBagged");
-		  	stub.yields(401, {});
-		  	user.saveUserMountain(userMountain, function(success, message) {
-		  		stub.restore();
-		  		assert.strictEqual(success, false);
-					assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
-		  	});
-		  })
-
-		  it ( 'Reports success', function() {
-		  	const stub = sinon.stub(user, "_requestUpdateBagged");
-		  	stub.yields(201, {id: 34, munro_id: 5, climbed_on: null});
-		  	user.saveUserMountain(userMountain, function(success, message) {
-		  		stub.restore();
-		  		assert.strictEqual(success, true);
-					assert.deepStrictEqual(message, null);
-		  	});
-		  })
-
-	 	})
-
-	 	describe( "Save UnBagged Mountain", function() {
-
-	 		var userMountain;
-
-	 		before(function() {
-	  		userMountain = new UserMountain({ id: 34, munro_id: 5, climbed_on: null });
-	  		userMountain.bagged = false;
-	  	})
-
-		  it ( 'Creates correct parameters', function() {
-		  	const stub = sinon.stub(user, "_requestDeleteBagged");
-		  	user.saveUserMountain(userMountain, function() {});
-	  		stub.restore();
-	  		const call = stub.getCall(0);
-				assert.strictEqual(call.args[0], "bagged_munros/34")
-		  })
-
-		  it ( 'Reports errors', function() {
-		  	const stub = sinon.stub(user, "_requestDeleteBagged");
-		  	stub.yields(401, {});
-		  	user.saveUserMountain(userMountain, function(success, message) {
-		  		stub.restore();
-		  		assert.strictEqual(success, false);
-					assert.deepStrictEqual(message, {status: 401, message: "Not logged in."});
-		  	});
-		  })
-
-		  it ( 'Reports success', function() {
-		  	const stub = sinon.stub(user, "_requestDeleteBagged");
-		  	stub.yields(204, {});
-		  	user.saveUserMountain(userMountain, function(success, message) {
-		  		stub.restore();
-		  		assert.strictEqual(success, true);
-					assert.deepStrictEqual(message, null);
-		  	});
-		  })
-
-	 	})
-	})
 })
