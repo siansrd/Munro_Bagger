@@ -71,4 +71,8 @@ describe("Forecasts", function(){
 	  assert.strictEqual(forecasts.day[2].description, "Light snow");
 	  assert.strictEqual(forecasts.day[2].visibility, "4 - 10km");
   });
+
+  it ('Creates dataDate', function() {
+  	assert.strictEqual(forecasts.dataDate, "2017-02-05T17:00:00Z");
+  });
 });
