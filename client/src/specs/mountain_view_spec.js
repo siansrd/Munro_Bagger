@@ -4,7 +4,7 @@ const UserMountain = require("../models/user_mountain");
 const sinon = require("sinon");
 const assert = require("assert");
 
-describe("Mountain", function(){
+describe("MountainView", function(){
 
 	var mountain;
   var mountainView;
