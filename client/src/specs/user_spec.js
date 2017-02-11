@@ -1,5 +1,3 @@
-process.env.NODE_ENV = 'test';
-
 const User = require("../models/user");
 const UserMountain = require("../models/user_mountain");
 const localStorage = require("../utility").localStorage;

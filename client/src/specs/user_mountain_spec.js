@@ -1,5 +1,3 @@
-process.env.NODE_ENV = 'test';
-
 const UserMountain = require("../models/user_mountain");
 const assert = require("assert");
 
