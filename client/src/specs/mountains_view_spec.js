@@ -41,6 +41,22 @@ describe("MountainsView", function(){
   	assert.strictEqual(mountainsView.mountains[4].id, 5);
   })
 
+  it ( 'Creates forecastDates.max', function() {
+    assert.strictEqual(mountainsView.forecastDates.max, "2017-02-05T17:00:00Z");
+  })
+
+  it ( 'Creates forecastDates.min', function() {
+    assert.strictEqual(mountainsView.forecastDates.min, "2017-02-05T17:00:00Z");
+  })
+
+  it ( 'Creates forecastDates.ave', function() {
+    assert.strictEqual(mountainsView.forecastDates.ave, "2017-02-05T17:00:00Z");
+  })
+
+  it ( 'Calculates forecastDates.aligned', function() {
+    assert.strictEqual(mountainsView.forecastDates.aligned, true);
+  })
+
   it ( 'Saves user on login', function() {
   	mountainsView.userLogin(user);
   	assert.strictEqual(mountainsView._user, user);

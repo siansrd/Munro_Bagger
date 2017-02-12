@@ -6,12 +6,35 @@ var MountainsView = function() {
   this._mountainsModel = new Mountains();
   this.mountains = null;
   this._user = null;
+  this._forecastDates = {
+    _min: null,
+    _max: null,
+    _total: 0,
+    _count: 0,
+    get min() { return this._min; },
+    get max() { return this._max; },
+    get ave() {
+      let sDate = new Date(this._total / this._count).toISOString();
+      return sDate.split(".")[0] + "Z";
+    },
+    get aligned() { return (this._min && this._min === this._max); },
+    reset: function() { this._min = this._max = null; this._total = this._count = 0 },
+    add: function(sDate) {
+      this._count += 1;
+      this._total += new Date(sDate).getTime();
+      if (!this._min || this._min > sDate) this._min = sDate;
+      if (!this._max || this._max < sDate) this._max = sDate;
+    }
+  }
+
+  Object.defineProperty(this, "forecastDates", { get: function(){ return this._forecastDates; } });
 }
 
 MountainsView.prototype.all = function(onCompleted) {
   this._mountainsModel.all(function(mtns){
     this.mountains = mtns.map(function(mtn) {
-      var mv = new MountainView(mtn);
+      this._forecastDates.add(mtn.forecasts.dataDate);
+      const mv = new MountainView(mtn);
       mv.createStatus = this.newBaggedRecord.bind(this);
       mv.saveStatus = this.saveBaggedRecord.bind(this);
       return mv;
