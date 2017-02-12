@@ -14,8 +14,8 @@ var MountainsView = function() {
     get min() { return this._min; },
     get max() { return this._max; },
     get ave() {
-      let sDate = new Date(this._total / this._count).toISOString();
-      return sDate.split(".")[0] + "Z";
+      let sDate = (this._count > 0) ? new Date(this._total / this._count).toISOString() : null;
+      return (sDate) ? sDate.split(".")[0] + "Z" : "";
     },
     get aligned() { return (this._min && this._min === this._max); },
     reset: function() { this._min = this._max = null; this._total = this._count = 0 },
