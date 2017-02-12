@@ -90,10 +90,10 @@ describe("Forecast", function(){
 	  assert.strictEqual(forecast.humidity, undefined);
 	  assert.strictEqual(forecast.pofp, undefined);
 	  assert.deepStrictEqual(forecast.temperature, { max: undefined, feelsLike: undefined });
-	  assert.strictEqual(forecast.code, -1);
-	  assert.strictEqual(forecast.description, "Not available");
+	  assert.strictEqual(forecast.code, undefined);
+	  assert.strictEqual(forecast.description, undefined);
 	  assert.strictEqual(forecast.visibility, undefined);
-	  assert.deepStrictEqual(forecast.UVIndex, { index: -1, text: "Not available"});
+	  assert.deepStrictEqual(forecast.UVIndex, { index: undefined, text: undefined });
 	 	assert.strictEqual(forecast.date, undefined);
   })
 })

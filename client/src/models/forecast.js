@@ -19,11 +19,13 @@ var Forecast = function(options){
   this._humidity = options.Hn;
   this._pofp = options.PPd;
   this._temperature = { max: options.Dm, feelsLike: options.FDm };
-  this._code = (!options.W || options.W === "NA") ? -1 : Number(options.W);
-  this._description = (this._code === -1) ? "Not available" : weatherText[this._code];
   this._visibility = visibility[(options.V)];
-  this._UVIndex = (options.U) ? { index: Number(options.U), text: UVIndexText[Number(options.U)] } : { index: -1, text: "Not available" };
+  this._UVIndex = (options.U) ? { index: Number(options.U), text: UVIndexText[Number(options.U)] } : { index: undefined, text: undefined };
   this._date = options.$
+  if (options.W) {
+    this._code = (options.W === "NA") ? -1 : Number(options.W);
+    this._description = (this._code === -1) ? "Not available" : weatherText[this._code];
+  }
 
   Object.defineProperty(this, "wind", { get: function() { return this._wind; } });
   Object.defineProperty(this, "humidity", { get: function() { return this._humidity; } });
