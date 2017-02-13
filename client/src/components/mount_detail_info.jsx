@@ -20,14 +20,17 @@ const MountDetailInfo = React.createClass({
     const dayNum = this.props.dayNum;
     const detail = this.props.focusMount.detail;
     const forecast = detail.forecasts.day[dayNum];
+
+    const unavailable = "Not available";
+    const queries = "???";
     
-    const description = forecast.description;
-    const tempMax = forecast.temperature.max;
-    const tempFL = forecast.temperature.feelsLike;
-    const windDirection = forecast.wind.direction;
-    const windSpeed = forecast.wind.speed;
-    const gusts = forecast.wind.gusting;
-    const visibility = forecast.visibility;
+    const description = (forecast.description) ? forecast.description : unavailable;
+    const tempMax = (forecast.temperature.max) ? forecast.temperature.max : queries;
+    const tempFL = (forecast.temperature.feelsLike) ? forecast.temperature.feelsLike : queries;
+    const windDirection = (forecast.wind.direction) ? forecast.wind.direction : queries;
+    const windSpeed = (forecast.wind.speed) ? forecast.wind.speed : queries;
+    const gusts = (forecast.wind.gusting) ? forecast.wind.gusting : queries;
+    const visibility = (forecast.visibility) ? forecast.visibility : unavailable;
 
     // <div className="grid-item">Region:</div>
     // <div className="grid-item">{detail.region}</div>
