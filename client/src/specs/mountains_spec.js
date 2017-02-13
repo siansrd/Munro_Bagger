@@ -14,7 +14,7 @@ describe("Mountains", function(){
 
   it ( 'Fetches mountains from network', function() {
   	// stub out the call to the Internet
-  	let stub = sinon.stub(mountains, "_fetchFromNetwork");
+  	const stub = sinon.stub(mountains, "_fetchFromNetwork");
   	stub.yields(stubData.munros);
   	mountains.all(function(rxMountains) {
       mountains._fetchFromNetwork.restore();

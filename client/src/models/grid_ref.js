@@ -1,3 +1,5 @@
+"use strict"
+
 const baseGrids = require('./grid_base');
 
 const GridRef = function(options){
@@ -18,8 +20,8 @@ GridRef.prototype.toString = function(){
 GridRef.prototype.toCoords = function() {
   for (let i = 0;  i < baseGrids.length; i++) {
     if (this._letters === baseGrids[i].letters) {
-      var eastings = baseGrids[i].eastings + this._eastings;
-      var northings = baseGrids[i].northings + this._northings;
+      let eastings = baseGrids[i].eastings + this._eastings;
+      let northings = baseGrids[i].northings + this._northings;
       return ({ eastings: eastings, northings: northings });
     }
   }

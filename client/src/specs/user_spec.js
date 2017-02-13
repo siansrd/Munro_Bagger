@@ -176,7 +176,7 @@ describe("User", function(){
 	describe( "Create UserMountain", function() {
 
 		it ( 'Adds a UserMountain to the bagged mountain list', function() {
-			let mtn = user.createUserMountain(4);
+			const mtn = user.createUserMountain(4);
 			assert.strictEqual(user.baggedList.length, 4);
 			assert.strictEqual(user.baggedList[3], mtn);
 			assert.strictEqual(user.baggedList[3].id, 4);	

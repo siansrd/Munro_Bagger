@@ -1,7 +1,9 @@
-var GridRef = require ("./grid_ref");
-var Forecasts = require("./forecasts");
+"use strict"
 
-var Mountain = function(options){
+const GridRef = require ("./grid_ref");
+const Forecasts = require("./forecasts");
+
+const Mountain = function(options){
   this._id = options.id;
   this._smcId = options.smcId;
   this._name = options.name;

@@ -1,5 +1,7 @@
-let UserMountain = require('./user_mountain');
-let ApiRequest = require('./api_request');
+"use strict"
+
+const UserMountain = require('./user_mountain');
+const ApiRequest = require('./api_request');
 
 const baseURL = "www.munrobagger.scot";
 // const baseURL = "localhost:3000"

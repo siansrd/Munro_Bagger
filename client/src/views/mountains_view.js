@@ -1,8 +1,10 @@
-var Mountains = require('../models/mountains');
-var MountainView = require('./mountain_view');
-var search = require('../utility').mountainSearch;
+"use strict"
 
-var MountainsView = function() {
+const Mountains = require('../models/mountains');
+const MountainView = require('./mountain_view');
+const search = require('../utility').mountainSearch;
+
+const MountainsView = function() {
   this._mountainsModel = new Mountains();
   this.mountains = null;
   this._user = null;

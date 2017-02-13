@@ -1,5 +1,5 @@
-let GridRef = require("../models/grid_ref");
-let assert = require("assert");
+const GridRef = require("../models/grid_ref");
+const assert = require("assert");
 
 describe("GridRef", function(){
 

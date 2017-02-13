@@ -1,8 +1,10 @@
-let ApiRequest = function() {
+"use strict"
+
+const ApiRequest = function() {
 };
 
 ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, jwtoken, content) {
-  let request = new XMLHttpRequest()
+  const request = new XMLHttpRequest()
   request.open(httpVerb, url);
   // request.withCredentials = true;
   if (jwtoken) request.setRequestHeader('Authorization', 'Bearer ' + jwtoken);
