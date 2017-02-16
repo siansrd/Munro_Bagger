@@ -32,8 +32,19 @@ var passwordOK = function(password) {
   return true;
 };
 
+const logger = function() {
+  if (true) {
+    const date = new Date();
+    const ms = date.getMilliseconds();
+    const time = date.toTimeString().split(" ")[0] + ":" + ms;
+    let args = Array.from(arguments);
+    console.log.apply(null, [time].concat(args));
+  }
+};
+
 module.exports = {
   mountainSearch: mountainSearch,
   upCase: upCase,
-  passwordOK: passwordOK
+  passwordOK: passwordOK,
+  logger: logger
 }
