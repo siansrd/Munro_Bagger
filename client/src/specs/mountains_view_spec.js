@@ -14,7 +14,7 @@ describe("MountainsView", function(){
   before(function(){
   	mountainsView = new MountainsView();
   	modelStub = sinon.stub(mountainsView._mountainsModel, "_fetchFromNetwork");
-  	modelStub.yields(stubData.munros);
+  	modelStub.yields(stubData.munros());
   	user = {
   		baggedList: [
   			new UserMountain({id:  4, munro_id: 1, climbed_on: null}),

@@ -1,4 +1,6 @@
-const stub_munros = [
+"use strict"
+
+const testMunros = [
 	{
 		id: 1,
 		smcId: "M240",
@@ -111,4 +113,14 @@ const stub_munros = [
 	}
 ];
 
-module.exports = { munros: stub_munros };
+let jsonMunros = JSON.stringify(testMunros);
+
+const fromJsonMunros = function() {
+	return JSON.parse(jsonMunros);
+}
+
+const toJsonMunros = function() {
+	return JSON.stringify(testMunros);
+}
+
+module.exports = { munros: fromJsonMunros, jsonMunros: toJsonMunros };

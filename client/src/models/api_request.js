@@ -1,3 +1,6 @@
+const XMLHttpRequest = (process.env.NODE_ENV === 'test') ? require('../stubs').XMLHttpRequest : window.XMLHttpRequest;
+const navigator = (process.env.NODE_ENV === 'test') ? require('../stubs').navigator : window.navigator;
+
 let ApiRequest = function() {
 };
 
