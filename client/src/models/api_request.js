@@ -1,11 +1,13 @@
+"use strict"
+
 const XMLHttpRequest = (process.env.NODE_ENV === 'test') ? require('../stubs').XMLHttpRequest : window.XMLHttpRequest;
 const navigator = (process.env.NODE_ENV === 'test') ? require('../stubs').navigator : window.navigator;
 
-let ApiRequest = function() {
+const ApiRequest = function() {
 };
 
 ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, jwtoken, content) {
-  let request = new XMLHttpRequest()
+  const request = new XMLHttpRequest()
   request.open(httpVerb, url);
   // request.withCredentials = true;
   if (jwtoken) request.setRequestHeader('Authorization', 'Bearer ' + jwtoken);

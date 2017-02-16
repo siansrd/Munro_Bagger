@@ -1,5 +1,5 @@
-let Mountain = require("../models/mountain");
-let assert = require("assert");
+const Mountain = require("../models/mountain");
+const assert = require("assert");
 
 describe("Mountain", function(){
 

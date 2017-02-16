@@ -92,8 +92,8 @@ describe("UserMountain", function(){
 	  });
 
 	  it ( 'Restores from backup', function () {
-	  	let backup = mountain.backup();
-	  	let newDate = "2003-03-03";
+	  	const backup = mountain.backup();
+	  	const newDate = "2003-03-03";
 	  	mountain.climbedOn = newDate;
 	  	mountain.bagged = false;
 	  	assert.strictEqual(mountain.climbedOn, newDate);

@@ -1,5 +1,5 @@
-let Forecasts = require("../models/forecasts");
-let assert = require("assert");
+const Forecasts = require("../models/forecasts");
+const assert = require("assert");
 
 describe("Forecasts", function(){
 
