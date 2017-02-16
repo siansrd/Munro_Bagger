@@ -16,6 +16,7 @@ const UserChangePassword = require('./user_change_password');
 const UserPasswordResetSuccess = require('./user_pass_reset_success')
 const About = require('./about');
 
+const logger = require('../utility').logger;
 const MountainsView = require('../views/mountains_view');
 const search = require('../utility').mountainSearch;
 const User = require('../models/user');
@@ -40,7 +41,7 @@ const UI = React.createClass({
   },
 
   logAndSetState(state) {
-    console.log("Changing state: ", state);
+    logger("Changing state: ", state);
     this.setState(state);
   },
 
@@ -131,7 +132,7 @@ const UI = React.createClass({
         this.logAndSetState({errorMsg: returned, infoBoxStatus: 'mountain' });
       }
       this.logAndSetState({checkboxDisabled: false, focusMountBagged: status}, function() {
-        console.log("Change state enable:", this.state.checkboxDisabled)
+        logger("Change state enable:", this.state.checkboxDisabled)
       })
     }.bind(this));
   },
@@ -251,7 +252,7 @@ const UI = React.createClass({
 
   render: function() {
 
-    console.log("Rendering UI")
+    logger("Rendering UI")
     // TODO: Refactor this
     if (!this.state.mountainViews) return <div></div>;
 

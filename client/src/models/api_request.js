@@ -1,5 +1,6 @@
 "use strict"
 
+const logger = require('../utility').logger;
 const XMLHttpRequest = (process.env.NODE_ENV === 'test') ? require('../stubs').XMLHttpRequest : window.XMLHttpRequest;
 const navigator = (process.env.NODE_ENV === 'test') ? require('../stubs').navigator : window.navigator;
 
@@ -15,7 +16,7 @@ ApiRequest.prototype._makeRequest = function(httpVerb, url, expected, callback, 
   request.onload = function() {
     let errorStatus = (expected.indexOf(this.status) === -1);
     let content = ((this.status === 204) || errorStatus ) ? null : JSON.parse(this.responseText);
-    console.log(httpVerb, "request to", url, "returned status", this.status)
+    logger(httpVerb, "request to", url, "returned status", this.status)
     callback(this.status, content);
   };
   let json = (content) ? JSON.stringify(content) : null;
