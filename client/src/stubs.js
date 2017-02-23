@@ -1,3 +1,5 @@
+"use strict"
+
 const navigator = {
   onLine: true
 };
@@ -23,7 +25,8 @@ XMLHttpRequest.prototype.setRequestHeader = function(name, value) {
   if (name) this.headers[name] = value;
 }
 
-XMLHttpRequest.prototype.send = function(content = null) {
+XMLHttpRequest.prototype.send = function(content) {
+  if (!content) content = null;
   this.content = content;
   HttpServer.receive(this);
 }
