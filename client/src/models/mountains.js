@@ -11,7 +11,6 @@ const Mountains = function(){
 };
 
 Mountains.prototype.all = function(onCompleted) {
-  
   const apiRequest = new ApiRequest();
   this._fetchFromNetwork(function(receivedMtns) {
     const mountains = [];
