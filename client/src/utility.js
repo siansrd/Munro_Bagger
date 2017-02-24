@@ -1,3 +1,5 @@
+"use strict"
+
 var mountainSearch = function(mountains, mountainId) {
   var mId = Number(mountainId);
 
