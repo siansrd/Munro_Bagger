@@ -34,7 +34,7 @@ const trackForecasts = function(locationId) {
       if (forecast) {
         let dataDate = forecast.SiteRep.DV.dataDate;
         if (dataDate !== lastDataDate) {
-          logger("Forecast dataDate:", forecast.SiteRep.DV.dataDate);
+          logger("Forecast dataDate:", dataDate);
           lastDataDate = dataDate;
         }
       }

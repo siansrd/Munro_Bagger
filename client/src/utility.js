@@ -38,7 +38,11 @@ const logger = function() {
   if (true) {
     const date = new Date();
     const ms = date.getMilliseconds();
-    const time = date.toTimeString().split(" ")[0] + "." + ms;
+    let padding = "";
+    if (ms < 100) {
+      padding = (ms < 10) ? "00" : "0";
+    }
+    const time = date.toTimeString().split(" ")[0] + "." + padding + ms;
     let args = Array.from(arguments);
     console.log.apply(null, [time].concat(args));
   }
