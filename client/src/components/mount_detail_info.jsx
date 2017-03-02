@@ -58,7 +58,10 @@ const MountDetailInfo = React.createClass({
           <div className="grid-item">High of {tempMax}&deg;C (Feels like {tempFL}&deg;C)</div>
           <div className="grid-item">Wind:</div>
           <div className="grid-item">{windSpeed}mph {this.formatDirection(windDirection)} ({gusts}mph Gusts)</div>
-
+          <div className="grid-item">Precipitation:</div>
+          <div className="grid-item">{(forecast.pofp) ? forecast.pofp : queries}% probability</div>
+          <div className="grid-item">Humidity:</div>
+          <div className="grid-item">{(forecast.humidity) ? forecast.humidity : queries}%</div>  
         </div>
       </div>
     )
