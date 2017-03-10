@@ -204,6 +204,10 @@ textarea:focus, input:focus, button:focus {
     z-index: 1;
 }
 
+#infoBox input[type="checkbox"] {
+    margin-left: 15px;
+}
+
 th {
   font-weight: normal;
   text-align: left;
