@@ -214,26 +214,6 @@ table {
   margin: 4px 0 10px;
 }
 
-/*.flex-grid {
-  margin: 4px 0 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.grid-item {
-  flex: 1 1 calc(100% - 120px);
-}
-.grid-item:nth-child(odd) {
-  flex: 0 0 120px;
-}
-
-.grid-item-key {
-  flex: 1 1 calc(100% - 35px);
-}
-.grid-item-key:nth-child(odd) {
-  flex: 0 0 35px;
-}
-*/
-
 .icon {
   height: 18px;
 }
@@ -533,8 +513,5 @@ table {
     clear: both;
   }
 
-  .flex-grid {
-    margin: 3px 0 6px;
-  }
 
 }
