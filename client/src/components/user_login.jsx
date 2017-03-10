@@ -46,13 +46,13 @@ const UserLogin = React.createClass({
         <div>
           <h3>Log in</h3>
           <p>{errorMessage}</p>
-          <form action="/users/sign_in" >
+          <form action="/users/sign_in">
             <div className="formElement">
-              <label>Email</label><br />
+              <div><label htmlFor="user_email">Email</label></div>
               <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
             </div>
             <div className="formElement">
-              <label>Password</label><br />
+              <div><label htmlFor="user_password">Password</label></div>
               <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword}/>
             </div>
             <div>
@@ -60,8 +60,8 @@ const UserLogin = React.createClass({
             </div>
           </form>
 
-          <p className="user-link" onClick={this.clickSignUp}>Sign up</p>
-          <p className="user-link" onClick={this.clickForgotPass}>Forgot your password?</p>
+          <p className="user-link" role="link" onClick={this.clickSignUp}>Sign up</p>
+          <p className="user-link" role="link" onClick={this.clickForgotPass}>Forgot your password?</p>
         </div>
       )
 

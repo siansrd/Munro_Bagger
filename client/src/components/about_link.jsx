@@ -9,7 +9,7 @@ const AboutLink = React.createClass({
   render: function(){
 
     return (
-      <div id="aboutLink" className="menu-link" onClick={this.onClickAbout}>
+      <div id="aboutLink" className="menu-link" role="link" onClick={this.onClickAbout}>
         <h4>About</h4>
       </div>
     )

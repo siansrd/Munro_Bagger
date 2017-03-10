@@ -42,13 +42,13 @@ const UserChangePassword = React.createClass ({
               <h4>Change Password</h4>
               <div className="formElement">
                   <p>{errorMessage}</p>
-                  <label>Password</label>
+                  <label htmlFor="user_password">Password</label>
                   <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
                   <input type="password" name="user[password]" id="user_password" onChange={this.updatePassword} />
               </div>
 
               <div className="formElement">
-                  <label>Password confirmation</label><br />
+                  <div><label htmlFor="user_password_confirmation">Password confirmation</label></div>
                   <input type="password" name="user[password_confirmation]" id="user_password_confirmation" onChange={this.updatePasswordConfirmation}/>
               </div>
                 <button onClick={this.passwordChange}>Change Password</button>
