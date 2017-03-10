@@ -204,7 +204,17 @@ textarea:focus, input:focus, button:focus {
     z-index: 1;
 }
 
-.flex-grid {
+th {
+  font-weight: normal;
+  text-align: left;
+  width: 110px;
+}
+
+table {
+  margin: 4px 0 10px;
+}
+
+/*.flex-grid {
   margin: 4px 0 10px;
   display: flex;
   flex-wrap: wrap;
@@ -222,6 +232,7 @@ textarea:focus, input:focus, button:focus {
 .grid-item-key:nth-child(odd) {
   flex: 0 0 35px;
 }
+*/
 
 .icon {
   height: 18px;
@@ -314,6 +325,10 @@ textarea:focus, input:focus, button:focus {
       font-size: 14px;
   }
 
+  td, th {
+      font-size: 14px;
+  }
+
   p {
       -webkit-margin-before: 0.8em;
       -webkit-margin-after: 0.8em;
@@ -371,6 +386,10 @@ textarea:focus, input:focus, button:focus {
 @media screen and (max-width: 750px) {
 
   body {
+      font-size: 12px;
+  }
+
+  td, th {
       font-size: 12px;
   }
 

@@ -11,18 +11,23 @@ const UserLoginSuccess = React.createClass ({
       <div>   
         <p>You're now logged in. You can change the bagged status of any of the mountains by clicking the icons on the map and you will see a checkbox in this window.</p>
 
-        <div className="flex-grid">
-          <div className="grid-item-key">
-            <img className="icon" src="/public/images/mntn-bagged-sunny.png"/>
-            <img className="icon" src="/public/images/mntn-bagged.png"/>
-          </div>
-          <div className="grid-item-key">- Bagged (Sunny/Not Sunny)</div>
-          <div className="grid-item-key">
-            <img className="icon" src="/public/images/mntn-not-bagged-sunny.png"/>
-            <img className="icon" src="/public/images/mntn-not-bagged.png"/>
-          </div>
-          <div className="grid-item-key">- Not Bagged (Sunny/Not Sunny)</div>
-        </div>
+        <table>
+          <tr>
+            <td>
+              <img className="icon" alt="icon indicating mountain is bagged and sunny" src="/public/images/mntn-bagged-sunny.png"/>
+              <img className="icon" alt="icon indicating mountain is bagged but not sunny" src="/public/images/mntn-bagged.png"/>
+            </td>
+            <td>- Bagged (Sunny/Not Sunny)</td>
+          </tr>
+
+          <tr>
+            <td>
+              <img className="icon" alt="icon indicating mountain is not bagged and sunny" src="/public/images/mntn-not-bagged-sunny.png"/>
+              <img className="icon" alt="icon indicating mountain is not bagged and not sunny" src="/public/images/mntn-not-bagged.png"/>
+            </td>
+            <td>- Not Bagged (Sunny/Not Sunny)</td>
+          </tr>
+        </table>
 
         <p className="user-link" onClick={this.clickChangePassword}>Change Password</p>
        
