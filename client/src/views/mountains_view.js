@@ -2,11 +2,13 @@
 
 const Mountains = require('../models/mountains');
 const MountainView = require('./mountain_view');
+const Regions = require('./regions');
 const search = require('../utility').mountainSearch;
 
 const MountainsView = function() {
   this._mountainsModel = new Mountains();
   this.mountains = null;
+  this.regions = null;
   this._user = null;
   this._forecastDates = {
     _min: null,
@@ -41,6 +43,7 @@ MountainsView.prototype.all = function(onCompleted) {
       mv.saveStatus = this.saveBaggedRecord.bind(this);
       return mv;
     }.bind(this));
+    this.regions = new Regions(this.mountains);
     onCompleted(this.mountains);
   }.bind(this));
 }

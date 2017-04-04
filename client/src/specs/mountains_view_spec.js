@@ -41,6 +41,10 @@ describe("MountainsView", function(){
   	assert.strictEqual(mountainsView.mountains[4].id, 5);
   })
 
+  it ( 'Has regions', function() {
+    assert.strictEqual(mountainsView.regions.length, 4);   
+  })
+
   it ( 'Creates forecastDates.max', function() {
     assert.strictEqual(mountainsView.forecastDates.max, "2017-02-05T17:00:00Z");
   })
