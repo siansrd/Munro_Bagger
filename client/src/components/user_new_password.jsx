@@ -35,7 +35,7 @@ const UserNewPassword = React.createClass({
           <p>{errorMessage}</p>
           <form>
               <div className="formElement">
-                  <label>Email</label><br />
+                  <div><label htmlFor="user_email">Email</label></div>
                   <input type="email" name="user[email]" id="user_email" onChange={this.updateEmail}/>
               </div>
               <div>

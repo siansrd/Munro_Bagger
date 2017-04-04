@@ -31,12 +31,11 @@ const MountDetailBagged = React.createClass({
     let opts = (this.props.disabled) ? {'disabled': 'disabled', 'checked': checked } : { 'checked': checked };
     
     return (
-      <div className="flex-grid">
-        <div className="grid-item">Bagged:</div>
-        <div className="grid-item">
-          <input type="checkbox" {...opts} onChange={this.handleBaggedChange}/>
+
+        <div>
+            <label htmlFor="bagged">Bagged:</label>
+            <input type="checkbox" id="bagged" {...opts} onChange={this.handleBaggedChange}/>
         </div>
-      </div>
     )
   }
 });

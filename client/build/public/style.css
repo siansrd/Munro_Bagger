@@ -204,23 +204,18 @@ textarea:focus, input:focus, button:focus {
     z-index: 1;
 }
 
-.flex-grid {
-  margin: 4px 0 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.grid-item {
-  flex: 1 1 calc(100% - 120px);
-}
-.grid-item:nth-child(odd) {
-  flex: 0 0 120px;
+#infoBox input[type="checkbox"] {
+    margin-left: 15px;
 }
 
-.grid-item-key {
-  flex: 1 1 calc(100% - 35px);
+th {
+  font-weight: normal;
+  text-align: left;
+  width: 110px;
 }
-.grid-item-key:nth-child(odd) {
-  flex: 0 0 35px;
+
+table {
+  margin: 4px 0 10px;
 }
 
 .icon {
@@ -314,6 +309,10 @@ textarea:focus, input:focus, button:focus {
       font-size: 14px;
   }
 
+  td, th {
+      font-size: 14px;
+  }
+
   p {
       -webkit-margin-before: 0.8em;
       -webkit-margin-after: 0.8em;
@@ -371,6 +370,10 @@ textarea:focus, input:focus, button:focus {
 @media screen and (max-width: 750px) {
 
   body {
+      font-size: 12px;
+  }
+
+  td, th {
       font-size: 12px;
   }
 
@@ -514,8 +517,5 @@ textarea:focus, input:focus, button:focus {
     clear: both;
   }
 
-  .flex-grid {
-    margin: 3px 0 6px;
-  }
 
 }

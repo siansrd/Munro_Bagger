@@ -59,18 +59,18 @@ const UserSignUp = React.createClass({
         <form>
           <div className="formElement">
             <p>{errorMessage}</p>
-            <label>Email</label><br />
+            <div><label htmlFor="user_email">Email</label></div>
             <input type="email" name="user[email]" id="user_email" value={this.state.email} onChange={this.updateEmail} />
           </div>
 
           <div className="formElement">
-            <label>Password</label><br/>
-            <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
+            <div><label htmlFor="user_password">Password</label></div>
             <input type="password" name="user[password]" id="user_password" value={this.state.password} onChange={this.updatePassword} />
+            <p className="small">At least 8 charaters, 1 uppercase and 1 number</p>
           </div>
 
           <div className="formElement">
-            <label>Password confirmation</label><br />
+            <div><label htmlFor="user_password_confirmation">Password confirmation</label></div>
             <input type="password" name="user[password_confirmation]" id="user_password_confirmation" value={this.state.passwordConfirmation} onChange={this.updatePasswordConfirmation}/>
           </div>
 

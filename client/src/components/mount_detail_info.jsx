@@ -34,35 +34,62 @@ const MountDetailInfo = React.createClass({
 
     // <div className="grid-item">Region:</div>
     // <div className="grid-item">{detail.region}</div>
+    <table>
+    <tr>
+    <th scope="row">Beth</th>
+    <td>8</td>
+    <td>January 14</td>
+    </tr>
+    </table>
 
     return (
       <div>
         <h3>{detail.name}</h3>
         <h4>({detail.meaning})</h4>
-        <div className="flex-grid">
-          <div className="grid-item">Height:</div>
-          <div className="grid-item">{detail.height}m</div>
-          <div className="grid-item">OS Grid Ref:</div>
-          <div className="grid-item">{detail.gridRef.toString()}</div>
-          <div className="grid-item">Lat/Long:</div>
-          <div className="grid-item">{detail.latLng.lat}°, {detail.latLng.lng}°</div>
-        </div>
+        <table>
+          <tr>
+            <th scope="row">Height:</th>
+            <td>{detail.height}m</td>
+          </tr>
+          <tr>
+            <th scope="row">OS Grid Ref:</th>
+            <td>{detail.gridRef.toString()}</td>
+          </tr>
+          <tr>
+            <th scope="row">Lat/Long:</th>
+            <td>{detail.latLng.lat}°, {detail.latLng.lng}°</td>
+          </tr>
+        </table>
 
         <div className="cond-title"><h3>Conditions {this.formatDay(this.props.dayNum)}:</h3></div>
-        <div className="flex-grid">
-          <div className="grid-item">Weather:</div>
-          <div className="grid-item">{description}</div>
-          <div className="grid-item">Visibility:</div>
-          <div className="grid-item">{visibility}</div>
-          <div className="grid-item">Temperature:</div>
-          <div className="grid-item">High of {tempMax}&deg;C (Feels like {tempFL}&deg;C)</div>
-          <div className="grid-item">Wind:</div>
-          <div className="grid-item">{windSpeed}mph {this.formatDirection(windDirection)} ({gusts}mph Gusts)</div>
-          <div className="grid-item">Precipitation:</div>
-          <div className="grid-item">{(forecast.pofp) ? forecast.pofp : queries}% probability</div>
-          <div className="grid-item">Humidity:</div>
-          <div className="grid-item">{(forecast.humidity) ? forecast.humidity : queries}%</div>  
-        </div>
+
+        <table>
+          <tr>
+            <th scope="row">Weather:</th>
+            <td>{description}</td>
+          </tr>
+          <tr>
+            <th scope="row">Visibility:</th>
+            <td>{visibility}</td>
+          </tr>
+          <tr>
+            <th scope="row">Temperature:</th>
+            <td>High of {tempMax}&deg;C (Feels like {tempFL}&deg;C)</td>
+          </tr>
+          <tr>
+            <th scope="row">Wind:</th>
+            <td>{windSpeed}mph {this.formatDirection(windDirection)} ({gusts}mph Gusts)</td>
+          </tr>
+          <tr>
+            <th scope="row">Precipitation:</th>
+            <td>{(forecast.pofp) ? forecast.pofp : queries}% probability</td>
+          </tr>
+          <tr>
+            <th scope="row">Humidity:</th>
+            <td>{(forecast.humidity) ? forecast.humidity : queries}%</td>
+          </tr>
+        </table>
+
       </div>
     )
   }
